@@ -8,10 +8,10 @@
 | 基准 commit | [`ad9264e309bd5e5422c04784372d7841b1e5d604`](https://github.com/msitarzewski/agency-agents/commit/ad9264e309bd5e5422c04784372d7841b1e5d604) |
 | 研究日期 | 2026-09-17 |
 | 上游许可 | MIT，Copyright (c) 2025 AgentLand Contributors |
-| 当前阶段 | 能力梳理与展示已完成；角色实际效果待实验验证 |
+| 当前阶段 | 能力整理与网页部署已完成；角色及能力后续按需验证 |
 | 详细记录 | [研究笔记](notes.md) · [项目元数据](project.json) |
 | 网页源码 | [web/](web/) |
-| 静态展示 | [网页入口](../../site/apps/001-agency-agents/index.html)（本地预览，尚未公开部署） |
+| 静态展示 | [在线研究页](https://yydshly.github.io/0917_codex_project/apps/001-agency-agents/) · [本地静态文件](../../site/apps/001-agency-agents/index.html) |
 
 ## 项目是什么
 
@@ -96,7 +96,7 @@ python projects/001-agency-agents/web/build.py
 - [x] 完成中文静态网页和本地预览
 - [ ] 在实际研究任务中运行选定角色
 - [ ] 对照评估耗时、事实错误、复现成功率与返工次数
-- [ ] 公开部署 GitHub Pages 并记录真实演示地址
+- [x] 公开部署 GitHub Pages 并记录真实演示地址
 
 ## 来源与许可
 

@@ -11,7 +11,7 @@
 <!-- PROJECT_INDEX:START -->
 | 编号 | 项目 | 研究摘要 | 状态 | 上游 | Web 演示 |
 | --- | --- | --- | --- | --- | --- |
-| 001 | [Agency Agents](projects/001-agency-agents/README.md) | 按领域、按身份定制的 skill 提示词库；效果受模型能力及其提升影响，后续按实际需要验证角色与能力的价值。 | 研究中 | <a href="https://github.com/msitarzewski/agency-agents">GitHub</a> | — |
+| 001 | [Agency Agents](projects/001-agency-agents/README.md) | 按领域、按身份定制的 skill 提示词库；效果受模型能力及其提升影响，后续按实际需要验证角色与能力的价值。 | 研究中 | <a href="https://github.com/msitarzewski/agency-agents">GitHub</a> | <a href="https://yydshly.github.io/0917_codex_project/apps/001-agency-agents/">访问演示</a> |
 <!-- PROJECT_INDEX:END -->
 
 ## 项目预览
@@ -46,6 +46,6 @@ python scripts/projects.py sync
 | [templates/project/](templates/project/) | 统一的子项目文档模板 |
 | [研究约定](docs/research-guide.md) | 编号规则、研究流程、图片与源码管理 |
 | [Web 部署说明](docs/deployment.md) | 多个演示的路径规划与 GitHub Pages 部署方式 |
-| [site/](site/) | 预留的静态演示发布目录，目前尚未部署 |
+| [site/](site/) | 已部署的静态研究展示与导航 |
 
 上游项目的源码、图片与其他素材遵循各自许可证；引用和修改时在子项目中记录来源。

@@ -10,4 +10,4 @@
 
 从仓库根目录执行 `python projects/001-agency-agents/web/build.py` 后预览 `site/`。网页支持离线阅读、原生可展开角色清单、键盘导航和小屏布局；外部来源链接需要网络。无 JavaScript 时正文与清单仍可阅读。
 
-更新上游版本后须同步核查中文结论、日期、研究文档和截图。发布遵循根目录的 GitHub Pages 规划，尚未公开部署。
+更新上游版本后须同步核查中文结论、日期、研究文档和截图。已通过 GitHub Pages 部署：[在线访问](https://yydshly.github.io/0917_codex_project/apps/001-agency-agents/)。根目录执行 `python scripts/build_site.py` 会生成研究页及读取元数据的网站索引。

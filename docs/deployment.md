@@ -1,39 +1,47 @@
-# 多 Web 演示部署规划
+# Web 展示与部署
 
-已添加展示导航页与 001-agency-agents 静态能力研究页，可本地预览；尚未公开发布或启用自动部署。
+本仓库使用 GitHub Pages 承载静态研究页面。已启用 GitHub Actions 自动构建与发布。
 
-## 路径规划
+- [在线项目索引](https://yydshly.github.io/0917_codex_project/)
+- [001 · Agency Agents](https://yydshly.github.io/0917_codex_project/apps/001-agency-agents/)
+- [Agency Agents 高清引导图](https://yydshly.github.io/0917_codex_project/apps/001-agency-agents/capability-summary.png)
 
-一个 GitHub 仓库对应一个 Pages 站点，多个静态演示放在该站点的不同子路径中：
+## 目录与数据来源
 
-```text
-site/
-  index.html                  # 后续添加的演示导航页
-  apps/
-    001-example-repo/         # 第一个演示的静态产物
-      index.html
-    002-another-repo/         # 第二个演示的静态产物
-      index.html
+- 子项目源码：`projects/NNN-slug/web/`。
+- 静态产物：`site/apps/NNN-slug/`。
+- 网站首页模板：`site/index.template.html`；`scripts/build_site.py` 从各子项目 `project.json` 生成 `site/index.html`。
+- 根 README 索引：仍由 `python scripts/projects.py sync` 生成。
+- 上游地址来自 `repo` 字段；公开演示地址来自已验证后的 `demo` 字段。根 README 与网页索引均关联原始仓库。
+
+## 本地构建
+
+```powershell
+python scripts/projects.py sync
+python scripts/projects.py check
+python scripts/build_site.py
+python -m http.server 8765 --bind 127.0.0.1 --directory site
 ```
 
-本仓库的默认 Pages 地址预计为 `https://yydshly.github.io/0917_codex_project/`，示例演示路径为 `/0917_codex_project/apps/001-example-repo/`。这些是路径约定，当前不是已上线链接。
+构建只需 Python 3.10+ 标准库，使用保存的版本清单，不依赖网络或上游源码副本。各子项目独立选用技术栈；目前总构建入口仅登记 001 的构建方式，后续按项目需要添加。
 
-## 源码与发布内容
+## 自动发布
 
-- 每个项目的演示源码保存在 `projects/NNN-slug/web/`，依赖和构建方式由子项目独立决定。
-- 后续构建流程将静态产物汇总到 `site/apps/NNN-slug/`，统一上传 Pages。
-- `site/` 只用于公开静态文件；研究笔记和本地上游副本不需要加入发布包。
-- 构建工具的资源前缀应匹配 `/0917_codex_project/apps/NNN-slug/`，也可按工具支持情况使用相对资源路径。
-- 单页应用可使用 hash 路由；采用其他路由时需要另外验证深层链接和刷新行为。
+工作流：`.github/workflows/pages.yml`。
 
-## 首次上线时
+1. main 分支的项目、展示、构建脚本或发布工作流变更触发部署，也可手动触发。
+2. 检查元数据和 README 索引，再构建网页。
+3. 将 `site/` 复制为发布包，排除 Markdown 说明和 HTML 模板。
+4. 上传 Pages 静态产物并通过 github-pages 环境发布。
 
-1. 添加并验证第一个演示及 `site/index.html`。
-2. 在仓库 Settings → Pages 中选择 GitHub Actions 作为发布来源。
-3. 添加 Pages 工作流：构建各演示、汇总到 `site/`，再通过 `actions/upload-pages-artifact` 与 `actions/deploy-pages` 发布；上传前排除目录说明文件。
-4. 验证首页、每个演示、静态资源和子路径刷新。
-5. 将实际演示地址写入对应 `project.json` 的 `demo` 并同步索引。
+只发布 `site/` 静态文件；本地上游副本、研究笔记、运行环境和凭据不会进入网站发布包。
 
-Pages 仅托管静态 HTML、CSS 和 JavaScript。有服务端、数据库或私密 API 密钥的项目，需要另行选择后端运行环境，在子项目中记录访问方式。
+## 子路径与验证
 
-参考：[GitHub Pages 官方说明](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)、[自定义 Pages 工作流](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)。
+资源使用相对路径，兼容 `/0917_codex_project/apps/001-agency-agents/`。页面章节用 hash 锚点，无需服务端路由。
+
+2026-09-17 已完成线上验证：网站索引、上游链接、子项目页面、高清引导图、角色清单展开与移动布局。首次发布记录：[工作流 35180823638](https://github.com/yydshly/0917_codex_project/actions/runs/35180823638)。后续部署以最新工作流结果为准。
+
+网页可访问不代表上游角色能力已验证。Agency Agents 当前完成分类整理、候选筛选与展示；后续按任务需求评估实际效果与模型升级的影响。
+
+参考：[GitHub Pages 自定义工作流](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)。
