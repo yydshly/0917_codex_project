@@ -1,0 +1,11 @@
+{
+  "id": 1,
+  "slug": "agency-agents",
+  "name": "Agency Agents",
+  "summary": "按领域、按身份定制的 skill 提示词库；效果受模型能力及其提升影响，后续按实际需要验证角色与能力的价值。",
+  "repo": "https://github.com/msitarzewski/agency-agents",
+  "status": "研究中",
+  "demo": "",
+  "cover": "assets/overview-desktop.png",
+  "cover_alt": "Agency Agents 中文能力研究页面桌面预览，展示概览、角色统计和能力地图"
+}

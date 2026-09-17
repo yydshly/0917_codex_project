@@ -1,0 +1,26 @@
+"""Build the static site and its metadata-driven project index (stdlib only)."""
+import html
+import subprocess
+import sys
+from pathlib import Path
+
+from projects import ROOT, read_projects
+
+
+def build():
+    entries = read_projects()
+    # Each subproject owns its stack. Register its build here when necessary.
+    subprocess.run([sys.executable, str(ROOT / "projects/001-agency-agents/web/build.py")], check=True)
+    rows = []
+    for entry in entries:
+        folder = entry["folder"]
+        local_demo = ROOT / "site" / "apps" / folder / "index.html"
+        demo = f'<a href="./apps/{folder}/">阅读研究 →</a>' if local_demo.exists() else "待添加"
+        rows.append(f'<tr><td>{entry["id"]:03d}</td><td><strong>{html.escape(entry["name"])}</strong><br><span>{html.escape(entry["status"])}</span></td><td>{html.escape(entry["summary"])}</td><td><a href="{html.escape(entry["repo"], quote=True)}" target="_blank" rel="noopener noreferrer">原始仓库 ↗</a></td><td>{demo}</td></tr>')
+    template = (ROOT / "site/index.template.html").read_text(encoding="utf-8")
+    (ROOT / "site/index.html").write_text(template.replace("<!-- PROJECT_ROWS -->", "\n".join(rows)), encoding="utf-8", newline="\n")
+    print("Built static site and project index")
+
+
+if __name__ == "__main__":
+    build()

@@ -9,13 +9,19 @@
 项目按固定编号升序排列；编号分配后不随研究状态变化，也不重复使用。
 
 <!-- PROJECT_INDEX:START -->
-暂无研究项目。使用下方命令创建第一个项目，编号从 `001` 开始。
+| 编号 | 项目 | 研究摘要 | 状态 | 上游 | Web 演示 |
+| --- | --- | --- | --- | --- | --- |
+| 001 | [Agency Agents](projects/001-agency-agents/README.md) | 按领域、按身份定制的 skill 提示词库；效果受模型能力及其提升影响，后续按实际需要验证角色与能力的价值。 | 研究中 | <a href="https://github.com/msitarzewski/agency-agents">GitHub</a> | — |
 <!-- PROJECT_INDEX:END -->
 
 ## 项目预览
 
 <!-- PROJECT_GALLERY:START -->
-暂无项目图片。为子项目添加封面后，这里会自动展示预览。
+### 001 · Agency Agents
+
+<a href="projects/001-agency-agents/README.md"><img src="projects/001-agency-agents/assets/overview-desktop.png" alt="Agency Agents 中文能力研究页面桌面预览，展示概览、角色统计和能力地图" width="640"></a>
+
+按领域、按身份定制的 skill 提示词库；效果受模型能力及其提升影响，后续按实际需要验证角色与能力的价值。
 <!-- PROJECT_GALLERY:END -->
 
 ## 新增研究项目
