@@ -1,0 +1,18 @@
+{
+  "researchDate": "2026-09-17",
+  "sourceRepo": "https://github.com/pbakaus/impeccable",
+  "sourceCommit": "f2c7051853848826aac2f4646581d62a732155ad",
+  "sourcePackageVersion": "4.1.0",
+  "engineRelease": "engine-v0.1.5",
+  "engineReportedVersion": "4.0.0",
+  "engineSha256": "477e544fc8880a5e82e427490cb9a5f5adab480c0e02966d33fd50772b531c71",
+  "license": "Apache-2.0",
+  "experimentType": "Constructed baseline; guideline-informed implementation; not a randomized model comparison",
+  "inputs": {
+    "after.css": "a2c24d1a649aa9a8dd1b588b2cda43b80717df04bfcd6013e56b404495e36485",
+    "before.css": "6f6a0986a9c673458790c32f9ae51b41b98a457b5b21268efc69d2f4a4ff2ce3",
+    "board.js": "4a455a93fd102f36613e228a6a5d508c3926cf18ad8de94efacd6bdcac75f342",
+    "board.template.html": "f14dd651930db5f3bb54ec52ae969836e2deb21a8e07735b5c0f3334f12cd3f7",
+    "data.json": "ceb93ec4884451270d7902017e031e42805fd09d836d944b99b459aecc2a7ec1"
+  }
+}

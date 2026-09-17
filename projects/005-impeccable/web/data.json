@@ -1,0 +1,7 @@
+[
+  {"id":"001","name":"Agency Agents","kind":"角色库","summary":"按领域选择角色，复用职责、工作步骤和交付要求。","focus":"角色提示是否改善任务结果，仍需真实任务对照。","repo":"https://github.com/msitarzewski/agency-agents"},
+  {"id":"002","name":"Agency Agents 中文版","kind":"角色库","summary":"中文角色与工作方法，包含中国场景适配。","focus":"比较原版与中文适配，选择适合研究流程的角色。","repo":"https://github.com/jnMetaCode/agency-agents-zh"},
+  {"id":"003","name":"Agency Orchestrator","kind":"编排工具","summary":"按任务依赖编排角色，传递结果并保存执行记录。","focus":"已有真实模型案例；质量增益仍需对照验证。","repo":"https://github.com/jnMetaCode/agency-orchestrator"},
+  {"id":"004","name":"Ponytail","kind":"工程工具","summary":"开发前优先复用已有实现，减少不必要的代码。","focus":"已验证部分指令与 Hook；实际成本收益尚未测量。","repo":"https://github.com/DietrichGebert/ponytail"},
+  {"id":"005","name":"Impeccable","kind":"设计工具","summary":"用设计指南、规则检测和可视化迭代改善前端界面。","focus":"本页使用的指南与检测对象；详细实测见研究页。","repo":"https://github.com/pbakaus/impeccable"}
+]

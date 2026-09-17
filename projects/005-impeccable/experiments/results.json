@@ -1,0 +1,93 @@
+{
+  "recordedAt": "2026-09-17T09:20:26.212973+00:00",
+  "engineRelease": "engine-v0.1.5",
+  "engineReportedVersion": "4.0.0",
+  "binarySha256": "477e544fc8880a5e82e427490cb9a5f5adab480c0e02966d33fd50772b531c71",
+  "config": "--no-config (no suppressions and no DESIGN.md)",
+  "pairs": [
+    {
+      "mode": "static",
+      "label": "静态 HTML / CSS",
+      "before": {
+        "exitCode": 2,
+        "primary": 49,
+        "advisory": 0,
+        "rules": {
+          "side-tab": 5,
+          "low-contrast": 33,
+          "undersized-ui-text": 6,
+          "tiny-text": 4,
+          "overused-font": 1
+        },
+        "raw": "raw/static-before.json",
+        "target": "site/apps/005-impeccable/before.html",
+        "viewport": null
+      },
+      "after": {
+        "exitCode": 0,
+        "primary": 0,
+        "advisory": 0,
+        "rules": {},
+        "raw": "raw/static-after.json",
+        "target": "site/apps/005-impeccable/after.html",
+        "viewport": null
+      }
+    },
+    {
+      "mode": "desktop",
+      "label": "浏览器 1280 × 900",
+      "before": {
+        "exitCode": 2,
+        "primary": 43,
+        "advisory": 0,
+        "rules": {
+          "low-contrast": 27,
+          "undersized-ui-text": 6,
+          "side-tab": 5,
+          "tiny-text": 4,
+          "overused-font": 1
+        },
+        "raw": "raw/desktop-before.json",
+        "target": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+        "viewport": "1280x900"
+      },
+      "after": {
+        "exitCode": 0,
+        "primary": 0,
+        "advisory": 0,
+        "rules": {},
+        "raw": "raw/desktop-after.json",
+        "target": "http://127.0.0.1:8766/apps/005-impeccable/after.html",
+        "viewport": "1280x900"
+      }
+    },
+    {
+      "mode": "mobile",
+      "label": "浏览器 390 × 844",
+      "before": {
+        "exitCode": 2,
+        "primary": 43,
+        "advisory": 0,
+        "rules": {
+          "low-contrast": 27,
+          "undersized-ui-text": 6,
+          "side-tab": 5,
+          "tiny-text": 4,
+          "overused-font": 1
+        },
+        "raw": "raw/mobile-before.json",
+        "target": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+        "viewport": "390x844"
+      },
+      "after": {
+        "exitCode": 0,
+        "primary": 0,
+        "advisory": 0,
+        "rules": {},
+        "raw": "raw/mobile-after.json",
+        "target": "http://127.0.0.1:8766/apps/005-impeccable/after.html",
+        "viewport": "390x844"
+      }
+    }
+  ]
+}

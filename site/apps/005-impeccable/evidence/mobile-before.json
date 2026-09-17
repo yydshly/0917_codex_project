@@ -1,0 +1,432 @@
+[
+  {
+    "antipattern": "low-contrast",
+    "name": "Low contrast text",
+    "description": "Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast between text and background.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "3.2:1 (need 4.5:1) — text #777777 on #ded7f4"
+  },
+  {
+    "antipattern": "low-contrast",
+    "name": "Low contrast text",
+    "description": "Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast between text and background.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "2.6:1 (need 3:1) — text #9a86ca on #eee8fb"
+  },
+  {
+    "antipattern": "low-contrast",
+    "name": "Low contrast text",
+    "description": "Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast between text and background.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "2.4:1 (need 4.5:1) — text #999999 on #eee8fb"
+  },
+  {
+    "antipattern": "undersized-ui-text",
+    "name": "Undersized functional text",
+    "description": "Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "10px functional text \"2026-09-17 数据快照\" (below 11px floor)"
+  },
+  {
+    "antipattern": "low-contrast",
+    "name": "Low contrast text",
+    "description": "Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast between text and background.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "3.5:1 (need 4.5:1) — text #888888 on #ffffff"
+  },
+  {
+    "antipattern": "low-contrast",
+    "name": "Low contrast text",
+    "description": "Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast between text and background.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "3.5:1 (need 4.5:1) — text #888888 on #ffffff"
+  },
+  {
+    "antipattern": "low-contrast",
+    "name": "Low contrast text",
+    "description": "Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast between text and background.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "3.5:1 (need 4.5:1) — text #888888 on #ffffff"
+  },
+  {
+    "antipattern": "side-tab",
+    "name": "Side-tab accent border",
+    "description": "Thick colored border on one side of a card — the most recognizable tell of AI-generated UIs. Use a subtler accent or remove it entirely.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "border-left: 4px + border-radius: 16px"
+  },
+  {
+    "antipattern": "low-contrast",
+    "name": "Low contrast text",
+    "description": "Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast between text and background.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "3.0:1 (need 4.5:1) — text #9a86ca on #f8f6ff"
+  },
+  {
+    "antipattern": "undersized-ui-text",
+    "name": "Undersized functional text",
+    "description": "Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "10px functional text \"角色库\" (below 11px floor)"
+  },
+  {
+    "antipattern": "low-contrast",
+    "name": "Low contrast text",
+    "description": "Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast between text and background.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "3.3:1 (need 4.5:1) — text #888888 on #f8f6ff"
+  },
+  {
+    "antipattern": "low-contrast",
+    "name": "Low contrast text",
+    "description": "Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast between text and background.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "3.0:1 (need 4.5:1) — text #888888 on #efebf8"
+  },
+  {
+    "antipattern": "low-contrast",
+    "name": "Low contrast text",
+    "description": "Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast between text and background.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "2.0:1 (need 4.5:1) — text #aaaaaa on #efebf8"
+  },
+  {
+    "antipattern": "tiny-text",
+    "name": "Tiny body text",
+    "description": "Body text below 12px is hard to read, especially on high-DPI screens. Use at least 14px for body content, 16px is ideal.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "11px body text"
+  },
+  {
+    "antipattern": "side-tab",
+    "name": "Side-tab accent border",
+    "description": "Thick colored border on one side of a card — the most recognizable tell of AI-generated UIs. Use a subtler accent or remove it entirely.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "border-left: 4px + border-radius: 16px"
+  },
+  {
+    "antipattern": "low-contrast",
+    "name": "Low contrast text",
+    "description": "Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast between text and background.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "3.0:1 (need 4.5:1) — text #9a86ca on #f8f6ff"
+  },
+  {
+    "antipattern": "undersized-ui-text",
+    "name": "Undersized functional text",
+    "description": "Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "10px functional text \"角色库\" (below 11px floor)"
+  },
+  {
+    "antipattern": "low-contrast",
+    "name": "Low contrast text",
+    "description": "Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast between text and background.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "3.3:1 (need 4.5:1) — text #888888 on #f8f6ff"
+  },
+  {
+    "antipattern": "low-contrast",
+    "name": "Low contrast text",
+    "description": "Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast between text and background.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "3.0:1 (need 4.5:1) — text #888888 on #efebf8"
+  },
+  {
+    "antipattern": "low-contrast",
+    "name": "Low contrast text",
+    "description": "Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast between text and background.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "2.0:1 (need 4.5:1) — text #aaaaaa on #efebf8"
+  },
+  {
+    "antipattern": "tiny-text",
+    "name": "Tiny body text",
+    "description": "Body text below 12px is hard to read, especially on high-DPI screens. Use at least 14px for body content, 16px is ideal.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "11px body text"
+  },
+  {
+    "antipattern": "side-tab",
+    "name": "Side-tab accent border",
+    "description": "Thick colored border on one side of a card — the most recognizable tell of AI-generated UIs. Use a subtler accent or remove it entirely.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "border-left: 4px + border-radius: 16px"
+  },
+  {
+    "antipattern": "low-contrast",
+    "name": "Low contrast text",
+    "description": "Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast between text and background.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "3.0:1 (need 4.5:1) — text #9a86ca on #f8f6ff"
+  },
+  {
+    "antipattern": "undersized-ui-text",
+    "name": "Undersized functional text",
+    "description": "Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "10px functional text \"编排工具\" (below 11px floor)"
+  },
+  {
+    "antipattern": "low-contrast",
+    "name": "Low contrast text",
+    "description": "Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast between text and background.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "3.3:1 (need 4.5:1) — text #888888 on #f8f6ff"
+  },
+  {
+    "antipattern": "low-contrast",
+    "name": "Low contrast text",
+    "description": "Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast between text and background.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "3.0:1 (need 4.5:1) — text #888888 on #efebf8"
+  },
+  {
+    "antipattern": "low-contrast",
+    "name": "Low contrast text",
+    "description": "Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast between text and background.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "2.0:1 (need 4.5:1) — text #aaaaaa on #efebf8"
+  },
+  {
+    "antipattern": "side-tab",
+    "name": "Side-tab accent border",
+    "description": "Thick colored border on one side of a card — the most recognizable tell of AI-generated UIs. Use a subtler accent or remove it entirely.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "border-left: 4px + border-radius: 16px"
+  },
+  {
+    "antipattern": "low-contrast",
+    "name": "Low contrast text",
+    "description": "Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast between text and background.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "3.0:1 (need 4.5:1) — text #9a86ca on #f8f6ff"
+  },
+  {
+    "antipattern": "undersized-ui-text",
+    "name": "Undersized functional text",
+    "description": "Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "10px functional text \"工程工具\" (below 11px floor)"
+  },
+  {
+    "antipattern": "low-contrast",
+    "name": "Low contrast text",
+    "description": "Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast between text and background.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "3.3:1 (need 4.5:1) — text #888888 on #f8f6ff"
+  },
+  {
+    "antipattern": "low-contrast",
+    "name": "Low contrast text",
+    "description": "Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast between text and background.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "3.0:1 (need 4.5:1) — text #888888 on #efebf8"
+  },
+  {
+    "antipattern": "low-contrast",
+    "name": "Low contrast text",
+    "description": "Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast between text and background.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "2.0:1 (need 4.5:1) — text #aaaaaa on #efebf8"
+  },
+  {
+    "antipattern": "tiny-text",
+    "name": "Tiny body text",
+    "description": "Body text below 12px is hard to read, especially on high-DPI screens. Use at least 14px for body content, 16px is ideal.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "11px body text"
+  },
+  {
+    "antipattern": "side-tab",
+    "name": "Side-tab accent border",
+    "description": "Thick colored border on one side of a card — the most recognizable tell of AI-generated UIs. Use a subtler accent or remove it entirely.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "border-left: 4px + border-radius: 16px"
+  },
+  {
+    "antipattern": "low-contrast",
+    "name": "Low contrast text",
+    "description": "Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast between text and background.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "3.0:1 (need 4.5:1) — text #9a86ca on #f8f6ff"
+  },
+  {
+    "antipattern": "undersized-ui-text",
+    "name": "Undersized functional text",
+    "description": "Interactive and content-bearing UI text (links, buttons, nav items, labels, table cells, meta rows, timecodes) below 11px is a legibility failure, not a style choice. WCAG sets no absolute pixel floor, but functional text under 11px is a defensible quality bar: it fails on high-DPI and small viewports and it degrades tap and read targets. The 11px floor holds even inside a footer; only non-interactive legal smallprint gets the softer 10px floor. Being ON the DESIGN.md size ramp does not exempt a value here: adding 8px to the ramp launders the token but not the legibility problem, and that is exactly the escape hatch this rule closes. Exempts sup/sub, visually-hidden (sr-only) text, and code/terminal contexts. Decorative letterspaced micro-labels are still functional and stay in scope.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "10px functional text \"设计工具\" (below 11px floor)"
+  },
+  {
+    "antipattern": "low-contrast",
+    "name": "Low contrast text",
+    "description": "Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast between text and background.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "3.3:1 (need 4.5:1) — text #888888 on #f8f6ff"
+  },
+  {
+    "antipattern": "low-contrast",
+    "name": "Low contrast text",
+    "description": "Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast between text and background.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "3.0:1 (need 4.5:1) — text #888888 on #efebf8"
+  },
+  {
+    "antipattern": "low-contrast",
+    "name": "Low contrast text",
+    "description": "Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast between text and background.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "2.0:1 (need 4.5:1) — text #aaaaaa on #efebf8"
+  },
+  {
+    "antipattern": "tiny-text",
+    "name": "Tiny body text",
+    "description": "Body text below 12px is hard to read, especially on high-DPI screens. Use at least 14px for body content, 16px is ideal.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "11px body text"
+  },
+  {
+    "antipattern": "low-contrast",
+    "name": "Low contrast text",
+    "description": "Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast between text and background.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "3.5:1 (need 4.5:1) — text #888888 on #ffffff"
+  },
+  {
+    "antipattern": "overused-font",
+    "name": "Overused font",
+    "description": "Inter, Roboto, Fraunces, Geist, Plus Jakarta Sans, and Space Grotesk are used on so many sites they no longer feel distinctive. Each new wave of AI-generated UIs converges on the same handful of faces. Choose a face that gives your interface personality.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "http://127.0.0.1:8766/apps/005-impeccable/before.html",
+    "line": 0,
+    "snippet": "Primary font: arial (100% of text)"
+  }
+]

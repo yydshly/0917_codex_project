@@ -1,0 +1,92 @@
+﻿# 005 · Impeccable：研究与运行记录
+
+## 方法与范围
+
+日期：2026-09-17。采用构造基线、指南导向修改、官方引擎扫描、独立浏览器验收。基线有意包含小字号、低对比度、固定宽度、长标题裁切和空状态缺失，不代表所有无 Skill 模型的输出。
+
+两版共用 web/data.json、筛选逻辑和主体模板。差异集中在 CSS、表单标签、空结果说明和恢复入口。长标题只在 scenario=long 下启用并标为合成数据。项目事实取自仓库 001–005 研究记录，不虚构用户、收入或效果数字。
+
+## 版本与来源
+
+- 源码 commit：f2c7051853848826aac2f4646581d62a732155ad，包版本 4.1.0。
+- 实际运行官方 engine-v0.1.5 Windows x64 发布资产；二进制 --version 自报 4.0.0。
+- SHA-256：477e544fc8880a5e82e427490cb9a5f5adab480c0e02966d33fd50772b531c71。
+- 下载使用上游 Windows launcher，并由其验证发布资产 .sha256；二进制未提交。
+- 未从研究 commit 编译引擎；检测结论属于该发布二进制，结构分析属于固定源码 commit。
+- 上游 Apache-2.0 许可与 NOTICE 保存在 third-party/；原始检测输出包含上游规则名称/说明。
+
+旧 ADR 和部分 CLI 帮助保留 Node/Puppeteer 术语；当前 Rust URL 实现直接通过 CDP 驱动 Chromium，分析以当前源码为准。
+
+## 如何应用指南
+
+实跑 impeccable context，确认无产品上下文和自动 Hook，收到手动检测要求。读取主 Skill 及 typeset、layout、harden、craft-floor 等参考指南，并将适用于实验的原则用于修改。
+
+本次是**定向应用设计指南**，没有在宿主全局安装插件，没有完成整个 init 访谈、新建视觉方向流程、独立 critique 双评审或 Live 会话；不以完整命令工作流验收自称。本页按钮切换静态实现，不是实时 AI 生成。
+
+设计选择：阅读/操作优先，继承本仓库研究页的深蓝文字、冷白背景、绿色动作色。保留项目事实与查找能力；正文 16px，标题角色拉开，项目按行分组，控件窄屏重排，长标题换行，空结果说明恢复路径。研究页用于 Read，看板用于 Operate。
+
+## 复现步骤
+
+### 查看演示
+
+在仓库根目录运行：
+
+```powershell
+python scripts/projects.py check
+python scripts/build_site.py
+python -m http.server 8766 --bind 127.0.0.1 --directory site
+```
+
+打开 http://127.0.0.1:8766/apps/005-impeccable/。构建只读取本地资料，不依赖上游副本、模型或网络。服务器端口可调整。
+
+### 重跑检测
+
+准备同版本官方引擎并保持静态服务器运行。如浏览器不在默认位置，指定真实路径：
+
+```powershell
+$env:IMPECCABLE_BROWSER = '你的 Chromium 可执行文件绝对路径'
+python projects/005-impeccable/experiments/run_detector.py --engine '你的 impeccable.exe 绝对路径'
+```
+
+脚本对静态 HTML、1280×900 桌面 URL、390×844 手机 URL 各扫描两版，共六次。统一 detect --json --no-config，不加载豁免和 DESIGN.md，也不隐藏建议项。只接受退出码 0/2，其他退出码视为操作失败，不能包装成零发现。
+
+机器相关绝对仓库路径在原始输出中替换为 <REPO>，其余发现保持不变。输出保存到 experiments/raw/ 与 results.json。默认 URL 可通过 --base-url 修改。
+
+### 重跑浏览器验证
+
+需要 Node.js、Playwright 与 Chromium；它们不是演示运行依赖。将 NODE_PATH 指向已准备的 Playwright 环境：
+
+```powershell
+$env:NODE_PATH = '包含 playwright 的 node_modules 绝对路径'
+node projects/005-impeccable/experiments/check_browser.cjs
+python projects/005-impeccable/web/build.py
+```
+
+DEMO_ORIGIN 可以调整服务地址。实际截图保存到 assets/，浏览器版本和检查明细保存到 browser-checks.json。再次构建将最新记录复制到静态站点。
+
+## 实际观察
+
+| 检测路径 | 基线主要发现 | 改造后主要发现 |
+| --- | ---: | ---: |
+| 静态 HTML/CSS | 49 | 0 |
+| Chromium 1280×900 | 43 | 0 |
+| Chromium 390×844 | 43 | 0 |
+
+所有扫描建议项为 0；基线退出码 2、改造后 0。浏览器 43 项发现仅涉及五种规则：27 低对比度、6 功能文字过小、5 侧边装饰线、4 微小文字、1 字体偏好。静态低对比度发现为 33，因此总数为 49；静态分析和浏览器可见状态不同，不混合比较。
+
+基线手机横向溢出并未增加检测器发现数量。独立浏览器检查另验溢出、搜索、组合筛选、恢复焦点、键盘展开、长标题、四种视口、文字放大、无脚本阅读与 Pages 子路径；精确结果以 browser-checks.json 为准。
+
+## 限制
+
+- 没有随机分组、盲评或重复模型生成，不能估计 Skill 的因果收益。
+- 未测用户任务耗时、转化率、节约 tokens 或开发时间。
+- 未实际运行 Live、扩展、宿主安装/Hook、团队长期一致性。
+- 检测对象为静态页面，不能直接外推到复杂框架项目。
+- 没有实体手机、屏幕阅读器或完整 WCAG 审计。
+- 200% 文字压力测试为逐元素计算字号放大，不冒充浏览器缩放/系统设置。
+- 默认状态运行规则检测；交互和压力状态由浏览器脚本另验。
+- 网页展示静态记录与可操作案例，不在访问时调用 AI/检测器；未公开部署。
+
+## 文件职责
+
+web/：原创页面、数据、交互和构建；experiments/：可复现脚本与真实输出；assets/：真实截图；third-party/：上游许可；site/apps/005-impeccable/：静态发布产物。

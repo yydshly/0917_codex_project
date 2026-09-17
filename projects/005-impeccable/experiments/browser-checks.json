@@ -1,0 +1,106 @@
+{
+  "recordedAt": "2026-09-17T10:13:07.857Z",
+  "browser": "151.0.7922.34",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "before: 搜索、组合筛选、清除筛选与恢复焦点",
+      "passed": true
+    },
+    {
+      "name": "after: 搜索、组合筛选、清除筛选与恢复焦点",
+      "passed": true
+    },
+    {
+      "name": "改造后：空结果说明、恢复全部、键盘展开与收起",
+      "passed": true
+    },
+    {
+      "name": "改造后长标题与视口",
+      "width": 320,
+      "viewport": 320,
+      "scroll": 320,
+      "headingHeight": 112,
+      "passed": true
+    },
+    {
+      "name": "改造后长标题与视口",
+      "width": 390,
+      "viewport": 390,
+      "scroll": 390,
+      "headingHeight": 84,
+      "passed": true
+    },
+    {
+      "name": "改造后长标题与视口",
+      "width": 768,
+      "viewport": 768,
+      "scroll": 768,
+      "headingHeight": 56,
+      "passed": true
+    },
+    {
+      "name": "改造后长标题与视口",
+      "width": 1280,
+      "viewport": 1280,
+      "scroll": 1280,
+      "headingHeight": 28,
+      "passed": true
+    },
+    {
+      "name": "基线缺陷复现：手机横向溢出",
+      "viewport": 390,
+      "scroll": 1060,
+      "expectedDefect": true
+    },
+    {
+      "name": "390px 下逐元素字号放大至 200%（不是浏览器缩放/实体设备）",
+      "viewport": 390,
+      "scroll": 390,
+      "passed": true
+    },
+    {
+      "name": "研究页：4 个场景 × 2 个版本切换与独立打开链接",
+      "passed": true
+    },
+    {
+      "name": "研究页响应式",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "name": "研究页响应式",
+      "width": 390,
+      "passed": true
+    },
+    {
+      "name": "研究页响应式",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "name": "研究页响应式",
+      "width": 1280,
+      "passed": true
+    },
+    {
+      "name": "研究页锚点、证据下载、截图与站内链接",
+      "passed": true
+    },
+    {
+      "name": "禁用 JavaScript：5 个项目与原生 details 可读",
+      "passed": true
+    },
+    {
+      "name": "模拟 GitHub Pages /0917_codex_project/ 子路径：样式、脚本、iframe 与返回首页",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "limitations": [
+    "不是实体手机测试",
+    "不是完整无障碍审计",
+    "未测用户任务耗时、转化率或模型因果增益",
+    "检测结果为默认页面状态，交互状态由本脚本另验"
+  ]
+}

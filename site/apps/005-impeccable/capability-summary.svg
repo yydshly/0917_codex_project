@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1680" height="2520" viewBox="0 0 1680 2520" role="img" aria-labelledby="title desc">
+<title id="title">Impeccable：前端优化的能力、原理与使用价值</title>
+<desc id="desc">统一引导图。Skill 提供通用设计约束，用户明确目标与风格，大模型细化项目要求并改代码，检测与验收提供反馈。说明对个人研究网页的意义、持续使用方式、模型升级影响，以及具体能力和实效仍待后续验证。</desc>
+<metadata>本研究原创源码分析图，非上游官方图或运行截图。研究日期 2026-09-17；源码 f2c7051853848826aac2f4646581d62a732155ad。已做有限看板实验；具体命令与模型增益尚待逐项验证。</metadata>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#096958" stroke-width="1.8"/></marker></defs>
+<g font-family="'Microsoft YaHei', 'Segoe UI', sans-serif"><rect width="1680" height="2520" fill="#f4f7fa"/>
+
+<text x="72" y="80" fill="#163447" font-size="39" font-weight="700">Impeccable：前端优化的能力、原理与使用价值</text>
+<text x="72" y="126" fill="#4b6271" font-size="25" font-weight="400">Skill 给通用约束；用户给目标与风格，大模型细化项目要求、设计并实现。</text>
+<rect x="72" y="154" width="164" height="32" rx="8" fill="#e4f1ec" stroke="none"/>
+<text x="84" y="177" fill="#096958" font-size="18" font-weight="600">1 个主 Skill</text>
+<rect x="250" y="154" width="188" height="32" rx="8" fill="#e4f1ec" stroke="none"/>
+<text x="262" y="177" fill="#096958" font-size="18" font-weight="600">24 个设计命令</text>
+<rect x="452" y="154" width="228" height="32" rx="8" fill="#e4f1ec" stroke="none"/>
+<text x="464" y="177" fill="#096958" font-size="18" font-weight="600">61 条确定性规则</text>
+<text x="704" y="178" fill="#4b6271" font-size="20" font-weight="400">上游目录规模，不等于效果已验证；具体能力仍待逐项研究。</text>
+<rect x="72" y="222" width="1536" height="112" rx="16" fill="#163447" stroke="none"/>
+<text x="100" y="263" fill="#ffffff" font-size="26" font-weight="700">统一入口</text>
+<text x="290" y="263" fill="#ffffff" font-size="30" font-weight="600">/impeccable &lt;任务&gt; [目标]</text>
+<text x="100" y="305" fill="#d9e8ef" font-size="22" font-weight="400">输入：目标界面 + 本轮改进目标；修改需要源码。支持评审、排版、布局、状态完善，也可指导新建。</text>
+<path d="M 840 334 V 361" fill="none" stroke="#096958" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="72" y="362" width="38" height="38" rx="10" fill="#096958" stroke="none"/>
+<text x="83" y="391" fill="#ffffff" font-size="23" font-weight="700">1</text>
+<text x="126" y="391" fill="#163447" font-size="28" font-weight="700">通用规则可以复用，项目要求需要定制</text>
+<text x="126" y="425" fill="#4b6271" font-size="21" font-weight="400">前三类是库提供的默认方法与偏好；第四类需要用户资料和大模型结合实际补充。</text>
+<rect x="72" y="449" width="366" height="226" rx="16" fill="#ffffff" stroke="#cbd8df"/>
+<text x="92" y="486" fill="#163447" font-size="24" font-weight="700">规范阈值与工程质量</text>
+<text x="92" y="518" fill="#245da2" font-size="20" font-weight="600">可以测量</text>
+<text x="92" y="550" fill="#4b6271" font-size="20" font-weight="400">正文对比度 ≥ 4.5:1</text>
+<text x="92" y="576" fill="#4b6271" font-size="20" font-weight="400">大字对比度 ≥ 3:1</text>
+<text x="92" y="602" fill="#4b6271" font-size="20" font-weight="400">文字不遮挡、内容不溢出</text>
+<text x="92" y="628" fill="#4b6271" font-size="20" font-weight="400">对比度阈值沿用 WCAG</text>
+<text x="92" y="654" fill="#4b6271" font-size="20" font-weight="400">来源：质量指南 + 检测规则 [1]</text>
+<path d="M 255 675 V 703" fill="none" stroke="#cbd8df" stroke-width="2.5"/>
+<rect x="462" y="449" width="366" height="226" rx="16" fill="#ffffff" stroke="#cbd8df"/>
+<text x="482" y="486" fill="#163447" font-size="24" font-weight="700">通用交互设计原则</text>
+<text x="482" y="518" fill="#245da2" font-size="20" font-weight="600">需要情境判断</text>
+<text x="482" y="550" fill="#4b6271" font-size="20" font-weight="400">状态可见、操作有反馈</text>
+<text x="482" y="576" fill="#4b6271" font-size="20" font-weight="400">一致性、错误预防与恢复</text>
+<text x="482" y="602" fill="#4b6271" font-size="20" font-weight="400">减少认知负担、明确主任务</text>
+<text x="482" y="628" fill="#4b6271" font-size="20" font-weight="400">Nielsen 十项原则辅助评审</text>
+<text x="482" y="654" fill="#4b6271" font-size="20" font-weight="400">来源：critique 评审指南 [2]</text>
+<path d="M 645 675 V 703" fill="none" stroke="#cbd8df" stroke-width="2.5"/>
+<rect x="852" y="449" width="366" height="226" rx="16" fill="#ffffff" stroke="#cbd8df"/>
+<text x="872" y="486" fill="#163447" font-size="24" font-weight="700">作者的审美与经验</text>
+<text x="872" y="518" fill="#92601b" font-size="20" font-weight="600">有取舍、有偏好</text>
+<text x="872" y="550" fill="#4b6271" font-size="20" font-weight="400">标题层级与间距有节奏</text>
+<text x="872" y="576" fill="#4b6271" font-size="20" font-weight="400">避免套娃卡片、渐变文字</text>
+<text x="872" y="602" fill="#4b6271" font-size="20" font-weight="400">警惕模板化字体与配色</text>
+<text x="872" y="628" fill="#4b6271" font-size="20" font-weight="400">减少装饰对任务的干扰</text>
+<text x="872" y="654" fill="#4b6271" font-size="20" font-weight="400">来源：craft-floor 等指南 [3]</text>
+<path d="M 1035 675 V 703" fill="none" stroke="#cbd8df" stroke-width="2.5"/>
+<rect x="1242" y="449" width="366" height="226" rx="16" fill="#ffffff" stroke="#cbd8df"/>
+<text x="1262" y="486" fill="#163447" font-size="24" font-weight="700">项目自身的要求</text>
+<text x="1262" y="518" fill="#096958" font-size="20" font-weight="600">决定是否适合</text>
+<text x="1262" y="550" fill="#4b6271" font-size="20" font-weight="400">用户、目标、任务与约束</text>
+<text x="1262" y="576" fill="#4b6271" font-size="20" font-weight="400">品牌、既有组件和视觉规范</text>
+<text x="1262" y="602" fill="#4b6271" font-size="20" font-weight="400">当前页面的内容与使用场景</text>
+<text x="1262" y="628" fill="#4b6271" font-size="20" font-weight="400">用户明确指定的要求优先</text>
+<text x="1262" y="654" fill="#4b6271" font-size="20" font-weight="400">来源：项目资料 + 用户需求 [4]</text>
+<path d="M 1425 675 V 703" fill="none" stroke="#cbd8df" stroke-width="2.5"/>
+<path d="M 255 703 H 1425" fill="none" stroke="#cbd8df" stroke-width="2.5"/>
+<path d="M 840 703 V 726" fill="none" stroke="#096958" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="72" y="743" width="1536" height="176" rx="16" fill="#e7f1ed" stroke="#b5d2c5"/>
+<text x="98" y="783" fill="#096958" font-size="28" font-weight="700">2  用户明确方向，大模型细化项目的特殊要求</text>
+<text x="98" y="824" fill="#163447" font-size="24" font-weight="600">目标用户 / 任务 / 风格参考 → 模型提出布局、字体、颜色与交互方案 → 用户确认或修订</text>
+<text x="98" y="862" fill="#4b6271" font-size="23" font-weight="400">优秀方向：操作重效率 / 阅读重理解 / 营销重行动 / 展示重体验；风格明确不等于任务已经好用。</text>
+<text x="98" y="898" fill="#4b6271" font-size="21" font-weight="400">PRODUCT.md 保存产品事实；DESIGN.md 保存确认的视觉规范；页面说明保存局部目标。明确需求优先于默认偏好。</text>
+<path d="M 840 919 V 956" fill="none" stroke="#096958" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="72" y="974" width="1536" height="168" rx="16" fill="#ffffff" stroke="#cbd8df"/>
+<text x="98" y="1015" fill="#163447" font-size="28" font-weight="700">3  宿主 AI 读取对应指南，推理并修改真实代码</text>
+<text x="98" y="1058" fill="#096958" font-size="25" font-weight="600">读取项目 → 诊断问题 → 明确修改策略 → 编辑 HTML / CSS / 组件 → 运行页面</text>
+<text x="98" y="1096" fill="#4b6271" font-size="23" font-weight="400">例如：区分标题与正文、按任务重组布局、保留搜索能力、补充长文本和空结果状态。</text>
+<text x="98" y="1128" fill="#4b6271" font-size="21" font-weight="400">约束形式：Markdown 指令进入模型上下文。它依赖模型理解与执行，并非强制求出“最优设计”的算法。</text>
+<path d="M 840 1142 V 1172" fill="none" stroke="#096958" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="72" y="1181" width="38" height="38" rx="10" fill="#096958" stroke="none"/>
+<text x="83" y="1210" fill="#ffffff" font-size="23" font-weight="700">4</text>
+<text x="126" y="1210" fill="#163447" font-size="28" font-weight="700">三种反馈，共同检查实现</text>
+<text x="126" y="1244" fill="#4b6271" font-size="21" font-weight="400">作用不同，互相补充；并非所有命令都会自动执行完整三路流程。</text>
+<rect x="72" y="1270" width="496" height="294" rx="16" fill="#ffffff" stroke="#cbd8df"/>
+<text x="94" y="1310" fill="#245da2" font-size="25" font-weight="700">程序检测：可重复的底线</text>
+<text x="94" y="1352" fill="#4b6271" font-size="22" font-weight="400">Rust detect：无需模型或 API Key</text>
+<text x="94" y="1381" fill="#4b6271" font-size="22" font-weight="400">源码文本 / 静态 HTML / 网页 URL</text>
+<text x="94" y="1410" fill="#4b6271" font-size="22" font-weight="400">URL → Chromium / CDP → 页面快照</text>
+<text x="94" y="1439" fill="#4b6271" font-size="22" font-weight="400">规则输出位置、片段和问题类型</text>
+<text x="94" y="1468" fill="#4b6271" font-size="22" font-weight="400">扩展与页面工具可复用 WASM 核心</text>
+<text x="94" y="1497" fill="#4b6271" font-size="22" font-weight="400">可选 Hook 在支持的宿主编辑后触发</text>
+<text x="94" y="1540" fill="#245da2" font-size="21" font-weight="600">零发现 ≠ 整个产品无缺陷 [1][5]</text>
+<path d="M 320 1564 V 1590" fill="none" stroke="#cbd8df" stroke-width="2.5"/>
+<rect x="592" y="1270" width="496" height="294" rx="16" fill="#ffffff" stroke="#cbd8df"/>
+<text x="614" y="1310" fill="#096958" font-size="25" font-weight="700">AI 评审：上下文中的判断</text>
+<text x="614" y="1352" fill="#4b6271" font-size="22" font-weight="400">看层级、信息结构和品牌适配</text>
+<text x="614" y="1381" fill="#4b6271" font-size="22" font-weight="400">检查主任务、状态和认知负担</text>
+<text x="614" y="1410" fill="#4b6271" font-size="22" font-weight="400">critique 可将设计与检测分开评估</text>
+<text x="614" y="1439" fill="#4b6271" font-size="22" font-weight="400">按严重度给出具体修改建议</text>
+<text x="614" y="1468" fill="#4b6271" font-size="22" font-weight="400">要求引用页面或代码中的证据</text>
+<text x="614" y="1497" fill="#4b6271" font-size="22" font-weight="400">评分用于整理判断，不是客观真值</text>
+<text x="614" y="1540" fill="#096958" font-size="21" font-weight="600">依然可能误判或自我认可 [2]</text>
+<path d="M 840 1564 V 1590" fill="none" stroke="#cbd8df" stroke-width="2.5"/>
+<rect x="1112" y="1270" width="496" height="294" rx="16" fill="#ffffff" stroke="#cbd8df"/>
+<text x="1134" y="1310" fill="#92601b" font-size="25" font-weight="700">浏览器与人：看实际效果</text>
+<text x="1134" y="1352" fill="#4b6271" font-size="22" font-weight="400">打开真实页面，检查桌面与手机</text>
+<text x="1134" y="1381" fill="#4b6271" font-size="22" font-weight="400">操作搜索、键盘和错误恢复路径</text>
+<text x="1134" y="1410" fill="#4b6271" font-size="22" font-weight="400">检查长标题、空状态与内容变化</text>
+<text x="1134" y="1439" fill="#4b6271" font-size="22" font-weight="400">用户确认是否符合自己的目标</text>
+<text x="1134" y="1468" fill="#4b6271" font-size="22" font-weight="400">可选 Live：选择元素并比较变体</text>
+<text x="1134" y="1497" fill="#4b6271" font-size="22" font-weight="400">接受方案后保留对应源码实现</text>
+<text x="1134" y="1540" fill="#92601b" font-size="21" font-weight="600">模拟视口 ≠ 真实用户测试 [6]</text>
+<path d="M 1360 1564 V 1590" fill="none" stroke="#cbd8df" stroke-width="2.5"/>
+<path d="M 320 1590 H 1360" fill="none" stroke="#cbd8df" stroke-width="2.5"/>
+<rect x="72" y="1610" width="1536" height="68" rx="12" fill="#e7f1ed" stroke="none"/>
+<text x="100" y="1652" fill="#096958" font-size="25" font-weight="600">发现问题 → 回到 AI 修改 → 批量复查；常规流程限制检查轮次，避免无限润色。</text>
+<path d="M 72 1644 H 35 V 1050 H 69" fill="none" stroke="#096958" stroke-width="2.5" marker-end="url(#arrow)" stroke-dasharray="7 6"/>
+<path d="M 840 1678 V 1707" fill="none" stroke="#096958" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="72" y="1717" width="38" height="38" rx="10" fill="#096958" stroke="none"/>
+<text x="83" y="1746" fill="#ffffff" font-size="23" font-weight="700">5</text>
+<text x="126" y="1746" fill="#163447" font-size="28" font-weight="700">交付结果：把“通过检查”和“优秀效果”分开</text>
+<text x="126" y="1780" fill="#4b6271" font-size="21" font-weight="400">交付物是前端代码、适用的设计记录与评审/验证证据；不是一个保证成功的分数。</text>
+<rect x="72" y="1804" width="496" height="184" rx="16" fill="#ffffff" stroke="#cbd8df"/>
+<text x="94" y="1842" fill="#245da2" font-size="25" font-weight="700">可以验证的质量</text>
+<text x="94" y="1878" fill="#4b6271" font-size="22" font-weight="400">本次规则是否命中</text>
+<text x="94" y="1906" fill="#4b6271" font-size="22" font-weight="400">指定尺寸是否溢出</text>
+<text x="94" y="1934" fill="#4b6271" font-size="22" font-weight="400">指定交互是否正常</text>
+<text x="94" y="1970" fill="#4b6271" font-size="20" font-weight="400">工具与测试给出有限范围的证据</text>
+<rect x="592" y="1804" width="496" height="184" rx="16" fill="#ffffff" stroke="#cbd8df"/>
+<text x="614" y="1842" fill="#096958" font-size="25" font-weight="700">仍需判断的适配</text>
+<text x="614" y="1878" fill="#4b6271" font-size="22" font-weight="400">信息是否清楚、重点是否合适</text>
+<text x="614" y="1906" fill="#4b6271" font-size="22" font-weight="400">是否符合品牌与使用场景</text>
+<text x="614" y="1934" fill="#4b6271" font-size="22" font-weight="400">视觉表达是否令人满意</text>
+<text x="614" y="1970" fill="#4b6271" font-size="20" font-weight="400">模型、设计者与用户共同判断</text>
+<rect x="1112" y="1804" width="496" height="184" rx="16" fill="#ffffff" stroke="#cbd8df"/>
+<text x="1134" y="1842" fill="#92601b" font-size="25" font-weight="700">还需实测的用户收益</text>
+<text x="1134" y="1878" fill="#4b6271" font-size="22" font-weight="400">任务成功率、完成时间</text>
+<text x="1134" y="1906" fill="#4b6271" font-size="22" font-weight="400">错误次数、理解程度</text>
+<text x="1134" y="1934" fill="#4b6271" font-size="22" font-weight="400">业务转化和长期使用体验</text>
+<text x="1134" y="1970" fill="#4b6271" font-size="20" font-weight="400">需真实用户或独立对照实验</text>
+<rect x="72" y="2020" width="1536" height="142" rx="16" fill="#163447" stroke="none"/>
+<text x="98" y="2061" fill="#ffffff" font-size="26" font-weight="700">对我的意义：给研究网页一套可复用的改进方法与验收参考</text>
+<text x="98" y="2103" fill="#e1edf3" font-size="24" font-weight="400">让读者理解项目能力、原理与证据；让看板用户顺利检索、筛选与恢复操作。</text>
+<text x="98" y="2139" fill="#e1edf3" font-size="21" font-weight="400">每轮针对明确问题持续优化，并沉淀已确认的规范；不追求无目标的反复改版，也不只追求规则零命中。</text>
+<rect x="72" y="2194" width="1536" height="137" rx="16" fill="#ffffff" stroke="#cbd8df"/>
+<text x="98" y="2231" fill="#163447" font-size="25" font-weight="700">阶段认识与后续研究</text>
+<text x="98" y="2270" fill="#4b6271" font-size="23" font-weight="400">模型越强，通用常识提醒的额外价值可能降低；项目上下文与实际验证仍有意义，规则也需更新。</text>
+<text x="98" y="2307" fill="#4b6271" font-size="23" font-weight="400">已做源码分析与有限看板实验；具体命令、风格定制、Live 和相对模型的实际增益，仍需逐项梳理与验证。</text>
+<text x="72" y="2373" fill="#096958" font-size="25" font-weight="700">核心：通用约束来自 Skill；特殊要求由用户与模型共同明确；具体实现靠大模型，最终效果靠验收。</text>
+<a href="https://github.com/pbakaus/impeccable/blob/f2c7051853848826aac2f4646581d62a732155ad/crates/core/src/checks/rules.rs" target="_blank">
+<text x="72" y="2420" fill="#245da2" font-size="19" font-weight="400">[1] 检测规则</text>
+</a>
+<a href="https://github.com/pbakaus/impeccable/blob/f2c7051853848826aac2f4646581d62a732155ad/skill/reference/critique.md" target="_blank">
+<text x="326" y="2420" fill="#245da2" font-size="19" font-weight="400">[2] 体验评审</text>
+</a>
+<a href="https://github.com/pbakaus/impeccable/blob/f2c7051853848826aac2f4646581d62a732155ad/skill/reference/craft-floor.md" target="_blank">
+<text x="580" y="2420" fill="#245da2" font-size="19" font-weight="400">[3] 设计底线</text>
+</a>
+<a href="https://github.com/pbakaus/impeccable/blob/f2c7051853848826aac2f4646581d62a732155ad/skill/SKILL.src.md" target="_blank">
+<text x="834" y="2420" fill="#245da2" font-size="19" font-weight="400">[4] Skill 与上下文</text>
+</a>
+<a href="https://github.com/pbakaus/impeccable/blob/f2c7051853848826aac2f4646581d62a732155ad/docs/ENGINE.md" target="_blank">
+<text x="1088" y="2420" fill="#245da2" font-size="19" font-weight="400">[5] 引擎架构</text>
+</a>
+<a href="https://github.com/pbakaus/impeccable/blob/f2c7051853848826aac2f4646581d62a732155ad/skill/reference/live.md" target="_blank">
+<text x="1342" y="2420" fill="#245da2" font-size="19" font-weight="400">[6] Live 流程</text>
+</a>
+<text x="72" y="2462" fill="#4b6271" font-size="19" font-weight="400">源码 f2c7051 · 2026-09-17 · 本研究原创说明图，非上游官方图或效果承诺；数字规模与实际能力增益应分开看。</text>
+</g></svg>

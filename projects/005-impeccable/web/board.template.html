@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{{TITLE}} · 研究看板</title><link rel="stylesheet" href="{{STYLE}}"><script src="board.js" defer></script></head>
+<body class="{{MODE}}"><div class="demo-notice">{{NOTICE}} · 相同项目数据 / 本研究构造的教学场景</div>
+<div class="shell"><header><a class="brand" href="index.html" target="_top">开源研究集</a><a href="index.html#experiment" target="_top">返回对比说明</a></header>
+<main><div class="intro"><div><h1>项目研究看板</h1><p>找到值得继续研究的项目，了解下一步要验证什么。</p></div><span class="snapshot">2026-09-17 数据快照</span></div>
+<form id="filters" role="search"><div class="field">{{SEARCH_LABEL}}<input id="query" type="search" placeholder="搜索项目名称或研究内容" autocomplete="off"></div><div class="field">{{KIND_LABEL}}<select id="kind"><option value="">全部类型</option><option>角色库</option><option>编排工具</option><option>工程工具</option><option>设计工具</option></select></div><button id="reset" type="button">清除筛选</button></form>
+<section class="results" aria-label="研究项目"><div class="list-heading"><h2>研究项目</h2><p id="count" role="status" aria-live="polite">共 5 个项目</p></div><div id="project-list">{{ROWS}}</div><div id="empty" hidden>{{EMPTY}}</div></section>
+<noscript><p>浏览器未启用 JavaScript，下面仍可阅读全部项目；搜索与筛选需要启用 JavaScript。</p></noscript>
+<footer>项目名称与说明来自本仓库研究记录。此看板不修改研究数据，也不调用 AI。</footer></main></div></body></html>

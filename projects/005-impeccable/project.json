@@ -1,0 +1,11 @@
+{
+  "id": 5,
+  "slug": "impeccable",
+  "name": "Impeccable",
+  "summary": "面向前端界面优化：Skill 提供通用设计约束，用户明确风格和特殊要求，大模型据此细化方案并实现，检测器辅助检查。对我可作为网页改进的方法与验收参考；具体能力、适用场景和实际增益仍需后续逐项梳理与验证。",
+  "repo": "https://github.com/pbakaus/impeccable",
+  "status": "研究中",
+  "demo": "",
+  "cover": "assets/capability-summary.png",
+  "cover_alt": "Impeccable 单张引导图：前端优化能力、Skill 通用约束、用户目标与风格、大模型定制实现、检测验收、对个人研究的意义，以及后续待验证能力。"
+}
