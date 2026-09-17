@@ -1,0 +1,27 @@
+# Local settings and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Dependencies and build products
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+coverage/
+dist/
+build/
+*.log
+
+# Local upstream checkouts and experiments
+upstream/
+.cache/
+.tmp/
