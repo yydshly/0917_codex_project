@@ -1,0 +1,11 @@
+{
+  "id": 9,
+  "slug": "subtrace",
+  "name": "Subtrace",
+  "summary": "借助 Linux seccomp BPF 筛选网络相关系统调用，结合 Go 透明代理实现后端 HTTP 请求与响应的捕获、解析、过滤和展示；通常无需修改业务代码，用于接口联调和网络排障。",
+  "repo": "https://github.com/subtrace/subtrace",
+  "status": "研究中",
+  "demo": "",
+  "cover": "assets/capability-summary.png",
+  "cover_alt": "Subtrace 能力与交互全景：BPF 筛选系统调用，Linux 通知 Go 进程处理并返回；流量经 TCP 代理与 TLS 处理，HTTP 解析为 HAR 后过滤并展示。原创源码说明图，非运行结果。"
+}

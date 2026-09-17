@@ -19,6 +19,7 @@
 | 006 | [Narrator AI CLI Skill](projects/006-narrator-ai-cli-skill/README.md) | 影视解说制作 Skill，由 Codex 等 AI 助手理解需求并按规则组织流程；配套 CLI 上传素材、向服务端下发指令并查询结果，服务端执行文案、配音、剪辑与视频合成。总览图说明角色分工、素材处理和约束边界，成片效果待实测。 | 研究中 | <a href="https://github.com/NarratorAI-Studio/narrator-ai-cli-skill">NarratorAI-Studio/narrator-ai-cli-skill</a> | <a href="https://yydshly.github.io/0917_codex_project/apps/006-narrator-ai-cli-skill/">访问演示</a> |
 | 007 | [Neko Master](projects/007-neko-master/README.md) | 从 Clash 等代理客户端内核采集连接与流量信息，保存历史并按设备、域名和节点展示；统计来自内核本地转发计数，无需远端同步。 | 研究中 | <a href="https://github.com/foru17/neko-master">foru17/neko-master</a> | <a href="https://yydshly.github.io/0917_codex_project/apps/007-neko-master/">访问演示</a> |
 | 008 | [Humanizer](projects/008-humanizer/README.md) | 将 25 类写作问题与修改建议封装为 Skill，由宿主大模型结合原文和样文执行识别、改写与自检，减少 AI 模板腔并贴近作者语气。可作为研究文档、汇报和内容初稿的统一编辑规范；规则属于提示约束，中文效果与实际收益待验证。 | 研究中 | <a href="https://github.com/blader/humanizer">blader/humanizer</a> | <a href="https://yydshly.github.io/0917_codex_project/apps/008-humanizer/">访问演示</a> |
+| 009 | [Subtrace](projects/009-subtrace/README.md) | 借助 Linux seccomp BPF 筛选网络相关系统调用，结合 Go 透明代理实现后端 HTTP 请求与响应的捕获、解析、过滤和展示；通常无需修改业务代码，用于接口联调和网络排障。 | 研究中 | <a href="https://github.com/subtrace/subtrace">subtrace/subtrace</a> | — |
 <!-- PROJECT_INDEX:END -->
 
 ## 项目预览
@@ -71,6 +72,12 @@
 <a href="projects/008-humanizer/README.md"><img src="projects/008-humanizer/assets/capability-summary.png" alt="Humanizer 能力与实现总览：4 项编辑能力，用户、SKILL.md 与宿主模型的分工，识别、改写、自检和终稿流程，3 种输出、5 类共 25 项规则，以及对日常写作、研究整理和团队协作的价值与验收边界。原创研究说明图，非模型运行结果。" width="640"></a>
 
 将 25 类写作问题与修改建议封装为 Skill，由宿主大模型结合原文和样文执行识别、改写与自检，减少 AI 模板腔并贴近作者语气。可作为研究文档、汇报和内容初稿的统一编辑规范；规则属于提示约束，中文效果与实际收益待验证。
+
+### 009 · Subtrace
+
+<a href="projects/009-subtrace/README.md"><img src="projects/009-subtrace/assets/capability-summary.png" alt="Subtrace 能力与交互全景：BPF 筛选系统调用，Linux 通知 Go 进程处理并返回；流量经 TCP 代理与 TLS 处理，HTTP 解析为 HAR 后过滤并展示。原创源码说明图，非运行结果。" width="640"></a>
+
+借助 Linux seccomp BPF 筛选网络相关系统调用，结合 Go 透明代理实现后端 HTTP 请求与响应的捕获、解析、过滤和展示；通常无需修改业务代码，用于接口联调和网络排障。
 <!-- PROJECT_GALLERY:END -->
 
 ## 新增研究项目

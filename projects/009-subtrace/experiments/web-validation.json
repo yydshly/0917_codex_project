@@ -1,0 +1,52 @@
+{
+  "date": "2026-09-17",
+  "scope": "本研究静态网页，非 Subtrace 实机验证",
+  "upstream_commit": "e3e3546b367ecc23d5fe5642491526ee969a6ff2",
+  "checks": {
+    "scenario_walkthroughs": 5,
+    "steps_per_scenario": 5,
+    "previous_restart": true,
+    "request_filters_search_empty_reset": true,
+    "request_response_headers": true,
+    "utf8_payload_truncation": true,
+    "keyboard_details": true,
+    "local_links": true,
+    "svg_loaded": true,
+    "relative_paths": true,
+    "file_protocol": true,
+    "no_javascript_reading": true,
+    "no_external_requests": true
+  },
+  "viewports": [
+    {
+      "viewport": 320,
+      "document": 320
+    },
+    {
+      "viewport": 390,
+      "document": 390
+    },
+    {
+      "viewport": 768,
+      "document": 768
+    },
+    {
+      "viewport": 1280,
+      "document": 1280
+    },
+    {
+      "viewport": 1440,
+      "document": 1440
+    }
+  ],
+  "console_errors": [],
+  "screenshots": [
+    "assets/research-page-desktop.png",
+    "assets/research-page-mobile.png"
+  ],
+  "not_tested": [
+    "Subtrace 安装或真实网络捕获",
+    "上游性能或兼容性",
+    "公开部署"
+  ]
+}

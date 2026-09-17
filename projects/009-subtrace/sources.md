@@ -1,0 +1,21 @@
+# 来源与证据索引
+
+读取日期：2026-09-17。所有源码固定到 `e3e3546b367ecc23d5fe5642491526ee969a6ff2`，提交日期 2025-12-18。未复制上游实现或截图。
+
+| 证据 | 文件 | 支持的结论 |
+| --- | --- | --- |
+| 01 | [cmd/run/run.go](https://github.com/subtrace/subtrace/blob/e3e3546b367ecc23d5fe5642491526ee969a6ff2/cmd/run/run.go) | 启动、内核检查、发布条件 |
+| 02 | [cmd/run/engine/seccomp/seccomp.go](https://github.com/subtrace/subtrace/blob/e3e3546b367ecc23d5fe5642491526ee969a6ff2/cmd/run/engine/seccomp/seccomp.go) | BPF、USER_NOTIF 与架构 |
+| 03 | [cmd/run/engine/process/handle.go](https://github.com/subtrace/subtrace/blob/e3e3546b367ecc23d5fe5642491526ee969a6ff2/cmd/run/engine/process/handle.go) | 系统调用处理与 CA 注入 |
+| 04 | [cmd/run/socket/socket.go](https://github.com/subtrace/subtrace/blob/e3e3546b367ecc23d5fe5642491526ee969a6ff2/cmd/run/socket/socket.go) | TCP 代理接入 |
+| 05 | [cmd/run/socket/proxy.go](https://github.com/subtrace/subtrace/blob/e3e3546b367ecc23d5fe5642491526ee969a6ff2/cmd/run/socket/proxy.go) | 协议识别与 TLS / WebSocket 边界 |
+| 06 | [cmd/run/tls/tls.go](https://github.com/subtrace/subtrace/blob/e3e3546b367ecc23d5fe5642491526ee969a6ff2/cmd/run/tls/tls.go) | 临时 CA、两段 TLS、信任验证限制 |
+| 07 | [tracer/parser.go](https://github.com/subtrace/subtrace/blob/e3e3546b367ecc23d5fe5642491526ee969a6ff2/tracer/parser.go) | HAR、采样、过滤与输出 |
+| 08 | [tracer/publisher.go](https://github.com/subtrace/subtrace/blob/e3e3546b367ecc23d5fe5642491526ee969a6ff2/tracer/publisher.go) | 事件发布与临时链接 |
+| 09 | [rpc/endpoint.go](https://github.com/subtrace/subtrace/blob/e3e3546b367ecc23d5fe5642491526ee969a6ff2/rpc/endpoint.go) | 默认服务端点 |
+| 10 | [docs/env-vars.mdx](https://github.com/subtrace/subtrace/blob/e3e3546b367ecc23d5fe5642491526ee969a6ff2/docs/env-vars.mdx) | 开关与捕获限制 |
+| 11 | [docs/rules.mdx](https://github.com/subtrace/subtrace/blob/e3e3546b367ecc23d5fe5642491526ee969a6ff2/docs/rules.mdx) | CEL 规则 |
+| 12 | [docs/ptrace.mdx](https://github.com/subtrace/subtrace/blob/e3e3546b367ecc23d5fe5642491526ee969a6ff2/docs/ptrace.mdx) | 容器权限 |
+| 13 | [LICENSE](https://github.com/subtrace/subtrace/blob/e3e3546b367ecc23d5fe5642491526ee969a6ff2/LICENSE) | BSD-3-Clause 与版权 |
+
+文字、教学数据与 SVG 均为本研究原创。上游源码保留于被忽略的 `upstream/subtrace/`，网页构建不依赖该目录。许可为 BSD-3-Clause，Copyright (c) 2024 Subtrace, Inc.。

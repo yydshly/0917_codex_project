@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1870" viewBox="0 0 1800 1870" role="img" aria-labelledby="title desc">
+<title id="title">Subtrace 能力与交互全景：BPF 筛选之后发生了什么</title>
+<desc id="desc">BPF 只负责系统调用入口筛选。Linux seccomp 将命中调用通知给 Subtrace 的 Go 进程，后者管理连接并经内核返回结果。实际字节流经过本地 TCP 代理，出站 HTTPS 通过临时 CA 与两段 TLS 获得明文，HTTP 解析成 HAR，经 CEL 过滤发布到浏览器。入站 TLS、未知 TCP 与证书固定存在不同限制。原创源码说明图，非运行结果。</desc>
+<defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#267b64"/></marker><marker id="b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#62788b"/></marker></defs>
+<rect width="1800" height="1870" rx="24" fill="#f5f5ef"/>
+<style>text{font-family:'Microsoft YaHei','Segoe UI',sans-serif;fill:#172d35}.mono{font-family:Consolas,monospace;letter-spacing:1px}</style>
+<text x="64" y="55" font-size="19" style="fill:#267b64" font-weight="600" class="mono" text-anchor="start">009 / SUBTRACE / SOURCE STUDY</text>
+<text x="64" y="121" font-size="51" style="fill:#172d35" font-weight="700" class="" text-anchor="start">BPF 筛选之后，Subtrace 如何让请求可见？</text>
+<text x="64" y="164" font-size="27" style="fill:#48665d" font-weight="400" class="" text-anchor="start">核心组合：seccomp BPF 筛选入口 + Go 用户态代理处理流量 + HTTP 记录与展示</text>
+<rect x="64" y="205" width="406" height="112" rx="12" fill="#e8eee4" stroke="#e8eee4"/>
+<text x="87" y="249" font-size="25" style="fill:#172d35" font-weight="700" class="" text-anchor="start">观察入站 HTTP</text>
+<text x="87" y="286" font-size="19" style="fill:#536a6d" font-weight="400" class="" text-anchor="start">核对客户端参数与服务响应</text>
+<rect x="486" y="205" width="406" height="112" rx="12" fill="#e8eee4" stroke="#e8eee4"/>
+<text x="509" y="249" font-size="25" style="fill:#172d35" font-weight="700" class="" text-anchor="start">观察出站 HTTP / HTTPS</text>
+<text x="509" y="286" font-size="19" style="fill:#536a6d" font-weight="400" class="" text-anchor="start">排查第三方 API 与认证错误</text>
+<rect x="908" y="205" width="406" height="112" rx="12" fill="#e8eee4" stroke="#e8eee4"/>
+<text x="931" y="249" font-size="25" style="fill:#172d35" font-weight="700" class="" text-anchor="start">检查请求与响应</text>
+<text x="931" y="286" font-size="19" style="fill:#536a6d" font-weight="400" class="" text-anchor="start">方法、URL、状态、头部、正文、耗时</text>
+<rect x="1330" y="205" width="406" height="112" rx="12" fill="#e8eee4" stroke="#e8eee4"/>
+<text x="1353" y="249" font-size="25" style="fill:#172d35" font-weight="700" class="" text-anchor="start">筛选与协议支持</text>
+<text x="1353" y="286" font-size="19" style="fill:#536a6d" font-weight="400" class="" text-anchor="start">CEL 规则；HTTP/1、HTTP/2</text>
+<text x="64" y="379" font-size="21" style="fill:#267b64" font-weight="600" class="mono" text-anchor="start">01</text>
+<text x="119" y="379" font-size="30" style="fill:#172d35" font-weight="700" class="" text-anchor="start">控制路径：先决定哪些系统调用需要接管</text>
+<text x="1736" y="379" font-size="20" style="fill:#647572" font-weight="400" class="" text-anchor="end">只处理命中的调用；不是把全部数据交给 BPF 解析</text>
+<rect x="64" y="413" width="380" height="280" rx="12" fill="#fff" stroke="#d3dcd3"/>
+<text x="88" y="451" font-size="21" style="fill:#267b64" font-weight="600" class="" text-anchor="start">目标应用 / 用户态</text>
+<text x="88" y="499" font-size="30" style="fill:#172d35" font-weight="700" class="" text-anchor="start">正常启动你的后端</text>
+<text x="88" y="543" font-size="21" style="fill:#536a6d" font-weight="400" class="" text-anchor="start">subtrace run -- my-server</text>
+<text x="88" y="578" font-size="21" style="fill:#536a6d" font-weight="400" class="" text-anchor="start">Node.js / Python / Go / …</text>
+<text x="88" y="631" font-size="21" style="fill:#172d35" font-weight="400" class="" text-anchor="start">调用 socket / connect / accept 等</text>
+<text x="88" y="665" font-size="19" style="fill:#536a6d" font-weight="400" class="" text-anchor="start">应用一般不接 SDK、不主动配置代理</text>
+<rect x="574" y="413" width="586" height="280" rx="12" fill="#e5eee8" stroke="#b6cbbf"/>
+<text x="600" y="451" font-size="21" style="fill:#267b64" font-weight="600" class="" text-anchor="start">LINUX 内核 / seccomp</text>
+<rect x="600" y="471" width="534" height="86" rx="8" fill="#173b35" stroke="#173b35"/>
+<text x="622" y="507" font-size="27" style="fill:#fff" font-weight="700" class="" text-anchor="start">BPF 过滤器：匹配系统调用</text>
+<text x="622" y="538" font-size="20" style="fill:#c5ded1" font-weight="400" class="" text-anchor="start">不承担 HTTP 解析、TLS 解密或界面展示</text>
+<text x="600" y="594" font-size="23" style="fill:#536a6d" font-weight="400" class="" text-anchor="start">命中 → 用户通知；调用线程等待处理</text>
+<text x="600" y="633" font-size="23" style="fill:#536a6d" font-weight="400" class="" text-anchor="start">未匹配 → 直接允许，内核照常执行</text>
+<text x="600" y="666" font-size="17" style="fill:#48665d" font-weight="400" class="mono" text-anchor="start">机制：SECCOMP_RET_USER_NOTIF / ALLOW</text>
+<rect x="1290" y="413" width="446" height="280" rx="12" fill="#fff" stroke="#d3dcd3"/>
+<text x="1314" y="451" font-size="21" style="fill:#267b64" font-weight="600" class="" text-anchor="start">Subtrace / Go 用户态</text>
+<text x="1314" y="499" font-size="30" style="fill:#172d35" font-weight="700" class="" text-anchor="start">接收通知，处理调用</text>
+<text x="1314" y="543" font-size="21" style="fill:#536a6d" font-weight="400" class="" text-anchor="start">读取参数与目标地址</text>
+<text x="1314" y="581" font-size="21" style="fill:#536a6d" font-weight="400" class="" text-anchor="start">管理 socket / 文件描述符</text>
+<text x="1314" y="619" font-size="21" style="fill:#536a6d" font-weight="400" class="" text-anchor="start">建立代理连接、注入描述符或返回结果</text>
+<text x="1314" y="665" font-size="18" style="fill:#536a6d" font-weight="400" class="" text-anchor="start">相关机制：pidfd / ADDFD / 进程内存读写</text>
+<path d="M453 535H563" fill="none" stroke="#267b64" stroke-width="3" marker-end="url(#a)"/>
+<text x="510" y="513" font-size="19" style="fill:#267b64" font-weight="400" class="" text-anchor="middle">系统调用</text>
+<path d="M1169 535H1278" fill="none" stroke="#267b64" stroke-width="3" marker-end="url(#a)"/>
+<text x="1224" y="513" font-size="19" style="fill:#267b64" font-weight="400" class="" text-anchor="middle">内核通知</text>
+<path d="M1510 703V775H255V705" fill="none" stroke="#62788b" stroke-width="3" marker-end="url(#b)" stroke-dasharray="9 7"/>
+<rect x="485" y="741" width="790" height="46" rx="0" fill="#f5f5ef" stroke="#f5f5ef"/>
+<text x="880" y="771" font-size="23" style="fill:#526c80" font-weight="400" class="" text-anchor="middle">经内核完成调用 / 返回结果或允许继续 → 应用继续运行</text>
+<text x="64" y="826" font-size="25" style="fill:#267b64" font-weight="700" class="" text-anchor="start">BPF 是入口筛选器；真正接管连接、处理字节流的是后面的 Go 程序。</text>
+<text x="64" y="899" font-size="21" style="fill:#267b64" font-weight="600" class="mono" text-anchor="start">02</text>
+<text x="119" y="899" font-size="30" style="fill:#172d35" font-weight="700" class="" text-anchor="start">数据路径：连接接管后，业务流量这样走</text>
+<text x="1736" y="899" font-size="20" style="fill:#647572" font-weight="400" class="" text-anchor="end">绿色双向箭头 = 实际业务字节流；以下以出站请求为例</text>
+<rect x="64" y="940" width="380" height="153" rx="12" fill="#fff" stroke="#d3dcd3"/>
+<text x="88" y="980" font-size="28" style="fill:#172d35" font-weight="700" class="" text-anchor="start">目标应用</text>
+<text x="88" y="1020" font-size="22" style="fill:#536a6d" font-weight="400" class="" text-anchor="start">像往常一样读写网络连接</text>
+<text x="88" y="1057" font-size="22" style="fill:#536a6d" font-weight="400" class="" text-anchor="start">通常无需修改业务代码</text>
+<rect x="650" y="940" width="510" height="153" rx="12" fill="#173b35" stroke="#173b35"/>
+<text x="677" y="980" font-size="29" style="fill:#fff" font-weight="700" class="" text-anchor="start">Subtrace 本地 TCP 代理</text>
+<text x="677" y="1020" font-size="22" style="fill:#c5ded1" font-weight="400" class="" text-anchor="start">协议识别 · 转发 · TLS / HTTP 处理</text>
+<text x="677" y="1057" font-size="22" style="fill:#c5ded1" font-weight="400" class="" text-anchor="start">未知 TCP → 回退为原始字节复制</text>
+<rect x="1366" y="940" width="370" height="153" rx="12" fill="#fff" stroke="#d3dcd3"/>
+<text x="1391" y="980" font-size="28" style="fill:#172d35" font-weight="700" class="" text-anchor="start">真实外部服务</text>
+<text x="1391" y="1020" font-size="22" style="fill:#536a6d" font-weight="400" class="" text-anchor="start">收到请求、返回响应</text>
+<text x="1391" y="1057" font-size="22" style="fill:#536a6d" font-weight="400" class="" text-anchor="start">无需安装 Subtrace</text>
+<path d="M459 1011H633" fill="none" stroke="#267b64" stroke-width="3" marker-end="url(#a)" marker-start="url(#a)"/>
+<text x="547" y="984" font-size="20" style="fill:#267b64" font-weight="400" class="" text-anchor="middle">应用侧连接</text>
+<path d="M1176 1011H1350" fill="none" stroke="#267b64" stroke-width="3" marker-end="url(#a)" marker-start="url(#a)"/>
+<text x="1264" y="984" font-size="20" style="fill:#267b64" font-weight="400" class="" text-anchor="middle">外部侧连接</text>
+<text x="64" y="1130" font-size="23" style="fill:#536a6d" font-weight="400" class="" text-anchor="start">入站 HTTP 也经代理接入应用；代理位于真实通信路径中，因此存在开销与兼容性成本。</text>
+<rect x="64" y="1162" width="1672" height="171" rx="12" fill="#e9eee3" stroke="#d3dfcc"/>
+<text x="88" y="1205" font-size="27" style="fill:#172d35" font-weight="700" class="" text-anchor="start">HTTPS 支路：为什么可以读到明文？</text>
+<text x="88" y="1250" font-size="25" style="fill:#267b64" font-weight="600" class="" text-anchor="start">内存临时 CA → 拦截已知 CA 文件读取，注入证书 → 建立两段 TLS → 在代理内部解析 HTTP</text>
+<text x="88" y="1299" font-size="22" style="fill:#536a6d" font-weight="400" class="" text-anchor="start">应用 ⇄ 加密通道 A ⇄ 代理内明文 ⇄ 加密通道 B ⇄ 外部服务；CA 准备可早于连接，不覆盖磁盘证书。</text>
+<text x="64" y="1398" font-size="21" style="fill:#267b64" font-weight="600" class="mono" text-anchor="start">03</text>
+<text x="119" y="1398" font-size="30" style="fill:#172d35" font-weight="700" class="" text-anchor="start">观察路径：把流量变成你能检查的记录</text>
+<text x="1736" y="1398" font-size="20" style="fill:#647572" font-weight="400" class="" text-anchor="end">记录从代理产生；下面不是业务请求的转发路径</text>
+<path d="M905 1100V1110H1755V1418H310V1430" fill="none" stroke="#62788b" stroke-width="3" marker-end="url(#b)" stroke-dasharray="9 7"/>
+<rect x="64" y="1442" width="490" height="141" rx="12" fill="#fff" stroke="#d3dcd3"/>
+<text x="88" y="1485" font-size="28" style="fill:#172d35" font-weight="700" class="" text-anchor="start">HTTP 解析 → HAR 记录</text>
+<text x="88" y="1527" font-size="22" style="fill:#536a6d" font-weight="400" class="" text-anchor="start">请求 / 响应 · 正文采样 · 时间信息</text>
+<text x="88" y="1564" font-size="22" style="fill:#536a6d" font-weight="400" class="" text-anchor="start">正文默认最多 4096 字节，可调整</text>
+<rect x="640" y="1442" width="436" height="141" rx="12" fill="#fff" stroke="#d3dcd3"/>
+<text x="665" y="1485" font-size="28" style="fill:#172d35" font-weight="700" class="" text-anchor="start">CEL 过滤 + 发布</text>
+<text x="665" y="1527" font-size="22" style="fill:#536a6d" font-weight="400" class="" text-anchor="start">首条匹配规则决定是否保留</text>
+<text x="665" y="1564" font-size="22" style="fill:#536a6d" font-weight="400" class="" text-anchor="start">筛选观察记录，不阻断业务访问</text>
+<rect x="1162" y="1442" width="574" height="141" rx="12" fill="#e5eee8" stroke="#b6cbbf"/>
+<text x="1188" y="1485" font-size="28" style="fill:#172d35" font-weight="700" class="" text-anchor="start">浏览器 Network 面板</text>
+<text x="1188" y="1527" font-size="21" style="fill:#536a6d" font-weight="400" class="" text-anchor="start">默认：WebSocket → Subtrace 服务 → 浏览器</text>
+<text x="1188" y="1564" font-size="21" style="fill:#536a6d" font-weight="400" class="" text-anchor="start">另有本地 DevTools 展示路径，需结合配置</text>
+<path d="M564 1516H628" fill="none" stroke="#267b64" stroke-width="3" marker-end="url(#a)"/>
+<path d="M1086 1516H1150" fill="none" stroke="#267b64" stroke-width="3" marker-end="url(#a)"/>
+<rect x="64" y="1626" width="1672" height="142" rx="12" fill="#eee6d7" stroke="#eee6d7"/>
+<text x="88" y="1666" font-size="25" style="fill:#172d35" font-weight="700" class="" text-anchor="start">能力边界</text>
+<text x="254" y="1666" font-size="22" style="fill:#536a6d" font-weight="400" class="" text-anchor="start">Linux 5.9+；Windows 原生没有这条 run 接管路径；HTTP/2 默认启用，WebSocket 为实验功能。</text>
+<text x="254" y="1703" font-size="22" style="fill:#536a6d" font-weight="400" class="" text-anchor="start">入站 TLS 不解密；证书固定 / mTLS 可能失败；此版本上游证书校验不完整；默认涉及外部发布。</text>
+<text x="254" y="1740" font-size="22" style="fill:#536a6d" font-weight="400" class="" text-anchor="start">不能直接解释业务函数内部耗时；未知 TCP 转发不等于全协议分析；真实兼容性与性能尚未实测。</text>
+<text x="64" y="1816" font-size="18" style="fill:#536a6d" font-weight="400" class="mono" text-anchor="start">SOURCE  github.com/subtrace/subtrace  ·  e3e3546  ·  BSD-3-Clause</text>
+<text x="1736" y="1816" font-size="20" style="fill:#536a6d" font-weight="400" class="" text-anchor="end">原创源码说明图 / 2026-09-17 / 非运行截图</text>
+</svg>

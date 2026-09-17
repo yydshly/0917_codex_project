@@ -1,0 +1,98 @@
+# 009 · Subtrace
+
+借助 Linux seccomp BPF 筛选网络相关系统调用，结合 Go 透明代理实现后端 HTTP 请求与响应的捕获、解析、过滤和展示；通常无需修改业务代码，用于接口联调和网络排障。
+
+**本项目为源码研究与静态教学演示。未安装、构建或运行 Subtrace，未捕获真实流量，也没有性能实测。** 网页中的请求、耗时与处理步骤均为人工编写的例子，不是上游界面截图或运行结果。
+
+| 信息 | 内容 |
+| --- | --- |
+| 上游 | [subtrace/subtrace](https://github.com/subtrace/subtrace) |
+| 研究基准 | [`e3e3546b367ecc23d5fe5642491526ee969a6ff2`](https://github.com/subtrace/subtrace/tree/e3e3546b367ecc23d5fe5642491526ee969a6ff2) |
+| 上游提交日期 / 研究日期 | 2025-12-18 / 2026-09-17 |
+| 许可证 | BSD-3-Clause，Copyright (c) 2024 Subtrace, Inc. |
+| 上游副本 | 仓库根目录 `upstream/subtrace/`，被 Git 忽略 |
+| 原理 / 证据 | [architecture.md](architecture.md) · [sources.md](sources.md) |
+| 网页 | [静态页面](../../site/apps/009-subtrace/index.html) · [维护说明](web/README.md) |
+| 研究记录 | [notes.md](notes.md) |
+
+## 我们对这个库的理解
+
+**核心能力是后端 HTTP 网络调试与观测；seccomp BPF 是实现这一能力的底层入口机制。** 它把进程的网络交互变成可查看、可筛选的请求与响应记录。通常不必修改业务代码，就能核对“后端发了什么、对方回了什么”。
+
+分工可以按三条路径理解：
+
+1. **控制路径：**BPF 筛选系统调用 → Linux seccomp 用户通知 → Subtrace Go 进程处理连接 → 经内核返回结果，应用继续运行。
+2. **业务数据路径：**应用 ⇄ 本地 TCP 代理 ⇄ 外部服务；Go 程序负责转发、协议处理与兼容场景下的出站 TLS 解密。
+3. **观察记录路径：**HTTP 解析 → HAR 与正文采样 → CEL 过滤 → 发布通道 → 浏览器展示。
+
+BPF 不直接解析 HTTP、解密 TLS 或绘制界面；这些能力由后续 Go 用户态程序和展示通道完成。这条透明接管路径依赖 Linux 5.9+，不是 Windows 原生工具，也不是全协议分析或业务函数性能分析器。
+
+## 先看全貌
+
+![Subtrace 能力与交互全景：BPF 筛选系统调用，Linux 通知 Go 进程处理并返回；流量经 TCP 代理与 TLS 处理，HTTP 解析为 HAR 后过滤并展示](assets/capability-summary.png)
+
+本研究原创说明图，依据固定源码绘制，非运行截图。将系统调用控制、业务流量和观察记录三条路径分开，避免把 HTTP 处理理解为 BPF 的职责。
+
+[高清 PNG](assets/capability-summary.png) · [矢量 SVG](assets/capability-summary.svg) · [完整文字版](assets/capability-summary-text.md)。
+
+## 能力与用途
+
+| 能力 | 用途 | 条件或限制 |
+| --- | --- | --- |
+| 入站 HTTP | 查看客户端参数、请求头、服务响应 | 入站 TLS 不自动解密；网关解密后转发的 HTTP 可观察 |
+| 出站 HTTP / HTTPS | 排查第三方接口的认证、参数和返回 | HTTPS 默认中间人拦截，需兼容证书信任机制 |
+| 请求详情 | 方法、URL、状态、头部、正文、耗时 | 正文默认最多捕获 4096 字节，可配置；无业务调用栈 |
+| HTTP/2 | 处理帧、流和请求 / 响应 | 默认启用，不等于支持 HTTP/3 |
+| WebSocket | 调试消息通信 | 实验功能，默认关闭；有捕获时间与载荷限制 |
+| 过滤与标签 | 排除健康检查、保留错误请求、补充上下文 | YAML + CEL，首条匹配；未匹配默认保留 |
+| 浏览器与日志 | 实时检查流量 | 默认发布到 Subtrace 服务；另有本地 DevTools 路径 |
+
+依据：[环境变量](https://github.com/subtrace/subtrace/blob/e3e3546b367ecc23d5fe5642491526ee969a6ff2/docs/env-vars.mdx)、[面板功能](https://github.com/subtrace/subtrace/blob/e3e3546b367ecc23d5fe5642491526ee969a6ff2/docs/using-the-dashboard.mdx)、[过滤规则](https://github.com/subtrace/subtrace/blob/e3e3546b367ecc23d5fe5642491526ee969a6ff2/docs/rules.mdx)。
+
+## 技术原理
+
+1. **seccomp 用户通知：**包装启动目标程序，选定的网络、文件和进程系统调用交由 Subtrace 处理，其他调用放行。使用 seccomp BPF，并非挂载 eBPF 探针被动抓包。
+2. **透明 TCP 代理：**在连接建立时管理并注入文件描述符，让入站或出站 TCP 流量经过本地代理，通常不用接入语言 SDK 或设置 HTTP 代理。
+3. **协议与 TLS：**识别 HTTP/1、HTTP/2、TLS。出站 TLS 使用临时 CA 和中间人握手获得明文；读取已知 CA 文件时返回“原证书集合 + 临时 CA”的内存文件，不覆盖磁盘系统证书。
+4. **记录与展示：**解析请求和响应，采样正文，生成 HAR，执行规则，再通过发布通道或本地 DevTools 展示。
+
+完整调用链与源码位置见 [architecture.md](architecture.md)。
+
+## Windows 与安装边界
+
+这里研究的 `subtrace run` 依赖 Linux seccomp、pidfd、描述符注入等内核接口，要求 **Linux 5.9+**，过滤器支持 amd64 / arm64。仓库有 Linux / Darwin 入口，未发现 Windows 原生的等价 run 实现。本次不在 Windows 安装或运行上游。
+
+Windows 浏览器可以直接阅读本研究网页。未来实测可另选符合条件的 Linux 环境；WSL2 或 Linux 容器仍需核对内核、权限和网络行为，本次均未验证。容器文档要求 `SYS_PTRACE`，但主要拦截机制仍是 seccomp 用户通知。
+
+以下仅为 Linux 使用方式说明，**本次未执行**：
+
+```bash
+subtrace run -- node server.js
+subtrace run -- fastapi run main.py
+SUBTRACE_PAYLOAD_LIMIT=65536 subtrace run -- ./my-server
+SUBTRACE_TLS=false subtrace run -- ./my-server
+```
+
+依据：[运行入口](https://github.com/subtrace/subtrace/blob/e3e3546b367ecc23d5fe5642491526ee969a6ff2/cmd/run/run.go)、[Linux 子命令](https://github.com/subtrace/subtrace/blob/e3e3546b367ecc23d5fe5642491526ee969a6ff2/subtrace_linux.go)、[权限](https://github.com/subtrace/subtrace/blob/e3e3546b367ecc23d5fe5642491526ee969a6ff2/docs/ptrace.mdx)。
+
+## 使用边界与研究价值
+
+- 适合第三方 API 联调、HTTP 认证与参数排障、检查网关解密后的入站请求。
+- 不能仅凭网络记录解释业务函数内部耗时，不能代替完整链路追踪、CPU 分析或数据库协议调试。
+- 入站 TLS 原样转发；证书固定、自定义信任库、mTLS 可能握手失败。关闭 TLS 拦截后看不到该加密通道内的 HTTP 正文。
+- 该提交的上游 TLS 连接使用 `InsecureSkipVerify: true`，源码有证书验证 TODO，不能把拦截后的信任验证视为与原程序等价。见 [TLS 实现](https://github.com/subtrace/subtrace/blob/e3e3546b367ecc23d5fe5642491526ee969a6ff2/cmd/run/tls/tls.go)。
+- 默认捕获事件发布到 Subtrace 服务，不是仅本地保存。`--devtools` 另有本地展示路径，但整个进程是否外联需结合 token 等配置核实。
+- 代理、解析、复制、签发证书与发布都有开销。本项目没有性能实测，不承诺官方 benchmark 的结果适用于其他负载。
+
+最值得借鉴的设计，是将系统调用拦截与应用层代理结合，把通常需要应用主动配置的网络调试器做成启动命令的包装层。
+
+## 本次交付与验证范围
+
+- 能力、原理、平台与协议边界均绑定固定 commit。
+- 网页包含原创总览图、五种连接场景、固定样例请求查看器。
+- 网页验证仅针对本研究页面，记录见 [notes.md](notes.md)，不构成上游运行证明。
+- 未安装上游、未真实抓包、未进行容器与性能验证。尚未公开发布，`project.json` 的 `demo` 留空。
+
+## 来源与许可证
+
+未复制上游实现、截图或品牌素材到本项目。文字、教学数据与 SVG 由本研究编写；上游源码仅保留在被忽略的目录。完整来源见 [sources.md](sources.md)，许可见 [LICENSE](https://github.com/subtrace/subtrace/blob/e3e3546b367ecc23d5fe5642491526ee969a6ff2/LICENSE)。

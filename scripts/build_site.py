@@ -19,6 +19,7 @@ def build():
     subprocess.run([sys.executable, str(ROOT / "projects/006-narrator-ai-cli-skill/web/build.py")], check=True)
     subprocess.run([sys.executable, str(ROOT / "projects/007-neko-master/web/build.py")], check=True)
     subprocess.run([sys.executable, str(ROOT / "projects/008-humanizer/web/build.py")], check=True)
+    subprocess.run([sys.executable, str(ROOT / "projects/009-subtrace/web/build.py")], check=True)
     rows = []
     for entry in entries:
         folder = entry["folder"]

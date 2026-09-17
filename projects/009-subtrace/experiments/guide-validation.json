@@ -1,0 +1,31 @@
+{
+  "date": "2026-09-17",
+  "scope": "原创说明图与静态网页，无上游运行",
+  "png": {
+    "width": 2700,
+    "height": 2805
+  },
+  "svg_text_within_canvas": true,
+  "visual_review": "已人工检查文字、箭头与三条路径",
+  "web": [
+    {
+      "viewport": 390,
+      "image": {
+        "width": 1800,
+        "height": 1870
+      },
+      "overflow": false,
+      "expanded": true
+    },
+    {
+      "viewport": 1440,
+      "image": {
+        "width": 1800,
+        "height": 1870
+      },
+      "overflow": false,
+      "expanded": true
+    }
+  ],
+  "png_available": true
+}

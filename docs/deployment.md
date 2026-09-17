@@ -16,6 +16,8 @@
 
 ## 本地构建
 
+009 Subtrace 的源码位于 `projects/009-subtrace/web/`，静态产物为 `site/apps/009-subtrace/`。页面说明 seccomp 连接接管、透明 TCP 代理、临时 CA 与 HAR 记录，包含五种逐步连接场景和固定样例请求查看器。Windows 仅阅读静态网页，不安装或运行上游，不捕获实际流量。已通过本地交互、链接、320–1440 像素响应式、file:// 和无 JavaScript 阅读检查；未公开部署，`demo` 留空。见 [009 维护说明](../projects/009-subtrace/web/README.md)。
+
 ```powershell
 python scripts/projects.py sync
 python scripts/projects.py check
