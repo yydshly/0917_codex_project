@@ -11,7 +11,7 @@ Agency Orchestrator（AO）面向具体场景选择角色、拆分任务并按�
 | 技术构成 | TypeScript / Node.js ≥20；本地 Web 服务、React Studio、Electron 桌面入口 |
 | 本次范围 | 能力与源码核查、158 项核心测试、五角色内容场景真实运行与定向返工；质量对照和全渠道兼容性尚未验证 |
 | 详细材料 | [能力清单](capabilities.md) · [研究与验证记录](notes.md) · [元数据](project.json) |
-| 能力展示网页 | [打开静态页面](../../site/apps/003-agency-orchestrator/index.html) · [网页维护说明](web/README.md) |
+| 能力展示网页 | [在线研究页](https://yydshly.github.io/0917_codex_project/apps/003-agency-orchestrator/) · [打开静态页面](../../site/apps/003-agency-orchestrator/index.html) · [网页维护说明](web/README.md) |
 | 实际场景 | [一人启动 AI 办公账号](../../site/apps/003-agency-orchestrator/case-content.html) · [两轮运行与复现材料](cases/content-launch/README.md) |
 | 完整理解图 | [高清 PNG](assets/capability-summary.png) · [可放大 SVG](assets/capability-summary.svg) · [文字版](assets/capability-summary-text.md) · [来源与制图说明](assets/capability-summary-brief.md) |
 | 后续产品试验 | [任务选择、对照方案、质量与重复评估](product-validation.md)（待开展） |
@@ -111,6 +111,6 @@ flowchart LR
 
 ## 本次交付与来源
 
-本阶段已整理能力、源码入口和验证记录，完成静态能力展示网页，并补充一次真实内容工作流与带反馈续跑案例；状态保留“研究中”，跟踪真实产品对照和原软件界面体验等未验证部分。引导图与项目封面统一使用本研究的完整信息图。发布地址在部署成功并验证后写入 `demo`。
+本阶段已整理能力、源码入口和验证记录，完成静态能力展示网页，并补充一次真实内容工作流与带反馈续跑案例；状态保留“研究中”，跟踪真实产品对照和原软件界面体验等未验证部分。引导图与项目封面统一使用本研究的完整信息图。网页已部署并验证：[在线研究页](https://yydshly.github.io/0917_codex_project/apps/003-agency-orchestrator/) · [完整引导图](https://yydshly.github.io/0917_codex_project/apps/003-agency-orchestrator/capability-summary.png) · [真实案例](https://yydshly.github.io/0917_codex_project/apps/003-agency-orchestrator/case-content.html)。正式地址已写入 `demo`。
 
 完整源码位于被忽略的 `upstream/agency-orchestrator/`。源码链接固定到研究 commit，研究说明为本仓库整理；本子项目仅引用三份上游展示素材，并附带许可全文，没有引入上游程序源码或角色全文。许可依据为上游 [LICENSE](https://github.com/jnMetaCode/agency-orchestrator/blob/1f36dba95ef70a0f3c3559cac16acd9898622ad9/LICENSE) 和 [package.json](https://github.com/jnMetaCode/agency-orchestrator/blob/1f36dba95ef70a0f3c3559cac16acd9898622ad9/package.json)。

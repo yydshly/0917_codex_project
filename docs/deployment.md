@@ -27,7 +27,7 @@ python -m http.server 8765 --bind 127.0.0.1 --directory site
 
 002 中文版研究已公开部署：[在线研究页](https://yydshly.github.io/0917_codex_project/apps/002-agency-agents-zh/) · [高清引导图](https://yydshly.github.io/0917_codex_project/apps/002-agency-agents-zh/capability-summary.png)。发布路径为 `apps/002-agency-agents-zh/`，正式地址已写入项目 `demo`。首次发布记录：[工作流 35183980271](https://github.com/yydshly/0917_codex_project/actions/runs/35183980271)；线上页面、引导图与搜索交互验证通过。
 
-003 角色编排研究的发布路径为 `apps/003-agency-orchestrator/`。以完整信息图作为引导和封面，说明能力、场景、研究价值、质量与重复边界及后续真实产品试验计划；另有 `case-content.html` 保存两轮真实模型调用的静态产物。官方素材与许可随站点发布；公开地址验证后登记到 `demo`。
+003 角色编排研究的发布路径为 `apps/003-agency-orchestrator/`。以完整信息图作为引导和封面，说明能力、场景、研究价值、质量与重复边界及后续真实产品试验计划；另有 `case-content.html` 保存两轮真实模型调用的静态产物。官方素材与许可随站点发布。已部署：[在线研究页](https://yydshly.github.io/0917_codex_project/apps/003-agency-orchestrator/) · [完整引导图](https://yydshly.github.io/0917_codex_project/apps/003-agency-orchestrator/capability-summary.png) · [真实案例](https://yydshly.github.io/0917_codex_project/apps/003-agency-orchestrator/case-content.html)，正式地址已登记到 `demo`。首次发布：[工作流 35190150874](https://github.com/yydshly/0917_codex_project/actions/runs/35190150874)。线上 HTML、PNG / SVG、文字版、两轮运行记录及必要资源已核对一致；后续产品效果对照试验仍待开展。
 
 ## 自动发布
 
