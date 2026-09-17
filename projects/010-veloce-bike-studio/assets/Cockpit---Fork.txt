@@ -1,0 +1,99 @@
+- link "Built with Arena Content is user-generated and unverified":
+  - /url: https://arena.ai/code
+  - paragraph: Built with Arena
+  - paragraph: Content is user-generated and unverified
+- button "Report content":
+- button "Close banner":
+- iframe [active] [id="preview-iframe"]:
+  - button "01 // CHASSIS":
+    - generic: 01 // CHASSIS
+  - button "02 // POWERTRAIN":
+    - generic: 02 // POWERTRAIN
+  - button "03 // COCKPIT":
+    - generic: 03 // COCKPIT
+  - button "04 // WHEELSET":
+    - generic: 04 // WHEELSET
+  - button "05 // CONTACT":
+    - generic: 05 // CONTACT
+  - banner:
+    - heading "VELOCE R9 // AERO-SLR" [level=1]
+    - generic: UCI LAB 09
+    - paragraph: Torayca T1100G Carbon Monocoque • Interactive 3D Digital Twin
+    - navigation:
+      - generic: View
+      - button "Full Profile"
+      - button "Drivetrain"
+      - button "Cockpit & Fork" [active]
+      - button "Rear Hub & Disc"
+      - button "Aero Plan"
+      - button "Reset Camera & Geometry":
+    - button "Explode CAD":
+      - generic: Explode CAD
+    - button "CFD Flow":
+      - generic: CFD Flow
+    - button "Hotspots":
+      - generic: Hotspots
+    - button "Turntable":
+      - generic: Turntable
+  - complementary:
+    - generic: LIVE WIND-TUNNEL TELEMETRY
+    - generic: Road Velocity
+    - generic: 33.7km/h
+    - generic: Crank Output
+    - generic: 239W
+    - generic: Configured Mass
+    - generic: 6.68kg
+    - generic: Aero Savings
+    - generic: "-18.4W"
+    - generic: Transmission Ratio
+    - generic: 54×16T (3.38:1)
+    - generic: SUB-ASSEMBLY INSPECTOR
+    - button "01 Aerodynamic Carbon Frame":
+      - generic: "01"
+      - generic: Aerodynamic Carbon Frame
+    - button "02 Precision Mechanical Transmission":
+      - generic: "02"
+      - generic: Precision Mechanical Transmission
+    - button "03 Ergonomic Control & Telemetry":
+      - generic: "03"
+      - generic: Ergonomic Control & Telemetry
+    - button "04 Rotational Aero & Braking":
+      - generic: "04"
+      - generic: Rotational Aero & Braking
+    - button "05 Compliance & Biomechanics":
+      - generic: "05"
+      - generic: Compliance & Biomechanics
+  - heading "Atelier Configurator" [level=2]
+  - button "Collapse Drawer":
+  - button "Finish"
+  - button "Wheels & Grip"
+  - button "CAD Specs"
+  - text: Click any
+  - strong: 3D Hotspot Pin
+  - text: on the bicycle or select a sub-assembly below to focus the camera and inspect CAD tolerances.
+  - button "01 // CHASSIS Torayca T1100G Kammtail Monocoque":
+    - generic: 01 // CHASSIS
+    - generic: Torayca T1100G Kammtail Monocoque
+  - button "02 // POWERTRAIN 54/40T Hollow-Forged Crank & 12s Cassette":
+    - generic: 02 // POWERTRAIN
+    - generic: 54/40T Hollow-Forged Crank & 12s Cassette
+  - button "03 // COCKPIT One-Piece Integrated Carbon Bar/Stem":
+    - generic: 03 // COCKPIT
+    - generic: One-Piece Integrated Carbon Bar/Stem
+  - button "04 // WHEELSET Deep-Section Carbon Rim & 160mm Rotors":
+    - generic: 04 // WHEELSET
+    - generic: Deep-Section Carbon Rim & 160mm Rotors
+  - button "05 // CONTACT 3D-Lattice Carbon Saddle & D-Shape Post":
+    - generic: 05 // CONTACT
+    - generic: 3D-Lattice Carbon Saddle & D-Shape Post
+  - contentinfo:
+    - button "Pause Drivetrain":
+    - generic: Drivetrain Cadence
+    - generic: 78 RPM
+    - slider
+    - generic: Fork Steer Angle
+    - button "0°"
+    - slider
+    - generic: CAD Explosion
+    - generic: 0%
+    - slider

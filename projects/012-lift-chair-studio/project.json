@@ -1,0 +1,13 @@
+{
+  "id": 12,
+  "slug": "lift-chair-studio",
+  "name": "升降椅交互工坊",
+  "summary": "家具产品的 3D 实现参考：用 React + Three.js 将升降锁定、织物材质、分步装配与人物乘坐滑行结合，展示产品交互的实现方式及质量边界。",
+  "kind": "3d-reference",
+  "repo": "",
+  "status": "已完成",
+  "demo": "",
+  "cover": "assets/product-guide.png",
+  "cover_alt": "实际运行的升降椅 3D 产品效果：绿色织物软包、靠背、扶手、气杆和五星底座",
+  "source": "https://yydshly.github.io/0917_codex_project/apps/010-veloce-bike-studio/"
+}

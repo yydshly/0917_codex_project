@@ -25,10 +25,22 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: |
+            projects/010-veloce-bike-studio/web/package-lock.json
+            projects/012-lift-chair-studio/web/package-lock.json
       - name: Check project index
         run: python scripts/projects.py check
       - name: Build static site
         run: python scripts/build_site.py
+      - name: Verify 3D interaction rules
+        run: |
+          python scripts/test_projects.py
+          node --test projects/010-veloce-bike-studio/web/tests/*.test.mjs
+          node --test projects/012-lift-chair-studio/web/tests/*.test.mjs
       - uses: actions/configure-pages@v5
       - name: Stage public files only
         run: |

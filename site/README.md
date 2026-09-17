@@ -19,3 +19,6 @@
 - [006 · Narrator AI CLI Skill：从素材到成品的操作方法与约束](apps/006-narrator-ai-cli-skill/index.html) · [在线研究页](https://yydshly.github.io/0917_codex_project/apps/006-narrator-ai-cli-skill/) · [单张引导图](apps/006-narrator-ai-cli-skill/capability-summary.svg)
 
 - [008 · Humanizer：能力、改写示意与 25 类规则](apps/008-humanizer/index.html) · [单张总览图](apps/008-humanizer/index.html#guide) · [在线研究页](https://yydshly.github.io/0917_codex_project/apps/008-humanizer/)。已发布并验证，支持示例切换、规则搜索与分类；模型改写效果仍待实测。
+
+- [010 · 自行车 3D 实现参考](apps/010-veloce-bike-studio/guide.html) · [交互演示](apps/010-veloce-bike-studio/)。实际产品截图引导，说明材质配置、传动制动、配件联动与结构检视的实现价值。
+- [012 · 升降椅 3D 实现参考](apps/012-lift-chair-studio/guide.html) · [交互演示](apps/012-lift-chair-studio/)。实际产品截图引导，说明升降锁定、织物、分步装配和人物乘坐滑行；明确教学与物理仿真的边界。

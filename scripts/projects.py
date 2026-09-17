@@ -50,7 +50,10 @@ def read_projects():
         require(folder.name == f"{number:03d}-{data['slug']}", f"{folder.name}: 目录与编号或 slug 不一致")
         require(data["name"].strip() and data["summary"].strip(), f"{folder.name}: 名称和摘要不能为空")
         require(data["status"] in STATUSES, f"{folder.name}: 未知研究状态")
-        require(valid_url(data["repo"], github=True), f"{folder.name}: 上游仓库地址无效")
+        require(not data["repo"] or valid_url(data["repo"], github=True), f"{folder.name}: 上游仓库地址无效")
+        source = data.get("source", "")
+        require(isinstance(source, str) and (not source or valid_url(source)), f"{folder.name}: 网页来源无效")
+        require(data["repo"] or source, f"{folder.name}: 必须提供上游仓库或网页来源")
         require(not data["demo"] or valid_url(data["demo"]), f"{folder.name}: 演示地址无效")
         require((folder / "README.md").is_file(), f"{folder.name}: 缺少 README.md")
         if data["cover"]:
@@ -74,6 +77,12 @@ def link(label, target):
     return f'<a href="{html.escape(target, quote=True)}">{html.escape(label)}</a>'
 
 
+def source_link(project):
+    target = project["repo"] or project.get("source", "")
+    label = urlparse(target).path.strip('/') if project["repo"] else "参考网页"
+    return link(label, target)
+
+
 def render(projects):
     if not projects:
         return {
@@ -87,7 +96,7 @@ def render(projects):
         demo = link("访问演示", project["demo"]) if project["demo"] else "—"
         rows.append(
             f"| {project['id']:03d} | [{escape(project['name'])}]({path}/README.md) | "
-            f"{escape(project['summary'])} | {project['status']} | {link(urlparse(project['repo']).path.strip('/'), project['repo'])} | {demo} |"
+            f"{escape(project['summary'])} | {project['status']} | {source_link(project)} | {demo} |"
         )
         if project["cover"]:
             image_path = html.escape(f"{path}/{project['cover']}", quote=True)
@@ -133,14 +142,16 @@ def create(args):
     readme_content(projects)  # Check markers before creating any files.
     require(SLUG.fullmatch(args.slug), "slug 仅支持小写英文、数字和中划线")
     require(all(item["slug"] != args.slug for item in projects), "该 slug 已存在")
-    require(valid_url(args.repo, github=True), "请提供 https://github.com/owner/repo 格式的上游地址")
+    require(not args.repo or valid_url(args.repo, github=True), "请提供 https://github.com/owner/repo 格式的上游地址")
+    require(not args.source or valid_url(args.source), "请提供有效的网页来源地址")
+    require(args.repo or args.source, "请提供 --repo 或 --source")
     for label, value in (("名称", args.name), ("摘要", args.summary)):
         require(value.strip() and "\n" not in value and "\r" not in value, f"{label} 不能为空或包含换行")
     number = max((item["id"] for item in projects), default=0) + 1
     folder = ROOT / "projects" / f"{number:03d}-{args.slug}"
     require(not folder.exists(), "目标目录已经存在")
     shutil.copytree(ROOT / "templates" / "project", folder)
-    values = {"id": f"{number:03d}", "name": escape(args.name), "repo": args.repo, "summary": escape(args.summary)}
+    values = {"id": f"{number:03d}", "name": escape(args.name), "repo": args.repo or args.source, "summary": escape(args.summary)}
     for path in folder.rglob("*.md"):
         content = path.read_text(encoding="utf-8")
         content = re.sub(r"\{\{(id|name|repo|summary)\}\}", lambda match: values[match[1]], content)
@@ -149,6 +160,8 @@ def create(args):
         "id": number, "slug": args.slug, "name": args.name, "summary": args.summary,
         "repo": args.repo, "status": "待研究", "demo": "", "cover": "", "cover_alt": "",
     }
+    if args.source:
+        metadata["source"] = args.source
     (folder / "project.json").write_text(json.dumps(metadata, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
     sync()
     print(f"已创建 projects/{folder.name}")
@@ -160,7 +173,8 @@ def main():
     new = commands.add_parser("new", help="创建带编号的研究项目并同步首页")
     new.add_argument("slug")
     new.add_argument("--name", required=True)
-    new.add_argument("--repo", required=True)
+    new.add_argument("--repo", default="")
+    new.add_argument("--source", default="", help="没有公开仓库时填写参考网页")
     new.add_argument("--summary", required=True)
     commands.add_parser("sync", help="更新首页索引和封面预览")
     commands.add_parser("check", help="检查项目元数据与首页是否一致")

@@ -25,7 +25,7 @@ python scripts/build_site.py
 python -m http.server 8765 --bind 127.0.0.1 --directory site
 ```
 
-构建只需 Python 3.10+ 标准库，使用保存的版本清单，不依赖网络或上游源码副本。各子项目独立选用技术栈；目前总构建入口已登记 001–006 的构建方式，后续按项目需要添加。
+说明页构建使用 Python 3.10+ 标准库；010、012 的独立三维应用另需 Node.js 22 与 npm，首次构建按锁文件安装依赖。所有公开资源随静态产物发布，运行时无需访问上游源码。各子项目独立选用技术栈；目前总构建入口已登记 001–006 的构建方式，后续按项目需要添加。
 
 006 Narrator AI CLI Skill 的源码位于 `projects/006-narrator-ai-cli-skill/web/`，发布目录为 `site/apps/006-narrator-ai-cli-skill/`。用单张总览图引导理解 Skill、Codex 等宿主助手、CLI 与云端服务的分工；详细展示素材上传、异步任务、制作流程与约束边界。页面为纯静态说明，不调用模型、不接收上传、不创建生成任务。公开产物包含研究正文、PNG / SVG 总览图、引导图文字版及明确选入的源码研究与来源记录；未发布凭据或上游检出。维护方式见[网页说明](../projects/006-narrator-ai-cli-skill/web/README.md)。
 
@@ -67,3 +67,12 @@ python -m http.server 8765 --bind 127.0.0.1 --directory site
 007 Neko Master 已部署：[在线研究页](https://yydshly.github.io/0917_codex_project/apps/007-neko-master/) · [两张引导图](https://yydshly.github.io/0917_codex_project/apps/007-neko-master/#guide)。[首次发布工作流](https://github.com/yydshly/0917_codex_project/actions/runs/35230427660) 成功，21 个公开文件、线上摘要与图片验证通过。
 
 008 Humanizer 已部署：[在线研究页](https://yydshly.github.io/0917_codex_project/apps/008-humanizer/) · [单张总览图](https://yydshly.github.io/0917_codex_project/apps/008-humanizer/#guide)。页面完整展示 Skill 能力、模型执行方式、25 类规则与对我们的意义；提供 PNG、SVG 和文字版。首次发布 [工作流 35231331072](https://github.com/yydshly/0917_codex_project/actions/runs/35231331072) 成功，10 个线上文件与发布提交一致，线上 1440、390、320 像素布局、图像与搜索检查通过。静态示例不调用模型，实际收益仍待验证。维护见 [008 网页说明](../projects/008-humanizer/web/README.md)。
+
+## 010 / 012：可交互 3D 实现参考
+
+这两个项目以实际产品效果截图作为引导图；首页新增两张入口卡，分别通往实现说明与交互演示。
+
+- [010 自行车实现说明](https://yydshly.github.io/0917_codex_project/apps/010-veloce-bike-studio/guide.html)：机械结构、材质配置、传动制动和配件联动。
+- [012 升降椅实现说明](https://yydshly.github.io/0917_codex_project/apps/012-lift-chair-studio/guide.html)：产品配置、织物与装配、调节锁定、人物乘坐滑行。
+
+两者均为 React + Three.js + 自定义运动代码，页面说明可复用方式、提示词和质量边界。原始截图在子项目 assets/product-guide.png；构建复制为 product-preview.png。guide.html 由 reference.json 和共享构建脚本生成。正式地址与工作流记录在各项目 experiments/deployment.json 中登记，运行验证不代表真实物理精度。

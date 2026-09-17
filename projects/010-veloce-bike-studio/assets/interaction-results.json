@@ -1,0 +1,54 @@
+[
+  {
+    "control": "传动",
+    "pressed": "true"
+  },
+  {
+    "control": "车把与前叉",
+    "pressed": "true"
+  },
+  {
+    "control": "后轮与碟刹",
+    "pressed": "true"
+  },
+  {
+    "control": "俯视",
+    "pressed": "true"
+  },
+  {
+    "control": "整车",
+    "pressed": "true"
+  },
+  {
+    "control": "曜石碳黑 UD STEALTH",
+    "selected": "true"
+  },
+  {
+    "control": "竞速绯红 ROSSO CORSA",
+    "selected": "true"
+  },
+  {
+    "control": "天青珠光 CELESTE PEARL",
+    "selected": "true"
+  },
+  {
+    "control": "拉丝钛银 BRUSHED TITANIUM",
+    "selected": "true"
+  },
+  {
+    "control": "日耀橙 SOLAR PAPAYA",
+    "selected": "true"
+  },
+  {
+    "control": "碳黑",
+    "selected": "true"
+  },
+  {
+    "control": "干邑棕",
+    "selected": "true"
+  },
+  {
+    "control": "粉笔白",
+    "selected": "true"
+  }
+]

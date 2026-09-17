@@ -20,7 +20,9 @@
 | 007 | [Neko Master](projects/007-neko-master/README.md) | 从 Clash 等代理客户端内核采集连接与流量信息，保存历史并按设备、域名和节点展示；统计来自内核本地转发计数，无需远端同步。 | 研究中 | <a href="https://github.com/foru17/neko-master">foru17/neko-master</a> | <a href="https://yydshly.github.io/0917_codex_project/apps/007-neko-master/">访问演示</a> |
 | 008 | [Humanizer](projects/008-humanizer/README.md) | 将 25 类写作问题与修改建议封装为 Skill，由宿主大模型结合原文和样文执行识别、改写与自检，减少 AI 模板腔并贴近作者语气。可作为研究文档、汇报和内容初稿的统一编辑规范；规则属于提示约束，中文效果与实际收益待验证。 | 研究中 | <a href="https://github.com/blader/humanizer">blader/humanizer</a> | <a href="https://yydshly.github.io/0917_codex_project/apps/008-humanizer/">访问演示</a> |
 | 009 | [Subtrace](projects/009-subtrace/README.md) | 借助 Linux seccomp BPF 筛选网络相关系统调用，结合 Go 透明代理实现后端 HTTP 请求与响应的捕获、解析、过滤和展示；通常无需修改业务代码，用于接口联调和网络排障。 | 研究中 | <a href="https://github.com/subtrace/subtrace">subtrace/subtrace</a> | <a href="https://yydshly.github.io/0917_codex_project/apps/009-subtrace/">访问演示</a> |
+| 010 | [Veloce Bike Studio](projects/010-veloce-bike-studio/README.md) | 机械产品的 3D 实现参考：用 React \+ Three\.js 展示材质配置、传动与制动联动、配件装配和部件检视，供产品配置器与结构教学复用。 | 已完成 | <a href="https://01a0adea-b123-7107-885c-42cf51379f50.arena.site/">参考网页</a> | — |
 | 011 | [Security Audit Skill](projects/011-security-audit-skill/README.md) | 指导 AI 从业务逻辑、身份权限、输入接口、数据与底层环境审查代码的安全质量；通过目标范围、路径追踪、覆盖记录、证据门槛、独立复核、执行边界和输出规范约束审计，形成可追溯结论与修复建议。附完整理解图及 Defending Code 对比，真实检出效果待验证。 | 研究中 | <a href="https://github.com/cloudflare/security-audit-skill">cloudflare/security-audit-skill</a> | <a href="https://yydshly.github.io/0917_codex_project/apps/011-security-audit-skill/">访问演示</a> |
+| 012 | [升降椅交互工坊](projects/012-lift-chair-studio/README.md) | 家具产品的 3D 实现参考：用 React \+ Three\.js 将升降锁定、织物材质、分步装配与人物乘坐滑行结合，展示产品交互的实现方式及质量边界。 | 已完成 | <a href="https://yydshly.github.io/0917_codex_project/apps/010-veloce-bike-studio/">参考网页</a> | — |
 <!-- PROJECT_INDEX:END -->
 
 ## 项目预览
@@ -80,11 +82,23 @@
 
 借助 Linux seccomp BPF 筛选网络相关系统调用，结合 Go 透明代理实现后端 HTTP 请求与响应的捕获、解析、过滤和展示；通常无需修改业务代码，用于接口联调和网络排障。
 
+### 010 · Veloce Bike Studio
+
+<a href="projects/010-veloce-bike-studio/README.md"><img src="projects/010-veloce-bike-studio/assets/product-guide.png" alt="实际运行的自行车 3D 产品效果：深色车架、传动链条、碟刹、水壶与材质配置面板" width="640"></a>
+
+机械产品的 3D 实现参考：用 React \+ Three\.js 展示材质配置、传动与制动联动、配件装配和部件检视，供产品配置器与结构教学复用。
+
 ### 011 · Security Audit Skill
 
 <a href="projects/011-security-audit-skill/README.md"><img src="projects/011-security-audit-skill/assets/capability-summary.png" alt="Security Audit Skill 完整理解图：安全检查角度、入口到影响的路径、七类约束和三种落实机制、六阶段及产出，并与 Defending Code 和既有研究对比；原创说明图，非实测结果。" width="640"></a>
 
 指导 AI 从业务逻辑、身份权限、输入接口、数据与底层环境审查代码的安全质量；通过目标范围、路径追踪、覆盖记录、证据门槛、独立复核、执行边界和输出规范约束审计，形成可追溯结论与修复建议。附完整理解图及 Defending Code 对比，真实检出效果待验证。
+
+### 012 · 升降椅交互工坊
+
+<a href="projects/012-lift-chair-studio/README.md"><img src="projects/012-lift-chair-studio/assets/product-guide.png" alt="实际运行的升降椅 3D 产品效果：绿色织物软包、靠背、扶手、气杆和五星底座" width="640"></a>
+
+家具产品的 3D 实现参考：用 React \+ Three\.js 将升降锁定、织物材质、分步装配与人物乘坐滑行结合，展示产品交互的实现方式及质量边界。
 <!-- PROJECT_GALLERY:END -->
 
 ## 新增研究项目
