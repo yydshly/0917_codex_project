@@ -11,3 +11,5 @@
 - [005 · Impeccable：前端优化、原理与使用价值](apps/005-impeccable/index.html) · [在线网页](https://yydshly.github.io/0917_codex_project/apps/005-impeccable/) · [单张引导图](apps/005-impeccable/capability-summary.svg) · [改造前](apps/005-impeccable/before.html) · [改造后](apps/005-impeccable/after.html)
 
 各演示使用 `apps/NNN-slug/` 子目录，演示源码保存在对应研究项目的 `web/` 中。详见[部署规划](../docs/deployment.md)。
+
+- [006 · Narrator AI CLI Skill：从素材到成品的操作方法与约束](apps/006-narrator-ai-cli-skill/index.html) · [单张引导图](apps/006-narrator-ai-cli-skill/capability-summary.svg)

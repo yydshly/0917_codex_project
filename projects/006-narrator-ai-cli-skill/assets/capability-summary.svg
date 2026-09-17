@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2160" height="3140" viewBox="0 0 2160 3140">
+<title>Narrator AI CLI Skill：从素材到解说视频的能力与约束全景</title>
+<desc>按角色、素材准备、任务交互、约束边界和成品五部分阅读。原创研究说明图，未运行云端生成。</desc>
+<rect width="2160" height="3140" fill="#F4F7FB"/>
+<text x="80" y="55" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="700" fill="#2859B8">006 / 项目研究 · NARRATOR AI CLI SKILL</text>
+<text x="80" y="110" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="64" font-weight="700" fill="#17263D">从素材到解说视频：谁在做，怎样做？</text>
+<text x="80" y="207" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="32" font-weight="400" fill="#4B5D74">把我们的理解串起来：用户提出目标，助手按规则组织步骤，云端完成制作。</text>
+<rect x="80" y="277" width="2000" height="132" rx="20" fill="#17263D" stroke="none" stroke-width="2"/>
+<text x="112" y="300" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="38" font-weight="700" fill="white">这个库的核心能力 = 提供“素材 → 成品”的操作方法、接口知识与流程约束</text>
+<text x="112" y="359" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="29" font-weight="400" fill="#D9E5F4">Skill 是操作手册；CLI 是调用工具；真正的文案、配音和视频处理由服务端执行。</text>
+<rect x="80" y="454" width="56" height="52" rx="12" fill="#17263D" stroke="none" stroke-width="2"/>
+<text x="95" y="461" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="29" font-weight="700" fill="white">01</text>
+<text x="155" y="456" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="38" font-weight="700" fill="#17263D">先分清四个角色</text>
+<text x="155" y="514" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="400" fill="#4B5D74">Skill 约束助手怎样操作；它本身不负责上传文件、推理模型或渲染视频。</text>
+<rect x="80" y="567" width="455" height="250" rx="20" fill="#EEE8F7" stroke="none" stroke-width="2"/>
+<rect x="80" y="567" width="8" height="250" rx="3" fill="#7350AD" stroke="none" stroke-width="2"/>
+<text x="106" y="591" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="33" font-weight="700" fill="#7350AD">Skill · 操作手册</text>
+<text x="106" y="650" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="400" fill="#4B5D74">有哪些能力、怎么调用</text>
+<text x="106" y="695" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="400" fill="#4B5D74">先做什么、需要什么输入</text>
+<text x="106" y="740" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="400" fill="#4B5D74">参数规则、确认与异常处理</text>
+<rect x="595" y="567" width="455" height="250" rx="20" fill="#E8EFFB" stroke="none" stroke-width="2"/>
+<rect x="595" y="567" width="8" height="250" rx="3" fill="#2859B8" stroke="none" stroke-width="2"/>
+<text x="621" y="591" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="33" font-weight="700" fill="#2859B8">AI 助手 · 安排工作</text>
+<text x="621" y="650" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="400" fill="#4B5D74">理解用户要求并选择路线</text>
+<text x="621" y="695" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="400" fill="#4B5D74">选素材、风格、声音与音乐</text>
+<text x="621" y="740" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="400" fill="#4B5D74">读结果，决定下一步</text>
+<rect x="1110" y="567" width="455" height="250" rx="20" fill="#E1F1F1" stroke="none" stroke-width="2"/>
+<rect x="1110" y="567" width="8" height="250" rx="3" fill="#087E83" stroke="none" stroke-width="2"/>
+<text x="1136" y="591" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="33" font-weight="700" fill="#087E83">CLI · 传递请求</text>
+<text x="1136" y="650" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="400" fill="#4B5D74">把参数变成 API 请求</text>
+<text x="1136" y="695" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="400" fill="#4B5D74">上传文件、提交和查询任务</text>
+<text x="1136" y="740" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="400" fill="#4B5D74">把状态与产物返回给助手</text>
+<rect x="1625" y="567" width="455" height="250" rx="20" fill="#FBF0DF" stroke="none" stroke-width="2"/>
+<rect x="1625" y="567" width="8" height="250" rx="3" fill="#A76213" stroke="none" stroke-width="2"/>
+<text x="1651" y="591" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="33" font-weight="700" fill="#A76213">服务端 · 执行制作</text>
+<text x="1651" y="650" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="400" fill="#4B5D74">按接口参数创建处理任务</text>
+<text x="1651" y="695" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="400" fill="#4B5D74">调用模型与媒体处理程序</text>
+<text x="1651" y="740" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="400" fill="#4B5D74">生成文案、音频和视频</text>
+<polyline points="535,686 586,686" fill="none" stroke="#7350AD" stroke-width="4" stroke-dasharray="10 8"/>
+<polygon points="586,686 571.5928463623571,692.9594485457797 571.5928463623571,679.0405514542203" fill="#7350AD"/>
+<text x="540" y="644" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" fill="#4B5D74">指导</text>
+<polyline points="1050,686 1101,686" fill="none" stroke="#2859B8" stroke-width="4"/>
+<polygon points="1101,686 1086.5928463623572,692.9594485457797 1086.5928463623572,679.0405514542203" fill="#2859B8"/>
+<text x="1055" y="644" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" fill="#4B5D74">调用</text>
+<polyline points="1565,686 1616,686" fill="none" stroke="#087E83" stroke-width="4"/>
+<polygon points="1616,686 1601.5928463623572,692.9594485457797 1601.5928463623572,679.0405514542203" fill="#087E83"/>
+<text x="1570" y="644" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" fill="#4B5D74">请求</text>
+<rect x="80" y="847" width="2000" height="83" rx="20" fill="white" stroke="none" stroke-width="2"/>
+<text x="109" y="871" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="32" font-weight="400" fill="#17263D">用户 → AI 助手：“把这部电影做成中文幽默解说，选男声，最后输出竖屏视频。”</text>
+<rect x="80" y="971" width="56" height="52" rx="12" fill="#17263D" stroke="none" stroke-width="2"/>
+<text x="95" y="978" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="29" font-weight="700" fill="white">02</text>
+<text x="155" y="973" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="38" font-weight="700" fill="#17263D">素材从哪里来？先拿到可引用的文件</text>
+<text x="155" y="1031" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="400" fill="#4B5D74">平台素材和用户素材是两条入口；搜到电影资料，并不等于拿到了电影文件。</text>
+<rect x="80" y="1083" width="2000" height="356" rx="20" fill="white" stroke="none" stroke-width="2"/>
+<text x="110" y="1103" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="29" font-weight="700" fill="#087E83">A  使用平台素材</text>
+<rect x="420" y="1098" width="405" height="62" rx="12" fill="#E1F1F1" stroke="none" stroke-width="2"/>
+<text x="438" y="1112" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="400" fill="#087E83">客户端查询素材目录</text>
+<rect x="910" y="1098" width="450" height="62" rx="12" fill="#E1F1F1" stroke="none" stroke-width="2"/>
+<text x="928" y="1112" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="400" fill="#087E83">取得视频＋字幕 file_id</text>
+<rect x="1445" y="1098" width="585" height="62" rx="12" fill="#E1F1F1" stroke="none" stroke-width="2"/>
+<text x="1463" y="1112" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="400" fill="#087E83">直接作为后续任务的输入</text>
+<polyline points="825,1129 900,1129" fill="none" stroke="#087E83" stroke-width="3"/>
+<polygon points="900,1129 885.5928463623571,1135.9594485457797 885.5928463623571,1122.0405514542203" fill="#087E83"/>
+<polyline points="1360,1129 1435,1129" fill="none" stroke="#087E83" stroke-width="3"/>
+<polygon points="1435,1129 1420.5928463623572,1135.9594485457797 1420.5928463623572,1122.0405514542203" fill="#087E83"/>
+<text x="110" y="1190" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="29" font-weight="700" fill="#2859B8">B  上传自己的素材（由客户端完成以下过程）</text>
+<rect x="110" y="1243" width="360" height="112" rx="14" fill="#E8EFFB" stroke="none" stroke-width="2"/>
+<text x="128" y="1258" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="29" font-weight="700" fill="#2859B8">本地视频＋SRT</text>
+<text x="128" y="1303" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#4B5D74">准备文件</text>
+<polyline points="470,1298 496,1298" fill="none" stroke="#2859B8" stroke-width="3"/>
+<polygon points="496,1298 481.5928463623572,1304.9594485457797 481.5928463623572,1291.0405514542203" fill="#2859B8"/>
+<rect x="505" y="1243" width="360" height="112" rx="14" fill="#E8EFFB" stroke="none" stroke-width="2"/>
+<text x="523" y="1258" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="29" font-weight="700" fill="#2859B8">申请上传地址</text>
+<text x="523" y="1303" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#4B5D74">平台返回预签名 URL</text>
+<polyline points="865,1298 891,1298" fill="none" stroke="#2859B8" stroke-width="3"/>
+<polygon points="891,1298 876.5928463623571,1304.9594485457797 876.5928463623571,1291.0405514542203" fill="#2859B8"/>
+<rect x="900" y="1243" width="360" height="112" rx="14" fill="#E8EFFB" stroke="none" stroke-width="2"/>
+<text x="918" y="1258" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="29" font-weight="700" fill="#2859B8">上传到对象存储</text>
+<text x="918" y="1303" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#4B5D74">客户端发送文件内容</text>
+<polyline points="1260,1298 1286,1298" fill="none" stroke="#2859B8" stroke-width="3"/>
+<polygon points="1286,1298 1271.5928463623572,1304.9594485457797 1271.5928463623572,1291.0405514542203" fill="#2859B8"/>
+<rect x="1295" y="1243" width="360" height="112" rx="14" fill="#E8EFFB" stroke="none" stroke-width="2"/>
+<text x="1313" y="1258" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="29" font-weight="700" fill="#2859B8">回调确认上传</text>
+<text x="1313" y="1303" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#4B5D74">通知平台文件已就绪</text>
+<polyline points="1655,1298 1681,1298" fill="none" stroke="#2859B8" stroke-width="3"/>
+<polygon points="1681,1298 1666.5928463623572,1304.9594485457797 1666.5928463623572,1291.0405514542203" fill="#2859B8"/>
+<rect x="1690" y="1243" width="360" height="112" rx="14" fill="#E8EFFB" stroke="none" stroke-width="2"/>
+<text x="1708" y="1258" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="29" font-weight="700" fill="#2859B8">取得 file_id</text>
+<text x="1708" y="1303" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#4B5D74">后续按 ID 引用</text>
+<text x="110" y="1383" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="29" font-weight="400" fill="#4B5D74">素材确认后，再选择解说风格、音色和 BGM；文件上传一次，后续任务引用文件编号。</text>
+<rect x="80" y="1482" width="56" height="52" rx="12" fill="#17263D" stroke="none" stroke-width="2"/>
+<text x="95" y="1489" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="29" font-weight="700" fill="white">03</text>
+<text x="155" y="1484" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="38" font-weight="700" fill="#17263D">客户端与服务端怎样配合？每个制作步骤都走这个循环</text>
+<text x="155" y="1542" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="400" fill="#4B5D74">助手安排调用；客户端发送参数；服务端处理；返回结果后，助手继续下一步。</text>
+<rect x="80" y="1594" width="2000" height="655" rx="20" fill="white" stroke="none" stroke-width="2"/>
+<rect x="110" y="1615" width="460" height="164" rx="20" fill="#E8EFFB" stroke="none" stroke-width="2"/>
+<rect x="110" y="1615" width="8" height="164" rx="3" fill="#2859B8" stroke="none" stroke-width="2"/>
+<text x="136" y="1639" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="33" font-weight="700" fill="#2859B8">AI 助手</text>
+<text x="136" y="1698" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="400" fill="#4B5D74">按 Skill 组织本步骤参数</text>
+<rect x="775" y="1615" width="460" height="164" rx="20" fill="#E1F1F1" stroke="none" stroke-width="2"/>
+<rect x="775" y="1615" width="8" height="164" rx="3" fill="#087E83" stroke="none" stroke-width="2"/>
+<text x="801" y="1639" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="33" font-weight="700" fill="#087E83">CLI 客户端</text>
+<text x="801" y="1698" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="400" fill="#4B5D74">JSON 参数＋API Key</text>
+<rect x="1440" y="1615" width="610" height="164" rx="20" fill="#FBF0DF" stroke="none" stroke-width="2"/>
+<rect x="1440" y="1615" width="8" height="164" rx="3" fill="#A76213" stroke="none" stroke-width="2"/>
+<text x="1466" y="1639" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="33" font-weight="700" fill="#A76213">服务端 API</text>
+<text x="1466" y="1698" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="400" fill="#4B5D74">检查请求，创建异步处理任务</text>
+<polyline points="570,1680 765,1680" fill="none" stroke="#2859B8" stroke-width="3"/>
+<polygon points="765,1680 750.5928463623571,1686.9594485457797 750.5928463623571,1673.0405514542203" fill="#2859B8"/>
+<text x="610" y="1635" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#17263D">调用命令</text>
+<polyline points="1235,1680 1430,1680" fill="none" stroke="#087E83" stroke-width="3"/>
+<polygon points="1430,1680 1415.5928463623572,1686.9594485457797 1415.5928463623572,1673.0405514542203" fill="#087E83"/>
+<text x="1263" y="1635" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#17263D">提交任务</text>
+<polyline points="1745,1779 1745,1818 1005,1818 1005,1779" fill="none" stroke="#A76213" stroke-width="3"/>
+<polygon points="1005,1779 1011.9594485457797,1793.4071536376428 998.0405514542203,1793.4071536376428" fill="#A76213"/>
+<text x="1210" y="1784" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="24" font-weight="400" fill="#A76213">返回 task_id（任务编号）</text>
+<text x="110" y="1840" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#17263D">客户端用 task_id 查询 → 服务端返回进度／错误／完成结果 → 助手读取并决定下一步</text>
+<rect x="110" y="1876" width="1940" height="203" rx="16" fill="#F5F7FA" stroke="none" stroke-width="2"/>
+<text x="135" y="1894" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="700" fill="#A76213">服务端按任务逐步执行的制作链</text>
+<rect x="135" y="1949" width="405" height="104" rx="12" fill="white" stroke="none" stroke-width="2"/>
+<text x="151" y="1960" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="700" fill="#17263D">生成解说文案</text>
+<text x="151" y="2007" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" fill="#4B5D74">影片资料／字幕＋风格</text>
+<polyline points="540,1999 602,1999" fill="none" stroke="#A76213" stroke-width="3"/>
+<polygon points="602,1999 587.5928463623571,2005.9594485457797 587.5928463623571,1992.0405514542203" fill="#A76213"/>
+<rect x="610" y="1949" width="405" height="104" rx="12" fill="white" stroke="none" stroke-width="2"/>
+<text x="626" y="1960" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="700" fill="#17263D">生成剪辑数据</text>
+<text x="626" y="2007" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" fill="#4B5D74">文案＋视频／字幕＋音色／BGM</text>
+<polyline points="1015,1999 1077,1999" fill="none" stroke="#A76213" stroke-width="3"/>
+<polygon points="1077,1999 1062.5928463623572,2005.9594485457797 1062.5928463623572,1992.0405514542203" fill="#A76213"/>
+<rect x="1085" y="1949" width="405" height="104" rx="12" fill="white" stroke="none" stroke-width="2"/>
+<text x="1101" y="1960" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="700" fill="#17263D">合成视频</text>
+<text x="1101" y="2007" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" fill="#4B5D74">按剪辑数据完成成片</text>
+<polyline points="1490,1999 1552,1999" fill="none" stroke="#A76213" stroke-width="3"/>
+<polygon points="1552,1999 1537.5928463623572,2005.9594485457797 1537.5928463623572,1992.0405514542203" fill="#A76213"/>
+<rect x="1560" y="1949" width="465" height="104" rx="12" fill="white" stroke="none" stroke-width="2"/>
+<text x="1576" y="1960" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="700" fill="#17263D">视觉包装 · 可选</text>
+<text x="1576" y="2007" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22" font-weight="400" fill="#4B5D74">标题、字幕样式、版式、分集</text>
+<text x="110" y="2100" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="400" fill="#17263D">两条路线：原创文案 → 快速剪辑 → 合成；参考风格／二创文案 → 剪辑 → 合成。</text>
+<text x="110" y="2146" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="400" fill="#4B5D74">结果传递：file_id 引用文件；task_id 查询进度；task_order_num 关联制作任务。</text>
+<text x="110" y="2190" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="400" fill="#4B5D74">必须等前置步骤完成；两条路线用于合成的关联编号不同，Skill 会说明如何传递。</text>
+<rect x="80" y="2292" width="56" height="52" rx="12" fill="#17263D" stroke="none" stroke-width="2"/>
+<text x="95" y="2299" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="29" font-weight="700" fill="white">04</text>
+<text x="155" y="2294" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="38" font-weight="700" fill="#17263D">约束怎样起作用？要分清“指导”与“强制检查”</text>
+<text x="155" y="2352" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="27" font-weight="400" fill="#4B5D74">约束制作过程可以减少操作错误，但不能单靠规则保证视频一定好看。</text>
+<rect x="80" y="2406" width="640" height="282" rx="20" fill="#EEE8F7" stroke="none" stroke-width="2"/>
+<rect x="80" y="2406" width="8" height="282" rx="3" fill="#7350AD" stroke="none" stroke-width="2"/>
+<text x="106" y="2430" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="33" font-weight="700" fill="#7350AD">Skill：指导助手遵守</text>
+<text x="106" y="2489" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="400" fill="#4B5D74">素材 ID 来自真实查询／上传</text>
+<text x="106" y="2534" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="400" fill="#4B5D74">文案、音色、标题语言一致</text>
+<text x="106" y="2579" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="400" fill="#4B5D74">按顺序执行，并确认资源选择</text>
+<text x="106" y="2624" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="400" fill="#4B5D74">失败后处理，不擅自更换路线</text>
+<rect x="760" y="2406" width="640" height="282" rx="20" fill="#E1F1F1" stroke="none" stroke-width="2"/>
+<rect x="760" y="2406" width="8" height="282" rx="3" fill="#087E83" stroke="none" stroke-width="2"/>
+<text x="786" y="2430" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="33" font-weight="700" fill="#087E83">程序：检查已实现的条件</text>
+<text x="786" y="2489" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="400" fill="#4B5D74">CLI：任务名、JSON 等检查</text>
+<text x="786" y="2534" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="400" fill="#4B5D74">服务端：鉴权、参数与额度等</text>
+<text x="786" y="2579" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="400" fill="#4B5D74">不满足条件时返回错误</text>
+<text x="786" y="2624" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="400" fill="#4B5D74">并非所有 Skill 规则都有代码校验</text>
+<rect x="1440" y="2406" width="640" height="282" rx="20" fill="#FBF0DF" stroke="none" stroke-width="2"/>
+<rect x="1440" y="2406" width="8" height="282" rx="3" fill="#A76213" stroke="none" stroke-width="2"/>
+<text x="1466" y="2430" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="33" font-weight="700" fill="#A76213">效果：还取决于实际处理</text>
+<text x="1466" y="2489" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="400" fill="#4B5D74">素材和字幕是否准确、完整</text>
+<text x="1466" y="2534" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="400" fill="#4B5D74">云端文案、配音与剪辑的质量</text>
+<text x="1466" y="2579" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="400" fill="#4B5D74">助手是否正确遵守流程</text>
+<text x="1466" y="2624" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="400" fill="#4B5D74">具体后端算法未完整公开</text>
+<rect x="80" y="2730" width="2000" height="255" rx="20" fill="#17263D" stroke="none" stroke-width="2"/>
+<text x="112" y="2752" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="37" font-weight="700" fill="white">05   最后得到什么？</text>
+<text x="112" y="2814" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="38" font-weight="700" fill="white">解说稿  ＋  原片画面  ＋  配音／字幕／BGM  →  成品 MP4 下载链接</text>
+<text x="112" y="2874" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="29" font-weight="400" fill="#D9E5F4">可选：视觉模板、横竖屏布局与分集；独立能力还包括声音克隆和文字转语音。</text>
+<text x="112" y="2924" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="28" font-weight="400" fill="#D9E5F4">最准确的理解：这个库提供从输入到成品的操作方法与规则，云端服务提供实际制作能力。</text>
+<text x="80" y="3026" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#4B5D74">本研究原创说明图 · 2026-09-17 · Skill 4b17c6f / CLI 2d8bb14 · 依据公开文档与源码整理</text>
+<text x="80" y="3070" dominant-baseline="text-before-edge" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="400" fill="#4B5D74">未调用云端生成：图中展示逻辑流程，非运行截图；成片质量、耗时和费用尚待实测。</text>
+</svg>

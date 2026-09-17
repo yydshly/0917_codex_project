@@ -16,6 +16,7 @@
 | 003 | [Agency Orchestrator](projects/003-agency-orchestrator/README.md) | 面向具体场景选择角色、拆分任务并按依赖编排执行，支持结果传递、运行留档与局部返工；适用于内容策划、产品方案和研究评审。对我们的价值是复用流程、追溯结果与减少重复执行；质量增益和角色冗余仍需后续用真实产品任务对照验证。 | 研究中 | <a href="https://github.com/jnMetaCode/agency-orchestrator">jnMetaCode/agency-orchestrator</a> | <a href="https://yydshly.github.io/0917_codex_project/apps/003-agency-orchestrator/">访问演示</a> |
 | 004 | [Ponytail](projects/004-ponytail/README.md) | 指导 AI 开发前先理解需求、优先复用已有代码与平台能力，以必要的新增代码完成需求，并提供改动审查、全库精简建议和已标记技术债汇总。核心是 Skill 工程规则，经插件与 Hooks、静态规则文件或 MCP 进入模型上下文，再由宿主 AI 读取项目、选择方案、修改和验证；属于提示约束，实际收益待对照验证。 | 研究中 | <a href="https://github.com/DietrichGebert/ponytail">DietrichGebert/ponytail</a> | <a href="https://yydshly.github.io/0917_codex_project/apps/004-ponytail/">访问演示</a> |
 | 005 | [Impeccable](projects/005-impeccable/README.md) | 面向前端界面优化：Skill 提供通用设计约束，用户明确风格和特殊要求，大模型据此细化方案并实现，检测器辅助检查。对我可作为网页改进的方法与验收参考；具体能力、适用场景和实际增益仍需后续逐项梳理与验证。 | 研究中 | <a href="https://github.com/pbakaus/impeccable">pbakaus/impeccable</a> | <a href="https://yydshly.github.io/0917_codex_project/apps/005-impeccable/">访问演示</a> |
+| 006 | [Narrator AI CLI Skill](projects/006-narrator-ai-cli-skill/README.md) | 影视解说制作 Skill，由 Codex 等 AI 助手理解需求并按规则组织流程；配套 CLI 上传素材、向服务端下发指令并查询结果，服务端执行文案、配音、剪辑与视频合成。总览图说明角色分工、素材处理和约束边界，成片效果待实测。 | 研究中 | <a href="https://github.com/NarratorAI-Studio/narrator-ai-cli-skill">NarratorAI-Studio/narrator-ai-cli-skill</a> | — |
 <!-- PROJECT_INDEX:END -->
 
 ## 项目预览
@@ -50,6 +51,12 @@
 <a href="projects/005-impeccable/README.md"><img src="projects/005-impeccable/assets/capability-summary.png" alt="Impeccable 单张引导图：前端优化能力、Skill 通用约束、用户目标与风格、大模型定制实现、检测验收、对个人研究的意义，以及后续待验证能力。" width="640"></a>
 
 面向前端界面优化：Skill 提供通用设计约束，用户明确风格和特殊要求，大模型据此细化方案并实现，检测器辅助检查。对我可作为网页改进的方法与验收参考；具体能力、适用场景和实际增益仍需后续逐项梳理与验证。
+
+### 006 · Narrator AI CLI Skill
+
+<a href="projects/006-narrator-ai-cli-skill/README.md"><img src="projects/006-narrator-ai-cli-skill/assets/capability-summary.png" alt="Narrator AI CLI Skill 全景图：操作手册、AI 助手、CLI 与服务端四个角色；平台素材和本地上传两条路径；任务提交、查询与结果传递；文案到成片的流程；Skill 指导、程序校验和效果边界。本研究原创说明图，非运行截图。" width="640"></a>
+
+影视解说制作 Skill，由 Codex 等 AI 助手理解需求并按规则组织流程；配套 CLI 上传素材、向服务端下发指令并查询结果，服务端执行文案、配音、剪辑与视频合成。总览图说明角色分工、素材处理和约束边界，成片效果待实测。
 <!-- PROJECT_GALLERY:END -->
 
 ## 新增研究项目

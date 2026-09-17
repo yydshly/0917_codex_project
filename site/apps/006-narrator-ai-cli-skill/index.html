@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="影视解说制作 Skill，由 Codex 等 AI 助手理解需求并按规则组织流程；配套 CLI 上传素材、向服务端下发指令并查询结果，服务端执行文案、配音、剪辑与视频合成。总览图说明角色分工、素材处理和约束边界，成片效果待实测。">
+  <meta name="theme-color" content="#17263d">
+  <title>Narrator AI CLI Skill · 从素材到成片的操作手册</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+<header class="site-header">
+  <a class="brand" href="../../"><span class="brand-mark">研</span>开源研究集 <span class="brand-divider">/</span><span class="project-number">006</span></a>
+  <nav aria-label="章节导航"><a href="#guide">总览图</a><a href="#roles">角色分工</a><a href="#workflow">制作流程</a><a href="#boundary">约束与边界</a></nav>
+  <a class="upstream" href="https://github.com/NarratorAI-Studio/narrator-ai-cli-skill" target="_blank" rel="noopener noreferrer">上游仓库 ↗</a>
+</header>
+<main id="main">
+  <section class="hero" aria-labelledby="title">
+    <div>
+      <p class="eyebrow">NARRATOR AI CLI SKILL <span>·</span> 能力与原理研究</p>
+      <h1 id="title">一份 Skill，<br>串起素材到成片。</h1>
+      <p class="lead">它是一份供 <strong>Codex 等 AI 助手</strong>使用的操作手册。助手按规则安排制作步骤，客户端把指令交给服务端，由服务端处理素材并返回结果。</p>
+      <div class="hero-actions"><a class="button" href="#guide">先看一张总览图 <span>↓</span></a><a class="text-link" href="#roles">再分清谁在做什么 ↗</a></div>
+      <p class="research-status"><span></span>源码与文档研究已完成 · 成片质量、耗时与费用待实测</p>
+    </div>
+    <aside class="hero-note" aria-label="一句话理解">
+      <p class="note-label">我们形成的理解</p>
+      <h2>规范制作过程，<br>调用实际能力。</h2>
+      <p>素材由平台或用户提供。<br>Skill 说明如何操作，AI 助手组织调用，云端完成制作。</p>
+      <div class="mini-chain"><span>素材 + 用户要求</span><span aria-hidden="true">↓</span><strong>助手按 Skill 安排步骤</strong><span aria-hidden="true">↓</span><span>CLI ⇄ 服务端</span><span aria-hidden="true">↓</span><strong>成品视频</strong></div>
+      <p class="note-foot">本页是研究说明，不会上传素材或创建生成任务。</p>
+    </aside>
+  </section>
+
+  <section id="guide" class="chapter guide-chapter" aria-labelledby="guide-title">
+    <div class="chapter-heading"><span class="section-number">01 / GUIDE</span><div><h2 id="guide-title">先用一张图，建立完整理解</h2><p>按图中 01 → 05 阅读：角色、素材、交互、约束，最后是成品。</p></div></div>
+    <div class="guide-layout">
+      <figure class="guide-figure"><a href="./capability-summary.png" target="_blank" rel="noopener" aria-label="打开高清总览图，可在新标签页放大查看"><img src="./capability-summary.png" width="2160" height="3140" alt="Narrator AI CLI Skill 总览：Skill 指导助手，助手调用客户端，客户端与云端交互；素材通过平台目录或预签名上传进入；文案、剪辑、合成逐步执行；区分提示约束、程序校验和成片质量边界。" fetchpriority="high"></a><figcaption>原创研究说明图 · 点击图片打开高清版本 · <a href="./capability-summary.svg" target="_blank" rel="noopener">矢量图 ↗</a> · <a href="./capability-summary-text.txt">文字版 ↗</a></figcaption></figure>
+      <aside class="guide-notes"><p class="eyebrow">READING NOTES</p><h3>带着这五个问题看图</h3><ol><li><b>谁理解需求？</b><span>Codex 等宿主 AI 助手，CLI 本身不负责理解自然语言。</span></li><li><b>Skill 做了什么？</b><span>提供操作知识、任务顺序、参数规则和异常处理说明。</span></li><li><b>素材在哪里？</b><span>可以选平台素材，也可以上传自己的视频和字幕。</span></li><li><b>谁真正制作视频？</b><span>服务端接收指令，组织模型与媒体处理程序执行任务。</span></li><li><b>规则保证效果吗？</b><span>规则帮助减少操作错误，成片质量仍需实际验证。</span></li></ol><div class="evidence-note">图中是根据公开接口整理的逻辑关系，不代表已验证的后端部署拓扑。</div></aside>
+    </div>
+  </section>
+
+  <section id="roles" class="chapter" aria-labelledby="roles-title">
+    <div class="chapter-heading"><span class="section-number">02 / ROLES</span><div><h2 id="roles-title">四个角色，各有自己的工作</h2><p>这个库提供 Skill；配套 CLI 连接服务；云端提供真正的处理能力。</p></div></div>
+    <div class="roles-grid">
+      <article class="role skill"><span class="role-index">01</span><p class="role-tag">规则与知识</p><h3>Skill</h3><p>告诉助手有哪些能力、需要什么输入、按什么顺序操作，以及怎样传递结果。</p><p class="role-bottom">核心文件：SKILL.md + references/</p></article>
+      <article class="role assistant"><span class="role-index">02</span><p class="role-tag">理解与安排</p><h3>AI 助手</h3><p>理解用户要求，读取 Skill，选择制作路线和参数，再根据任务结果继续下一步。</p><p class="role-bottom">由 Codex 等宿主工具提供</p></article>
+      <article class="role client"><span class="role-index">03</span><p class="role-tag">请求与传递</p><h3>CLI 客户端</h3><p>上传素材、发送结构化请求、查询执行进度，把服务端的状态和产物返回给助手。</p><p class="role-bottom">配套 Python 命令行客户端</p></article>
+      <article class="role server"><span class="role-index">04</span><p class="role-tag">处理与产出</p><h3>云端服务</h3><p>执行文案生成、配音、剪辑数据生成与视频合成，并提供结果文件或下载链接。</p><p class="role-bottom">内部具体算法未完整公开</p></article>
+    </div>
+    <div class="plain-insight"><span>关键区别</span><p>图中的 AI 助手来自宿主工具，<strong>这个 Skill 仓库没有自行实现这位助手</strong>。服务端是否另外使用自建 Agent，目前不能从公开客户端确认。</p></div>
+  </section>
+
+  <section id="workflow" class="chapter" aria-labelledby="workflow-title">
+    <div class="chapter-heading"><span class="section-number">03 / WORKFLOW</span><div><h2 id="workflow-title">从素材准备，到取回成品</h2><p>以“中文、幽默风格、男声、竖屏解说”为例，理解一次制作如何进行。</p></div></div>
+    <div class="workflow-row"><div class="step-title"><span>01</span><h3>准备素材与要求</h3></div><div class="step-body"><p>助手确认影片、解说语言、风格、音色和 BGM。素材有两个入口：</p><div class="material-path"><b>A · 平台素材</b><p>客户端查询素材库 → 得到视频与字幕文件 ID → 后续任务直接引用。</p></div><div class="material-path"><b>B · 自己的素材</b><p>准备视频 + SRT → 申请上传地址 → 上传至对象存储 → 回调确认 → 得到文件 ID。</p></div><p class="small-note">搜索片名返回的是影片资料，不等于获取电影文件。Skill 本身也不打包全部素材。</p></div></div>
+    <div class="workflow-row"><div class="step-title"><span>02</span><h3>提交任务并等待</h3></div><div class="step-body"><p>助手组织本步骤参数，CLI 通过 API 提交。服务端创建异步任务并返回编号；客户端查询进度，完成后把结果交给助手。</p><div class="request-loop"><span>助手安排</span><i>→</i><span>CLI 提交</span><i>→</i><span>服务端处理</span><i>→</i><span>查询状态与结果</span></div><p class="small-note">“提交成功”不等于“制作完成”。只有前置步骤完成，才按对应接口要求进入下一步。</p></div></div>
+    <div class="workflow-row"><div class="step-title"><span>03</span><h3>逐步完成制作</h3></div><div class="step-body"><ol class="production-list"><li><b>生成解说文案</b><span>使用影片资料或字幕，结合风格、语言和叙述视角生成内容。</span></li><li><b>生成剪辑数据</b><span>将文案与视频、字幕、音色和音乐关联，得到用于后续合成的数据。</span></li><li><b>合成视频</b><span>由服务端完成成片处理，并返回视频结果。</span></li><li><b>视觉包装（可选）</b><span>添加标题、字幕样式、横竖屏布局与分集设置。</span></li></ol><details><summary>展开：两条路线和任务编号有什么区别？</summary><div class="details-body"><p><strong>原创路线：</strong>fast-writing → fast-clip-data → video-composing。</p><p><strong>二创路线：</strong>可选 popular-learning → generate-writing → clip-data → video-composing。使用预设风格时可跳过风格学习。</p><p><code>file_id</code> 引用文件；<code>task_id</code> 查询任务；<code>task_order_num</code> 关联制作步骤。</p><p>合成时，原创路线使用 fast-clip-data 的关联编号；二创路线使用 generate-writing 的关联编号，并要求 clip-data 已完成。Skill 的价值之一，就是说明这些容易混淆的接口规则。</p><a href="https://github.com/NarratorAI-Studio/narrator-ai-cli-skill/blob/4b17c6f2175bd532c92db778a847f8fb6bdd3177/references/workflows.md" target="_blank" rel="noopener noreferrer">核对上游工作流文档 ↗</a></div></details></div></div>
+    <div class="workflow-row"><div class="step-title"><span>04</span><h3>取得结果</h3></div><div class="step-body"><p>最终效果是将原片画面与解说、配音、字幕和 BGM 组合成视频，助手取得并交付 MP4 下载链接。</p><p class="small-note">平台另有声音克隆、文字转语音等独立任务；实际使用需要有效账户、API Key 与相应积分。</p></div></div>
+  </section>
+
+  <section id="boundary" class="chapter" aria-labelledby="boundary-title">
+    <div class="chapter-heading"><span class="section-number">04 / BOUNDARIES</span><div><h2 id="boundary-title">规范的是过程，效果需要验证</h2><p>Skill 的文字规则与程序的强制检查，是两个不同层次。</p></div></div>
+    <div class="boundary-grid"><article><p class="eyebrow">SKILL 指导</p><h3>助手需要遵守的规则</h3><ul><li>素材 ID 来自真实查询或上传。</li><li>文案、音色和标题的语言一致。</li><li>确认资源，按前置依赖执行。</li><li>失败后按规则处理，不擅自换路线。</li></ul><p>这些主要通过文档进入助手上下文，依赖助手正确执行。</p></article><article><p class="eyebrow">程序校验</p><h3>代码已经实现的检查</h3><ul><li>客户端检查任务名称与 JSON 等。</li><li>服务端处理鉴权和参数检查。</li><li>额度不足或请求异常时返回错误。</li><li>并非所有 Skill 规则都有强制校验。</li></ul><p>服务端检查依据公开接口和错误码说明；内部实现未完整公开。</p></article><article><p class="eyebrow">效果验证</p><h3>还需要真实素材验证</h3><ul><li>文案是否准确，画面是否匹配。</li><li>配音、字幕与原声是否协调。</li><li>标题语言、裁切和分集是否合适。</li><li>真实耗时、费用和失败恢复表现。</li></ul><p>本研究尚未调用云端生成，不将概念流程当作已完成的样片。</p></article></div>
+    <details class="agent-question"><summary>服务端只是程序，还是自己实现了 Agent？</summary><div class="details-body"><p>能确认的是：服务端提供具体的处理接口，处理过程可以包含调用 AI 模型、语音服务和媒体程序。<strong>使用模型不等于采用自主决策的 Agent。</strong></p><p>程序按固定步骤调用模型，也能完成文案、配音与合成；如果内部由模型自主选择工具和下一步，才更接近这里讨论的 Agent。两个公开仓库不足以确认服务端采用了哪一种组织方式。</p></div></details>
+  </section>
+
+  <section id="sources" class="chapter sources" aria-labelledby="sources-title"><div class="chapter-heading"><span class="section-number">05 / EVIDENCE</span><div><h2 id="sources-title">结论能追溯，未知保留边界</h2><p>研究基准：2026-09-17。固定版本链接避免上游更新后证据错位。</p></div></div><div class="source-grid"><div><h3>Skill 与制作流程</h3><a href="https://github.com/NarratorAI-Studio/narrator-ai-cli-skill/blob/4b17c6f2175bd532c92db778a847f8fb6bdd3177/SKILL.md" target="_blank" rel="noopener noreferrer">Skill 定义与规则 ↗</a><a href="https://github.com/NarratorAI-Studio/narrator-ai-cli-skill/blob/4b17c6f2175bd532c92db778a847f8fb6bdd3177/references/workflows.md" target="_blank" rel="noopener noreferrer">输入输出与两条制作路线 ↗</a><a href="https://github.com/NarratorAI-Studio/narrator-ai-cli-skill/blob/4b17c6f2175bd532c92db778a847f8fb6bdd3177/references/magic-video.md" target="_blank" rel="noopener noreferrer">视觉模板与语言要求 ↗</a><p>Skill 1.0.5 · commit 4b17c6f</p></div><div><h3>客户端与服务边界</h3><a href="https://github.com/NarratorAI-Studio/narrator-ai-cli/blob/2d8bb1463058fb36f267f205994dca38b32f037d/src/narrator_ai/client.py" target="_blank" rel="noopener noreferrer">HTTP 客户端与鉴权 ↗</a><a href="https://github.com/NarratorAI-Studio/narrator-ai-cli/blob/2d8bb1463058fb36f267f205994dca38b32f037d/src/narrator_ai/commands/file.py" target="_blank" rel="noopener noreferrer">素材上传实现 ↗</a><a href="https://github.com/NarratorAI-Studio/narrator-ai-cli/blob/2d8bb1463058fb36f267f205994dca38b32f037d/src/narrator_ai/commands/task.py" target="_blank" rel="noopener noreferrer">任务提交与查询实现 ↗</a><p>CLI 声明版本 1.0.0 · commit 2d8bb14</p></div><div><h3>研究记录</h3><a href="./capability-summary-text.txt">引导图完整文字版 ↗</a><a href="./research-notes.txt">源码分析与后续实验计划 ↗</a><a href="./sources.txt">完整来源与证据等级 ↗</a><p>两个上游仓库均为 MIT；图与说明为本研究整理。</p></div></div></section>
+  <div class="closing"><p>这个库提供从输入到成品的操作方法与规则。</p><strong>助手驱动流程，客户端连接服务，服务端执行制作。</strong><a href="#title">回到开头 ↑</a></div>
+</main>
+<footer><a href="../../">← 返回研究索引</a><span>006 · Narrator AI CLI Skill</span><a href="https://github.com/NarratorAI-Studio/narrator-ai-cli-skill" target="_blank" rel="noopener noreferrer">查看上游仓库 ↗</a></footer>
+</body>
+</html>

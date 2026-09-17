@@ -23,7 +23,9 @@ python scripts/build_site.py
 python -m http.server 8765 --bind 127.0.0.1 --directory site
 ```
 
-构建只需 Python 3.10+ 标准库，使用保存的版本清单，不依赖网络或上游源码副本。各子项目独立选用技术栈；目前总构建入口已登记 001–005 的构建方式，后续按项目需要添加。
+构建只需 Python 3.10+ 标准库，使用保存的版本清单，不依赖网络或上游源码副本。各子项目独立选用技术栈；目前总构建入口已登记 001–006 的构建方式，后续按项目需要添加。
+
+006 Narrator AI CLI Skill 的源码位于 `projects/006-narrator-ai-cli-skill/web/`，发布目录为 `site/apps/006-narrator-ai-cli-skill/`。用单张总览图引导理解 Skill、Codex 等宿主助手、CLI 与云端服务的分工；详细展示素材上传、异步任务、制作流程与约束边界。页面为纯静态说明，不调用模型、不接收上传、不创建生成任务。公开产物包含研究正文、PNG / SVG 总览图、引导图文字版及明确选入的源码研究与来源记录；未发布凭据或上游检出。维护方式见[网页说明](../projects/006-narrator-ai-cli-skill/web/README.md)。
 
 005 Impeccable 的静态产物位于 `site/apps/005-impeccable/`，源码位于 `projects/005-impeccable/web/`。以单张引导图说明前端优化能力、Skill 通用约束、用户与模型的定制分工及个人使用价值，另有教学看板、四种交互场景和实测记录。已部署：[在线研究页](https://yydshly.github.io/0917_codex_project/apps/005-impeccable/) · [单张引导图](https://yydshly.github.io/0917_codex_project/apps/005-impeccable/#guide)；首次发布 [工作流 35209570002](https://github.com/yydshly/0917_codex_project/actions/runs/35209570002)。已核对 38 个线上文件、桌面/手机布局、图像加载、空结果恢复和中文文本编码，`demo` 已登记。具体能力与实际收益仍需后续逐项研究；网页不执行 AI、检测器或 Live，原始规则输出附上游许可与 NOTICE。复现见[维护说明](../projects/005-impeccable/web/README.md)。
 
