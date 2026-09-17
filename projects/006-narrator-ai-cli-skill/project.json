@@ -5,7 +5,7 @@
   "summary": "影视解说制作 Skill，由 Codex 等 AI 助手理解需求并按规则组织流程；配套 CLI 上传素材、向服务端下发指令并查询结果，服务端执行文案、配音、剪辑与视频合成。总览图说明角色分工、素材处理和约束边界，成片效果待实测。",
   "repo": "https://github.com/NarratorAI-Studio/narrator-ai-cli-skill",
   "status": "研究中",
-  "demo": "",
+  "demo": "https://yydshly.github.io/0917_codex_project/apps/006-narrator-ai-cli-skill/",
   "cover": "assets/capability-summary.png",
   "cover_alt": "Narrator AI CLI Skill 全景图：操作手册、AI 助手、CLI 与服务端四个角色；平台素材和本地上传两条路径；任务提交、查询与结果传递；文案到成片的流程；Skill 指导、程序校验和效果边界。本研究原创说明图，非运行截图。"
 }

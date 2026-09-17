@@ -15,6 +15,6 @@ python -m http.server 8766 --bind 127.0.0.1 --directory site
 
 预览入口：`http://127.0.0.1:8766/apps/006-narrator-ai-cli-skill/`。所有资源与研究索引链接均使用相对路径，兼容 GitHub Pages 的仓库前缀。交互使用原生锚点与 details，关闭 JavaScript 也能完整阅读。
 
-部署沿用仓库 `.github/workflows/pages.yml`，不是部署上游视频服务。发布后核对页面、图片与文字材料，确认可访问后再登记 project.json 的 demo。
+部署沿用仓库 `.github/workflows/pages.yml`，不是部署上游视频服务。已部署：[在线研究页](https://yydshly.github.io/0917_codex_project/apps/006-narrator-ai-cli-skill/) · [总览图](https://yydshly.github.io/0917_codex_project/apps/006-narrator-ai-cli-skill/#guide)。首次发布 [工作流 35213733990](https://github.com/yydshly/0917_codex_project/actions/runs/35213733990) 成功，页面、图像和文字材料已核对，project.json 的 demo 已登记。
 
 验证脚本为 `check_browser.cjs`，需要在 Node 环境中提供 Playwright。默认检查本地预览；通过 `RESEARCH_BASE` 可指定线上完整目录 URL。检查 320、390、768、1280 像素宽度、图片加载、锚点、键盘展开收起和全部公开文件内容一致性，并把结果保存到 `../experiments/`。本地模式额外生成桌面与手机完整截图。

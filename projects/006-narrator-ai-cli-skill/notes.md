@@ -145,3 +145,9 @@
 实际验证：标准库构建成功；Chromium 在 320、390、768、1280 像素宽度下无横向溢出，图像正常加载，章节锚点与键盘展开收起有效，8 个公开文件与构建结果一致。本地检查共 13 项，通过；完整记录见 `experiments/browser-checks.json`。桌面与手机截图已保存到 assets。
 
 网页不执行上游制作能力，网页可访问与本地浏览器检查不能证明云端成片效果。发布继续沿用当前仓库 GitHub Pages。
+
+### 首次发布与线上验证
+
+首次发布对应 commit `dc80364f358901a7ec8ebe46846578dfcc31fe5e`，GitHub Pages [工作流 35213733990](https://github.com/yydshly/0917_codex_project/actions/runs/35213733990) 成功。线上地址为 [006 研究页](https://yydshly.github.io/0917_codex_project/apps/006-narrator-ai-cli-skill/)。
+
+线上检查共 13 项通过：四种视口无溢出且图片正常、原生键盘交互与锚点正常、8 个公开文件内容与本地构建一致。记录保存在 `experiments/deployment.json`。验证后将正式地址登记到项目元数据并同步首页。研究网页已发布，不表示上游生成能力已实测。

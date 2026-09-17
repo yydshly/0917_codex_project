@@ -21,6 +21,7 @@
 | 上游仓库 | [narrator-ai-cli-skill](https://github.com/NarratorAI-Studio/narrator-ai-cli-skill) |
 | 配套实现 | [narrator-ai-cli](https://github.com/NarratorAI-Studio/narrator-ai-cli) |
 | 研究日期 | 2026-09-17 |
+| 在线研究页 | [阅读网页](https://yydshly.github.io/0917_codex_project/apps/006-narrator-ai-cli-skill/) · [从总览图开始](https://yydshly.github.io/0917_codex_project/apps/006-narrator-ai-cli-skill/#guide) |
 | 研究状态 | 文档与源码静态分析已完成；未调用生成接口，成片质量、耗时和费用待实测 |
 | 详细材料 | [源码与验证笔记](notes.md) · [固定版本与证据来源](sources.md) · [项目元数据](project.json) |
 
@@ -177,7 +178,7 @@
 3. 同素材比较二创路线，判断额外步骤是否带来可见收益。
 4. 测试外语与视觉模板的语言一致性、裁切和分集效果。
 
-当前没有生成样片、运行截图或线上演示，`demo` 字段保持为空；项目封面使用上述原创研究说明图。准备步骤和验收表见[研究笔记](notes.md)。
+静态研究网页已部署，`demo` 已登记；项目封面使用上述原创研究说明图，assets 中另有网页实拍。网页不调用上游生成接口，目前仍没有上游制作样片。准备步骤和验收表见[研究笔记](notes.md)。
 
 ## 来源与许可证
 
