@@ -1,0 +1,49 @@
+{
+  "date": "2026-09-17",
+  "scope": "原创静态教学页；不代表上游审计能力测试",
+  "upstream_commit": "c1c8a8c1471069fb0e188eeaff69b8e8db6564a8",
+  "checks": {
+    "site_build": "passed",
+    "project_index_check": "passed, 11 projects",
+    "javascript_syntax": "passed, node --check",
+    "local_links": "passed, 25 references across page and Markdown",
+    "html_anchors": "passed",
+    "svg_xml": "passed",
+    "source_placeholders": "resolved",
+    "six_phase_buttons": "passed, all six titles changed as expected",
+    "profiles": "passed, standard / quick / deep; quick final review shows merged verifier",
+    "domain_filters": "passed, 19 total / 9 foundation / 10 specialist",
+    "search": "passed, MCP returned one specialist; unmatched term showed empty state",
+    "evidence_cases": "passed, confirmed / needs_validation / rejected explanations switched",
+    "keyboard": "passed, Enter activated reconnaissance phase",
+    "desktop_layout": "visually inspected at 1280 px; document width 1265 px, no horizontal overflow",
+    "mobile_layout": "visually inspected at 390 px; document width 375 px, no horizontal overflow",
+    "browser_console": "no warning or error entries returned during interaction checks"
+  },
+  "screenshots": [
+    "../assets/page-desktop.png",
+    "../assets/page-mobile.png"
+  ],
+  "not_performed": [
+    "Skill installation",
+    "upstream script execution",
+    "real codebase audit",
+    "detection or performance benchmark",
+    "public deployment"
+  ],
+  "discussion_revision": {
+    "date": "2026-09-17",
+    "scope": "理解、约束机制、完整总览图和历史项目比较",
+    "static_links": "passed, 40 references",
+    "anchors_and_unique_ids": "passed",
+    "unresolved_templates": false,
+    "constraint_rows": 7,
+    "comparison_rows": 6,
+    "mobile_layout": "390px viewport, 375px document; tables scroll inside 333px containers with 620px content",
+    "desktop_layout": "visually inspected, constraint table and guide displayed",
+    "image": "1600x2350 SVG rendered with Sharp to PNG; viewed entire raster, no text overlap or clipping",
+    "console_errors": [],
+    "upstream_execution": false,
+    "public_deployment": false
+  }
+}

@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2350" viewBox="0 0 1600 2350" role="img" aria-labelledby="title desc">
+<title id="title">Security Audit Skill：能力、约束、效果与历史项目对比</title>
+<desc id="desc">从六类安全角度审查代码，沿入口到影响追踪；七类约束分别由模型指令、程序校验与宿主隔离落实；六阶段输出三种结论和覆盖记录，对比 Defending Code。原创研究说明图，非实测结果。</desc>
+<style>text{font-family:Microsoft YaHei,PingFang SC,Arial,sans-serif}a text{text-decoration:underline}</style>
+<rect width="1600" height="2350" fill="#f5f5ee"/>
+<text x="64" y="58" font-size="18" fill="#5d6c65" font-weight="600">011 / CLOUDFLARE / SECURITY AUDIT SKILL</text>
+<rect x="1180" y="28" width="356" height="43" rx="8" fill="#e6edda" stroke="#d6ded2"/>
+<text x="1197" y="57" font-size="20" fill="#172f2b" font-weight="400">原创研究图 · 非真实审计结果</text>
+<text x="64" y="122" font-size="44" fill="#172f2b" font-weight="700">从业务与技术边界，检查代码的安全质量</text>
+<text x="64" y="166" font-size="22" fill="#5d6c65" font-weight="400">检查谁能做什么、输入如何到达资源、是否产生不该发生的效果；Skill 指导，宿主 AI 调查与验证。</text>
+<text x="64" y="199" font-size="22" fill="#5d6c65" font-weight="400">“质量把控”限定在安全维度：不等于全部功能、性能、可维护性评估，也不替项目实现权限系统。</text>
+<text x="64" y="259" font-size="18" fill="#62794b" font-weight="700">01</text>
+<text x="112" y="259" font-size="30" fill="#172f2b" font-weight="700">从哪些角度审计</text>
+<text x="112" y="295" font-size="20" fill="#5d6c65" font-weight="400">根据项目的真实入口和信任边界选择；9 组基础方法与 10 个专项领域提供调查提示。</text>
+<rect x="64" y="319" width="472" height="128" rx="14" fill="#fffef9" stroke="#d6ded2"/>
+<text x="86" y="357" font-size="25" fill="#172f2b" font-weight="650">业务逻辑与生命周期</text>
+<text x="86" y="394" font-size="20" fill="#5d6c65" font-weight="400">状态与顺序、并发与重试、撤销与恢复</text>
+<text x="86" y="423" font-size="20" fill="#5d6c65" font-weight="400">检查重复退款、重复核销等安全后果</text>
+<rect x="564" y="319" width="472" height="128" rx="14" fill="#fffef9" stroke="#d6ded2"/>
+<text x="586" y="357" font-size="25" fill="#172f2b" font-weight="650">身份、权限与隔离</text>
+<text x="586" y="394" font-size="20" fill="#5d6c65" font-weight="400">认证、角色、对象所有权、租户范围</text>
+<text x="586" y="423" font-size="20" fill="#5d6c65" font-weight="400">检查越权操作与跨用户、跨租户访问</text>
+<rect x="1064" y="319" width="472" height="128" rx="14" fill="#fffef9" stroke="#d6ded2"/>
+<text x="1086" y="357" font-size="25" fill="#172f2b" font-weight="650">输入、接口与敏感操作</text>
+<text x="1086" y="394" font-size="20" fill="#5d6c65" font-weight="400">HTTP、文件、CLI、消息与工具参数</text>
+<text x="1086" y="423" font-size="20" fill="#5d6c65" font-weight="400">检查范围、类型、转换及注入路径</text>
+<rect x="64" y="464" width="472" height="128" rx="14" fill="#fffef9" stroke="#d6ded2"/>
+<text x="86" y="502" font-size="25" fill="#172f2b" font-weight="650">数据与秘密</text>
+<text x="86" y="539" font-size="20" fill="#5d6c65" font-weight="400">缓存、导出、备份、删除与密钥</text>
+<text x="86" y="568" font-size="20" fill="#5d6c65" font-weight="400">检查派生副本和后续使用是否泄露</text>
+<rect x="564" y="464" width="472" height="128" rx="14" fill="#fffef9" stroke="#d6ded2"/>
+<text x="586" y="502" font-size="25" fill="#172f2b" font-weight="650">组件、协议与平台</text>
+<text x="586" y="539" font-size="20" fill="#5d6c65" font-weight="400">浏览器、RPC、AI / MCP、本地 IPC</text>
+<text x="586" y="568" font-size="20" fill="#5d6c65" font-weight="400">检查组件的保证与下游假设是否一致</text>
+<rect x="1064" y="464" width="472" height="128" rx="14" fill="#fffef9" stroke="#d6ded2"/>
+<text x="1086" y="502" font-size="25" fill="#172f2b" font-weight="650">底层、部署与供应链</text>
+<text x="1086" y="539" font-size="20" fill="#5d6c65" font-weight="400">内存、资源上限、云配置、CI 与发布</text>
+<text x="1086" y="568" font-size="20" fill="#5d6c65" font-weight="400">检查越界、共享资源与发布权限失效</text>
+<rect x="64" y="622" width="1472" height="188" rx="14" fill="#214c40" stroke="#214c40"/>
+<text x="88" y="663" font-size="27" fill="#f7f7ef" font-weight="700">02 / 沿入口追到实际影响</text>
+<text x="88" y="711" font-size="25" fill="#d6ef79" font-weight="600">谁进入  →  能输入或操作什么  →  认证授权与转换  →  触达什么资源  →  边界失败与证据</text>
+<text x="88" y="752" font-size="20" fill="#d4dfcf" font-weight="400">同时核查：必经防护、批量与旧版、异常、并发、重试、迁移、撤销和恢复路径。</text>
+<text x="88" y="782" font-size="20" fill="#d4dfcf" font-weight="400">假设订单案例：A 查询 B 的订单 → 核对中间件、查询与数据库策略 → 本地虚拟账号验证；未知策略保留待验证。</text>
+<text x="64" y="867" font-size="18" fill="#62794b" font-weight="700">03</text>
+<text x="112" y="867" font-size="30" fill="#172f2b" font-weight="700">Skill 从哪些角度约束 AI</text>
+<text x="112" y="903" font-size="20" fill="#5d6c65" font-weight="400">约束审计行为与证据标准；不能仅凭发现者自报完成，就认定漏洞成立。</text>
+<rect x="64" y="924" width="1472" height="382" rx="14" fill="#fffef9" stroke="#d6ded2"/>
+<rect x="76" y="931" width="1448" height="46" rx="5" fill="#eef1e7" stroke="#eef1e7"/>
+<text x="92" y="960" font-size="22" fill="#172f2b" font-weight="700">目标</text>
+<text x="245" y="960" font-size="21" fill="#172f2b" font-weight="400">说明主体、输入或动作、边界、资源与具体结果</text>
+<text x="1075" y="960" font-size="20" fill="#526642" font-weight="400">以安全不变量提出候选</text>
+<text x="92" y="1010" font-size="22" fill="#172f2b" font-weight="700">路径</text>
+<text x="245" y="1010" font-size="21" fill="#172f2b" font-weight="400">从入口追到效果，核对最强防护及其他可达路径</text>
+<text x="1075" y="1010" font-size="20" fill="#526642" font-weight="400">调查者阅读，验证者重读</text>
+<rect x="76" y="1031" width="1448" height="46" rx="5" fill="#eef1e7" stroke="#eef1e7"/>
+<text x="92" y="1060" font-size="22" fill="#172f2b" font-weight="700">覆盖</text>
+<text x="245" y="1060" font-size="21" fill="#172f2b" font-weight="400">保存检查单元、负责人、源码路径、检查与遗漏</text>
+<text x="1075" y="1060" font-size="20" fill="#526642" font-weight="400">覆盖记录 + 独立覆盖检查</text>
+<text x="92" y="1110" font-size="22" fill="#172f2b" font-weight="700">证据</text>
+<text x="245" y="1110" font-size="21" fill="#172f2b" font-weight="400">确认需完整路径与本地观察；未知关键事实单列</text>
+<text x="1075" y="1110" font-size="20" fill="#526642" font-weight="400">独立验证；待验证无严重性</text>
+<rect x="76" y="1131" width="1448" height="46" rx="5" fill="#eef1e7" stroke="#eef1e7"/>
+<text x="92" y="1160" font-size="22" fill="#172f2b" font-weight="700">独立性</text>
+<text x="245" y="1160" font-size="21" fill="#172f2b" font-weight="400">发现者不兼任独立验证者；重大改写再次复核</text>
+<text x="1075" y="1160" font-size="20" fill="#526642" font-weight="400">主代理安排新的子代理</text>
+<text x="92" y="1210" font-size="22" fill="#172f2b" font-weight="700">执行</text>
+<text x="245" y="1210" font-size="21" fill="#172f2b" font-weight="400">断外网、白名单环境、只读源码、隔离写入与限额</text>
+<text x="1075" y="1210" font-size="20" fill="#526642" font-weight="400">宿主沙箱强制实施，缺条件不执行</text>
+<rect x="76" y="1231" width="1448" height="46" rx="5" fill="#eef1e7" stroke="#eef1e7"/>
+<text x="92" y="1260" font-size="22" fill="#172f2b" font-weight="700">输出</text>
+<text x="245" y="1260" font-size="21" fill="#172f2b" font-weight="400">三类结论字段分开，报告不得超出已验证事实</text>
+<text x="1075" y="1260" font-size="20" fill="#526642" font-weight="400">Schema 与脚本检查记录规则</text>
+<rect x="64" y="1326" width="472" height="122" rx="14" fill="#e7eddb" stroke="#d6ded2"/>
+<text x="86" y="1364" font-size="24" fill="#172f2b" font-weight="650">指令约束 / 模型遵守</text>
+<text x="86" y="1397" font-size="20" fill="#5d6c65" font-weight="400">Markdown → 主代理 → 子代理提示</text>
+<text x="86" y="1425" font-size="20" fill="#5d6c65" font-weight="400">规定如何调查；仍可能遗漏或误解</text>
+<rect x="564" y="1326" width="472" height="122" rx="14" fill="#e7eddb" stroke="#d6ded2"/>
+<text x="586" y="1364" font-size="24" fill="#172f2b" font-weight="650">程序校验 / 明确规则</text>
+<text x="586" y="1397" font-size="20" fill="#5d6c65" font-weight="400">Node.js 检查字段、状态与一致性</text>
+<text x="586" y="1425" font-size="20" fill="#5d6c65" font-weight="400">记录合规 ≠ 漏洞事实得到证明</text>
+<rect x="1064" y="1326" width="472" height="122" rx="14" fill="#e7eddb" stroke="#d6ded2"/>
+<text x="1086" y="1364" font-size="24" fill="#172f2b" font-weight="650">环境隔离 / 操作系统</text>
+<text x="1086" y="1397" font-size="20" fill="#5d6c65" font-weight="400">宿主提供网络、文件与资源隔离</text>
+<text x="1086" y="1425" font-size="20" fill="#5d6c65" font-weight="400">本库没有附带完整的运行平台</text>
+<text x="64" y="1504" font-size="18" fill="#62794b" font-weight="700">04</text>
+<text x="112" y="1504" font-size="30" fill="#172f2b" font-weight="700">如何推进，最终得到什么</text>
+<text x="112" y="1540" font-size="20" fill="#5d6c65" font-weight="400">预期价值：减少无证据猜测与重复调查，让结论、覆盖缺口和后续行动可追踪。</text>
+<text x="80" y="1589" font-size="29" fill="#172f2b" font-weight="650">侦察  →  调查  →  候选验证  →  结构化记录  →  最终复核  →  报告</text>
+<rect x="64" y="1615" width="472" height="118" rx="14" fill="#e1edc9" stroke="#e1edc9"/>
+<text x="84" y="1653" font-size="24" fill="#172f2b" font-weight="650">confirmed / 已确认</text>
+<text x="84" y="1684" font-size="20" fill="#5d6c65" font-weight="400">路径、条件、观察结果与已证明影响</text>
+<text x="84" y="1712" font-size="20" fill="#5d6c65" font-weight="400">可赋严重性；提出最小修复建议</text>
+<rect x="564" y="1615" width="472" height="118" rx="14" fill="#eee9d6" stroke="#eee9d6"/>
+<text x="584" y="1653" font-size="24" fill="#172f2b" font-weight="650">needs_validation / 待验证</text>
+<text x="584" y="1684" font-size="20" fill="#5d6c65" font-weight="400">源码支持疑点，明确缺失的关键事实</text>
+<text x="584" y="1712" font-size="20" fill="#5d6c65" font-weight="400">提供验证计划；不赋严重性</text>
+<rect x="1064" y="1615" width="472" height="118" rx="14" fill="#e3e7e0" stroke="#e3e7e0"/>
+<text x="1084" y="1653" font-size="24" fill="#172f2b" font-weight="650">rejected / 已排除</text>
+<text x="1084" y="1684" font-size="20" fill="#5d6c65" font-weight="400">有效控制或反证推翻候选问题</text>
+<text x="1084" y="1712" font-size="20" fill="#5d6c65" font-weight="400">记录理由，避免重复错误主张</text>
+<text x="80" y="1771" font-size="21" fill="#172f2b" font-weight="400">共同产物：findings.json + 覆盖记录 + 汇总 / 详细发现 / 待验证报告。披露受阻、延期和范围外事项。</text>
+<text x="80" y="1806" font-size="20" fill="#5d6c65" font-weight="400">quick 合并验证与最终复核，明确部分覆盖；本次未执行真实审计，未测检出率、误报率或成本。</text>
+<text x="64" y="1860" font-size="18" fill="#62794b" font-weight="700">05</text>
+<text x="112" y="1860" font-size="30" fill="#172f2b" font-weight="700">与 9 月 15 日研究的 Defending Code 对比</text>
+<text x="112" y="1896" font-size="20" fill="#5d6c65" font-weight="400">共同方法：读代码 → 提出假设 → 构造验证输入 → 独立复核 → 保留证据。</text>
+<rect x="64" y="1910" width="1472" height="259" rx="14" fill="#fffef9" stroke="#d6ded2"/>
+<text x="86" y="1947" font-size="21" fill="#5d6c65" font-weight="600">维度</text>
+<text x="282" y="1947" font-size="25" fill="#172f2b" font-weight="700">Security Audit Skill / 本次</text>
+<text x="933" y="1947" font-size="25" fill="#172f2b" font-weight="700">Defending Code / 先前</text>
+<path d="M80 1972H1520" stroke="#d6ded2"/>
+<text x="86" y="2000" font-size="20" fill="#172f2b" font-weight="600">形态与范围</text>
+<text x="282" y="2000" font-size="20" fill="#172f2b" font-weight="400">审计 Skill + 校验脚本；跨领域安全边界</text>
+<text x="933" y="2000" font-size="19" fill="#172f2b" font-weight="400">可执行框架 + Skill；默认 C/C++ 内存漏洞</text>
+<path d="M80 2018H1520" stroke="#d6ded2"/>
+<text x="86" y="2046" font-size="20" fill="#172f2b" font-weight="600">执行与环境</text>
+<text x="282" y="2046" font-size="20" fill="#172f2b" font-weight="400">宿主提供模型、子代理、工具和隔离</text>
+<text x="933" y="2046" font-size="19" fill="#172f2b" font-weight="400">Claude Code + Python + Docker / gVisor / ASAN</text>
+<path d="M80 2064H1520" stroke="#d6ded2"/>
+<text x="86" y="2092" font-size="20" fill="#172f2b" font-weight="600">工程重点</text>
+<text x="282" y="2092" font-size="20" fill="#172f2b" font-weight="400">覆盖追踪、证据门槛、最终记录与报告</text>
+<text x="933" y="2092" font-size="19" fill="#172f2b" font-weight="400">构造输入、容器复现、恢复与补丁验收</text>
+<path d="M80 2110H1520" stroke="#d6ded2"/>
+<text x="86" y="2138" font-size="20" fill="#172f2b" font-weight="600">修复与效果</text>
+<text x="282" y="2138" font-size="20" fill="#172f2b" font-weight="400">给修复建议，不改源码；检出效果未实测</text>
+<text x="933" y="2138" font-size="19" fill="#172f2b" font-weight="400">另有 Patch 命令生成并验证候选补丁</text>
+<text x="64" y="2210" font-size="21" fill="#172f2b" font-weight="400">其他研究：Ponytail 看实现必要性与精简；Impeccable 看界面体验；gstack 覆盖研发流程与质量检查。</text>
+<text x="64" y="2246" font-size="21" fill="#5d6c65" font-weight="400">两库均不保证发现全部问题；未做同目标、同模型的效果对照，不能据此判断谁更准确。</text>
+<path d="M64 2272H1536" stroke="#d6ded2"/>
+<text x="64" y="2302" font-size="17" fill="#5d6c65" font-weight="400">固定来源：Cloudflare c1c8a8c（MIT） / Anthropic d3bea6b（Apache-2.0）；研究整理 2026-09-17。</text>
+<text x="64" y="2328" font-size="17" fill="#5d6c65" font-weight="400">依据 SKILL、RECONNAISSANCE、HUNTING、VALIDATION 与 Defending Code 前次源码研究；完整来源见 sources.md。</text>
+</svg>

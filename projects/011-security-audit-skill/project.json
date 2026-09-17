@@ -1,0 +1,11 @@
+{
+  "id": 11,
+  "slug": "security-audit-skill",
+  "name": "Security Audit Skill",
+  "summary": "指导 AI 从业务逻辑、身份权限、输入接口、数据与底层环境审查代码的安全质量；通过目标范围、路径追踪、覆盖记录、证据门槛、独立复核、执行边界和输出规范约束审计，形成可追溯结论与修复建议。附完整理解图及 Defending Code 对比，真实检出效果待验证。",
+  "repo": "https://github.com/cloudflare/security-audit-skill",
+  "status": "研究中",
+  "demo": "",
+  "cover": "assets/capability-summary.png",
+  "cover_alt": "Security Audit Skill 完整理解图：安全检查角度、入口到影响的路径、七类约束和三种落实机制、六阶段及产出，并与 Defending Code 和既有研究对比；原创说明图，非实测结果。"
+}
