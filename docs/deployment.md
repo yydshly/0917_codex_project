@@ -23,7 +23,9 @@ python scripts/build_site.py
 python -m http.server 8765 --bind 127.0.0.1 --directory site
 ```
 
-构建只需 Python 3.10+ 标准库，使用保存的版本清单，不依赖网络或上游源码副本。各子项目独立选用技术栈；目前总构建入口已登记 001、002 与 003 的构建方式，后续按项目需要添加。
+构建只需 Python 3.10+ 标准库，使用保存的版本清单，不依赖网络或上游源码副本。各子项目独立选用技术栈；目前总构建入口已登记 001、002、003 与 004 的构建方式，后续按项目需要添加。
+
+004 Ponytail 的静态产物位于 `site/apps/004-ponytail/`，源码位于 `projects/004-ponytail/web/`。页面展示库的价值、可操作的日期筛选教学场景及 Skill 的入口和决策约束。当前已完成本地构建和交互验证，尚未发布；不得将规划的 Pages 路径当作已上线地址，`demo` 暂时留空。
 
 002 中文版研究已公开部署：[在线研究页](https://yydshly.github.io/0917_codex_project/apps/002-agency-agents-zh/) · [高清引导图](https://yydshly.github.io/0917_codex_project/apps/002-agency-agents-zh/capability-summary.png)。发布路径为 `apps/002-agency-agents-zh/`，正式地址已写入项目 `demo`。首次发布记录：[工作流 35183980271](https://github.com/yydshly/0917_codex_project/actions/runs/35183980271)；线上页面、引导图与搜索交互验证通过。
 

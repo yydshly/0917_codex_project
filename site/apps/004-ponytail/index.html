@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="理解 Ponytail：让 AI 开发前先判断、先复用，再写必要的新代码。通过可操作的日期筛选案例，拆解 Skill 入口、决策顺序和约束机制。">
+  <title>Ponytail · 先复用，再动手</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./architecture.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">跳到正文</a>
+<header class="site-header">
+  <a class="brand" href="../../"><span class="brand-symbol" aria-hidden="true">P</span><span>开源研究集 <b>/ 004</b></span></a>
+  <nav aria-label="章节导航"><a href="#meaning">能力与意义</a><a href="#scenario">场景演示</a><a href="#skill">Skill 拆解</a><a href="./architecture.html">整体机制</a></nav>
+  <a class="upstream" href="https://github.com/DietrichGebert/ponytail" target="_blank" rel="noopener noreferrer">上游仓库 <span aria-hidden="true">↗</span></a>
+</header>
+<main id="main">
+  <section class="intro" id="meaning" aria-labelledby="intro-title">
+    <div class="intro-copy">
+      <p class="eyebrow"><span class="dot"></span> PONYTAIL / AI 开发方法研究</p>
+      <h1 id="intro-title">先看看有什么，<br>再决定写什么。</h1>
+      <p class="lead">指导 AI 在动手开发之前，先判断能不能利用已有能力，<strong>用更少的新增代码满足需求。</strong></p>
+      <p class="intro-note">核心是一套 Skill。插件负责把规则送入上下文，模型负责理解、选择和执行。</p>
+      <div class="intro-links"><a class="primary-link" href="#scenario">体验一个具体场景 <span aria-hidden="true">↗</span></a><a class="text-link" href="#skill">查看 Skill 如何起作用 <span aria-hidden="true">↓</span></a></div>
+      <p class="version">研究快照 v4.10.0 <span>·</span> 2026.09.17 <span>·</span> MIT</p>
+    </div>
+    <aside class="principle-sheet" aria-label="开发前的三个问题">
+      <div class="sheet-top"><span>开发前，先问三件事</span><span class="mono">01—03</span></div>
+      <div class="principle"><span>01</span><div><h2>有必要做吗？</h2><p>只做明确需要的，不为“也许以后”搭框架。</p></div></div>
+      <div class="principle"><span>02</span><div><h2>已经有了吗？</h2><p>先查仓库，再看标准库、平台和已安装依赖。</p></div></div>
+      <div class="principle"><span>03</span><div><h2>最少还缺什么？</h2><p>补齐真正缺少的部分，保留需求和必要检查。</p></div></div>
+      <div class="sheet-bottom"><span aria-hidden="true">↳</span> 少维护一份重复代码，也少承担一份长期成本。</div>
+    </aside>
+  </section>
+
+  <section class="value-band" aria-label="价值与边界">
+    <div><span class="small-label">它改变什么</span><p>从“马上开始造”<br>到“先判断如何复用”。</p></div>
+    <div><span class="small-label">价值落在哪里</span><p>减少重复实现、无用抽象<br>和不必要的依赖。</p></div>
+    <div><span class="small-label">需要守住什么</span><p>明确需求、安全、无障碍<br>和必要的验证。</p></div>
+  </section>
+
+  <section class="architecture-section" id="guide" aria-labelledby="guide-title">
+    <p class="section-kicker">一张图 / 作用、能力与实现原理</p><h2 id="guide-title">从接入规则，到作出开发决策。</h2>
+    <p class="section-lead">按从上到下的顺序读：先看它解决什么问题，再看四条接入路径如何汇合，接着看 AI 怎样选方案，最后用场景和约束核对理解。点击图片可放大查看。</p>
+    <figure class="overview-figure"><a href="./capability-summary.svg" target="_blank" rel="noopener" aria-label="打开可放大的 Ponytail 原理全景图"><img src="./capability-summary.png" width="2400" height="3700" loading="lazy" alt="Ponytail 原理全景图：作用与能力；Skill、插件与 Hooks、规则文件、MCP 四条并列接入路径；模型上下文与七步复用决策；日期筛选案例；程序控制和提示约束的区别。"></a><figcaption>本研究依据固定版本源码和 Hook 隔离实验绘制；日期筛选为教学案例，未做模型收益对照实验。</figcaption></figure>
+    <div class="source-actions"><a href="./capability-summary.png" download>下载高清 PNG</a><a href="./capability-summary.svg" target="_blank" rel="noopener">查看矢量 SVG ↗</a><a href="./capability-summary-text.txt">阅读图中文字</a><a href="./architecture.html">继续阅读机制详解 →</a></div>
+  </section>
+
+  <section class="chapter" id="scenario" aria-labelledby="scenario-title">
+    <div class="chapter-heading"><span class="chapter-number">01</span><div><p class="eyebrow">一个可以操作的开发场景</p><h2 id="scenario-title">给研究任务加一个日期筛选。</h2><p>需求很小：选一天，显示这一天到期的任务；清空后恢复全部任务。</p></div></div>
+    <div class="scenario-brief"><span class="small-label">需求边界</span><p>6 条本地示例任务，日期统一为 <code>YYYY-MM-DD</code>。需要日期选择、清空、结果数量和空结果提示；没有跨时区预约或复杂日历需求。</p><span class="evidence-badge">本研究实现的交互示例</span></div>
+    <div class="demo-layout">
+      <div class="decision-panel">
+        <p class="small-label">先检查项目现状</p>
+        <fieldset class="context-choice"><legend class="visually-hidden">项目是否有可复用的日期筛选组件</legend>
+          <label><input type="radio" name="context" value="native" checked><span>已有列表，但没有日期组件</span></label>
+          <label><input type="radio" name="context" value="reuse"><span>已有符合需求的 DateFilter 组件</span></label>
+        </fieldset>
+        <ol class="case-ladder" aria-label="案例决策过程">
+          <li data-rung="1"><span class="rung-index">1</span><div><strong>需要这个功能吗？</strong><p>需要，按截止日期查看任务是明确需求。</p></div><span class="rung-state">继续</span></li>
+          <li data-rung="2"><span class="rung-index">2</span><div><strong>仓库已经有了吗？</strong><p id="reuse-explanation">列表和渲染逻辑可以复用，日期控件尚缺。</p></div><span class="rung-state">继续</span></li>
+          <li data-rung="3"><span class="rung-index">3</span><div><strong>标准库能完整解决吗？</strong><p>数组过滤可复用语言内置能力，还需要输入控件。</p></div><span class="rung-state">继续</span></li>
+          <li data-rung="4" class="is-stop"><span class="rung-index">4</span><div><strong>平台原生能力够吗？</strong><p>浏览器日期输入框满足本次交互要求。</p></div><span class="rung-state">采用</span></li>
+        </ol>
+        <div class="decision-result" aria-live="polite"><span class="small-label">本次选择</span><h3 id="decision-title">原生日期输入 + 现有列表</h3><p id="decision-detail">增加一个原生日期输入框，接入现有列表过滤与渲染。这个演示无需新增第三方依赖。</p></div>
+        <p class="quiet">切换的是教学前提与对应决策。筛选演示行为保持一致；这里没有实时调用 AI。</p>
+      </div>
+      <div class="working-demo">
+        <div class="demo-top"><div><span class="small-label">实际操作</span><h3>研究任务清单</h3></div><span class="sample-label">示例数据</span></div>
+        <form class="filter-bar" id="filter-form"><div class="date-field"><label for="due-date">截止日期</label><input type="date" id="due-date" aria-describedby="date-help"></div><button class="plain-button" type="reset">清空筛选</button></form>
+        <p id="date-help" class="quiet">试试选择 2026 年 9 月 17 日，或使用下方快捷日期。</p>
+        <div class="date-shortcuts" aria-label="演示日期"><button type="button" data-date="2026-09-17">9 月 17 日</button><button type="button" data-date="2026-09-18">9 月 18 日</button><button type="button" data-date="2026-09-30">查看空结果</button></div>
+        <div class="result-header"><span>任务 / 所属项目</span><output id="result-count" for="due-date" aria-live="polite">共 6 项任务</output></div>
+        <ul class="task-list" id="task-list">
+          <li data-due="2026-09-17"><div><strong>整理角色职责边界</strong><span>001 · Agency Agents</span></div><div class="task-meta"><time datetime="2026-09-17">09 / 17</time><span class="status done">已完成</span></div></li>
+          <li data-due="2026-09-17"><div><strong>核对中文角色分类</strong><span>002 · Agency Agents 中文版</span></div><div class="task-meta"><time datetime="2026-09-17">09 / 17</time><span class="status">进行中</span></div></li>
+          <li data-due="2026-09-18"><div><strong>复盘流程返工机制</strong><span>003 · Agency Orchestrator</span></div><div class="task-meta"><time datetime="2026-09-18">09 / 18</time><span class="status">进行中</span></div></li>
+          <li data-due="2026-09-18"><div><strong>检查 Skill 的决策顺序</strong><span>004 · Ponytail</span></div><div class="task-meta"><time datetime="2026-09-18">09 / 18</time><span class="status">进行中</span></div></li>
+          <li data-due="2026-09-19"><div><strong>验证静态页面子路径</strong><span>研究集 · 网页展示</span></div><div class="task-meta"><time datetime="2026-09-19">09 / 19</time><span class="status pending">待开始</span></div></li>
+          <li data-due="2026-09-21"><div><strong>设计同需求对照实验</strong><span>004 · Ponytail</span></div><div class="task-meta"><time datetime="2026-09-21">09 / 21</time><span class="status pending">待开始</span></div></li>
+        </ul>
+        <div class="empty-state" id="empty-state" hidden><span aria-hidden="true">∅</span><h4>这一天没有到期任务</h4><p>换个日期，或清空筛选查看全部任务。</p></div>
+        <div class="demo-foot"><span class="dot"></span><span>使用浏览器原生日期控件 · 不添加日历库</span></div>
+        <noscript><p class="notice">启用 JavaScript 后可操作筛选；当前显示全部示例任务，正文分析仍可阅读。</p></noscript>
+      </div>
+    </div>
+    <div class="case-explanation">
+      <div><h3>省下的是一条不必要的实现路径。</h3><p>这个需求不必新增日历依赖、包装组件、主题配置和通用筛选框架。已有符合要求的组件时，直接接入它；没有时，原生控件已足够。</p><p><strong>减少的是重复工作，保留的是完整需求。</strong>演示仍提供了字段标签、清空操作、结果数量和空状态。</p><p class="quiet">这是根据 Skill 原则制作的可运行教学案例，不是启用 / 未启用 Ponytail 的模型对照实验，也不据此计算节省比例。</p></div>
+      <div class="code-panel"><div class="code-top"><span>本页实际筛选逻辑</span><span>JavaScript</span></div><pre><code>function applyDateFilter() {
+  const selected = dateInput.value;
+  let visible = 0;
+  for (const row of taskRows) {
+    row.hidden = Boolean(selected &amp;&amp; row.dataset.due !== selected);
+    if (!row.hidden) visible += 1;
+  }
+  count.textContent = `共 ${visible} 项任务`;
+  emptyState.hidden = visible !== 0;
+}</code></pre><p>日期是日历日期字符串，直接比较，无需先转换成跨时区时间戳。</p></div>
+    </div>
+    <details class="boundary"><summary>如果需求变复杂，还能坚持用这个方案吗？<span aria-hidden="true">＋</span></summary><div><p>如果需要跨时区预约、禁用不连续日期、复杂区间选择或指定日历交互，应重新核对原生控件是否足够。缺少明确功能时，就继续评估已有依赖或编写必要实现，不能因为“代码少”就省略需求。</p><p>这里演示的是浏览器内筛选。真实后端仍需做授权与输入校验，前端控件不能替代安全边界。</p></div></details>
+  </section>
+
+  <section class="chapter skill-chapter" id="skill" aria-labelledby="skill-title">
+    <div class="chapter-heading"><span class="chapter-number">02</span><div><p class="eyebrow">把 Skill 打开看</p><h2 id="skill-title">规则如何进入 AI，又如何影响决策？</h2><p>核心是文本规则。接入代码管理加载和模式，模型执行具体的工程判断。</p></div></div>
+    <div class="architecture-callout"><div><span class="small-label">进一步理解这些组件如何配合</span><h3>一套规则，多条接入路径。</h3><p>Skill、插件、Hooks、规则文件和 MCP 不是必须依次经过的五个步骤。查看完整机制、请求生命周期和真实 Hook 输出。</p></div><a class="primary-link" href="./architecture.html">打开整体机制解析 ↗</a></div>
+    <div class="entry-heading"><h3>入口有四种，核心规则相通。</h3><p>命令写法和自动激活能力随宿主不同而变化，以下对应固定版本源码。</p></div>
+    <div class="entry-grid">
+      <article><span class="entry-number">A / 按需调用</span><h4>Skill 入口</h4><code>skills/ponytail/SKILL.md</code><p>宿主通过 name / description 发现技能，用户显式调用或宿主按任务匹配加载。描述里列出编写、修复、重构等适用场景。</p><a href="https://github.com/DietrichGebert/ponytail/blob/e3ba2aa6f1e6f0bc4d69eb09c9f0d0a93af56156/skills/ponytail/SKILL.md" target="_blank" rel="noopener noreferrer">查看入口文件 ↗</a></article>
+      <article><span class="entry-number">B / 自动加载</span><h4>插件与 Hooks</h4><code>hooks/claude-codex-hooks.json</code><p>插件声明技能目录与事件脚本。会话启动加载规则，用户输入处理模式命令，支持的子代理事件传递规则。</p><a href="https://github.com/DietrichGebert/ponytail/blob/e3ba2aa6f1e6f0bc4d69eb09c9f0d0a93af56156/hooks/claude-codex-hooks.json" target="_blank" rel="noopener noreferrer">查看三个事件 ↗</a></article>
+      <article><span class="entry-number">C / 项目约定</span><h4>规则文件</h4><code>AGENTS.md / 宿主规则目录</code><p>把精简规则放到宿主识别的位置。能否自动读取取决于宿主；只有规则文件时，不等于拥有动态模式切换。</p><a href="https://github.com/DietrichGebert/ponytail/blob/e3ba2aa6f1e6f0bc4d69eb09c9f0d0a93af56156/AGENTS.md" target="_blank" rel="noopener noreferrer">查看紧凑规则 ↗</a></article>
+      <article><span class="entry-number">D / 按请求取用</span><h4>MCP 入口</h4><code>ponytail-mcp/index.js</code><p>Prompt ponytail 和工具 ponytail_instructions 返回规则文本。它本身不读取你的项目、不修改代码，也不保证每轮自动加载。</p><a href="https://github.com/DietrichGebert/ponytail/blob/e3ba2aa6f1e6f0bc4d69eb09c9f0d0a93af56156/ponytail-mcp/index.js" target="_blank" rel="noopener noreferrer">查看 MCP 实现 ↗</a></article>
+    </div>
+
+    <div class="mechanism">
+      <div class="subheading"><span class="small-label">从规则到行动</span><h3>程序负责送达，模型负责判断。</h3></div>
+      <ol class="flow"><li><span>01</span><strong>加载技能</strong><p>读取 Markdown 正文</p><code>SKILL.md</code></li><li><span>02</span><strong>构建规则文本</strong><p>去文件头，筛选模式示例</p><code>getPonytailInstructions()</code></li><li><span>03</span><strong>加入模型上下文</strong><p>Hooks / 宿主适配器</p><code>additionalContext 等</code></li><li class="flow-model"><span>04</span><strong>理解后选择方案</strong><p>读代码 → 复用 → 最小实现</p><code>宿主模型与原有工具</code></li></ol>
+      <p class="flow-note">这不是七段自动执行的优化算法：决策阶梯写在提示词中，由模型理解并遵循。OpenCode 适配器每轮追加规则；其他接入方式的时机不同。</p>
+      <a class="text-link" href="https://github.com/DietrichGebert/ponytail/blob/e3ba2aa6f1e6f0bc4d69eb09c9f0d0a93af56156/hooks/ponytail-instructions.js" target="_blank" rel="noopener noreferrer">核对规则构建源码 ↗</a>
+    </div>
+
+    <div class="anatomy-layout">
+      <div><p class="small-label">SKILL.md 的内部结构</p><h3>不只是“写短一点”。</h3><p>它把触发条件、判断顺序、禁止事项和例外写在一起，持续提醒模型如何取舍。</p><a class="text-link" href="https://github.com/DietrichGebert/ponytail/blob/e3ba2aa6f1e6f0bc4d69eb09c9f0d0a93af56156/skills/ponytail/SKILL.md" target="_blank" rel="noopener noreferrer">阅读完整 Skill ↗</a></div>
+      <div class="anatomy-list">
+        <details open><summary><span>01</span>元数据：什么时候加载？</summary><p><code>name</code> 标识技能，<code>description</code> 描述编程、重构、修复、选库等触发场景，也排除一般知识和翻译等非编程任务。元数据帮助宿主发现与选择技能；实际激活还取决于宿主。</p></details>
+        <details><summary><span>02</span>角色与持续性：保持什么倾向？</summary><p>设定“高效但不草率的资深开发者”角色，并要求模式持续生效直到关闭或会话结束。这是文本层面的行为提醒，不是改变模型权重。</p></details>
+        <details><summary><span>03</span>决策阶梯：先选哪条路？</summary><p>按“必要性 → 仓库复用 → 标准库 → 平台原生 → 已安装依赖 → 简短实现 → 必要新代码”的顺序检查。在理解代码和需求后，停在第一个满足要求的方案。</p></details>
+        <details><summary><span>04</span>工程规则：什么不该新增？</summary><p>避免未经请求的抽象、未来脚手架和无用配置；修复前搜索调用方，把修复放在共享根因处。对已知有上限的简化留下 <code>ponytail:</code> 注释，写明限制和升级条件。</p></details>
+        <details><summary><span>05</span>输出约定：怎样交付？</summary><p>默认代码优先，简要说明省略了什么、何时需要补上。用户明确要求的报告和详细解释应完整提供；非平凡逻辑要留下可运行检查，不能覆盖项目已有的测试约定。</p></details>
+        <details><summary><span>06</span>例外边界：什么不能省？</summary><p>不能为缩短代码删掉明确需求、信任边界校验、防止数据丢失的错误处理、安全措施和基本无障碍；也不能省掉理解真实调用流程的步骤。</p></details>
+      </div>
+    </div>
+
+    <div class="mode-section"><div><span class="small-label">同一需求，不同强度</span><h3>模式改变的是取舍倾向。</h3><p>以日期筛选为例，查看三种模式的教学解读。切换不会启用真实插件。</p><fieldset class="mode-switch"><legend class="visually-hidden">选择讲解模式</legend><label><input type="radio" name="mode" value="lite"><span>lite</span></label><label><input type="radio" name="mode" value="full" checked><span>full <small>默认</small></span></label><label><input type="radio" name="mode" value="ultra"><span>ultra</span></label></fieldset></div><div class="mode-output" aria-live="polite"><span class="small-label" id="mode-label">FULL / 采用最小的充分方案</span><h4 id="mode-title">原生日期输入框满足要求，就直接采用。</h4><p id="mode-detail">复用列表渲染，增加日期筛选和空状态，不引入日历库。需求、标签和必要检查都保留。</p><div class="guardrail"><span aria-hidden="true">✓</span> 所有模式共同保留：明确需求 · 安全 · 无障碍 · 必要检查</div></div></div>
+
+    <div class="constraint-section"><h3>它的“约束”，强到什么程度？</h3><div class="constraint-grid"><article><span class="constraint-type">代码执行的部分</span><h4>模式与文本处理</h4><p>解析模式参数、读取配置、筛选文本、保存状态、输出宿主所需格式。这些可以通过确定性测试核对。</p></article><article><span class="constraint-type">模型遵循的部分</span><h4>工程判断与行动</h4><p>是否读全调用链、复用是否合适、是否过度抽象、能否保留所有边界，由模型结合任务判断。</p></article><article><span class="constraint-type">交付仍需验证的部分</span><h4>功能与实际收益</h4><p>提示词没有自动阻断违规代码。依然需要测试和审查；代码更少也不自动等于质量更好。</p></article></div></div>
+  </section>
+
+  <section class="closing" aria-labelledby="closing-title"><div><p class="eyebrow">理解它的价值，也理解它的边界</p><h2 id="closing-title">把“先复用，再实现”<br>变成 AI 的开发习惯。</h2><p>核心价值是减少不必要的工程工作。实际增益取决于模型原本的能力、需求复杂度，以及已有项目规则是否已经覆盖这些原则。</p></div><div class="more-skills"><h3>实现之后，还有三种检查入口。</h3><dl><div><dt>ponytail-review</dt><dd>检查当前改动中的不必要复杂度；只给建议。</dd></div><div><dt>ponytail-audit</dt><dd>扩展到全仓库，寻找可删除或替换的实现。</dd></div><div><dt>ponytail-debt</dt><dd>汇总 ponytail: 注释中的局限和升级条件。</dd></div></dl><p>这些复杂度检查不能替代正确性与安全审查。</p></div></section>
+
+  <section class="sources" id="sources" aria-labelledby="sources-title"><h2 id="sources-title">来源与验证范围</h2><div class="source-grid"><div><h3>已确认</h3><p>基于 v4.10.0 / <code>e3ba2aa</code> 阅读核心技能与适配代码；规则副本一致性检查和 3 项 MCP 指令构建测试通过。</p><a href="https://github.com/DietrichGebert/ponytail/blob/e3ba2aa6f1e6f0bc4d69eb09c9f0d0a93af56156/skills/ponytail/SKILL.md" target="_blank" rel="noopener noreferrer">核心 Skill ↗</a><a href="https://github.com/DietrichGebert/ponytail/blob/e3ba2aa6f1e6f0bc4d69eb09c9f0d0a93af56156/hooks/ponytail-runtime.js" target="_blank" rel="noopener noreferrer">宿主适配代码 ↗</a></div><div><h3>本页演示的性质</h3><p>日期筛选由本研究实现，任务为示例数据。决策与模式说明是教学解读，不冒充插件调用日志或模型对照结果。</p><a href="./capabilities.txt" target="_blank" rel="noopener noreferrer">完整能力分析（文字版） ↗</a><a href="./research-notes.txt" target="_blank" rel="noopener noreferrer">研究与验证记录 ↗</a></div><div><h3>效果数字的边界</h3><p>上游报告约 54% 的新增代码缩减，来自特定模型和任务，未由本研究复现；gain 技能仍保留旧口径，不能拿来代表当前项目收益。</p><a href="https://github.com/DietrichGebert/ponytail/blob/e3ba2aa6f1e6f0bc4d69eb09c9f0d0a93af56156/benchmarks/results/2026-06-18-agentic.md" target="_blank" rel="noopener noreferrer">上游评测及局限 ↗</a><a href="https://github.com/DietrichGebert/ponytail/blob/e3ba2aa6f1e6f0bc4d69eb09c9f0d0a93af56156/skills/ponytail-gain/SKILL.md" target="_blank" rel="noopener noreferrer">核对 gain 口径 ↗</a></div></div></section>
+</main>
+<footer><a href="../../">← 返回研究集</a><p>004 · Ponytail <span>研究整理 / 2026.09.17</span></p><a href="https://github.com/DietrichGebert/ponytail/blob/e3ba2aa6f1e6f0bc4d69eb09c9f0d0a93af56156/LICENSE" target="_blank" rel="noopener noreferrer">上游 MIT 许可证 ↗</a></footer>
+</body>
+</html>

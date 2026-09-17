@@ -1,0 +1,97 @@
+{
+  "commit": "e3ba2aa6f1e6f0bc4d69eb09c9f0d0a93af56156",
+  "date": "2026-09-17",
+  "scope": "Isolated upstream Node.js hook execution using the Codex-shaped output branch; no host, model, or MCP client launched.",
+  "default_mode": "full",
+  "checks": 7,
+  "passed": 7,
+  "events": [
+    {
+      "event": "会话启动",
+      "script": "ponytail-activate.js",
+      "input": {},
+      "state": "full",
+      "stdout_present": true,
+      "context_characters": 5229,
+      "contains_ladder": true,
+      "mode_row": "full",
+      "exit_code": 0
+    },
+    {
+      "event": "普通开发请求",
+      "script": "ponytail-mode-tracker.js",
+      "input": {
+        "prompt": "为任务清单增加日期筛选"
+      },
+      "state": "full",
+      "stdout_present": false,
+      "context_characters": 0,
+      "contains_ladder": false,
+      "mode_row": null,
+      "exit_code": 0
+    },
+    {
+      "event": "切换 lite",
+      "script": "ponytail-mode-tracker.js",
+      "input": {
+        "prompt": "/ponytail lite"
+      },
+      "state": "lite",
+      "stdout_present": true,
+      "context_characters": 35,
+      "contains_ladder": false,
+      "mode_row": null,
+      "exit_code": 0
+    },
+    {
+      "event": "子代理启动",
+      "script": "ponytail-subagent.js",
+      "input": {
+        "agent_type": "general"
+      },
+      "state": "lite",
+      "stdout_present": true,
+      "context_characters": 5202,
+      "contains_ladder": true,
+      "mode_row": "lite",
+      "exit_code": 0
+    },
+    {
+      "event": "关闭模式",
+      "script": "ponytail-mode-tracker.js",
+      "input": {
+        "prompt": "/ponytail off"
+      },
+      "state": null,
+      "stdout_present": true,
+      "context_characters": 17,
+      "contains_ladder": false,
+      "mode_row": null,
+      "exit_code": 0
+    },
+    {
+      "event": "关闭后的子代理",
+      "script": "ponytail-subagent.js",
+      "input": {
+        "agent_type": "general"
+      },
+      "state": null,
+      "stdout_present": false,
+      "context_characters": 0,
+      "contains_ladder": false,
+      "mode_row": null,
+      "exit_code": 0
+    },
+    {
+      "event": "再次启动激活脚本",
+      "script": "ponytail-activate.js",
+      "input": {},
+      "state": "full",
+      "stdout_present": true,
+      "context_characters": 5229,
+      "contains_ladder": true,
+      "mode_row": "full",
+      "exit_code": 0
+    }
+  ]
+}

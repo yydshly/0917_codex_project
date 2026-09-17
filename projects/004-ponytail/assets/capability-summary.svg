@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="3700" viewBox="0 0 2400 3700" role="img" aria-labelledby="title desc"><title id="title">Ponytail 作用、能力与技术原理全景图</title><desc id="desc">核心工程规则通过 Skill、插件 Hooks、静态规则或 MCP 四条接入路径进入宿主模型上下文；模型读取项目、按七级阶梯选择方案、实现并验证。包含日期筛选案例及软约束边界。</desc><rect width="100%" height="100%" fill="#f7f7f0"/><g font-family="Microsoft YaHei, PingFang SC, sans-serif"><rect x="0" y="0" width="2400" height="302" rx="0" fill="#175c4c" stroke="none" stroke-width="2"/>
+<text x="80" y="35" font-size="28" font-weight="400" fill="#dce8d4" dominant-baseline="text-before-edge">开源研究集  /  004  /  作用、能力与技术原理</text>
+<text x="80" y="96" font-size="82" font-weight="700" fill="#ffffff" dominant-baseline="text-before-edge">PONYTAIL</text>
+<text x="80" y="216" font-size="43" font-weight="700" fill="#ffffff" dominant-baseline="text-before-edge">先理解，先复用，再写必要的新代码。</text>
+<text x="80" y="335" font-size="29" font-weight="400" fill="#54685c" dominant-baseline="text-before-edge">读图顺序：看价值 → 分清接入路径 → 理解模型决策 → 用案例核对 → 识别约束边界</text>
+<polyline points="80,409 2320,409" fill="none" stroke="#cbd6c7" stroke-width="3"/>
+<text x="80" y="435" font-size="29" font-weight="700" fill="#175c4c" dominant-baseline="text-before-edge">01</text>
+<text x="178" y="429" font-size="44" font-weight="700" fill="#21382e" dominant-baseline="text-before-edge">它的作用：减少重复实现与过度设计</text>
+<text x="178" y="500" font-size="27" font-weight="400" fill="#54685c" dominant-baseline="text-before-edge">核心是工程规则 Skill；读代码、改代码和运行检查，仍由宿主 AI 助手完成。</text>
+<rect x="80" y="564" width="730" height="238" rx="12" fill="#e9efdf" stroke="#cbd6c7" stroke-width="2"/>
+<text x="106" y="586" font-size="23" font-weight="700" fill="#175c4c" dominant-baseline="text-before-edge">开发前 / ponytail</text>
+<text x="106" y="628" font-size="35" font-weight="700" fill="#175c4c" dominant-baseline="text-before-edge">先找已有能力</text>
+<text x="106" y="697" font-size="29" font-weight="400" fill="#21382e" dominant-baseline="text-before-edge">复用项目代码、标准库、原生功能与已有依赖，缺什</text>
+<text x="106" y="741" font-size="29" font-weight="400" fill="#21382e" dominant-baseline="text-before-edge">么再补什么。</text>
+<rect x="834" y="564" width="730" height="238" rx="12" fill="#edf2f6" stroke="#cbd6c7" stroke-width="2"/>
+<text x="860" y="586" font-size="23" font-weight="700" fill="#355f84" dominant-baseline="text-before-edge">审查 / review · audit</text>
+<text x="860" y="628" font-size="35" font-weight="700" fill="#355f84" dominant-baseline="text-before-edge">找出可删的复杂度</text>
+<text x="860" y="697" font-size="29" font-weight="400" fill="#21382e" dominant-baseline="text-before-edge">检查当前改动或整个仓库，给出删除与替代建议；默</text>
+<text x="860" y="741" font-size="29" font-weight="400" fill="#21382e" dominant-baseline="text-before-edge">认不应用修改。</text>
+<rect x="1588" y="564" width="730" height="238" rx="12" fill="#ffffff" stroke="#cbd6c7" stroke-width="2"/>
+<text x="1614" y="586" font-size="23" font-weight="700" fill="#175c4c" dominant-baseline="text-before-edge">跟踪 / debt</text>
+<text x="1614" y="628" font-size="35" font-weight="700" fill="#175c4c" dominant-baseline="text-before-edge">把刻意简化留下记录</text>
+<text x="1614" y="697" font-size="29" font-weight="400" fill="#21382e" dominant-baseline="text-before-edge">汇总 ponytail: 注释中的局限与升级条件；未标记的</text>
+<text x="1614" y="741" font-size="29" font-weight="400" fill="#21382e" dominant-baseline="text-before-edge">债务不会自动出现。</text>
+<text x="80" y="831" font-size="25" font-weight="400" fill="#54685c" dominant-baseline="text-before-edge">辅助入口：gain 展示历史评测，help 提供帮助。它们不实时测量当前项目的质量或节省量。</text>
+<polyline points="80,906 2320,906" fill="none" stroke="#cbd6c7" stroke-width="3"/>
+<text x="80" y="932" font-size="29" font-weight="700" fill="#175c4c" dominant-baseline="text-before-edge">02</text>
+<text x="178" y="926" font-size="44" font-weight="700" fill="#21382e" dominant-baseline="text-before-edge">整体构成：一套原则，多条送达路径</text>
+<text x="178" y="997" font-size="27" font-weight="400" fill="#54685c" dominant-baseline="text-before-edge">插件是打包与注册机制，可同时包含 Skill 和 Hooks；规则文件与 MCP 是另外的接入方式。</text>
+<rect x="80" y="1061" width="542" height="357" rx="12" fill="#ffffff" stroke="#cbd6c7" stroke-width="2"/>
+<text x="106" y="1083" font-size="23" font-weight="700" fill="#175c4c" dominant-baseline="text-before-edge">A  按需调用</text>
+<text x="106" y="1125" font-size="35" font-weight="700" fill="#175c4c" dominant-baseline="text-before-edge">Skill</text>
+<text x="106" y="1194" font-size="28" font-weight="400" fill="#21382e" dominant-baseline="text-before-edge">宿主发现 name / description</text>
+<text x="106" y="1236" font-size="28" font-weight="400" fill="#21382e" dominant-baseline="text-before-edge">用户调用或宿主按任务选择</text>
+<text x="106" y="1278" font-size="28" font-weight="400" fill="#21382e" dominant-baseline="text-before-edge">加载 SKILL.md 正文</text>
+<rect x="646" y="1061" width="542" height="357" rx="12" fill="#e9efdf" stroke="#cbd6c7" stroke-width="2"/>
+<text x="672" y="1083" font-size="23" font-weight="700" fill="#175c4c" dominant-baseline="text-before-edge">B  自动激活</text>
+<text x="672" y="1125" font-size="35" font-weight="700" fill="#175c4c" dominant-baseline="text-before-edge">插件 + Hooks</text>
+<text x="672" y="1194" font-size="28" font-weight="400" fill="#21382e" dominant-baseline="text-before-edge">插件登记技能与事件脚本</text>
+<text x="672" y="1236" font-size="28" font-weight="400" fill="#21382e" dominant-baseline="text-before-edge">事件触发 → 读取模式与 Skill</text>
+<text x="672" y="1278" font-size="28" font-weight="400" fill="#21382e" dominant-baseline="text-before-edge">构建规则 → 输出宿主上下文</text>
+<rect x="1212" y="1061" width="542" height="357" rx="12" fill="#ffffff" stroke="#cbd6c7" stroke-width="2"/>
+<text x="1238" y="1083" font-size="23" font-weight="700" fill="#175c4c" dominant-baseline="text-before-edge">C  静态约定</text>
+<text x="1238" y="1125" font-size="35" font-weight="700" fill="#175c4c" dominant-baseline="text-before-edge">规则文件</text>
+<text x="1238" y="1194" font-size="28" font-weight="400" fill="#21382e" dominant-baseline="text-before-edge">AGENTS.md / 宿主规则目录</text>
+<text x="1238" y="1236" font-size="28" font-weight="400" fill="#21382e" dominant-baseline="text-before-edge">保存核心原则的紧凑版本</text>
+<text x="1238" y="1278" font-size="28" font-weight="400" fill="#21382e" dominant-baseline="text-before-edge">由宿主按自己的约定读取</text>
+<rect x="1778" y="1061" width="542" height="357" rx="12" fill="#edf2f6" stroke="#cbd6c7" stroke-width="2"/>
+<text x="1804" y="1083" font-size="23" font-weight="700" fill="#355f84" dominant-baseline="text-before-edge">D  协议取用</text>
+<text x="1804" y="1125" font-size="35" font-weight="700" fill="#355f84" dominant-baseline="text-before-edge">MCP</text>
+<text x="1804" y="1194" font-size="28" font-weight="400" fill="#21382e" dominant-baseline="text-before-edge">请求 Prompt 或规则工具</text>
+<text x="1804" y="1236" font-size="28" font-weight="400" fill="#21382e" dominant-baseline="text-before-edge">共用构建器 → 返回规则文本</text>
+<text x="1804" y="1278" font-size="28" font-weight="400" fill="#21382e" dominant-baseline="text-before-edge">由宿主提供给模型</text>
+<polyline points="351.0,1418 351.0,1458" fill="none" stroke="#175c4c" stroke-width="4"/>
+<polyline points="917.0,1418 917.0,1458" fill="none" stroke="#175c4c" stroke-width="4"/>
+<polyline points="1483.0,1418 1483.0,1458" fill="none" stroke="#175c4c" stroke-width="4"/>
+<polyline points="2049.0,1418 2049.0,1458" fill="none" stroke="#175c4c" stroke-width="4"/>
+<polyline points="351.0,1458 2049.0,1458" fill="none" stroke="#175c4c" stroke-width="4"/>
+<polyline points="1200.0,1458 1200.0,1501" fill="none" stroke="#175c4c" stroke-width="4"/>
+<polygon points="1200.0,1501 1193.9968707179607,1489.4690660038693 1206.0031292820393,1489.4690660038693" fill="#175c4c"/>
+<rect x="80" y="1502" width="2240" height="147" rx="12" fill="#175c4c" stroke="none" stroke-width="2"/>
+<text x="109" y="1524" font-size="37" font-weight="700" fill="#ffffff" dominant-baseline="text-before-edge">汇合点：宿主的模型上下文</text>
+<text x="109" y="1588" font-size="30" font-weight="400" fill="#dce8d4" dominant-baseline="text-before-edge">Ponytail 规则 + 用户需求 + 项目约定 + 已读取的代码与工具结果</text>
+<text x="80" y="1676" font-size="27" font-weight="400" fill="#54685c" dominant-baseline="text-before-edge">不必全部安装或叠加。规则内容相通，但加载时机、模式管理与子代理支持随宿主而异。</text>
+<polyline points="80,1748 2320,1748" fill="none" stroke="#cbd6c7" stroke-width="3"/>
+<text x="80" y="1774" font-size="29" font-weight="700" fill="#175c4c" dominant-baseline="text-before-edge">03</text>
+<text x="178" y="1768" font-size="44" font-weight="700" fill="#21382e" dominant-baseline="text-before-edge">技术原理：程序送达规则，模型完成判断</text>
+<text x="178" y="1839" font-size="27" font-weight="400" fill="#54685c" dominant-baseline="text-before-edge">以下为插件 + Hooks 路径；只调用 Skill 或读取静态规则时，不必经过同一套 Node.js 脚本。</text>
+<rect x="80" y="1903" width="533" height="192" rx="12" fill="#ffffff" stroke="#cbd6c7" stroke-width="2"/>
+<text x="104" y="1924" font-size="33" font-weight="700" fill="#175c4c" dominant-baseline="text-before-edge">1  读取配置</text>
+<text x="104" y="1987" font-size="27" font-weight="400" fill="#21382e" dominant-baseline="text-before-edge">环境变量 → 配置文件 → full</text>
+<text x="104" y="2027" font-size="27" font-weight="400" fill="#21382e" dominant-baseline="text-before-edge">写入当前模式状态</text>
+<polyline points="617,1995 644,1995" fill="none" stroke="#175c4c" stroke-width="4"/>
+<polygon points="644,1995 632.4690660038693,2001.0031292820393 632.4690660038693,1988.9968707179607" fill="#175c4c"/>
+<rect x="649" y="1903" width="533" height="192" rx="12" fill="#ffffff" stroke="#cbd6c7" stroke-width="2"/>
+<text x="673" y="1924" font-size="33" font-weight="700" fill="#175c4c" dominant-baseline="text-before-edge">2  构建正文</text>
+<text x="673" y="1987" font-size="27" font-weight="400" fill="#21382e" dominant-baseline="text-before-edge">读取 Skill，去掉文件头</text>
+<text x="673" y="2027" font-size="27" font-weight="400" fill="#21382e" dominant-baseline="text-before-edge">筛选当前强度示例，保留边界</text>
+<polyline points="1186,1995 1213,1995" fill="none" stroke="#175c4c" stroke-width="4"/>
+<polygon points="1213,1995 1201.4690660038693,2001.0031292820393 1201.4690660038693,1988.9968707179607" fill="#175c4c"/>
+<rect x="1218" y="1903" width="533" height="192" rx="12" fill="#ffffff" stroke="#cbd6c7" stroke-width="2"/>
+<text x="1242" y="1924" font-size="33" font-weight="700" fill="#175c4c" dominant-baseline="text-before-edge">3  宿主接收</text>
+<text x="1242" y="1987" font-size="27" font-weight="400" fill="#21382e" dominant-baseline="text-before-edge">Hook 输出文本或宿主 JSON</text>
+<text x="1242" y="2027" font-size="27" font-weight="400" fill="#21382e" dominant-baseline="text-before-edge">宿主识别后加入上下文</text>
+<polyline points="1755,1995 1782,1995" fill="none" stroke="#175c4c" stroke-width="4"/>
+<polygon points="1782,1995 1770.4690660038693,2001.0031292820393 1770.4690660038693,1988.9968707179607" fill="#175c4c"/>
+<rect x="1787" y="1903" width="533" height="192" rx="12" fill="#ffffff" stroke="#cbd6c7" stroke-width="2"/>
+<text x="1811" y="1924" font-size="33" font-weight="700" fill="#175c4c" dominant-baseline="text-before-edge">4  模型行动</text>
+<text x="1811" y="1987" font-size="27" font-weight="400" fill="#21382e" dominant-baseline="text-before-edge">用原有搜索、编辑、终端工具</text>
+<text x="1811" y="2027" font-size="27" font-weight="400" fill="#21382e" dominant-baseline="text-before-edge">阅读代码 → 选择 → 实现与验证</text>
+<text x="80" y="2126" font-size="33" font-weight="700" fill="#175c4c" dominant-baseline="text-before-edge">模型遵循的决策阶梯</text>
+<rect x="80" y="2187" width="296" height="119" rx="12" fill="#e9efdf" stroke="none" stroke-width="2"/>
+<text x="100" y="2202" font-size="23" font-weight="400" fill="#175c4c" dominant-baseline="text-before-edge">01</text>
+<text x="100" y="2244" font-size="28" font-weight="700" fill="#21382e" dominant-baseline="text-before-edge">需求必要？</text>
+<polyline points="379,2250 400,2250" fill="none" stroke="#175c4c" stroke-width="4"/>
+<polygon points="400,2250 388.46906600386933,2256.0031292820395 388.46906600386933,2243.9968707179605" fill="#175c4c"/>
+<rect x="404" y="2187" width="296" height="119" rx="12" fill="#e9efdf" stroke="none" stroke-width="2"/>
+<text x="424" y="2202" font-size="23" font-weight="400" fill="#175c4c" dominant-baseline="text-before-edge">02</text>
+<text x="424" y="2244" font-size="28" font-weight="700" fill="#21382e" dominant-baseline="text-before-edge">仓库已有？</text>
+<polyline points="703,2250 724,2250" fill="none" stroke="#175c4c" stroke-width="4"/>
+<polygon points="724,2250 712.4690660038693,2256.0031292820395 712.4690660038693,2243.9968707179605" fill="#175c4c"/>
+<rect x="728" y="2187" width="296" height="119" rx="12" fill="#e9efdf" stroke="none" stroke-width="2"/>
+<text x="748" y="2202" font-size="23" font-weight="400" fill="#175c4c" dominant-baseline="text-before-edge">03</text>
+<text x="748" y="2244" font-size="28" font-weight="700" fill="#21382e" dominant-baseline="text-before-edge">标准库？</text>
+<polyline points="1027,2250 1048,2250" fill="none" stroke="#175c4c" stroke-width="4"/>
+<polygon points="1048,2250 1036.4690660038693,2256.0031292820395 1036.4690660038693,2243.9968707179605" fill="#175c4c"/>
+<rect x="1052" y="2187" width="296" height="119" rx="12" fill="#e9efdf" stroke="none" stroke-width="2"/>
+<text x="1072" y="2202" font-size="23" font-weight="400" fill="#175c4c" dominant-baseline="text-before-edge">04</text>
+<text x="1072" y="2244" font-size="28" font-weight="700" fill="#21382e" dominant-baseline="text-before-edge">平台原生？</text>
+<polyline points="1351,2250 1372,2250" fill="none" stroke="#175c4c" stroke-width="4"/>
+<polygon points="1372,2250 1360.4690660038693,2256.0031292820395 1360.4690660038693,2243.9968707179605" fill="#175c4c"/>
+<rect x="1376" y="2187" width="296" height="119" rx="12" fill="#e9efdf" stroke="none" stroke-width="2"/>
+<text x="1396" y="2202" font-size="23" font-weight="400" fill="#175c4c" dominant-baseline="text-before-edge">05</text>
+<text x="1396" y="2244" font-size="28" font-weight="700" fill="#21382e" dominant-baseline="text-before-edge">现有依赖？</text>
+<polyline points="1675,2250 1696,2250" fill="none" stroke="#175c4c" stroke-width="4"/>
+<polygon points="1696,2250 1684.4690660038693,2256.0031292820395 1684.4690660038693,2243.9968707179605" fill="#175c4c"/>
+<rect x="1700" y="2187" width="296" height="119" rx="12" fill="#e9efdf" stroke="none" stroke-width="2"/>
+<text x="1720" y="2202" font-size="23" font-weight="400" fill="#175c4c" dominant-baseline="text-before-edge">06</text>
+<text x="1720" y="2244" font-size="28" font-weight="700" fill="#21382e" dominant-baseline="text-before-edge">简短实现？</text>
+<polyline points="1999,2250 2020,2250" fill="none" stroke="#175c4c" stroke-width="4"/>
+<polygon points="2020,2250 2008.4690660038693,2256.0031292820395 2008.4690660038693,2243.9968707179605" fill="#175c4c"/>
+<rect x="2024" y="2187" width="296" height="119" rx="12" fill="#175c4c" stroke="none" stroke-width="2"/>
+<text x="2044" y="2202" font-size="23" font-weight="400" fill="#dce8d4" dominant-baseline="text-before-edge">07</text>
+<text x="2044" y="2244" font-size="28" font-weight="700" fill="#ffffff" dominant-baseline="text-before-edge">必要新代码</text>
+<text x="80" y="2334" font-size="29" font-weight="700" fill="#21382e" dominant-baseline="text-before-edge">前提：先理解真实代码与调用链。停止条件：第一个满足明确需求的方案就采用。</text>
+<text x="80" y="2389" font-size="26" font-weight="400" fill="#54685c" dominant-baseline="text-before-edge">这是给模型的自然语言决策指导，不是自动搜索并强制选出答案的算法，也没有修改或训练模型权重。</text>
+<polyline points="80,2464 2320,2464" fill="none" stroke="#cbd6c7" stroke-width="3"/>
+<text x="80" y="2490" font-size="29" font-weight="700" fill="#175c4c" dominant-baseline="text-before-edge">04</text>
+<text x="178" y="2484" font-size="44" font-weight="700" fill="#21382e" dominant-baseline="text-before-edge">一个场景：给研究任务清单增加日期筛选</text>
+<text x="178" y="2555" font-size="27" font-weight="400" fill="#54685c" dominant-baseline="text-before-edge">同一需求，根据已有能力选不同路径；这是教学示例，不是启用前后的模型对照结果。</text>
+<rect x="80" y="2663" width="442" height="209" rx="12" fill="#ffffff" stroke="#cbd6c7" stroke-width="2"/>
+<text x="105" y="2683" font-size="25" font-weight="700" fill="#175c4c" dominant-baseline="text-before-edge">需求</text>
+<text x="105" y="2735" font-size="31" font-weight="400" fill="#21382e" dominant-baseline="text-before-edge">按所选日期筛选任务。</text>
+<text x="105" y="2781" font-size="31" font-weight="400" fill="#21382e" dominant-baseline="text-before-edge">清空后恢复全部列表。</text>
+<rect x="594" y="2619" width="918" height="130" rx="12" fill="#e9efdf" stroke="#cbd6c7" stroke-width="2"/>
+<text x="619" y="2637" font-size="30" font-weight="700" fill="#175c4c" dominant-baseline="text-before-edge">项目已有合适的 DateFilter</text>
+<text x="619" y="2694" font-size="27" font-weight="400" fill="#21382e" dominant-baseline="text-before-edge">停在第 2 步：复用组件，接入现有列表。</text>
+<rect x="594" y="2779" width="918" height="130" rx="12" fill="#edf2f6" stroke="#cbd6c7" stroke-width="2"/>
+<text x="619" y="2797" font-size="30" font-weight="700" fill="#355f84" dominant-baseline="text-before-edge">没有日期组件，但原生控件满足需求</text>
+<text x="619" y="2854" font-size="27" font-weight="400" fill="#21382e" dominant-baseline="text-before-edge">停在第 4 步：日期输入框 + 现有过滤逻辑。</text>
+<polyline points="522,2767 557,2767" fill="none" stroke="#cbd6c7" stroke-width="3"/>
+<polyline points="557,2767 557,2684 589,2684" fill="none" stroke="#175c4c" stroke-width="4"/>
+<polygon points="589,2684 577.4690660038693,2690.0031292820395 577.4690660038693,2677.9968707179605" fill="#175c4c"/>
+<polyline points="557,2767 557,2844 589,2844" fill="none" stroke="#355f84" stroke-width="4"/>
+<polygon points="589,2844 577.4690660038693,2850.0031292820395 577.4690660038693,2837.9968707179605" fill="#355f84"/>
+<rect x="1580" y="2638" width="716" height="254" rx="12" fill="#175c4c" stroke="none" stroke-width="2"/>
+<text x="1605" y="2661" font-size="35" font-weight="700" fill="#ffffff" dominant-baseline="text-before-edge">交付完整需求</text>
+<text x="1605" y="2728" font-size="28" font-weight="400" fill="#dce8d4" dominant-baseline="text-before-edge">日期输入 · 清空 · 数量 · 空状态</text>
+<text x="1605" y="2770" font-size="28" font-weight="400" fill="#dce8d4" dominant-baseline="text-before-edge">避免重复造组件或新增日历库</text>
+<text x="1605" y="2812" font-size="28" font-weight="400" fill="#dce8d4" dominant-baseline="text-before-edge">复杂需求出现时，重新判断方案</text>
+<polyline points="1512,2684 1542,2684 1542,2844 1512,2844" fill="none" stroke="#cbd6c7" stroke-width="3"/>
+<polyline points="1542,2765 1575,2765" fill="none" stroke="#175c4c" stroke-width="4"/>
+<polygon points="1575,2765 1563.4690660038693,2771.0031292820395 1563.4690660038693,2758.9968707179605" fill="#175c4c"/>
+<polyline points="80,2952 2320,2952" fill="none" stroke="#cbd6c7" stroke-width="3"/>
+<text x="80" y="2978" font-size="29" font-weight="700" fill="#175c4c" dominant-baseline="text-before-edge">05</text>
+<text x="178" y="2972" font-size="44" font-weight="700" fill="#21382e" dominant-baseline="text-before-edge">约束边界：少写代码，不能少做必要的事</text>
+<text x="178" y="3043" font-size="27" font-weight="400" fill="#54685c" dominant-baseline="text-before-edge">明确需求、安全、输入校验、数据保护、无障碍，以及必要的可运行检查，都不能因精简被省略。</text>
+<rect x="80" y="3107" width="1108" height="242" rx="12" fill="#e9efdf" stroke="#cbd6c7" stroke-width="2"/>
+<text x="106" y="3129" font-size="23" font-weight="700" fill="#175c4c" dominant-baseline="text-before-edge">程序层面 / 可确定性检查</text>
+<text x="106" y="3171" font-size="35" font-weight="700" fill="#175c4c" dominant-baseline="text-before-edge">模式、文本与送达机制</text>
+<text x="106" y="3240" font-size="28" font-weight="400" fill="#21382e" dominant-baseline="text-before-edge">配置解析、状态文件、规则过滤、输出格式可以测试；这些检查不等于验证模型的开</text>
+<text x="106" y="3282" font-size="28" font-weight="400" fill="#21382e" dominant-baseline="text-before-edge">发质量。</text>
+<rect x="1212" y="3107" width="1108" height="242" rx="12" fill="#f6eee1" stroke="#cbd6c7" stroke-width="2"/>
+<text x="1238" y="3129" font-size="23" font-weight="700" fill="#8a542e" dominant-baseline="text-before-edge">模型层面 / 需要验收</text>
+<text x="1238" y="3171" font-size="35" font-weight="700" fill="#8a542e" dominant-baseline="text-before-edge">工程判断仍是软约束</text>
+<text x="1238" y="3240" font-size="28" font-weight="400" fill="#21382e" dominant-baseline="text-before-edge">是否读全代码、正确复用、保留边界，由模型执行；共用 Hooks 不会审核每次补丁并</text>
+<text x="1238" y="3282" font-size="28" font-weight="400" fill="#21382e" dominant-baseline="text-before-edge">阻止违规写入。</text>
+<rect x="80" y="3378" width="2240" height="154" rx="12" fill="#ffffff" stroke="#cbd6c7" stroke-width="2"/>
+<text x="105" y="3398" font-size="28" font-weight="700" fill="#175c4c" dominant-baseline="text-before-edge">本研究证据</text>
+<text x="380" y="3398" font-size="27" font-weight="400" fill="#21382e" dominant-baseline="text-before-edge">源码核查 + 3 项 MCP 指令测试 + 7 步隔离 Hook 验证；没有运行真实宿主中的模型开发对照。</text>
+<text x="105" y="3474" font-size="26" font-weight="400" fill="#54685c" dominant-baseline="text-before-edge">验证观察：普通请求不一定重发规则；切换模式不等于重载全文；off 不会删除已有对话上下文。</text>
+<polyline points="80,3561 2320,3561" fill="none" stroke="#cbd6c7" stroke-width="3"/>
+<text x="80" y="3584" font-size="24" font-weight="400" fill="#54685c" dominant-baseline="text-before-edge">研究快照 4.10.0 · e3ba2aa6f1e6 · 2026-09-17  |  上游 DietrichGebert/ponytail · MIT</text>
+<text x="80" y="3628" font-size="23" font-weight="400" fill="#54685c" dominant-baseline="text-before-edge">本研究原创说明图，依据固定版本 Skill、插件、Hooks、MCP 源码与隔离实验整理；非软件截图，非效果承诺。</text></g></svg>
