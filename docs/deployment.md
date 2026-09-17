@@ -63,3 +63,5 @@ python -m http.server 8765 --bind 127.0.0.1 --directory site
 参考：[GitHub Pages 自定义工作流](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)。
 
 007 Neko Master 已部署：[在线研究页](https://yydshly.github.io/0917_codex_project/apps/007-neko-master/) · [两张引导图](https://yydshly.github.io/0917_codex_project/apps/007-neko-master/#guide)。[首次发布工作流](https://github.com/yydshly/0917_codex_project/actions/runs/35230427660) 成功，21 个公开文件、线上摘要与图片验证通过。
+
+008 Humanizer 的源码位于 `projects/008-humanizer/web/`，产物为 `site/apps/008-humanizer/`。页面用一张原创总览图完整展示能力、Skill 实现、25 类规则和对我们的意义，提供 PNG、SVG 与文字版。固定中文示例仅用于教学，不调用模型。已完成本地响应式、键盘、筛选、图像加载、链接和无 JavaScript 阅读检查，尚未公开部署，`demo` 保持为空。维护方式见 [008 网页说明](../projects/008-humanizer/web/README.md)。

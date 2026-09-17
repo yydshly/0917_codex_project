@@ -1,0 +1,27 @@
+{
+  "date": "2026-09-17T13:13:44.589Z",
+  "url": "http://127.0.0.1:8878/apps/008-humanizer/",
+  "viewports": [
+    1440,
+    1024,
+    768,
+    390,
+    320
+  ],
+  "patterns": 25,
+  "checks": [
+    "guide anchor and image load",
+    "category counts",
+    "search",
+    "empty recovery",
+    "keyboard expansion",
+    "example switching",
+    "keyboard example selection",
+    "no horizontal overflow",
+    "local links including PNG, SVG and text",
+    "anchor targets",
+    "no JavaScript fallback",
+    "no browser errors"
+  ],
+  "scope": "Static-page checks only; no Humanizer model calls. Deployment status requires separate verification."
+}
