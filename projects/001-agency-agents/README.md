@@ -1,6 +1,6 @@
 # 001 · Agency Agents
 
-按领域、按身份定制的 skill 提示词库；效果受模型能力及其提升影响，后续按实际需要验证角色与能力的价值。
+按领域和身份提供角色提示词、工作步骤与交付要求，覆盖工程、设计、测试等18个领域、279个角色；供我们按实际任务选取并验证能否提升效果，价值可能随模型升级变化。
 
 | 信息 | 内容 |
 | --- | --- |
@@ -12,6 +12,8 @@
 | 详细记录 | [研究笔记](notes.md) · [项目元数据](project.json) |
 | 网页源码 | [web/](web/) |
 | 静态展示 | [在线研究页](https://yydshly.github.io/0917_codex_project/apps/001-agency-agents/) · [本地静态文件](../../site/apps/001-agency-agents/index.html) |
+
+先从[项目汇总图](https://yydshly.github.io/0917_codex_project/apps/001-agency-agents/#guide)了解库的定位、主要领域、候选选择原因与后续验证方向，再阅读详细分析。
 
 ## 项目是什么
 
@@ -82,11 +84,7 @@ python projects/001-agency-agents/web/build.py
 
 该图是基于固定版本资料制作的研究信息图，不是角色实际运行效果的证据。六个候选基于我们的任务需求筛选，其效果与增量价值留待后续深度测试。
 
-### 网页预览
-
-![Agency Agents 中文能力研究页面桌面预览，展示概览、角色统计和能力地图](assets/overview-desktop.png)
-
-来源：本项目本地运行页面的真实浏览器截图，2026-09-17；展示的是研究页面，不是上游角色的运行结果。移动端截图与验证说明见 [assets/](assets/)。
+网页历史截图与验证记录保存在 [assets/](assets/)，本页仅展示上方这一张汇总图。
 
 ## 研究进度
 

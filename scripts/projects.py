@@ -87,7 +87,7 @@ def render(projects):
         demo = link("访问演示", project["demo"]) if project["demo"] else "—"
         rows.append(
             f"| {project['id']:03d} | [{escape(project['name'])}]({path}/README.md) | "
-            f"{escape(project['summary'])} | {project['status']} | {link('GitHub', project['repo'])} | {demo} |"
+            f"{escape(project['summary'])} | {project['status']} | {link(urlparse(project['repo']).path.strip('/'), project['repo'])} | {demo} |"
         )
         if project["cover"]:
             image_path = html.escape(f"{path}/{project['cover']}", quote=True)
