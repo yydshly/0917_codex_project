@@ -1,0 +1,9 @@
+{
+  "width": 2600,
+  "height": 5748,
+  "text_lines": 199,
+  "content_blocks": 116,
+  "text_within_canvas": true,
+  "generator": "web/render_summary.py",
+  "upstream_commit": "1f36dba95ef70a0f3c3559cac16acd9898622ad9"
+}

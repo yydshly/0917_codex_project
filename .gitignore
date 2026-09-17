@@ -23,6 +23,7 @@ build/
 
 # Local upstream checkouts and experiments
 upstream/
+!projects/003-agency-orchestrator/assets/upstream/
 .cache/
 .tmp/
 _site/

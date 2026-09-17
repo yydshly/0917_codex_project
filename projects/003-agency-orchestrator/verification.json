@@ -1,0 +1,138 @@
+{
+  "research_date": "2026-09-17",
+  "repository": "https://github.com/jnMetaCode/agency-orchestrator",
+  "commit": "1f36dba95ef70a0f3c3559cac16acd9898622ad9",
+  "package_version": "0.19.2",
+  "environment": {
+    "os": "Windows",
+    "node": "22.15.0",
+    "npm": "10.9.2",
+    "tsx": "4.20.6",
+    "python": "3.10.11"
+  },
+  "scope": "Selected pure-function and mock tests; no real model calls, no UI/desktop/Docker verification",
+  "installation": {
+    "command": "npm ci --ignore-scripts --no-audit --no-fund",
+    "exit_code": 0,
+    "packages_added": 190
+  },
+  "build": {
+    "command": "npm.cmd run build",
+    "exit_code": 0
+  },
+  "cli_checks": {
+    "validate": "passed: product-review.yaml, 4 steps, 1 input",
+    "plan": [
+      [
+        "analyze"
+      ],
+      [
+        "tech_review",
+        "design_review"
+      ],
+      [
+        "final_summary"
+      ]
+    ]
+  },
+  "inventory": {
+    "workflow_yaml_files": 69,
+    "english_workflow_files": 13,
+    "zh_roles_in_npm_1_4_0": 276,
+    "bundled_english_roles": 191,
+    "direct_dependencies": 11,
+    "openai_compatible_registry_entries": 20,
+    "additional_anthropic_registry_entries": 1,
+    "install_targets": 8,
+    "mcp_tools": 6
+  },
+  "upstream_tests": [
+    {
+      "exit_code": 0,
+      "passed": 37,
+      "failed": 0,
+      "file": "test/run.ts"
+    },
+    {
+      "exit_code": 0,
+      "passed": 30,
+      "failed": 0,
+      "file": "test/assert.ts"
+    },
+    {
+      "exit_code": 0,
+      "passed": 13,
+      "failed": 0,
+      "file": "test/condition.ts"
+    },
+    {
+      "exit_code": 0,
+      "passed": 37,
+      "failed": 0,
+      "file": "test/verify.ts"
+    },
+    {
+      "exit_code": 0,
+      "passed": 12,
+      "failed": 0,
+      "file": "test/resume.ts"
+    },
+    {
+      "exit_code": 0,
+      "passed": 3,
+      "failed": 0,
+      "file": "test/feedback.ts"
+    },
+    {
+      "exit_code": 0,
+      "passed": 14,
+      "failed": 0,
+      "file": "test/e2e.ts"
+    },
+    {
+      "exit_code": 0,
+      "passed": 5,
+      "failed": 0,
+      "file": "test/e2e-condition.ts"
+    },
+    {
+      "exit_code": 0,
+      "passed": 5,
+      "failed": 0,
+      "file": "test/e2e-loop.ts"
+    },
+    {
+      "exit_code": 0,
+      "passed": 2,
+      "failed": 0,
+      "file": "test/human-input.ts"
+    }
+  ],
+  "test_totals": {
+    "passed": 158,
+    "failed": 0
+  },
+  "boundary_probes": {
+    "approval_without_condition": {
+      "answer": "no",
+      "downstream_status": "completed",
+      "success": true
+    },
+    "acceptance_rework_after_assert": {
+      "status": "completed",
+      "verification": {
+        "pass": true,
+        "failed": [],
+        "reworked": true
+      },
+      "final_contains_required_marker": false,
+      "mock_calls": 4
+    },
+    "max_concurrent_mock_calls": {
+      "deepseek": 2,
+      "claude-code": 1
+    },
+    "script": "experiments/probe-boundaries.mjs",
+    "exit_code": 0
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "collected_on": "2026-09-17",
+  "commit": "1f36dba95ef70a0f3c3559cac16acd9898622ad9",
+  "copyright": "Copyright 2026 jnMetaCode",
+  "license": "Apache-2.0",
+  "usage": "Upstream-provided visuals, not local execution screenshots",
+  "files": [
+    {
+      "file": "upstream/studio-workflows-zh.png",
+      "source": "https://github.com/jnMetaCode/agency-orchestrator/blob/1f36dba95ef70a0f3c3559cac16acd9898622ad9/docs/screenshots/studio-workflows-zh.png",
+      "sha256": "17f80b90765596002788fd09fff78b8a631101fda57b098c7fb0aa2c7c9689bc",
+      "bytes": 475650,
+      "modified": false,
+      "width": 2880,
+      "height": 1800
+    },
+    {
+      "file": "upstream/studio-roles-zh.png",
+      "source": "https://github.com/jnMetaCode/agency-orchestrator/blob/1f36dba95ef70a0f3c3559cac16acd9898622ad9/docs/screenshots/studio-roles-zh.png",
+      "sha256": "9ae13cc6d37191bdc1c2318ee4dfa3ef69847cdaad828457674a58832dda2eab",
+      "bytes": 567915,
+      "modified": false,
+      "width": 2880,
+      "height": 1800
+    },
+    {
+      "file": "upstream/demo-studio-zh.gif",
+      "source": "https://github.com/jnMetaCode/agency-orchestrator/blob/1f36dba95ef70a0f3c3559cac16acd9898622ad9/demo-studio-zh.gif",
+      "sha256": "9aa08de336473a1c3bc97ade8b3eae4110c990dc883215e30164547603bedee3",
+      "bytes": 134334,
+      "modified": false,
+      "width": 1000,
+      "height": 594
+    },
+    {
+      "file": "upstream/LICENSE.txt",
+      "source": "https://github.com/jnMetaCode/agency-orchestrator/blob/1f36dba95ef70a0f3c3559cac16acd9898622ad9/LICENSE",
+      "sha256": "ec42078c942db589baaaa2054631a13be00c35e9f807d66da461642d2b9d7222",
+      "bytes": 10951,
+      "modified": false
+    }
+  ]
+}

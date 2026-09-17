@@ -13,6 +13,7 @@
 | --- | --- | --- | --- | --- | --- |
 | 001 | [Agency Agents](projects/001-agency-agents/README.md) | 按领域和身份提供角色提示词、工作步骤与交付要求，覆盖工程、设计、测试等18个领域、279个角色；供我们按实际任务选取并验证能否提升效果，价值可能随模型升级变化。 | 研究中 | <a href="https://github.com/msitarzewski/agency-agents">msitarzewski/agency-agents</a> | <a href="https://yydshly.github.io/0917_codex_project/apps/001-agency-agents/">访问演示</a> |
 | 002 | [Agency Agents 中文版](projects/002-agency-agents-zh/README.md) | 中文角色与工作方法库，提供20个部门、277个角色的职责、步骤和交付要求，并做中国场景适配；为我的项目研究、验证和中文文档沉淀提供可复用方法，后续可由独立编排器调度，实际增益待验证。 | 研究中 | <a href="https://github.com/jnMetaCode/agency-agents-zh">jnMetaCode/agency-agents-zh</a> | <a href="https://yydshly.github.io/0917_codex_project/apps/002-agency-agents-zh/">访问演示</a> |
+| 003 | [Agency Orchestrator](projects/003-agency-orchestrator/README.md) | 面向具体场景选择角色、拆分任务并按依赖编排执行，支持结果传递、运行留档与局部返工；适用于内容策划、产品方案和研究评审。对我们的价值是复用流程、追溯结果与减少重复执行；质量增益和角色冗余仍需后续用真实产品任务对照验证。 | 研究中 | <a href="https://github.com/jnMetaCode/agency-orchestrator">jnMetaCode/agency-orchestrator</a> | — |
 <!-- PROJECT_INDEX:END -->
 
 ## 项目预览
@@ -29,6 +30,12 @@
 <a href="projects/002-agency-agents-zh/README.md"><img src="projects/002-agency-agents-zh/assets/capability-summary.png" alt="Agency Agents 中文版能力总览：角色与方法、277 个角色及20个部门、个人研究价值与后续独立编排器调度关系" width="640"></a>
 
 中文角色与工作方法库，提供20个部门、277个角色的职责、步骤和交付要求，并做中国场景适配；为我的项目研究、验证和中文文档沉淀提供可复用方法，后续可由独立编排器调度，实际增益待验证。
+
+### 003 · Agency Orchestrator
+
+<a href="projects/003-agency-orchestrator/README.md"><img src="projects/003-agency-orchestrator/assets/capability-summary.png" alt="Agency Orchestrator 完整理解图：能力、内部流程、使用路径、五角色真实案例、限制、价值与验证范围；本研究整理，非界面截图" width="640"></a>
+
+面向具体场景选择角色、拆分任务并按依赖编排执行，支持结果传递、运行留档与局部返工；适用于内容策划、产品方案和研究评审。对我们的价值是复用流程、追溯结果与减少重复执行；质量增益和角色冗余仍需后续用真实产品任务对照验证。
 <!-- PROJECT_GALLERY:END -->
 
 ## 新增研究项目
