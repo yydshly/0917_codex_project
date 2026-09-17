@@ -9,8 +9,8 @@
 | 对比项目 | [001 · Agency Agents 原版](../001-agency-agents/README.md)，固定版本 `ad9264e309bd5e5422c04784372d7841b1e5d604` |
 | 研究日期 | 2026-09-17 |
 | 上游许可 | MIT；Copyright (c) 2025 Michael Sitarzewski；Copyright (c) 2026 jnMetaCode |
-| 当前阶段 | 能力与差异整理、网页及本地验证完成；角色效果待验证 |
-| 网页 | [本地静态页面](../../site/apps/002-agency-agents-zh/index.html) · [网页源码](web/) |
+| 当前阶段 | 能力与差异整理、网页部署及线上验证完成；角色效果待验证 |
+| 网页 | [在线研究页](https://yydshly.github.io/0917_codex_project/apps/002-agency-agents-zh/) · [先看引导图](https://yydshly.github.io/0917_codex_project/apps/002-agency-agents-zh/#guide) · [本地静态页面](../../site/apps/002-agency-agents-zh/index.html) · [网页源码](web/) |
 | 记录 | [研究笔记](notes.md) · [截图与验证说明](assets/README.md) |
 
 ## 定位与能力
@@ -67,7 +67,7 @@ python -m http.server 8766 --bind 127.0.0.1 --directory site
 
 访问 http://127.0.0.1:8766/apps/002-agency-agents-zh/ 。普通构建使用已保存的角色快照，仅依赖 Python 标准库，无需联网或上游副本。资源与页面链接使用相对路径，可部署在 GitHub Pages 项目子路径下，也可直接打开静态 HTML。
 
-只有主动更新研究版本时，才运行快照提取脚本并重新审阅内容，见 [web/README.md](web/README.md)。本次完成本地网页与站点接入，尚未发布本项目的新版本；`demo` 留空，避免把计划地址写成已验证的公开地址。
+只有主动更新研究版本时，才运行快照提取脚本并重新审阅内容，见 [web/README.md](web/README.md)。网页已于 2026-09-17 部署到 GitHub Pages，[首次发布记录](https://github.com/yydshly/0917_codex_project/actions/runs/35183980271)。已验证公开页面、引导图与搜索交互；项目保持“研究中”，后续按实际任务验证角色效果。
 
 ## 一图理解：能力、范围与对我的价值
 

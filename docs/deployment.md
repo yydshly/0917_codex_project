@@ -25,7 +25,7 @@ python -m http.server 8765 --bind 127.0.0.1 --directory site
 
 构建只需 Python 3.10+ 标准库，使用保存的版本清单，不依赖网络或上游源码副本。各子项目独立选用技术栈；目前总构建入口已登记 001 与 002 的构建方式，后续按项目需要添加。
 
-002 中文版研究已接入本地索引，路径为 `apps/002-agency-agents-zh/`。本次尚未发布，项目 `demo` 留空；公开地址需部署后验证再填写。
+002 中文版研究已公开部署：[在线研究页](https://yydshly.github.io/0917_codex_project/apps/002-agency-agents-zh/) · [高清引导图](https://yydshly.github.io/0917_codex_project/apps/002-agency-agents-zh/capability-summary.png)。发布路径为 `apps/002-agency-agents-zh/`，正式地址已写入项目 `demo`。首次发布记录：[工作流 35183980271](https://github.com/yydshly/0917_codex_project/actions/runs/35183980271)；线上页面、引导图与搜索交互验证通过。
 
 ## 自动发布
 
