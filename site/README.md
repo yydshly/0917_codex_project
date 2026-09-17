@@ -1,6 +1,6 @@
 # 静态演示发布目录
 
-- [009 · Subtrace：后端网络调试能力与原理](apps/009-subtrace/index.html) · [逐步演示](apps/009-subtrace/index.html#lab) · [原创总览图](apps/009-subtrace/capability-summary.svg)。固定教学样例，未安装上游、未抓取流量；本地页面验证完成，尚未公开发布。
+- [009 · Subtrace：后端网络调试能力与原理](apps/009-subtrace/index.html) · [逐步演示](apps/009-subtrace/index.html#lab) · [原创总览图](apps/009-subtrace/capability-summary.svg)。固定教学样例，未安装上游、未抓取流量；已部署：[在线研究页](https://yydshly.github.io/0917_codex_project/apps/009-subtrace/)，公开资源、摘要与教学交互已验证。
 
 此处保存导航页和各子项目的静态演示产物。已通过 GitHub Pages 公开部署：[在线索引](https://yydshly.github.io/0917_codex_project/)。
 

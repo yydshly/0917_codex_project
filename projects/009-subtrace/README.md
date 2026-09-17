@@ -12,7 +12,7 @@
 | 许可证 | BSD-3-Clause，Copyright (c) 2024 Subtrace, Inc. |
 | 上游副本 | 仓库根目录 `upstream/subtrace/`，被 Git 忽略 |
 | 原理 / 证据 | [architecture.md](architecture.md) · [sources.md](sources.md) |
-| 网页 | [静态页面](../../site/apps/009-subtrace/index.html) · [维护说明](web/README.md) |
+| 网页 | [在线研究页](https://yydshly.github.io/0917_codex_project/apps/009-subtrace/) · [本地页面](../../site/apps/009-subtrace/index.html) · [维护说明](web/README.md) |
 | 研究记录 | [notes.md](notes.md) |
 
 ## 我们对这个库的理解
@@ -91,7 +91,11 @@ SUBTRACE_TLS=false subtrace run -- ./my-server
 - 能力、原理、平台与协议边界均绑定固定 commit。
 - 网页包含原创总览图、五种连接场景、固定样例请求查看器。
 - 网页验证仅针对本研究页面，记录见 [notes.md](notes.md)，不构成上游运行证明。
-- 未安装上游、未真实抓包、未进行容器与性能验证。尚未公开发布，`project.json` 的 `demo` 留空。
+- 未安装上游、未真实抓包、未进行容器与性能验证。已公开发布，`project.json` 的 `demo` 已登记验证后的地址。
+
+## 公开发布
+
+[在线研究页](https://yydshly.github.io/0917_codex_project/apps/009-subtrace/) · [完整交互图](https://yydshly.github.io/0917_codex_project/apps/009-subtrace/#guide)。[首次发布工作流](https://github.com/yydshly/0917_codex_project/actions/runs/35232736513) 成功；10 个线上文件与发布提交一致，线上摘要、图片、1440 / 390 / 320 像素布局及教学交互已检查。详细记录见 [deployment.json](experiments/deployment.json)。网页发布不代表上游运行能力已实测。
 
 ## 来源与许可证
 

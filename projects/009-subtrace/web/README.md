@@ -26,6 +26,6 @@ python -m http.server 8899 --bind 127.0.0.1 --directory site
 
 正文上限以 UTF-8 字节计算，截断仅影响显示副本；32 字节是为了教学可见性设置的选项，4096 字节对应研究版本默认值。流程没有自动计时，以用户点击推进，不表示真实耗时。
 
-`site/apps/009-subtrace/` 为静态产物，资源均使用相对路径，支持 GitHub Pages 子路径。发布前核对部署工作流和公开地址，本次 `demo` 不填未验证的线上 URL。
+`site/apps/009-subtrace/` 为静态产物，资源均使用相对路径，支持 GitHub Pages 子路径。已核对首次发布工作流和公开资源，`demo` 已登记为 https://yydshly.github.io/0917_codex_project/apps/009-subtrace/ 。发布验证见 `../experiments/deployment.json`。
 
 验收记录位于 `../experiments/web-validation.json`，截图若保存须说明是本研究页。本项目仅验证静态教学交互，不验证 Subtrace 本体。

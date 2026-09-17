@@ -1,0 +1,74 @@
+{
+  "date": "2026-09-17",
+  "url": "https://yydshly.github.io/0917_codex_project/apps/009-subtrace/",
+  "source_commit": "1206d66212b4045c95827016fb9abfe48fcdf683",
+  "workflow": "https://github.com/yydshly/0917_codex_project/actions/runs/35232736513",
+  "workflow_conclusion": "success",
+  "scope": "静态研究页部署验证；未运行 Subtrace",
+  "files": [
+    {
+      "file": "app.js",
+      "bytes": 13393,
+      "sha256": "1e1768d859eb6c8dbb115de2c3b300c98bcba4ae1d163dcf92b1664d8afa1210"
+    },
+    {
+      "file": "architecture.txt",
+      "bytes": 7119,
+      "sha256": "3f5ef0f7e51cfb789c71cbf1077c230849d985b12decd8faa2e5597c1745c07b"
+    },
+    {
+      "file": "capability-summary.png",
+      "bytes": 836205,
+      "sha256": "1e80dffff012bdbff1bca77ee4348c9e7a623de99bddc56e8d3ad6ab9b6a7cc5"
+    },
+    {
+      "file": "capability-summary.svg",
+      "bytes": 14851,
+      "sha256": "65c674de492ac646a764251bc5d8d708951d884307687d2d48c35db541b0588e"
+    },
+    {
+      "file": "favicon.svg",
+      "bytes": 200,
+      "sha256": "fbcde8f360a4cb7f55f30550d064cdca90a3c458d1bcb41de21db7a1a3f1be1f"
+    },
+    {
+      "file": "guide.txt",
+      "bytes": 2911,
+      "sha256": "549431502ea310260d4e8e06da95702219acbbb94c3f0df83207b6d2e8ff9fe5"
+    },
+    {
+      "file": "index.html",
+      "bytes": 16385,
+      "sha256": "b60222f5c991052be87addb149e49617b4177c3c16e76a17ab4dd621a037257f"
+    },
+    {
+      "file": "research.txt",
+      "bytes": 8083,
+      "sha256": "d30af4afcdd9807ff2ca42f21930fcdb5ad2492e31276145d82bd31372b85c23"
+    },
+    {
+      "file": "sources.txt",
+      "bytes": 2572,
+      "sha256": "ab37d9f1da544301a78c0e0038167750d5c319390f5eb69605e046c9eded36a6"
+    },
+    {
+      "file": "styles.css",
+      "bytes": 18229,
+      "sha256": "4d18450da821f243d589fef62e4c4f27fd01e301d78f318deb1bcd89a9217151"
+    }
+  ],
+  "browser_checks": {
+    "viewports": [
+      1440,
+      390,
+      320
+    ],
+    "no_overflow": true,
+    "summary": true,
+    "diagram_loaded": true,
+    "https_walkthrough": true,
+    "filter_empty_reset": true,
+    "payload_limit": true,
+    "console_errors": []
+  }
+}
