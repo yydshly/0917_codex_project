@@ -18,7 +18,7 @@ Ponytail 指导 AI 在开发前先理解需求和调用链，优先复用已有�
 | 本次范围 | 能力与源码分析、评测口径核查、规则副本检查、3 项 MCP 指令构建测试、7 步隔离 Hook 验证及交互研究网页 |
 | 尚未验证 | 宿主安装与真实会话、模型输出质量、项目实际节省的代码/成本/时间、MCP 客户端端到端调用 |
 | 详细材料 | [能力与技术原理](capabilities.md) · [整体构成与执行机制](architecture.md) · [研究与验证记录](notes.md) · [元数据](project.json) |
-| 交互研究网页 | [能力总览与案例](../../site/apps/004-ponytail/index.html) · [整体机制详解](../../site/apps/004-ponytail/architecture.html) · [网页维护与本地预览](web/README.md)（未发布） |
+| 交互研究网页 | [在线能力总览与案例](https://yydshly.github.io/0917_codex_project/apps/004-ponytail/) · [在线原理全景图与详解](https://yydshly.github.io/0917_codex_project/apps/004-ponytail/architecture.html#guide) · [网页维护与本地预览](web/README.md) |
 
 ## 解决什么问题
 
@@ -74,7 +74,7 @@ AI 编程助手容易为小需求添加新依赖、单实现接口、多层包�
 
 本次能力分析已完成。已经确认规则构建、适配机制和命令边界，运行了不调用模型的有限检查。研究状态保留“研究中”，用于跟踪尚未开展的真实任务对照；后续方案见[研究记录](notes.md#后续验证方案未执行)。
 
-本阶段已完成静态研究网页：能力与意义、可操作的日期筛选场景、Skill 入口与约束拆解。场景数据及模式解释为本研究教学示例，不是模型实测。网页已在本地浏览器验证，尚未公开发布；`demo` 留空。
+本阶段已完成并公开发布静态研究网页：能力与意义、可操作的日期筛选场景、Skill 入口与约束拆解。场景数据及模式解释为本研究教学示例，不是模型实测。本地交互检查、站点构建和线上静态资源核对通过；已将在线地址登记到 `demo`。[首次发布记录](https://github.com/yydshly/0917_codex_project/actions/runs/35199129801)。
 
 另提供一张完整的[原理全景图（PNG）](assets/capability-summary.png)、[可放大的 SVG](assets/capability-summary.svg) 和[文字版](assets/capability-summary-text.md)，从作用、接入路径、上下文构建、决策阶梯、实际场景到约束边界连贯说明。本图为本研究原创说明图，已作为项目封面；来源见 [assets/README.md](assets/README.md)。
 

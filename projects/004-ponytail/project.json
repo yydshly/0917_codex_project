@@ -5,7 +5,7 @@
   "summary": "指导 AI 开发前先理解需求、优先复用已有代码与平台能力，以必要的新增代码完成需求，并提供改动审查、全库精简建议和已标记技术债汇总。核心是 Skill 工程规则，经插件与 Hooks、静态规则文件或 MCP 进入模型上下文，再由宿主 AI 读取项目、选择方案、修改和验证；属于提示约束，实际收益待对照验证。",
   "repo": "https://github.com/DietrichGebert/ponytail",
   "status": "研究中",
-  "demo": "",
+  "demo": "https://yydshly.github.io/0917_codex_project/apps/004-ponytail/",
   "cover": "assets/capability-summary.png",
   "cover_alt": "Ponytail 原理全景图：作用与能力、Skill／插件与 Hooks／规则文件／MCP 四条接入路径、上下文构建、复用决策、日期筛选案例和约束边界；本研究原创说明图"
 }

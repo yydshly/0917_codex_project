@@ -19,7 +19,7 @@ python scripts/build_site.py
 python -m http.server 8766 --bind 127.0.0.1 --directory site
 ```
 
-访问 `http://127.0.0.1:8766/apps/004-ponytail/`。所有本地资源使用相对路径，页面内部使用锚点；兼容既有 GitHub Pages 子路径。当前只完成本地构建与浏览器验证，未发布，本项目 `demo` 保持空值。
+本地访问 `http://127.0.0.1:8766/apps/004-ponytail/`；[在线研究页](https://yydshly.github.io/0917_codex_project/apps/004-ponytail/)。所有本地资源使用相对路径，页面内部使用锚点，兼容 GitHub Pages 子路径。已完成本地交互验证、公开部署和线上资源核对；正式地址已写入 `demo`。
 
 ## 场景定义
 
