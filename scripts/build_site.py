@@ -12,6 +12,7 @@ def build():
     entries = read_projects()
     # Each subproject owns its stack. Register its build here when necessary.
     subprocess.run([sys.executable, str(ROOT / "projects/001-agency-agents/web/build.py")], check=True)
+    subprocess.run([sys.executable, str(ROOT / "projects/002-agency-agents-zh/web/build.py")], check=True)
     rows = []
     for entry in entries:
         folder = entry["folder"]

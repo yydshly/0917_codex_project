@@ -1,0 +1,11 @@
+{
+  "id": 2,
+  "slug": "agency-agents-zh",
+  "name": "Agency Agents 中文版",
+  "summary": "中文角色与工作方法库，提供20个部门、277个角色的职责、步骤和交付要求，并做中国场景适配；为我的项目研究、验证和中文文档沉淀提供可复用方法，后续可由独立编排器调度，实际增益待验证。",
+  "repo": "https://github.com/jnMetaCode/agency-agents-zh",
+  "status": "研究中",
+  "demo": "",
+  "cover": "assets/capability-summary.png",
+  "cover_alt": "Agency Agents 中文版能力总览：角色与方法、277 个角色及20个部门、个人研究价值与后续独立编排器调度关系"
+}

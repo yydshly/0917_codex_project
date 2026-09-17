@@ -1,0 +1,1216 @@
+{
+  "repository": "https://github.com/jnMetaCode/agency-agents-zh",
+  "commit": "fa3c83ddff9954e0dd7af1fc3e39d919d7af6452",
+  "reviewed_on": "2026-09-17",
+  "license": "MIT",
+  "divisions": [
+    {
+      "id": "academic",
+      "agents": [
+        {
+          "name": "人类学家",
+          "path": "academic/academic-anthropologist.md"
+        },
+        {
+          "name": "地理学家",
+          "path": "academic/academic-geographer.md"
+        },
+        {
+          "name": "历史学家",
+          "path": "academic/academic-historian.md"
+        },
+        {
+          "name": "叙事学家",
+          "path": "academic/academic-narratologist.md"
+        },
+        {
+          "name": "心理学家",
+          "path": "academic/academic-psychologist.md"
+        },
+        {
+          "name": "学习规划师",
+          "path": "academic/academic-study-planner.md"
+        }
+      ]
+    },
+    {
+      "id": "company",
+      "agents": [
+        {
+          "name": "首席执行官（CEO）",
+          "path": "company/chief-executive-officer.md"
+        },
+        {
+          "name": "首席财务官（CFO）",
+          "path": "company/chief-financial-officer.md"
+        },
+        {
+          "name": "首席营销官（CMO）",
+          "path": "company/chief-marketing-officer.md"
+        },
+        {
+          "name": "幕僚长（Chief of Staff）",
+          "path": "company/chief-of-staff.md"
+        },
+        {
+          "name": "首席运营官（COO）",
+          "path": "company/chief-operating-officer.md"
+        },
+        {
+          "name": "首席产品官（CPO）",
+          "path": "company/chief-product-officer.md"
+        },
+        {
+          "name": "首席技术官（CTO）",
+          "path": "company/chief-technology-officer.md"
+        }
+      ]
+    },
+    {
+      "id": "design",
+      "agents": [
+        {
+          "name": "品牌守护者",
+          "path": "design/design-brand-guardian.md"
+        },
+        {
+          "name": "图像提示词工程师",
+          "path": "design/design-image-prompt-engineer.md"
+        },
+        {
+          "name": "包容性视觉专家",
+          "path": "design/design-inclusive-visuals-specialist.md"
+        },
+        {
+          "name": "Persona 走查专家",
+          "path": "design/design-persona-walkthrough.md"
+        },
+        {
+          "name": "UI 设计师",
+          "path": "design/design-ui-designer.md"
+        },
+        {
+          "name": "UX 架构师",
+          "path": "design/design-ux-architect.md"
+        },
+        {
+          "name": "UX 研究员",
+          "path": "design/design-ux-researcher.md"
+        },
+        {
+          "name": "视频提示词工程师",
+          "path": "design/design-video-prompt-engineer.md"
+        },
+        {
+          "name": "视觉叙事师",
+          "path": "design/design-visual-storyteller.md"
+        },
+        {
+          "name": "趣味注入师",
+          "path": "design/design-whimsy-injector.md"
+        }
+      ]
+    },
+    {
+      "id": "engineering",
+      "agents": [
+        {
+          "name": "AI 数据修复工程师",
+          "path": "engineering/engineering-ai-data-remediation-engineer.md"
+        },
+        {
+          "name": "AI 工程师",
+          "path": "engineering/engineering-ai-engineer.md"
+        },
+        {
+          "name": "自主优化架构师",
+          "path": "engineering/engineering-autonomous-optimization-architect.md"
+        },
+        {
+          "name": "后端架构师",
+          "path": "engineering/engineering-backend-architect.md"
+        },
+        {
+          "name": "CMS 开发者",
+          "path": "engineering/engineering-cms-developer.md"
+        },
+        {
+          "name": "代码审查员",
+          "path": "engineering/engineering-code-reviewer.md"
+        },
+        {
+          "name": "代码库入职引导工程师",
+          "path": "engineering/engineering-codebase-onboarding-engineer.md"
+        },
+        {
+          "name": "数据工程师",
+          "path": "engineering/engineering-data-engineer.md"
+        },
+        {
+          "name": "数据库优化师",
+          "path": "engineering/engineering-database-optimizer.md"
+        },
+        {
+          "name": "DevOps 自动化师",
+          "path": "engineering/engineering-devops-automator.md"
+        },
+        {
+          "name": "钉钉集成开发工程师",
+          "path": "engineering/engineering-dingtalk-integration-developer.md"
+        },
+        {
+          "name": "Drupal 购物车工程师",
+          "path": "engineering/engineering-drupal-shopping-cart.md"
+        },
+        {
+          "name": "邮件智能工程师",
+          "path": "engineering/engineering-email-intelligence-engineer.md"
+        },
+        {
+          "name": "嵌入式固件工程师",
+          "path": "engineering/engineering-embedded-firmware-engineer.md"
+        },
+        {
+          "name": "嵌入式 Linux 驱动工程师",
+          "path": "engineering/engineering-embedded-linux-driver-engineer.md"
+        },
+        {
+          "name": "飞书集成开发工程师",
+          "path": "engineering/engineering-feishu-integration-developer.md"
+        },
+        {
+          "name": "Filament 优化专家",
+          "path": "engineering/engineering-filament-optimization-specialist.md"
+        },
+        {
+          "name": "FPGA/ASIC 数字设计工程师",
+          "path": "engineering/engineering-fpga-digital-design-engineer.md"
+        },
+        {
+          "name": "前端开发者",
+          "path": "engineering/engineering-frontend-developer.md"
+        },
+        {
+          "name": "Git 工作流大师",
+          "path": "engineering/engineering-git-workflow-master.md"
+        },
+        {
+          "name": "故障响应指挥官",
+          "path": "engineering/engineering-incident-response-commander.md"
+        },
+        {
+          "name": "IoT 方案架构师",
+          "path": "engineering/engineering-iot-solution-architect.md"
+        },
+        {
+          "name": "IT 服务经理",
+          "path": "engineering/engineering-it-service-manager.md"
+        },
+        {
+          "name": "机械设计工程师",
+          "path": "engineering/engineering-mechanical-design-engineer.md"
+        },
+        {
+          "name": "最小变更工程师",
+          "path": "engineering/engineering-minimal-change-engineer.md"
+        },
+        {
+          "name": "移动应用开发者",
+          "path": "engineering/engineering-mobile-app-builder.md"
+        },
+        {
+          "name": "多智能体系统架构师",
+          "path": "engineering/engineering-multi-agent-systems-architect.md"
+        },
+        {
+          "name": "国内网络工程师",
+          "path": "engineering/engineering-network-engineer-china.md"
+        },
+        {
+          "name": "OrgScript 工程师",
+          "path": "engineering/engineering-orgscript-engineer.md"
+        },
+        {
+          "name": "上位机工程师",
+          "path": "engineering/engineering-pc-host-engineer.md"
+        },
+        {
+          "name": "Prompt 工程师",
+          "path": "engineering/engineering-prompt-engineer.md"
+        },
+        {
+          "name": "快速原型师",
+          "path": "engineering/engineering-rapid-prototyper.md"
+        },
+        {
+          "name": "安全工程师",
+          "path": "engineering/engineering-security-engineer.md"
+        },
+        {
+          "name": "高级开发者",
+          "path": "engineering/engineering-senior-developer.md"
+        },
+        {
+          "name": "软件架构师",
+          "path": "engineering/engineering-software-architect.md"
+        },
+        {
+          "name": "Solidity 智能合约工程师",
+          "path": "engineering/engineering-solidity-smart-contract-engineer.md"
+        },
+        {
+          "name": "SRE (站点可靠性工程师)",
+          "path": "engineering/engineering-sre.md"
+        },
+        {
+          "name": "技术文档工程师",
+          "path": "engineering/engineering-technical-writer.md"
+        },
+        {
+          "name": "威胁检测工程师（工程侧）",
+          "path": "engineering/engineering-threat-detection-engineer.md"
+        },
+        {
+          "name": "语音 AI 集成工程师",
+          "path": "engineering/engineering-voice-ai-integration-engineer.md"
+        },
+        {
+          "name": "微信小程序开发者",
+          "path": "engineering/engineering-wechat-mini-program-developer.md"
+        },
+        {
+          "name": "WordPress 购物车工程师",
+          "path": "engineering/engineering-wordpress-shopping-cart.md"
+        }
+      ]
+    },
+    {
+      "id": "finance",
+      "agents": [
+        {
+          "name": "簿记与财务总监",
+          "path": "finance/finance-bookkeeper-controller.md"
+        },
+        {
+          "name": "财务分析师",
+          "path": "finance/finance-financial-analyst.md"
+        },
+        {
+          "name": "财务预测分析师",
+          "path": "finance/finance-financial-forecaster.md"
+        },
+        {
+          "name": "FP&A 分析师",
+          "path": "finance/finance-fpa-analyst.md"
+        },
+        {
+          "name": "金融风控分析师",
+          "path": "finance/finance-fraud-detector.md"
+        },
+        {
+          "name": "香港股市合规审查专家",
+          "path": "finance/finance-hk-stock-compliance-reviewer.md"
+        },
+        {
+          "name": "投资研究员",
+          "path": "finance/finance-investment-researcher.md"
+        },
+        {
+          "name": "发票管理专家",
+          "path": "finance/finance-invoice-manager.md"
+        },
+        {
+          "name": "税务策略师",
+          "path": "finance/finance-tax-strategist.md"
+        }
+      ]
+    },
+    {
+      "id": "game-development",
+      "agents": [
+        {
+          "name": "Blender 插件工程师",
+          "path": "game-development/blender/blender-addon-engineer.md"
+        },
+        {
+          "name": "游戏音频工程师",
+          "path": "game-development/game-audio-engineer.md"
+        },
+        {
+          "name": "游戏设计师",
+          "path": "game-development/game-designer.md"
+        },
+        {
+          "name": "Godot 游戏脚本开发者",
+          "path": "game-development/godot/godot-gameplay-scripter.md"
+        },
+        {
+          "name": "Godot 多人游戏工程师",
+          "path": "game-development/godot/godot-multiplayer-engineer.md"
+        },
+        {
+          "name": "Godot Shader 开发者",
+          "path": "game-development/godot/godot-shader-developer.md"
+        },
+        {
+          "name": "关卡设计师",
+          "path": "game-development/level-designer.md"
+        },
+        {
+          "name": "叙事设计师",
+          "path": "game-development/narrative-designer.md"
+        },
+        {
+          "name": "Roblox 虚拟形象创作者",
+          "path": "game-development/roblox-studio/roblox-avatar-creator.md"
+        },
+        {
+          "name": "Roblox 体验设计师",
+          "path": "game-development/roblox-studio/roblox-experience-designer.md"
+        },
+        {
+          "name": "Roblox 系统脚本工程师",
+          "path": "game-development/roblox-studio/roblox-systems-scripter.md"
+        },
+        {
+          "name": "技术美术",
+          "path": "game-development/technical-artist.md"
+        },
+        {
+          "name": "Unity 架构师",
+          "path": "game-development/unity/unity-architect.md"
+        },
+        {
+          "name": "Unity 编辑器工具开发者",
+          "path": "game-development/unity/unity-editor-tool-developer.md"
+        },
+        {
+          "name": "Unity 多人游戏工程师",
+          "path": "game-development/unity/unity-multiplayer-engineer.md"
+        },
+        {
+          "name": "Unity Shader Graph 美术师",
+          "path": "game-development/unity/unity-shader-graph-artist.md"
+        },
+        {
+          "name": "Unreal 多人游戏架构师",
+          "path": "game-development/unreal-engine/unreal-multiplayer-architect.md"
+        },
+        {
+          "name": "Unreal 系统工程师",
+          "path": "game-development/unreal-engine/unreal-systems-engineer.md"
+        },
+        {
+          "name": "Unreal 技术美术",
+          "path": "game-development/unreal-engine/unreal-technical-artist.md"
+        },
+        {
+          "name": "Unreal 世界构建师",
+          "path": "game-development/unreal-engine/unreal-world-builder.md"
+        }
+      ]
+    },
+    {
+      "id": "gis",
+      "agents": [
+        {
+          "name": "三维场景开发者",
+          "path": "gis/gis-3d-scene-developer.md"
+        },
+        {
+          "name": "GIS 分析师",
+          "path": "gis/gis-analyst.md"
+        },
+        {
+          "name": "BIM/GIS 专家",
+          "path": "gis/gis-bim-specialist.md"
+        },
+        {
+          "name": "地图制图设计师",
+          "path": "gis/gis-cartography-designer.md"
+        },
+        {
+          "name": "无人机实景测绘专家",
+          "path": "gis/gis-drone-reality-mapping.md"
+        },
+        {
+          "name": "GeoAI/ML 工程师",
+          "path": "gis/gis-geoai-ml-engineer.md"
+        },
+        {
+          "name": "地理处理专家",
+          "path": "gis/gis-geoprocessing-specialist.md"
+        },
+        {
+          "name": "GIS 质检工程师",
+          "path": "gis/gis-qa-engineer.md"
+        },
+        {
+          "name": "解决方案工程师",
+          "path": "gis/gis-solution-engineer.md"
+        },
+        {
+          "name": "空间数据工程师",
+          "path": "gis/gis-spatial-data-engineer.md"
+        },
+        {
+          "name": "空间数据科学家",
+          "path": "gis/gis-spatial-data-scientist.md"
+        },
+        {
+          "name": "技术顾问",
+          "path": "gis/gis-technical-consultant.md"
+        },
+        {
+          "name": "Web GIS 开发工程师",
+          "path": "gis/gis-web-gis-developer.md"
+        }
+      ]
+    },
+    {
+      "id": "hr",
+      "agents": [
+        {
+          "name": "绩效管理专家",
+          "path": "hr/hr-performance-reviewer.md"
+        },
+        {
+          "name": "招聘专家（HR 全流程）",
+          "path": "hr/hr-recruiter.md"
+        }
+      ]
+    },
+    {
+      "id": "legal",
+      "agents": [
+        {
+          "name": "合同审查专家",
+          "path": "legal/legal-contract-reviewer.md"
+        },
+        {
+          "name": "制度文件撰写专家",
+          "path": "legal/legal-policy-writer.md"
+        }
+      ]
+    },
+    {
+      "id": "marketing",
+      "agents": [
+        {
+          "name": "AEO 基础架构师",
+          "path": "marketing/marketing-aeo-foundations.md"
+        },
+        {
+          "name": "智能搜索优化师",
+          "path": "marketing/marketing-agentic-search-optimizer.md"
+        },
+        {
+          "name": "AI 搜索可见性与 GEO 策略师",
+          "path": "marketing/marketing-ai-citation-strategist.md"
+        },
+        {
+          "name": "应用商店优化师",
+          "path": "marketing/marketing-app-store-optimizer.md"
+        },
+        {
+          "name": "百度 SEO 专家",
+          "path": "marketing/marketing-baidu-seo-specialist.md"
+        },
+        {
+          "name": "B站内容策略师",
+          "path": "marketing/marketing-bilibili-strategist.md"
+        },
+        {
+          "name": "图书联合作者",
+          "path": "marketing/marketing-book-co-author.md"
+        },
+        {
+          "name": "轮播图增长引擎",
+          "path": "marketing/marketing-carousel-growth-engine.md"
+        },
+        {
+          "name": "中国电商运营专家",
+          "path": "marketing/marketing-china-ecommerce-operator.md"
+        },
+        {
+          "name": "中国市场本地化策略师",
+          "path": "marketing/marketing-china-market-localization-strategist.md"
+        },
+        {
+          "name": "内容创作者",
+          "path": "marketing/marketing-content-creator.md"
+        },
+        {
+          "name": "跨境电商运营专家",
+          "path": "marketing/marketing-cross-border-ecommerce.md"
+        },
+        {
+          "name": "新闻情报官",
+          "path": "marketing/marketing-daily-news-briefing.md"
+        },
+        {
+          "name": "抖音策略师",
+          "path": "marketing/marketing-douyin-strategist.md"
+        },
+        {
+          "name": "电商运营师",
+          "path": "marketing/marketing-ecommerce-operator.md"
+        },
+        {
+          "name": "邮件营销策略师",
+          "path": "marketing/marketing-email-strategist.md"
+        },
+        {
+          "name": "全球播客策略师",
+          "path": "marketing/marketing-global-podcast-strategist.md"
+        },
+        {
+          "name": "增长黑客",
+          "path": "marketing/marketing-growth-hacker.md"
+        },
+        {
+          "name": "Instagram 策展师",
+          "path": "marketing/marketing-instagram-curator.md"
+        },
+        {
+          "name": "知识付费产品策划师",
+          "path": "marketing/marketing-knowledge-commerce-strategist.md"
+        },
+        {
+          "name": "快手策略师",
+          "path": "marketing/marketing-kuaishou-strategist.md"
+        },
+        {
+          "name": "LinkedIn 内容创作专家",
+          "path": "marketing/marketing-linkedin-content-creator.md"
+        },
+        {
+          "name": "直播电商主播教练",
+          "path": "marketing/marketing-livestream-commerce-coach.md"
+        },
+        {
+          "name": "多平台发布编排官",
+          "path": "marketing/marketing-multi-platform-publisher.md"
+        },
+        {
+          "name": "播客内容策略师",
+          "path": "marketing/marketing-podcast-strategist.md"
+        },
+        {
+          "name": "PR 与传播经理",
+          "path": "marketing/marketing-pr-communications-manager.md"
+        },
+        {
+          "name": "私域流量运营师",
+          "path": "marketing/marketing-private-domain-operator.md"
+        },
+        {
+          "name": "Reddit 社区运营",
+          "path": "marketing/marketing-reddit-community-builder.md"
+        },
+        {
+          "name": "搜索增长编排器",
+          "path": "marketing/marketing-search-growth-orchestrator.md"
+        },
+        {
+          "name": "SEO 与自然搜索增长专家",
+          "path": "marketing/marketing-seo-specialist.md"
+        },
+        {
+          "name": "短视频剪辑指导师",
+          "path": "marketing/marketing-short-video-editing-coach.md"
+        },
+        {
+          "name": "社交媒体策略师",
+          "path": "marketing/marketing-social-media-strategist.md"
+        },
+        {
+          "name": "TikTok 策略师",
+          "path": "marketing/marketing-tiktok-strategist.md"
+        },
+        {
+          "name": "Twitter 互动官",
+          "path": "marketing/marketing-twitter-engager.md"
+        },
+        {
+          "name": "视频优化专家",
+          "path": "marketing/marketing-video-optimization-specialist.md"
+        },
+        {
+          "name": "微信公众号管理",
+          "path": "marketing/marketing-wechat-official-account.md"
+        },
+        {
+          "name": "微信公众号运营",
+          "path": "marketing/marketing-wechat-operator.md"
+        },
+        {
+          "name": "微博运营策略师",
+          "path": "marketing/marketing-weibo-strategist.md"
+        },
+        {
+          "name": "微信视频号运营策略师",
+          "path": "marketing/marketing-weixin-channels-strategist.md"
+        },
+        {
+          "name": "X/Twitter 情报分析师",
+          "path": "marketing/marketing-x-twitter-intelligence-analyst.md"
+        },
+        {
+          "name": "小红书运营专家",
+          "path": "marketing/marketing-xiaohongshu-operator.md"
+        },
+        {
+          "name": "小红书专家",
+          "path": "marketing/marketing-xiaohongshu-specialist.md"
+        },
+        {
+          "name": "知乎策略师",
+          "path": "marketing/marketing-zhihu-strategist.md"
+        }
+      ]
+    },
+    {
+      "id": "paid-media",
+      "agents": [
+        {
+          "name": "付费媒体审计师",
+          "path": "paid-media/paid-media-auditor.md"
+        },
+        {
+          "name": "广告创意策略师",
+          "path": "paid-media/paid-media-creative-strategist.md"
+        },
+        {
+          "name": "社交广告策略师",
+          "path": "paid-media/paid-media-paid-social-strategist.md"
+        },
+        {
+          "name": "PPC 竞价策略师",
+          "path": "paid-media/paid-media-ppc-strategist.md"
+        },
+        {
+          "name": "程序化广告采买专家",
+          "path": "paid-media/paid-media-programmatic-buyer.md"
+        },
+        {
+          "name": "搜索词分析师",
+          "path": "paid-media/paid-media-search-query-analyst.md"
+        },
+        {
+          "name": "追踪与归因专家",
+          "path": "paid-media/paid-media-tracking-specialist.md"
+        }
+      ]
+    },
+    {
+      "id": "product",
+      "agents": [
+        {
+          "name": "行为助推引擎",
+          "path": "product/product-behavioral-nudge-engine.md"
+        },
+        {
+          "name": "反馈分析师",
+          "path": "product/product-feedback-synthesizer.md"
+        },
+        {
+          "name": "产品经理（PM）",
+          "path": "product/product-manager.md"
+        },
+        {
+          "name": "Sprint 排序师",
+          "path": "product/product-sprint-prioritizer.md"
+        },
+        {
+          "name": "趋势研究员",
+          "path": "product/product-trend-researcher.md"
+        }
+      ]
+    },
+    {
+      "id": "project-management",
+      "agents": [
+        {
+          "name": "实验追踪员",
+          "path": "project-management/project-management-experiment-tracker.md"
+        },
+        {
+          "name": "Jira工作流管家",
+          "path": "project-management/project-management-jira-workflow-steward.md"
+        },
+        {
+          "name": "会议纪要专家",
+          "path": "project-management/project-management-meeting-notes-specialist.md"
+        },
+        {
+          "name": "项目牧羊人",
+          "path": "project-management/project-management-project-shepherd.md"
+        },
+        {
+          "name": "工作室运营",
+          "path": "project-management/project-management-studio-operations.md"
+        },
+        {
+          "name": "工作室制片人",
+          "path": "project-management/project-management-studio-producer.md"
+        },
+        {
+          "name": "高级项目经理",
+          "path": "project-management/project-manager-senior.md"
+        }
+      ]
+    },
+    {
+      "id": "sales",
+      "agents": [
+        {
+          "name": "客户拓展策略师",
+          "path": "sales/sales-account-strategist.md"
+        },
+        {
+          "name": "销售教练",
+          "path": "sales/sales-coach.md"
+        },
+        {
+          "name": "赢单策略师",
+          "path": "sales/sales-deal-strategist.md"
+        },
+        {
+          "name": "Discovery 教练",
+          "path": "sales/sales-discovery-coach.md"
+        },
+        {
+          "name": "售前工程师",
+          "path": "sales/sales-engineer.md"
+        },
+        {
+          "name": "Offer 与 Lead Gen 策略师",
+          "path": "sales/sales-offer-lead-gen-strategist.md"
+        },
+        {
+          "name": "Outbound 策略师",
+          "path": "sales/sales-outbound-strategist.md"
+        },
+        {
+          "name": "Pipeline 分析师",
+          "path": "sales/sales-pipeline-analyst.md"
+        },
+        {
+          "name": "投标策略师",
+          "path": "sales/sales-proposal-strategist.md"
+        }
+      ]
+    },
+    {
+      "id": "security",
+      "agents": [
+        {
+          "name": "应用安全工程师",
+          "path": "security/security-appsec-engineer.md"
+        },
+        {
+          "name": "安全架构师",
+          "path": "security/security-architect.md"
+        },
+        {
+          "name": "区块链安全审计师",
+          "path": "security/security-blockchain-security-auditor.md"
+        },
+        {
+          "name": "云安全架构师",
+          "path": "security/security-cloud-security-architect.md"
+        },
+        {
+          "name": "合规审计师",
+          "path": "security/security-compliance-auditor.md"
+        },
+        {
+          "name": "事件响应专家",
+          "path": "security/security-incident-responder.md"
+        },
+        {
+          "name": "渗透测试员",
+          "path": "security/security-penetration-tester.md"
+        },
+        {
+          "name": "高级安全运营工程师",
+          "path": "security/security-senior-secops.md"
+        },
+        {
+          "name": "威胁检测工程师（安全运营）",
+          "path": "security/security-threat-detection-engineer.md"
+        },
+        {
+          "name": "威胁情报分析师",
+          "path": "security/security-threat-intelligence-analyst.md"
+        }
+      ]
+    },
+    {
+      "id": "spatial-computing",
+      "agents": [
+        {
+          "name": "macOS Metal 空间工程师",
+          "path": "spatial-computing/macos-spatial-metal-engineer.md"
+        },
+        {
+          "name": "终端集成专家",
+          "path": "spatial-computing/terminal-integration-specialist.md"
+        },
+        {
+          "name": "visionOS 空间工程师",
+          "path": "spatial-computing/visionos-spatial-engineer.md"
+        },
+        {
+          "name": "XR 座舱交互专家",
+          "path": "spatial-computing/xr-cockpit-interaction-specialist.md"
+        },
+        {
+          "name": "XR 沉浸式开发者",
+          "path": "spatial-computing/xr-immersive-developer.md"
+        },
+        {
+          "name": "XR 界面架构师",
+          "path": "spatial-computing/xr-interface-architect.md"
+        }
+      ]
+    },
+    {
+      "id": "specialized",
+      "agents": [
+        {
+          "name": "应付账款智能体",
+          "path": "specialized/accounts-payable-agent.md"
+        },
+        {
+          "name": "身份信任架构师",
+          "path": "specialized/agentic-identity-trust.md"
+        },
+        {
+          "name": "智能体编排者",
+          "path": "specialized/agents-orchestrator.md"
+        },
+        {
+          "name": "鉴定评估师",
+          "path": "specialized/authenticity-appraiser.md"
+        },
+        {
+          "name": "自动化治理架构师",
+          "path": "specialized/automation-governance-architect.md"
+        },
+        {
+          "name": "商业战略家",
+          "path": "specialized/business-strategist.md"
+        },
+        {
+          "name": "变革管理顾问",
+          "path": "specialized/change-management-consultant.md"
+        },
+        {
+          "name": "企业培训课程设计师",
+          "path": "specialized/corporate-training-designer.md"
+        },
+        {
+          "name": "客户成功经理",
+          "path": "specialized/customer-success-manager.md"
+        },
+        {
+          "name": "数据整合师",
+          "path": "specialized/data-consolidation-agent.md"
+        },
+        {
+          "name": "数据隐私官",
+          "path": "specialized/data-privacy-officer.md"
+        },
+        {
+          "name": "ESG 与可持续发展官",
+          "path": "specialized/esg-sustainability-officer.md"
+        },
+        {
+          "name": "高考志愿填报顾问",
+          "path": "specialized/gaokao-college-advisor.md"
+        },
+        {
+          "name": "政务数字化售前顾问",
+          "path": "specialized/government-digital-presales-consultant.md"
+        },
+        {
+          "name": "资助申请撰稿人",
+          "path": "specialized/grant-writer.md"
+        },
+        {
+          "name": "医疗客服专家",
+          "path": "specialized/healthcare-customer-service.md"
+        },
+        {
+          "name": "医疗健康营销合规师",
+          "path": "specialized/healthcare-marketing-compliance.md"
+        },
+        {
+          "name": "酒店宾客服务专家",
+          "path": "specialized/hospitality-guest-services.md"
+        },
+        {
+          "name": "HR 入职管理专家",
+          "path": "specialized/hr-onboarding.md"
+        },
+        {
+          "name": "身份图谱操作员",
+          "path": "specialized/identity-graph-operator.md"
+        },
+        {
+          "name": "语言翻译专家",
+          "path": "specialized/language-translator.md"
+        },
+        {
+          "name": "律所计费与工时专家",
+          "path": "specialized/legal-billing-time-tracking.md"
+        },
+        {
+          "name": "律所客户接案专家",
+          "path": "specialized/legal-client-intake.md"
+        },
+        {
+          "name": "法律文书审查专家",
+          "path": "specialized/legal-document-review.md"
+        },
+        {
+          "name": "养殖档案核对员",
+          "path": "specialized/livestock-archive-auditor.md"
+        },
+        {
+          "name": "信贷经理助手",
+          "path": "specialized/loan-officer-assistant.md"
+        },
+        {
+          "name": "LSP 索引工程师",
+          "path": "specialized/lsp-index-engineer.md"
+        },
+        {
+          "name": "M&A 整合经理",
+          "path": "specialized/ma-integration-manager.md"
+        },
+        {
+          "name": "医疗账单与编码专员",
+          "path": "specialized/medical-billing-coding-specialist.md"
+        },
+        {
+          "name": "运营经理",
+          "path": "specialized/operations-manager.md"
+        },
+        {
+          "name": "组织心理学家",
+          "path": "specialized/organizational-psychologist.md"
+        },
+        {
+          "name": "个人成长导师",
+          "path": "specialized/personal-growth-mentor.md"
+        },
+        {
+          "name": "提示词工程师",
+          "path": "specialized/prompt-engineer.md"
+        },
+        {
+          "name": "房地产经纪助手",
+          "path": "specialized/real-estate-buyer-seller.md"
+        },
+        {
+          "name": "人才获取专家",
+          "path": "specialized/recruitment-specialist.md"
+        },
+        {
+          "name": "报告分发师",
+          "path": "specialized/report-distribution-agent.md"
+        },
+        {
+          "name": "零售退货专家",
+          "path": "specialized/retail-customer-returns.md"
+        },
+        {
+          "name": "销售数据提取师",
+          "path": "specialized/sales-data-extraction-agent.md"
+        },
+        {
+          "name": "AI 治理政策专家",
+          "path": "specialized/specialized-ai-policy-writer.md"
+        },
+        {
+          "name": "土木工程师",
+          "path": "specialized/specialized-civil-engineer.md"
+        },
+        {
+          "name": "文化智能策略师",
+          "path": "specialized/specialized-cultural-intelligence-strategist.md"
+        },
+        {
+          "name": "开发者布道师",
+          "path": "specialized/specialized-developer-advocate.md"
+        },
+        {
+          "name": "文档生成器",
+          "path": "specialized/specialized-document-generator.md"
+        },
+        {
+          "name": "法国咨询市场专家",
+          "path": "specialized/specialized-french-consulting-market.md"
+        },
+        {
+          "name": "韩国商务专家",
+          "path": "specialized/specialized-korean-business-navigator.md"
+        },
+        {
+          "name": "MCP 构建器",
+          "path": "specialized/specialized-mcp-builder.md"
+        },
+        {
+          "name": "会议效率专家",
+          "path": "specialized/specialized-meeting-assistant.md"
+        },
+        {
+          "name": "模型 QA 专家",
+          "path": "specialized/specialized-model-qa.md"
+        },
+        {
+          "name": "定价分析师",
+          "path": "specialized/specialized-pricing-analyst.md"
+        },
+        {
+          "name": "动态定价策略师",
+          "path": "specialized/specialized-pricing-optimizer.md"
+        },
+        {
+          "name": "企业风险评估师",
+          "path": "specialized/specialized-risk-assessor.md"
+        },
+        {
+          "name": "Salesforce 架构师",
+          "path": "specialized/specialized-salesforce-architect.md"
+        },
+        {
+          "name": "策略对决推演师",
+          "path": "specialized/specialized-strategy-duel-agent.md"
+        },
+        {
+          "name": "工作流架构师",
+          "path": "specialized/specialized-workflow-architect.md"
+        },
+        {
+          "name": "留学规划顾问",
+          "path": "specialized/study-abroad-advisor.md"
+        },
+        {
+          "name": "技术翻译专家",
+          "path": "specialized/technical-translator-agent.md"
+        },
+        {
+          "name": "旅行规划师",
+          "path": "specialized/travel-planner.md"
+        },
+        {
+          "name": "ZK 管家",
+          "path": "specialized/zk-steward.md"
+        }
+      ]
+    },
+    {
+      "id": "supply-chain",
+      "agents": [
+        {
+          "name": "服装工厂规划工程师",
+          "path": "supply-chain/supply-chain-garment-factory-planning-engineer.md"
+        },
+        {
+          "name": "库存预测专家",
+          "path": "supply-chain/supply-chain-inventory-forecaster.md"
+        },
+        {
+          "name": "物流路线优化师",
+          "path": "supply-chain/supply-chain-route-optimizer.md"
+        },
+        {
+          "name": "供应链采购策略师",
+          "path": "supply-chain/supply-chain-strategist.md"
+        },
+        {
+          "name": "供应商评估专家",
+          "path": "supply-chain/supply-chain-vendor-evaluator.md"
+        }
+      ]
+    },
+    {
+      "id": "support",
+      "agents": [
+        {
+          "name": "数据分析师",
+          "path": "support/support-analytics-reporter.md"
+        },
+        {
+          "name": "高管摘要师",
+          "path": "support/support-executive-summary-generator.md"
+        },
+        {
+          "name": "财务追踪员",
+          "path": "support/support-finance-tracker.md"
+        },
+        {
+          "name": "基础设施运维师",
+          "path": "support/support-infrastructure-maintainer.md"
+        },
+        {
+          "name": "法务合规员",
+          "path": "support/support-legal-compliance-checker.md"
+        },
+        {
+          "name": "招聘运营专家",
+          "path": "support/support-recruitment-specialist.md"
+        },
+        {
+          "name": "客服响应者",
+          "path": "support/support-support-responder.md"
+        }
+      ]
+    },
+    {
+      "id": "testing",
+      "agents": [
+        {
+          "name": "无障碍审核员",
+          "path": "testing/testing-accessibility-auditor.md"
+        },
+        {
+          "name": "API 测试员",
+          "path": "testing/testing-api-tester.md"
+        },
+        {
+          "name": "嵌入式测试工程师",
+          "path": "testing/testing-embedded-qa-engineer.md"
+        },
+        {
+          "name": "证据收集者",
+          "path": "testing/testing-evidence-collector.md"
+        },
+        {
+          "name": "性能基准师",
+          "path": "testing/testing-performance-benchmarker.md"
+        },
+        {
+          "name": "现实检验者",
+          "path": "testing/testing-reality-checker.md"
+        },
+        {
+          "name": "测试结果分析师",
+          "path": "testing/testing-test-results-analyzer.md"
+        },
+        {
+          "name": "工具评估师",
+          "path": "testing/testing-tool-evaluator.md"
+        },
+        {
+          "name": "工作流优化师",
+          "path": "testing/testing-workflow-optimizer.md"
+        }
+      ]
+    }
+  ]
+}
