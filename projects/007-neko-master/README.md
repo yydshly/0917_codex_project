@@ -73,10 +73,14 @@ python scripts/projects.py check
 python scripts/build_site.py
 ```
 
-上述检查验证教学模型、来源与静态产物，不等同于运行上游。产物已按 GitHub Pages 子路径准备，尚未公开部署，`demo` 留空。[维护说明](web/README.md)
+上述检查验证教学模型、来源与静态产物，不等同于运行上游。产物已按 GitHub Pages 子路径准备，已公开部署，`demo` 留空。[维护说明](web/README.md)
 
 ## 阶段结论
 
 适合家庭、实验室和多网关环境的流量观察与分流排查。可复用的设计包括网关适配器、连接差分、实时内存与批量落盘分离、统一维度聚合和远程主动上报。
 
 网关 API 无法保证覆盖未经过网关的流量、全部短连接和断采期间已消失的记录。缓存与去重含内存状态，重启、队列溢出和写入失败需实测。项目没有提供 HTTPS 内容解密，也不能直接作为严格计费依据。
+
+## 公开部署
+
+[在线研究页](https://yydshly.github.io/0917_codex_project/apps/007-neko-master/) · [第一张引导图](https://yydshly.github.io/0917_codex_project/apps/007-neko-master/#guide) · [第二张底层图](https://yydshly.github.io/0917_codex_project/apps/007-neko-master/#network-flow)。[首次发布工作流](https://github.com/yydshly/0917_codex_project/actions/runs/35230427660) 成功；21 个线上文件一致性检查通过。记录见 [部署验证](experiments/deployment.json)。

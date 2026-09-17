@@ -8,6 +8,8 @@
 
 `model.mjs` 是独立缩小模型，不是上游源码；`app.mjs` 控制截图和教学交互。模型测试 `node --test projects/007-neko-master/experiments/model.test.mjs`；静态与来源检查 `python projects/007-neko-master/experiments/verify.py`。
 
-构建使用文件白名单：HTML、CSS、JS、原创 SVG、四张上游 PNG、指定研究正文 TXT、来源清单 JSON 和 MIT 许可。不会复制 upstream、任何凭据、未选中的实验文件。站点尚未公开部署，`demo` 保持空字符串。
+构建使用文件白名单：HTML、CSS、JS、原创 SVG、四张上游 PNG、指定研究正文 TXT、来源清单 JSON 和 MIT 许可。不会复制 upstream、任何凭据、未选中的实验文件。站点已部署，正式地址已登记到 `demo`。
 
 另包含原创 `clash-network-flow.svg`、其高清 PNG 导出及文字说明，展示系统代理、TUN 与 Trojan 的交互。`draw-network-flow.py` 用 Python 标准库生成 SVG；PNG 为已检查的导出素材，日常站点构建无需图像库。页面 `#network-flow` 可直达该图。
+
+已部署：[在线研究页](https://yydshly.github.io/0917_codex_project/apps/007-neko-master/) · [两张引导图](https://yydshly.github.io/0917_codex_project/apps/007-neko-master/#guide)。首轮发布 [工作流](https://github.com/yydshly/0917_codex_project/actions/runs/35230427660) 成功；21 个公开文件与构建产物一致，线上摘要、图片和跳转已验证。见 `experiments/deployment.json`。

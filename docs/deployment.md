@@ -61,3 +61,5 @@ python -m http.server 8765 --bind 127.0.0.1 --directory site
 网页可访问不代表上游角色能力已验证。Agency Agents 当前完成分类整理、候选筛选与展示；后续按任务需求评估实际效果与模型升级的影响。
 
 参考：[GitHub Pages 自定义工作流](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)。
+
+007 Neko Master 已部署：[在线研究页](https://yydshly.github.io/0917_codex_project/apps/007-neko-master/) · [两张引导图](https://yydshly.github.io/0917_codex_project/apps/007-neko-master/#guide)。[首次发布工作流](https://github.com/yydshly/0917_codex_project/actions/runs/35230427660) 成功，21 个公开文件、线上摘要与图片验证通过。

@@ -1,0 +1,142 @@
+{
+  "url": "https://yydshly.github.io/0917_codex_project/apps/007-neko-master/",
+  "verified_at": "2026-09-17T13:58:49.583168+00:00",
+  "workflow": "https://github.com/yydshly/0917_codex_project/actions/runs/35230427660",
+  "commit": "4ae32438b083544be860a07edec436b1663f9e78",
+  "files": [
+    {
+      "file": "app.mjs",
+      "bytes": 5017,
+      "sha256": "709c0489e37cdfce16838313d73cbe3c1f5c8d390d67b6d81d0c277e7f222ec0",
+      "match": "exact"
+    },
+    {
+      "file": "architecture.txt",
+      "bytes": 7214,
+      "sha256": "924023f7911045787cc126fb5e90ae5907ddc55826f6fe099a18e30c856571c0",
+      "match": "exact"
+    },
+    {
+      "file": "capabilities.txt",
+      "bytes": 3799,
+      "sha256": "0145ff76e80a349042fc7fc3103216528d10cc580d99a96ad50619f51bc61be5",
+      "match": "exact"
+    },
+    {
+      "file": "capability-summary-text.txt",
+      "bytes": 923,
+      "sha256": "24d74bcc7ad0928c8c9ebfcbe3f3a79735d495aac3a3df368fc96067c68a7d39",
+      "match": "exact"
+    },
+    {
+      "file": "capability-summary.svg",
+      "bytes": 3933,
+      "sha256": "dc1e7652f11fa0d9c5649776ae79f279ef186801ce80b997accb2508343b74b6",
+      "match": "exact"
+    },
+    {
+      "file": "clash-network-flow-text.txt",
+      "bytes": 4768,
+      "sha256": "15fd1c092782571571bcd38c3f2b6f2f65a2ba74ab5de24267d969a697b494d3",
+      "match": "exact"
+    },
+    {
+      "file": "clash-network-flow.png",
+      "bytes": 1236775,
+      "sha256": "edbe71634774d542206cd8a01edf5f88636302541429cfae0dfb9cbbef87ae8b",
+      "match": "exact"
+    },
+    {
+      "file": "clash-network-flow.svg",
+      "bytes": 14176,
+      "sha256": "83072cbf9b82fa10e8cf0e59d76ef2f8b6955bf4cb8ee0e34a6876dde2e986cd",
+      "match": "exact"
+    },
+    {
+      "file": "favicon.svg",
+      "bytes": 187,
+      "sha256": "cc39d8e696a765bdf54a8cd43d8fe95f9441e6e3c9b49da67ac703cacc4195c6",
+      "match": "exact"
+    },
+    {
+      "file": "index.html",
+      "bytes": 19713,
+      "sha256": "5988245e2def593e0267094bfaee7b420729f9263bd914a7671ffb6bddaaed4a",
+      "match": "exact"
+    },
+    {
+      "file": "LICENSE.neko-master.txt",
+      "bytes": 1066,
+      "sha256": "fb8f39ce11f2fbf985450599dbad27f725f4a0ca9a6fbfd0d26866cdd3723048",
+      "match": "exact"
+    },
+    {
+      "file": "model.mjs",
+      "bytes": 1985,
+      "sha256": "cac9d78fa1b97b095603bf52281933975d17ad168eaaae7bf6b952b7086e8ee4",
+      "match": "exact"
+    },
+    {
+      "file": "neko-master-domains-dark.png",
+      "bytes": 537586,
+      "sha256": "67a960638694554c76d581e2fecd520d4d5ede63a4e037428c33f08b05ef7acf",
+      "match": "exact"
+    },
+    {
+      "file": "neko-master-overview-light.png",
+      "bytes": 764719,
+      "sha256": "8728fa4843630e8877e564dba0e4463c3a4dc3d2ddcb6c8287ef9fdab233b2a4",
+      "match": "exact"
+    },
+    {
+      "file": "neko-master-regions-light.png",
+      "bytes": 624574,
+      "sha256": "f07782df37711b9abe8228641045f4b1bc347bbb3f399ee6531446ab9245e584",
+      "match": "exact"
+    },
+    {
+      "file": "neko-master-rules-dark.png",
+      "bytes": 1007029,
+      "sha256": "539c190589035af489859cba70f6ac2687638a3220646e9652a7228539f45e4e",
+      "match": "exact"
+    },
+    {
+      "file": "source-manifest.json",
+      "bytes": 8803,
+      "sha256": "34851c9f0dc25068df843a9ed5d1ab008e8b57eab9775fa5239e51d067cf3a6f",
+      "match": "normalized_newlines"
+    },
+    {
+      "file": "sources.txt",
+      "bytes": 5805,
+      "sha256": "f6df5f58c3b156ed6a8f739b4ed9e60da23893fb240e92537595bf90c50a101f",
+      "match": "exact"
+    },
+    {
+      "file": "styles.css",
+      "bytes": 13231,
+      "sha256": "79f52a439639d0ab0972423c3fece2664899321ab309915161c0d93d18c51087",
+      "match": "exact"
+    },
+    {
+      "file": "system-proxy-tun-revised.png",
+      "bytes": 1794235,
+      "sha256": "bad4ecc856acaa798df8123498094a68fdd9aa7f7dd2e4cd741883ff6d2ef9f9",
+      "match": "exact"
+    },
+    {
+      "file": "understanding.txt",
+      "bytes": 4225,
+      "sha256": "7ca6e1254961053c96ce9710c4a974cbc293db6d18444064bd5839db5377e2e6",
+      "match": "exact"
+    }
+  ],
+  "status": "passed",
+  "scope": "Static website and published assets; no live gateway monitoring",
+  "browser_checks": [
+    "Online summary and both diagrams visible",
+    "Both images fully loaded",
+    "Guide link navigates to #network-flow",
+    "No horizontal overflow in current online viewport"
+  ]
+}
