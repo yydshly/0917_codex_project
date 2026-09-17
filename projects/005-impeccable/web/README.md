@@ -4,7 +4,7 @@
 
 入口 index.template.html；实验页面共用 board.template.html、data.json 与 board.js，差别由 before.css / after.css 及少量可访问性文案控制。build.py 读取保存的实验结果生成表格，再复制资源到 site/apps/005-impeccable/。资源使用相对路径，适配 Pages 仓库前缀，不使用服务端路由。
 
-网页不运行 AI、检测器或 Live。版本切换是静态案例展示，不是官方 Live。公开部署验证前，demo 元数据保持为空。
+网页不运行 AI、检测器或 Live。版本切换是静态案例展示，不是官方 Live。已验证并登记 [在线研究页](https://yydshly.github.io/0917_codex_project/apps/005-impeccable/)；发布检查脚本为 ../experiments/check_deployment.cjs。
 
 中文 `.txt` 文档使用带 BOM 的 UTF-8 导出，避免静态服务器未声明 HTTP charset 时浏览器按其他编码打开。Markdown 源文件仍保持 UTF-8，正文不变。
 

@@ -15,7 +15,7 @@
 | 002 | [Agency Agents 中文版](projects/002-agency-agents-zh/README.md) | 中文角色与工作方法库，提供20个部门、277个角色的职责、步骤和交付要求，并做中国场景适配；为我的项目研究、验证和中文文档沉淀提供可复用方法，后续可由独立编排器调度，实际增益待验证。 | 研究中 | <a href="https://github.com/jnMetaCode/agency-agents-zh">jnMetaCode/agency-agents-zh</a> | <a href="https://yydshly.github.io/0917_codex_project/apps/002-agency-agents-zh/">访问演示</a> |
 | 003 | [Agency Orchestrator](projects/003-agency-orchestrator/README.md) | 面向具体场景选择角色、拆分任务并按依赖编排执行，支持结果传递、运行留档与局部返工；适用于内容策划、产品方案和研究评审。对我们的价值是复用流程、追溯结果与减少重复执行；质量增益和角色冗余仍需后续用真实产品任务对照验证。 | 研究中 | <a href="https://github.com/jnMetaCode/agency-orchestrator">jnMetaCode/agency-orchestrator</a> | <a href="https://yydshly.github.io/0917_codex_project/apps/003-agency-orchestrator/">访问演示</a> |
 | 004 | [Ponytail](projects/004-ponytail/README.md) | 指导 AI 开发前先理解需求、优先复用已有代码与平台能力，以必要的新增代码完成需求，并提供改动审查、全库精简建议和已标记技术债汇总。核心是 Skill 工程规则，经插件与 Hooks、静态规则文件或 MCP 进入模型上下文，再由宿主 AI 读取项目、选择方案、修改和验证；属于提示约束，实际收益待对照验证。 | 研究中 | <a href="https://github.com/DietrichGebert/ponytail">DietrichGebert/ponytail</a> | <a href="https://yydshly.github.io/0917_codex_project/apps/004-ponytail/">访问演示</a> |
-| 005 | [Impeccable](projects/005-impeccable/README.md) | 面向前端界面优化：Skill 提供通用设计约束，用户明确风格和特殊要求，大模型据此细化方案并实现，检测器辅助检查。对我可作为网页改进的方法与验收参考；具体能力、适用场景和实际增益仍需后续逐项梳理与验证。 | 研究中 | <a href="https://github.com/pbakaus/impeccable">pbakaus/impeccable</a> | — |
+| 005 | [Impeccable](projects/005-impeccable/README.md) | 面向前端界面优化：Skill 提供通用设计约束，用户明确风格和特殊要求，大模型据此细化方案并实现，检测器辅助检查。对我可作为网页改进的方法与验收参考；具体能力、适用场景和实际增益仍需后续逐项梳理与验证。 | 研究中 | <a href="https://github.com/pbakaus/impeccable">pbakaus/impeccable</a> | <a href="https://yydshly.github.io/0917_codex_project/apps/005-impeccable/">访问演示</a> |
 <!-- PROJECT_INDEX:END -->
 
 ## 项目预览

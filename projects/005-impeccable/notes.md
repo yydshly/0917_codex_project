@@ -85,7 +85,13 @@ DEMO_ORIGIN 可以调整服务地址。实际截图保存到 assets/，浏览器
 - 没有实体手机、屏幕阅读器或完整 WCAG 审计。
 - 200% 文字压力测试为逐元素计算字号放大，不冒充浏览器缩放/系统设置。
 - 默认状态运行规则检测；交互和压力状态由浏览器脚本另验。
-- 网页展示静态记录与可操作案例，不在访问时调用 AI/检测器；未公开部署。
+- 网页展示静态记录与可操作案例，不在访问时调用 AI/检测器。
+
+## 公开部署验证
+
+2026-09-17 已发布至 [在线研究页](https://yydshly.github.io/0917_codex_project/apps/005-impeccable/)。首次发布 commit 为 2abd38c6d2144198005608c8f8d406559d0f504f，[工作流 35209570002](https://github.com/yydshly/0917_codex_project/actions/runs/35209570002) 成功。
+
+实际核对 38 个线上文件与构建结果（文本统一换行后比较），检查桌面/手机布局、引导图加载、摘要内容、空结果恢复，以及三个中文文本文件的 UTF-8 显示。首次核对记录保存在 experiments/deployment.json；可在已配置 Playwright 的环境运行 experiments/check_deployment.cjs 重新验证。发布可用性不代表上游全部能力或实际收益已经验证。
 
 ## 文件职责
 

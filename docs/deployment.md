@@ -25,7 +25,7 @@ python -m http.server 8765 --bind 127.0.0.1 --directory site
 
 构建只需 Python 3.10+ 标准库，使用保存的版本清单，不依赖网络或上游源码副本。各子项目独立选用技术栈；目前总构建入口已登记 001–005 的构建方式，后续按项目需要添加。
 
-005 Impeccable 的静态产物位于 `site/apps/005-impeccable/`，源码位于 `projects/005-impeccable/web/`。包含能力分析、同数据研究看板前后版本、四种交互场景、官方检测记录和浏览器验证。已完成本地构建与仓库前缀模拟检查，尚未公开部署，`demo` 留空；本地预览见[维护说明](../projects/005-impeccable/web/README.md)。网页不执行 AI、检测器或 Live，原始规则输出附上游许可与 NOTICE。
+005 Impeccable 的静态产物位于 `site/apps/005-impeccable/`，源码位于 `projects/005-impeccable/web/`。以单张引导图说明前端优化能力、Skill 通用约束、用户与模型的定制分工及个人使用价值，另有教学看板、四种交互场景和实测记录。已部署：[在线研究页](https://yydshly.github.io/0917_codex_project/apps/005-impeccable/) · [单张引导图](https://yydshly.github.io/0917_codex_project/apps/005-impeccable/#guide)；首次发布 [工作流 35209570002](https://github.com/yydshly/0917_codex_project/actions/runs/35209570002)。已核对 38 个线上文件、桌面/手机布局、图像加载、空结果恢复和中文文本编码，`demo` 已登记。具体能力与实际收益仍需后续逐项研究；网页不执行 AI、检测器或 Live，原始规则输出附上游许可与 NOTICE。复现见[维护说明](../projects/005-impeccable/web/README.md)。
 
 004 Ponytail 的静态产物位于 `site/apps/004-ponytail/`，源码位于 `projects/004-ponytail/web/`。页面说明库的能力、复用优先决策、Skill 与插件 / Hooks / 规则文件 / MCP 的关系，并以同一张原理全景图作为摘要和封面。已部署：[在线研究页](https://yydshly.github.io/0917_codex_project/apps/004-ponytail/) · [全景图与机制详解](https://yydshly.github.io/0917_codex_project/apps/004-ponytail/architecture.html#guide) · [高清图](https://yydshly.github.io/0917_codex_project/apps/004-ponytail/capability-summary.png)。首次发布：[工作流 35199129801](https://github.com/yydshly/0917_codex_project/actions/runs/35199129801)。页面、PNG / SVG、文字版、Hook 摘要和必要资源均已核对，正式地址已登记到 `demo`；日期筛选为教学案例，实际模型收益仍待对照验证。
 

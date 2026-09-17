@@ -1,0 +1,246 @@
+{
+  "checkedAt": "2026-09-17T10:17:39.003Z",
+  "url": "https://yydshly.github.io/0917_codex_project/apps/005-impeccable/",
+  "deployedCommit": "2abd38c6d2144198005608c8f8d406559d0f504f",
+  "workflow": "https://github.com/yydshly/0917_codex_project/actions/runs/35209570002",
+  "files": [
+    {
+      "file": "after-desktop.png",
+      "status": 200,
+      "sha256": "eabbb9210812ad8412f8745b914bba16ce64bf1a1c084b58122ebb1010a2a398",
+      "matchesBuild": true
+    },
+    {
+      "file": "after-mobile.png",
+      "status": 200,
+      "sha256": "5184e7bc4e8d56051497c7073933a437bde129be1c994e6302e84bc9a97de69e",
+      "matchesBuild": true
+    },
+    {
+      "file": "after.css",
+      "status": 200,
+      "sha256": "a2c24d1a649aa9a8dd1b588b2cda43b80717df04bfcd6013e56b404495e36485",
+      "matchesBuild": true
+    },
+    {
+      "file": "after.html",
+      "status": 200,
+      "sha256": "40a5a7ab35df8c6cd9d686d7358eba5110af83a59839488096b8881da2e48dc4",
+      "matchesBuild": true
+    },
+    {
+      "file": "before-desktop.png",
+      "status": 200,
+      "sha256": "81d7314dddc1145c7bb3680393c0ec12e75818ba2645719c70b74b4db5aa40b8",
+      "matchesBuild": true
+    },
+    {
+      "file": "before-mobile.png",
+      "status": 200,
+      "sha256": "fc2946e3a02ac161751f2f8da0da0988c713747e1990f914157056ec78398074",
+      "matchesBuild": true
+    },
+    {
+      "file": "before.css",
+      "status": 200,
+      "sha256": "6f6a0986a9c673458790c32f9ae51b41b98a457b5b21268efc69d2f4a4ff2ce3",
+      "matchesBuild": true
+    },
+    {
+      "file": "before.html",
+      "status": 200,
+      "sha256": "c6b92a1ec0dabb96b2c615abc0ef990cd2348d5024617638cdfb1c5cf90323a1",
+      "matchesBuild": true
+    },
+    {
+      "file": "board.js",
+      "status": 200,
+      "sha256": "4a455a93fd102f36613e228a6a5d508c3926cf18ad8de94efacd6bdcac75f342",
+      "matchesBuild": true
+    },
+    {
+      "file": "browser-checks.json",
+      "status": 200,
+      "sha256": "3f081657487df8bf4b76e14aa59bc9a148fa7ddeb1a46dab87fc3cd06bc7a36a",
+      "matchesBuild": true
+    },
+    {
+      "file": "capabilities.txt",
+      "status": 200,
+      "sha256": "db14ca764f8284cd189d2c8474004f26f3bcd80f861fe9f7867f2e38e707b8c6",
+      "matchesBuild": true
+    },
+    {
+      "file": "capability-summary-text.txt",
+      "status": 200,
+      "sha256": "f03a55bcfa215c00c12e30ff217156352adf482f8cde0aeb0f3d28f7ab7687e9",
+      "matchesBuild": true
+    },
+    {
+      "file": "capability-summary.png",
+      "status": 200,
+      "sha256": "2d9202ca795e6a86c735964316f843e82e3d05997edc7e260b054b3cfcc5e80b",
+      "matchesBuild": true
+    },
+    {
+      "file": "capability-summary.svg",
+      "status": 200,
+      "sha256": "06d520eb7b95b158cd54c349e1248070383a1195f01a8f473fb502829537db19",
+      "matchesBuild": true
+    },
+    {
+      "file": "comparison-desktop.png",
+      "status": 200,
+      "sha256": "eaf1b0fb347deeb21dfdf9aba06ad1d89fdf654f5e846fe039e10162ecaa6bc2",
+      "matchesBuild": true
+    },
+    {
+      "file": "empty-mobile.png",
+      "status": 200,
+      "sha256": "7554d606df7687c6f193505f072588113000c33fa9c20ccd34003599d6d8569c",
+      "matchesBuild": true
+    },
+    {
+      "file": "evidence/desktop-after.json",
+      "status": 200,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "matchesBuild": true
+    },
+    {
+      "file": "evidence/desktop-after.stderr.txt",
+      "status": 200,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "matchesBuild": true
+    },
+    {
+      "file": "evidence/desktop-before.json",
+      "status": 200,
+      "sha256": "e469ecf53218fdafdfcdb751a37297405f146a61c1e6c891ec73fb03fce9180a",
+      "matchesBuild": true
+    },
+    {
+      "file": "evidence/desktop-before.stderr.txt",
+      "status": 200,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "matchesBuild": true
+    },
+    {
+      "file": "evidence/mobile-after.json",
+      "status": 200,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "matchesBuild": true
+    },
+    {
+      "file": "evidence/mobile-after.stderr.txt",
+      "status": 200,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "matchesBuild": true
+    },
+    {
+      "file": "evidence/mobile-before.json",
+      "status": 200,
+      "sha256": "e469ecf53218fdafdfcdb751a37297405f146a61c1e6c891ec73fb03fce9180a",
+      "matchesBuild": true
+    },
+    {
+      "file": "evidence/mobile-before.stderr.txt",
+      "status": 200,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "matchesBuild": true
+    },
+    {
+      "file": "evidence/static-after.json",
+      "status": 200,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "matchesBuild": true
+    },
+    {
+      "file": "evidence/static-after.stderr.txt",
+      "status": 200,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "matchesBuild": true
+    },
+    {
+      "file": "evidence/static-before.json",
+      "status": 200,
+      "sha256": "63dda782955655677c5fc22feed25da64dc87cf7e02324e813ee74a9e2d897e3",
+      "matchesBuild": true
+    },
+    {
+      "file": "evidence/static-before.stderr.txt",
+      "status": 200,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "matchesBuild": true
+    },
+    {
+      "file": "index.html",
+      "status": 200,
+      "sha256": "ab42734d8ee73bf507964963ed082a84dfa5c7bdbe8639723cd8238dde13ed3d",
+      "matchesBuild": true
+    },
+    {
+      "file": "provenance.json",
+      "status": 200,
+      "sha256": "7fe28b39629aa38a9fdbb069b78b185e09f201d22910715c08aad957718bcd02",
+      "matchesBuild": true
+    },
+    {
+      "file": "research-notes.txt",
+      "status": 200,
+      "sha256": "51c0bfe38296dadaa0cce939c986d8daf428e15fb05011d9b4bcfcac02786a0b",
+      "matchesBuild": true
+    },
+    {
+      "file": "results.json",
+      "status": 200,
+      "sha256": "89256a8c9966de718141ef679086558bda075eab5a9a858bdada0306d7140739",
+      "matchesBuild": true
+    },
+    {
+      "file": "study-desktop.png",
+      "status": 200,
+      "sha256": "a3e7fd7cfd4572735a92ebf4b98687f851b9ea7f8216127019f4aa3c8096b071",
+      "matchesBuild": true
+    },
+    {
+      "file": "study-mobile.png",
+      "status": 200,
+      "sha256": "fef7e4d1e078d59ab2799a3eb85ecc26bfd3b515059ff044db48dd2a3a3dc865",
+      "matchesBuild": true
+    },
+    {
+      "file": "study.css",
+      "status": 200,
+      "sha256": "ed48086479830e3e65f07bc479201c7a9fcf730c87cdecf37a6c86bd2ddf5335",
+      "matchesBuild": true
+    },
+    {
+      "file": "study.js",
+      "status": 200,
+      "sha256": "53f75bce2ed00f926c8867045589cc903f0574c09bc179be67329b771a04ddda",
+      "matchesBuild": true
+    },
+    {
+      "file": "third-party/LICENSE.impeccable",
+      "status": 200,
+      "sha256": "02bb8c3b4e70190e3986c0404ad2fd8d639b4f534252d82379cc1b502b6d1812",
+      "matchesBuild": true
+    },
+    {
+      "file": "third-party/NOTICE.impeccable.txt",
+      "status": 200,
+      "sha256": "c60a093c2845fd9fb82f9c6f742ece31f379f8190b535309d32d66c45ccffdcb",
+      "matchesBuild": true
+    }
+  ],
+  "browser": {
+    "version": "151.0.7922.34",
+    "desktopAndMobile": true,
+    "guideLoaded": true,
+    "summaryMatches": true,
+    "noHorizontalOverflow": true,
+    "emptyRecovery": true,
+    "chineseTextUtf8": true,
+    "errors": []
+  }
+}

@@ -17,7 +17,7 @@
 | 能力规模 | 1 个主 Skill、24 个设计命令、61 条确定性规则，按源码快照核对 |
 | 详细研究 | [能力与原理](capabilities.md) · [实验步骤与限制](notes.md) · [检测结果](experiments/results.json) · [浏览器验证](experiments/browser-checks.json) |
 | 演示 | [研究网页](../../site/apps/005-impeccable/index.html) · [改造前](../../site/apps/005-impeccable/before.html) · [改造后](../../site/apps/005-impeccable/after.html) · [本地启动](web/README.md) |
-| 发布状态 | 本地构建，未公开部署；元数据 demo 留空 |
+| 发布状态 | [已公开部署](https://yydshly.github.io/0917_codex_project/apps/005-impeccable/) · [单张引导图](https://yydshly.github.io/0917_codex_project/apps/005-impeccable/#guide) · [首次发布验证](experiments/deployment.json) |
 
 ## 我们形成的理解
 
