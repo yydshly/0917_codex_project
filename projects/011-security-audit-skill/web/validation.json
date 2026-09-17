@@ -28,8 +28,7 @@
     "Skill installation",
     "upstream script execution",
     "real codebase audit",
-    "detection or performance benchmark",
-    "public deployment"
+    "detection or performance benchmark"
   ],
   "discussion_revision": {
     "date": "2026-09-17",
@@ -45,5 +44,14 @@
     "console_errors": [],
     "upstream_execution": false,
     "public_deployment": false
+  },
+  "publication": {
+    "date": "2026-09-17",
+    "url": "https://yydshly.github.io/0917_codex_project/apps/011-security-audit-skill/",
+    "content_commit": "439a21790c320ef90547f525456caf37c9b531a1",
+    "workflow": "https://github.com/yydshly/0917_codex_project/actions/runs/35238351567",
+    "workflow_conclusion": "success",
+    "browser": "page loaded; seven-constraint navigation works; MCP search returns 1 / 19; SVG natural size 1600x2350; no warning/error entries",
+    "note": "Earlier local checks remain historical records; no upstream audit executed."
   }
 }

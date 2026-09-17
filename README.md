@@ -20,7 +20,7 @@
 | 007 | [Neko Master](projects/007-neko-master/README.md) | 从 Clash 等代理客户端内核采集连接与流量信息，保存历史并按设备、域名和节点展示；统计来自内核本地转发计数，无需远端同步。 | 研究中 | <a href="https://github.com/foru17/neko-master">foru17/neko-master</a> | <a href="https://yydshly.github.io/0917_codex_project/apps/007-neko-master/">访问演示</a> |
 | 008 | [Humanizer](projects/008-humanizer/README.md) | 将 25 类写作问题与修改建议封装为 Skill，由宿主大模型结合原文和样文执行识别、改写与自检，减少 AI 模板腔并贴近作者语气。可作为研究文档、汇报和内容初稿的统一编辑规范；规则属于提示约束，中文效果与实际收益待验证。 | 研究中 | <a href="https://github.com/blader/humanizer">blader/humanizer</a> | <a href="https://yydshly.github.io/0917_codex_project/apps/008-humanizer/">访问演示</a> |
 | 009 | [Subtrace](projects/009-subtrace/README.md) | 借助 Linux seccomp BPF 筛选网络相关系统调用，结合 Go 透明代理实现后端 HTTP 请求与响应的捕获、解析、过滤和展示；通常无需修改业务代码，用于接口联调和网络排障。 | 研究中 | <a href="https://github.com/subtrace/subtrace">subtrace/subtrace</a> | <a href="https://yydshly.github.io/0917_codex_project/apps/009-subtrace/">访问演示</a> |
-| 011 | [Security Audit Skill](projects/011-security-audit-skill/README.md) | 指导 AI 从业务逻辑、身份权限、输入接口、数据与底层环境审查代码的安全质量；通过目标范围、路径追踪、覆盖记录、证据门槛、独立复核、执行边界和输出规范约束审计，形成可追溯结论与修复建议。附完整理解图及 Defending Code 对比，真实检出效果待验证。 | 研究中 | <a href="https://github.com/cloudflare/security-audit-skill">cloudflare/security-audit-skill</a> | — |
+| 011 | [Security Audit Skill](projects/011-security-audit-skill/README.md) | 指导 AI 从业务逻辑、身份权限、输入接口、数据与底层环境审查代码的安全质量；通过目标范围、路径追踪、覆盖记录、证据门槛、独立复核、执行边界和输出规范约束审计，形成可追溯结论与修复建议。附完整理解图及 Defending Code 对比，真实检出效果待验证。 | 研究中 | <a href="https://github.com/cloudflare/security-audit-skill">cloudflare/security-audit-skill</a> | <a href="https://yydshly.github.io/0917_codex_project/apps/011-security-audit-skill/">访问演示</a> |
 <!-- PROJECT_INDEX:END -->
 
 ## 项目预览

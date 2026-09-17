@@ -1,6 +1,6 @@
 # 静态演示发布目录
 
-- [011 · Security Audit Skill：安全质量、七类 AI 约束与历史对比](apps/011-security-audit-skill/index.html) · [完整理解图](apps/011-security-audit-skill/capability-summary.svg)。静态教学展示，包含与 Defending Code 的机制对比；案例为人工假设，未执行真实审计。
+- [011 · Security Audit Skill：安全质量、七类 AI 约束与历史对比](apps/011-security-audit-skill/index.html) · [完整理解图](apps/011-security-audit-skill/capability-summary.svg)。静态教学展示，包含与 Defending Code 的机制对比；案例为人工假设，未执行真实审计。已发布并验证：[在线研究页](https://yydshly.github.io/0917_codex_project/apps/011-security-audit-skill/)。
 
 - [009 · Subtrace：后端网络调试能力与原理](apps/009-subtrace/index.html) · [逐步演示](apps/009-subtrace/index.html#lab) · [原创总览图](apps/009-subtrace/capability-summary.svg)。固定教学样例，未安装上游、未抓取流量；已部署：[在线研究页](https://yydshly.github.io/0917_codex_project/apps/009-subtrace/)，公开资源、摘要与教学交互已验证。
 

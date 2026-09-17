@@ -15,7 +15,7 @@
 | 本地上游 | `upstream/security-audit-skill/`，已被 Git 忽略 |
 | 展示入口 | [本地交互页](../../site/apps/011-security-audit-skill/index.html) · [维护说明](web/README.md) |
 | 深入阅读 | [实现原理](architecture.md) · [来源索引](sources.md) · [研究记录](notes.md) |
-| 发布状态 | 静态展示已完成；公开地址待发布验证后登记 |
+| 发布状态 | 已发布并验证：[在线研究页](https://yydshly.github.io/0917_codex_project/apps/011-security-audit-skill/)；仅为教学展示，非真实审计结果 |
 
 ## 能力总览
 
