@@ -72,4 +72,3 @@ test('lights inherit steering/seat mounts, switches extinguish removed lamps, cl
   assert.equal(equipmentState({...config,lightMode:'off'}).rearOn,false);
   groups.saddle.position.copy(seatOffset(80));assert.equal(e.clamp.position.y,0);assert.equal(groups.saddle.position.y,.08);assert.ok(groups.saddle.position.x<0);
 });
-

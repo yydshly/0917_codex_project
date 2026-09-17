@@ -111,7 +111,3 @@ export function solveChain(gear=5,phase=0){
   result=evaluate((low+high)/2,true);
   return {...result,circles};
 }
-
-
-
-

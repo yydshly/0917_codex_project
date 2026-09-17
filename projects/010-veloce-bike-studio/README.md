@@ -49,7 +49,7 @@ cd projects/010-veloce-bike-studio/web
 node --test tests/config.test.mjs
 ```
 
-静态产物：`site/apps/010-veloce-bike-studio/`。已配置相对资源路径，适用于 GitHub Pages 子路径；由 GitHub Actions 构建并发布，公开结果以部署记录为准。
+静态产物：`site/apps/010-veloce-bike-studio/`。已配置相对资源路径，适用于 GitHub Pages 子路径；已通过 GitHub Actions 构建并发布，线上资源与交互验证通过。
 
 ## 项目结构
 
@@ -96,3 +96,7 @@ node --test tests/config.test.mjs
 ## 变速、车灯与座椅升降
 
 已加入 12 档后飞轮切换、122 节固定销距链条、前后车灯、座管快拆卡扣与 0–80 mm 升降。详见[操作、边界与实拍](gears-lights-seatpost.md)。当前共 23 项测试通过。
+
+## 发布验证
+
+2026-09-18 已上线。[发布工作流](https://github.com/yydshly/0917_codex_project/actions/runs/35287605549)成功；两项目与首页共 60 个公开文件核对一致。实际检查模型渲染及核心交互，浏览器未记录错误。详见 [发布记录](experiments/deployment.json)。

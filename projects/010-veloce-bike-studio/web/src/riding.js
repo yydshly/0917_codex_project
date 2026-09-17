@@ -38,4 +38,3 @@ export function rideReadout(state,config){
   return {speed,actualCadence:state.actualCadence,mode:state.mode,brakeDistance:state.brakeDistance,
     power:config.pedaling!==false&&!(config.frontBrake||config.rearBrake)?(.025+.003*state.speed**2)*83*state.speed:0};
 }
-

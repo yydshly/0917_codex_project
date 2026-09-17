@@ -9,7 +9,7 @@
 
 把 010 自行车演示的三维交互方法迁移到升降椅，用一个可以实际操作的场景解释 React 界面、Three.js 模型和自定义运动规则如何配合。
 
-本地预览：[打开升降椅演示](http://127.0.0.1:4181/apps/012-lift-chair-studio/)。静态输出为 `site/apps/012-lift-chair-studio/`，本轮将通过 GitHub Pages 发布。
+本地预览：[打开升降椅演示](http://127.0.0.1:4181/apps/012-lift-chair-studio/)。静态输出为 `site/apps/012-lift-chair-studio/`，已通过 GitHub Pages 公开发布。
 
 ## 可以体验什么
 
@@ -110,3 +110,7 @@
 背部升级后共 9 项测试通过，新增射线检查后壳开孔贯通且中间壳体保留厚度。实际检查腰托 0–50 mm 和最大 22° 后仰；机构仍为运动示意，开孔不代表通过透气或结构强度测试。
 
 来源、独立实现说明和依赖许可证见 [sources.md](sources.md)；迁移分析见 [notes.md](notes.md)；质感问题及处理记录见 [visual-quality-review.md](visual-quality-review.md)。
+
+## 发布验证
+
+2026-09-18 已上线。[发布工作流](https://github.com/yydshly/0917_codex_project/actions/runs/35287605549)成功；两项目与首页共 60 个公开文件核对一致。实际检查模型渲染及核心交互，浏览器未记录错误。详见 [发布记录](experiments/deployment.json)。

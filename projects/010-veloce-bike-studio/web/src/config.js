@@ -38,4 +38,3 @@ export function telemetry(config) {
   return {
     mass: 5.34 + wheels[config.wheel].mass / 1000 + accessories.reduce((sum,a)=>sum+(config[a.id]?a.mass:0),0), saving: wheels[config.wheel].saving};
 }
-

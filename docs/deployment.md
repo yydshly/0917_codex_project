@@ -76,3 +76,5 @@ python -m http.server 8765 --bind 127.0.0.1 --directory site
 - [012 升降椅实现说明](https://yydshly.github.io/0917_codex_project/apps/012-lift-chair-studio/guide.html)：产品配置、织物与装配、调节锁定、人物乘坐滑行。
 
 两者均为 React + Three.js + 自定义运动代码，页面说明可复用方式、提示词和质量边界。原始截图在子项目 assets/product-guide.png；构建复制为 product-preview.png。guide.html 由 reference.json 和共享构建脚本生成。正式地址与工作流记录在各项目 experiments/deployment.json 中登记，运行验证不代表真实物理精度。
+
+2026-09-18 首次发布完成：[工作流 35287605549](https://github.com/yydshly/0917_codex_project/actions/runs/35287605549) 成功。两项目与首页共 60 个公开文件与本地产物一致；线上验证自行车换色与暂停、升降椅乘坐滑行与暂停，未记录控制台错误。`demo` 已登记正式地址。

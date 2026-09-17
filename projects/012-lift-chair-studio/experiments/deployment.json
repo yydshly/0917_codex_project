@@ -1,0 +1,172 @@
+{
+  "verified_at": "2026-09-18T07:39:37.670504+08:00",
+  "url": "https://yydshly.github.io/0917_codex_project/apps/012-lift-chair-studio/",
+  "guide_url": "https://yydshly.github.io/0917_codex_project/apps/012-lift-chair-studio/guide.html",
+  "release_commit": "6ee1022b1c496fc6de6a7b7f1cf6d2062c43c716",
+  "workflow": "https://github.com/yydshly/0917_codex_project/actions/runs/35287605549",
+  "workflow_conclusion": "success",
+  "files": [
+    {
+      "path": "apps/012-lift-chair-studio/chair.svg",
+      "status": 200,
+      "matches": true
+    },
+    {
+      "path": "apps/012-lift-chair-studio/guide.html",
+      "status": 200,
+      "matches": true
+    },
+    {
+      "path": "apps/012-lift-chair-studio/index.html",
+      "status": 200,
+      "matches": true
+    },
+    {
+      "path": "apps/012-lift-chair-studio/product-preview.png",
+      "status": 200,
+      "matches": true
+    },
+    {
+      "path": "apps/012-lift-chair-studio/sources.txt",
+      "status": 200,
+      "matches": true
+    },
+    {
+      "path": "apps/012-lift-chair-studio/assets/index-D7bMEcNF.css",
+      "status": 200,
+      "matches": true
+    },
+    {
+      "path": "apps/012-lift-chair-studio/assets/index-F1-17AbI.js",
+      "status": 200,
+      "matches": true
+    },
+    {
+      "path": "apps/012-lift-chair-studio/assets/space-grotesk-latin-400-normal-BnQMeOim.woff",
+      "status": 200,
+      "matches": true
+    },
+    {
+      "path": "apps/012-lift-chair-studio/assets/space-grotesk-latin-400-normal-CJ-V5oYT.woff2",
+      "status": 200,
+      "matches": true
+    },
+    {
+      "path": "apps/012-lift-chair-studio/assets/space-grotesk-latin-500-normal-CNSSEhBt.woff",
+      "status": 200,
+      "matches": true
+    },
+    {
+      "path": "apps/012-lift-chair-studio/assets/space-grotesk-latin-500-normal-lFbtlQH6.woff2",
+      "status": 200,
+      "matches": true
+    },
+    {
+      "path": "apps/012-lift-chair-studio/assets/space-grotesk-latin-700-normal-CwsQ-cCU.woff",
+      "status": 200,
+      "matches": true
+    },
+    {
+      "path": "apps/012-lift-chair-studio/assets/space-grotesk-latin-700-normal-RjhwGPKo.woff2",
+      "status": 200,
+      "matches": true
+    },
+    {
+      "path": "apps/012-lift-chair-studio/assets/space-grotesk-latin-ext-400-normal-CfP_5XZW.woff2",
+      "status": 200,
+      "matches": true
+    },
+    {
+      "path": "apps/012-lift-chair-studio/assets/space-grotesk-latin-ext-400-normal-DRPE3kg4.woff",
+      "status": 200,
+      "matches": true
+    },
+    {
+      "path": "apps/012-lift-chair-studio/assets/space-grotesk-latin-ext-500-normal-3dgZTiw9.woff",
+      "status": 200,
+      "matches": true
+    },
+    {
+      "path": "apps/012-lift-chair-studio/assets/space-grotesk-latin-ext-500-normal-DUe3BAxM.woff2",
+      "status": 200,
+      "matches": true
+    },
+    {
+      "path": "apps/012-lift-chair-studio/assets/space-grotesk-latin-ext-700-normal-BQnZhY3m.woff2",
+      "status": 200,
+      "matches": true
+    },
+    {
+      "path": "apps/012-lift-chair-studio/assets/space-grotesk-latin-ext-700-normal-HVCqSBdx.woff",
+      "status": 200,
+      "matches": true
+    },
+    {
+      "path": "apps/012-lift-chair-studio/assets/space-grotesk-vietnamese-400-normal-B7xT_GF5.woff2",
+      "status": 200,
+      "matches": true
+    },
+    {
+      "path": "apps/012-lift-chair-studio/assets/space-grotesk-vietnamese-400-normal-BIWiOVfw.woff",
+      "status": 200,
+      "matches": true
+    },
+    {
+      "path": "apps/012-lift-chair-studio/assets/space-grotesk-vietnamese-500-normal-BmEvtly_.woff2",
+      "status": 200,
+      "matches": true
+    },
+    {
+      "path": "apps/012-lift-chair-studio/assets/space-grotesk-vietnamese-500-normal-BTqKIpxg.woff",
+      "status": 200,
+      "matches": true
+    },
+    {
+      "path": "apps/012-lift-chair-studio/assets/space-grotesk-vietnamese-700-normal-DMty7AZE.woff2",
+      "status": 200,
+      "matches": true
+    },
+    {
+      "path": "apps/012-lift-chair-studio/assets/space-grotesk-vietnamese-700-normal-Duxec5Rn.woff",
+      "status": 200,
+      "matches": true
+    },
+    {
+      "path": "apps/012-lift-chair-studio/licenses/@fontsource-space-grotesk-LICENSE",
+      "status": 200,
+      "matches": true
+    },
+    {
+      "path": "apps/012-lift-chair-studio/licenses/lucide-react-LICENSE",
+      "status": 200,
+      "matches": true
+    },
+    {
+      "path": "apps/012-lift-chair-studio/licenses/react-dom-LICENSE",
+      "status": 200,
+      "matches": true
+    },
+    {
+      "path": "apps/012-lift-chair-studio/licenses/react-LICENSE",
+      "status": 200,
+      "matches": true
+    },
+    {
+      "path": "apps/012-lift-chair-studio/licenses/three-LICENSE",
+      "status": 200,
+      "matches": true
+    }
+  ],
+  "browser_checks": [
+    "线上三维模型可见",
+    "乘坐滑行启动后有速度与累计距离",
+    "暂停后速度归零且距离保留",
+    "控制台无警告或错误"
+  ],
+  "shared_checks": [
+    "首页显示两张实际产品截图与 3D 实现参考摘要",
+    "说明页链接与图片加载正常",
+    "说明页手机宽度未出现横向溢出"
+  ],
+  "limits": "交互与资源发布验证，不代表物理仿真或人体工学验证。"
+}
