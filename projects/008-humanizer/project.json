@@ -5,7 +5,7 @@
   "summary": "将 25 类写作问题与修改建议封装为 Skill，由宿主大模型结合原文和样文执行识别、改写与自检，减少 AI 模板腔并贴近作者语气。可作为研究文档、汇报和内容初稿的统一编辑规范；规则属于提示约束，中文效果与实际收益待验证。",
   "repo": "https://github.com/blader/humanizer",
   "status": "研究中",
-  "demo": "",
+  "demo": "https://yydshly.github.io/0917_codex_project/apps/008-humanizer/",
   "cover": "assets/capability-summary.png",
   "cover_alt": "Humanizer 能力与实现总览：4 项编辑能力，用户、SKILL.md 与宿主模型的分工，识别、改写、自检和终稿流程，3 种输出、5 类共 25 项规则，以及对日常写作、研究整理和团队协作的价值与验收边界。原创研究说明图，非模型运行结果。"
 }

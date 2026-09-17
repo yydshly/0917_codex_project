@@ -14,4 +14,4 @@
 
 - [006 · Narrator AI CLI Skill：从素材到成品的操作方法与约束](apps/006-narrator-ai-cli-skill/index.html) · [在线研究页](https://yydshly.github.io/0917_codex_project/apps/006-narrator-ai-cli-skill/) · [单张引导图](apps/006-narrator-ai-cli-skill/capability-summary.svg)
 
-- [008 · Humanizer：能力、改写示意与 25 类规则](apps/008-humanizer/index.html) · [单张能力与实现总览图](apps/008-humanizer/index.html#guide) · [高清 PNG](apps/008-humanizer/capability-summary.png)。图中完整展示能力、Skill 实现、25 类规则与对我们的意义；页面支持示例切换、规则搜索和分类筛选，尚未公开部署。
+- [008 · Humanizer：能力、改写示意与 25 类规则](apps/008-humanizer/index.html) · [单张总览图](apps/008-humanizer/index.html#guide) · [在线研究页](https://yydshly.github.io/0917_codex_project/apps/008-humanizer/)。已发布并验证，支持示例切换、规则搜索与分类；模型改写效果仍待实测。

@@ -10,7 +10,7 @@ python scripts/build_site.py
 python -m http.server 8765 --bind 127.0.0.1 --directory site
 ```
 
-访问 `/apps/008-humanizer/`。公开部署路径规划为 `/0917_codex_project/apps/008-humanizer/`，使用相对资源路径和 hash 导航。当前仅完成本地网页，项目 `demo` 留空，不能据此声称已公开部署。
+访问 `/apps/008-humanizer/`。公开部署路径为 `/0917_codex_project/apps/008-humanizer/`，使用相对资源路径和 hash 导航。已发布：[在线研究页](https://yydshly.github.io/0917_codex_project/apps/008-humanizer/)。首次发布工作流 `35231331072` 成功，10 个公开文件与发布提交一致；线上 1440、390、320 像素布局、总览图加载及规则搜索通过，项目 `demo` 已登记。
 
 ## 内容和交互
 

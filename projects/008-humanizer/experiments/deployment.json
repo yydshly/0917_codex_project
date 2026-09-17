@@ -1,0 +1,73 @@
+{
+  "checked_at": "2026-09-17T14:07:18.306215+00:00",
+  "url": "https://yydshly.github.io/0917_codex_project/apps/008-humanizer/",
+  "commit": "b798430f312d91ca0b5c3ee366f34d0a6acba073",
+  "workflow": "https://github.com/yydshly/0917_codex_project/actions/runs/35231331072",
+  "files": [
+    {
+      "file": "app.js",
+      "sha256": "44e45a72b3f3f9763d911e13ce52e4fdf9de21e07cc81df86ab7673829cf030c",
+      "matches": true
+    },
+    {
+      "file": "capability-summary-text.txt",
+      "sha256": "49f5f49f61d08cf04ca1d14bc40cd0b227beca4b96d4d8de5bd31c2485f23ec8",
+      "matches": true
+    },
+    {
+      "file": "capability-summary.png",
+      "sha256": "b33268f6c838d51b69a877ad11a511d2c1d48e28f4f1b02fb4ac8f9d59d9d661",
+      "matches": true
+    },
+    {
+      "file": "capability-summary.svg",
+      "sha256": "a26644aaed33c853090f5adaf3104efe1f4276d021e6bad23a8bb53bdef7e192",
+      "matches": true
+    },
+    {
+      "file": "favicon.svg",
+      "sha256": "38325157a9062d0849f6e4b56d277aaa4c9450192184d10d466cd50a24da77e3",
+      "matches": true
+    },
+    {
+      "file": "index.html",
+      "sha256": "9c2640995411b60276807534202b9a2abd60c3609f09085fe6fc226f7a83b79c",
+      "matches": true
+    },
+    {
+      "file": "notes.txt",
+      "sha256": "5cd3c34209277f1567441420735c34b2f63ca671dd0e8967c6579901f105ea31",
+      "matches": true
+    },
+    {
+      "file": "patterns.txt",
+      "sha256": "9ea24b9bdd52b94b32c060f96f8cf61d1722a574170cebcb0f37efac474755f9",
+      "matches": true
+    },
+    {
+      "file": "research.txt",
+      "sha256": "68db3a68e8818544b7c2e998e825188c588126e2dc459df2a09b978b2211f072",
+      "matches": true
+    },
+    {
+      "file": "styles.css",
+      "sha256": "dcf72e3c2a5b10010700538e04e49608cb08dabdcb5f834a8e1fd4f781fe9518",
+      "matches": true
+    }
+  ],
+  "scope": "Verified public static files against the published commit; no model rewriting performed.",
+  "browser_checks": {
+    "widths": [
+      1440,
+      390,
+      320
+    ],
+    "checks": [
+      "no horizontal overflow",
+      "guide image decode",
+      "25 rules present",
+      "rule search"
+    ],
+    "passed": true
+  }
+}

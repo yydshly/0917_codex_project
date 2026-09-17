@@ -18,7 +18,7 @@
 | 005 | [Impeccable](projects/005-impeccable/README.md) | 面向前端界面优化：Skill 提供通用设计约束，用户明确风格和特殊要求，大模型据此细化方案并实现，检测器辅助检查。对我可作为网页改进的方法与验收参考；具体能力、适用场景和实际增益仍需后续逐项梳理与验证。 | 研究中 | <a href="https://github.com/pbakaus/impeccable">pbakaus/impeccable</a> | <a href="https://yydshly.github.io/0917_codex_project/apps/005-impeccable/">访问演示</a> |
 | 006 | [Narrator AI CLI Skill](projects/006-narrator-ai-cli-skill/README.md) | 影视解说制作 Skill，由 Codex 等 AI 助手理解需求并按规则组织流程；配套 CLI 上传素材、向服务端下发指令并查询结果，服务端执行文案、配音、剪辑与视频合成。总览图说明角色分工、素材处理和约束边界，成片效果待实测。 | 研究中 | <a href="https://github.com/NarratorAI-Studio/narrator-ai-cli-skill">NarratorAI-Studio/narrator-ai-cli-skill</a> | <a href="https://yydshly.github.io/0917_codex_project/apps/006-narrator-ai-cli-skill/">访问演示</a> |
 | 007 | [Neko Master](projects/007-neko-master/README.md) | 从 Clash 等代理客户端内核采集连接与流量信息，保存历史并按设备、域名和节点展示；统计来自内核本地转发计数，无需远端同步。 | 研究中 | <a href="https://github.com/foru17/neko-master">foru17/neko-master</a> | <a href="https://yydshly.github.io/0917_codex_project/apps/007-neko-master/">访问演示</a> |
-| 008 | [Humanizer](projects/008-humanizer/README.md) | 将 25 类写作问题与修改建议封装为 Skill，由宿主大模型结合原文和样文执行识别、改写与自检，减少 AI 模板腔并贴近作者语气。可作为研究文档、汇报和内容初稿的统一编辑规范；规则属于提示约束，中文效果与实际收益待验证。 | 研究中 | <a href="https://github.com/blader/humanizer">blader/humanizer</a> | — |
+| 008 | [Humanizer](projects/008-humanizer/README.md) | 将 25 类写作问题与修改建议封装为 Skill，由宿主大模型结合原文和样文执行识别、改写与自检，减少 AI 模板腔并贴近作者语气。可作为研究文档、汇报和内容初稿的统一编辑规范；规则属于提示约束，中文效果与实际收益待验证。 | 研究中 | <a href="https://github.com/blader/humanizer">blader/humanizer</a> | <a href="https://yydshly.github.io/0917_codex_project/apps/008-humanizer/">访问演示</a> |
 <!-- PROJECT_INDEX:END -->
 
 ## 项目预览
