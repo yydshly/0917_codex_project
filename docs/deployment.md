@@ -37,6 +37,10 @@ python -m http.server 8765 --bind 127.0.0.1 --directory site
 
 003 角色编排研究的发布路径为 `apps/003-agency-orchestrator/`。以完整信息图作为引导和封面，说明能力、场景、研究价值、质量与重复边界及后续真实产品试验计划；另有 `case-content.html` 保存两轮真实模型调用的静态产物。官方素材与许可随站点发布。已部署：[在线研究页](https://yydshly.github.io/0917_codex_project/apps/003-agency-orchestrator/) · [完整引导图](https://yydshly.github.io/0917_codex_project/apps/003-agency-orchestrator/capability-summary.png) · [真实案例](https://yydshly.github.io/0917_codex_project/apps/003-agency-orchestrator/case-content.html)，正式地址已登记到 `demo`。首次发布：[工作流 35190150874](https://github.com/yydshly/0917_codex_project/actions/runs/35190150874)。线上 HTML、PNG / SVG、文字版、两轮运行记录及必要资源已核对一致；后续产品效果对照试验仍待开展。
 
+## 007 Neko Master
+
+发布目录 `site/apps/007-neko-master/`，源码 `projects/007-neko-master/web/`。以修订对照图和底层交互图引导理解：Clash 在转发时本地计数，Neko Master 从管理 API 采集、保存并展示。页面包含理解整理、上游截图、增量教学实验和源码证据；静态发布不连接用户网关。
+
 ## 自动发布
 
 工作流：`.github/workflows/pages.yml`。

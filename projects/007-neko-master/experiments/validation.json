@@ -1,0 +1,13 @@
+{
+  "verified_at": "2026-09-17T13:56:48.486113+00:00",
+  "scope": "Local teaching page and asset provenance only; no upstream gateway runtime test",
+  "checks": [
+    "4 upstream PNGs match commit-pinned SHA-256 and published copies",
+    "Upstream MIT license and copyright retained",
+    "All HTML local resources and anchors resolve under static site root",
+    "Exactly 21 allowlisted public files, no upstream checkout or private data",
+    "Original Clash diagram PNG and SVG match published copies",
+    "Built code and styles match maintained sources"
+  ],
+  "status": "passed"
+}

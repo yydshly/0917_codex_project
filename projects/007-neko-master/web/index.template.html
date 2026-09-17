@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="从 Clash 等代理客户端内核采集连接与流量信息，保存历史并按设备、域名和节点展示；统计来自内核本地转发计数，无需远端同步。">
+  <title>Neko Master · 让流量有迹可循</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.mjs"></script>
+</head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+<header class="topbar"><a class="brand" href="../../"><span class="brand-icon" aria-hidden="true">N</span>开源研究集 <span class="muted">/ 007</span></a><nav aria-label="主导航"><a href="#guide">两张引导图</a><a href="#understanding">理解摘要</a><a href="#capabilities">能力展示</a><a href="#lab">增量实验</a><a href="#architecture">原理分析</a><a href="#sources">源码证据</a></nav></header>
+<main id="main">
+<section class="hero" aria-labelledby="hero-title">
+  <div><p class="eyebrow">NEKO MASTER / NETWORK OBSERVABILITY</p><h1 id="hero-title">从客户端记录，<br>看懂流量去向。</h1><p class="lead">Neko Master 读取 Clash 等代理客户端内核的连接与流量信息，保存历史，按设备、域名、IP、规则和节点展示。数据经过内核转发时就能被计数，无需向远端代理服务器同步统计。</p><div class="actions"><a class="button primary" href="#guide">先看两张引导图 <span aria-hidden="true">↘</span></a><a class="text-link" href="{{BASE}}README.zh.md">上游项目 ↗</a></div><p class="hero-meta">Clash / Mihomo · Surge · 多网关 · MIT</p></div>
+  <aside class="hero-card" aria-label="项目定位"><div class="card-label"><span class="dot"></span> 一套面板，多个观察角度</div><div class="orbit"><div class="orbit-center">连接记录<small>网关 API</small></div><span class="orb one">设备</span><span class="orb two">域名</span><span class="orb three">IP</span><span class="orb four">规则</span><span class="orb five">节点</span><span class="orb six">地区</span></div><p>连接增量 → 多维聚合 → 历史与实时展示</p><div class="mini-note">源码研究 · 未接入真实网关</div></aside>
+</section>
+<div class="evidence-strip"><span><strong>01</strong> 上游原图展示界面</span><span><strong>02</strong> 教学数据解释算法</span><span><strong>03</strong> 固定源码支撑分析</span></div>
+
+<section id="guide" class="section">
+  <div class="section-heading"><div><p class="eyebrow">GUIDE 1 / BUILD THE MODEL</p><h2>先分清入口、出口与统计。</h2></div><p>第一张图串起我们的理解。<br>第二张图继续拆解 TCP、TLS 与远端交互。</p></div>
+  <figure class="guide"><a href="system-proxy-tun-revised.png" target="_blank" rel="noopener"><img src="system-proxy-tun-revised.png" width="1312" height="1199" alt="系统代理与 TUN 修订对照：两种入口汇入 Clash 内核，说明远端转发、DNS 三个问题、Neko Master 的统计读取位置和连接排查方法"></a><figcaption>基于用户提供图稿的修订教学图，非实测 · <a href="system-proxy-tun-revised.png">放大查看</a> · <a href="understanding.txt">理解全文与来源</a> · <a href="#network-flow">继续看底层交互 ↓</a></figcaption></figure>
+</section>
+
+<section id="understanding" class="section">
+  <div class="section-heading"><div><p class="eyebrow">READ THE CLIENT / FOLLOW THE DATA</p><h2>为什么读客户端，就能知道流量？</h2></div><p>Clash 负责转发并计数。<br>Neko Master 负责采集、保存和展示。</p></div>
+  <p class="lead">有网络请求时，Clash 在应用与远端之间转发数据，所以能在本地累计上传、下载字节，并记录目标和所选节点。选择 DIRECT 时，则由 Clash 直接连接网站。并不是每次启动都向远端同步流量账单。</p>
+  <div class="two-columns boundary-grid"><article><span>业务数据</span><h3>应用 → Clash → 节点 → 网站</h3><p>网页、文件等数据沿此路径传输，响应反向返回。这里以选择代理节点为例；无业务请求时不意味着始终有业务流量。</p></article><article><span>统计数据</span><h3>内核计数 → 管理 API → Neko</h3><p>Neko Master 读取所配置的 Clash 内核，可以位于电脑或路由器上；无需登录远端节点，也无需解密网页来统计字节。</p></article></div>
+  <div class="mechanisms">
+    <details open><summary>系统代理与 TUN，区别在哪一步？</summary><div><p>系统代理由应用主动使用代理地址，HTTPS 可通过 HTTP CONNECT 把域名交给 Clash；TUN 由操作系统按路由把 IP 包交给虚拟网卡，再由内核结合协议栈处理。两种方式都使用操作系统与 IP 层，并可共用后面的出口和统计。</p></div></details>
+    <details><summary>全局模式、DNS 和 IP 检测分别说明什么？</summary><div><p>GLOBAL 只决定进入内核后的出口，不会强迫所有应用使用系统代理。DNS 要分清谁解析、问谁、从哪里查询；TUN 不保证 DNS 经远端。IP 检测只证明那次请求的出口，不能证明全部流量路径，也不保证其他网站采用相同地区或信誉判断。</p></div></details>
+    <details><summary>为什么切换 TUN 后可用性可能变化？</summary><div><p>先检查相关连接是否进入 Clash、是否走 DIRECT 或不同节点，再比较 DNS、IPv6、旧连接、缓存以及账号和服务限制。切换结果不能单独证明原因；TUN 不会自动提高 IP 信誉。</p></div></details>
+    <details><summary>统计数字是否等于套餐用量？</summary><div><p>不一定。Clash 记录经过该内核的连接字节，Neko Master 计算增量并保存历史。物理网卡封装、重传、其他设备、采集间隙及服务商计费口径都会影响可比性。</p></div></details>
+  </div><p class="caption"><a href="understanding.txt">阅读完整整理</a> · <a href="clash-network-flow-text.txt">核对官方资料与图解</a>。本页是静态教学展示，未接入真实网关。</p>
+</section>
+
+<section id="network-flow" class="section">
+  <div class="section-heading"><div><p class="eyebrow">GUIDE 2 / FROM APP TO WEBSITE</p><h2>系统代理与 TUN，在哪里分开？</h2></div><p>从上往下看：两种入口 → 共同出口 → 两层加密。<br>以 HTTPS 网站与 Trojan 节点为例，点击图片放大。</p></div>
+  <figure class="guide"><a href="clash-network-flow.png" target="_blank" rel="noopener"><img src="clash-network-flow.png" width="3200" height="4520" alt="Clash 完整交互图：系统代理通过回环 TCP 和 HTTP CONNECT 进入，TUN 通过系统路由和虚拟网卡进入；核心选择出口并统计，远端 Trojan 节点解除外层加密、另建网站连接，内层 HTTPS 保持端到端"></a><figcaption>原创教学图，非实际抓包 · <a href="clash-network-flow.png">高清图片</a> · <a href="clash-network-flow.svg">矢量原图</a> · <a href="clash-network-flow-text.txt">文字解释与官方来源</a></figcaption></figure>
+</section>
+
+<section id="capabilities" class="section">
+  <div class="section-heading"><div><p class="eyebrow">01 / CAPABILITIES</p><h2>带着问题，读懂网络。</h2></div><p>从趋势、服务和分流路径切入。<br>下面四张图片均来自上游，数字不是本研究实测。</p></div>
+  <div class="gallery-layout"><div class="gallery-menu" role="group" aria-label="选择能力展示">
+    <button class="gallery-choice" data-view="overview" aria-pressed="true" disabled><span>01 / 总览</span><strong>什么时间，流量变大了？</strong><small>总量、连接数、趋势与排名</small></button>
+    <button class="gallery-choice" data-view="domains" aria-pressed="false" disabled><span>02 / 域名</span><strong>哪些服务，消耗最多？</strong><small>域名流量、关联地址与连接数</small></button>
+    <button class="gallery-choice" data-view="rules" aria-pressed="false" disabled><span>03 / 规则</span><strong>这次访问，为什么走它？</strong><small>规则、策略组与代理链</small></button>
+    <button class="gallery-choice" data-view="regions" aria-pressed="false" disabled><span>04 / 地区</span><strong>连接目标，分布在哪里？</strong><small>地理位置与网络归属</small></button>
+  </div><figure class="gallery-figure"><a id="original-link" href="neko-master-overview-light.png" target="_blank" rel="noopener"><img id="capability-image" src="neko-master-overview-light.png" width="3362" height="2426" alt="上游浅色总览：总流量、连接数、时间趋势及域名、代理、地区排名"></a><figcaption><span id="gallery-caption" aria-live="polite">总览 / 观察峰值，再选择设备、域名或节点继续分析。</span><a id="screenshot-source" href="{{BASE}}assets/neko-master-overview-light.png">原始来源 ↗</a></figcaption></figure></div>
+  <noscript><p class="notice">启用 JavaScript 可切换原图及操作教学实验。也可直接查看 <a href="neko-master-domains-dark.png">域名原图</a>、<a href="neko-master-rules-dark.png">规则原图</a>、<a href="neko-master-regions-light.png">地区原图</a>，其余正文无需 JavaScript。</p></noscript>
+  <div class="three-columns small-cards"><article><span class="line-icon" aria-hidden="true">↳</span><h3>追到来源设备</h3><p>用来源 IP 聚合流量，帮助找到高用量设备。NAT 后的地址不一定能区分每个终端。</p></article><article><span class="line-icon" aria-hidden="true">◷</span><h3>保留可回看的历史</h3><p>按时间与维度聚合，回看流量变化。历史完整性取决于持续采集与持久存储。</p></article><article><span class="line-icon" aria-hidden="true">⇄</span><h3>集中观察多个网关</h3><p>按后端 ID 隔离数据；远程 Agent 主动上报，适合分散在不同局域网的网关。</p></article></div>
+</section>
+
+<section id="lab" class="section lab-section">
+  <div class="section-heading"><div><p class="eyebrow">02 / INTERACTIVE EXPLAINER</p><h2>13 MB，并不全是新增流量。</h2></div><p>网关返回累计值，采集器需要记住上一次。<br>逐步推进，看看差分和批量落盘如何配合。</p></div>
+  <div class="lab"><div class="lab-top"><span class="badge">人工构造的教学数据</span><label>选择场景 <select id="scenario" disabled><option value="normal">连续增长与重复快照</option><option value="reset">计数回退与重置</option><option value="idle">零流量连接与空闲</option></select></label></div>
+  <div class="lab-grid"><div class="lab-input"><p class="eyebrow">单连接 / 只看下载方向</p><h3 id="frame-label">尚未读取快照</h3><div class="input-number"><span id="current">—</span><small>MB 累计</small></div><div class="equation"><span>上次基线 <b id="previous">—</b></span><span>本次新增 <b id="delta">—</b></span></div><p id="explanation" aria-live="polite">点击“读取下一帧”，从第一份连接快照开始。</p><div class="actions lab-actions"><button class="button primary" id="next" disabled>读取下一帧 →</button><button class="button secondary" id="restart" disabled>重置实验</button></div></div>
+  <div class="lab-ledger"><p class="eyebrow">显示总量 = 库中历史 + 内存待落盘</p><div class="ledger-row"><span>数据库历史</span><strong><span id="stored">0</span> <small>MB</small></strong></div><div class="ledger-row"><span>实时内存</span><strong><span id="pending">0</span> <small>MB</small></strong></div><div class="ledger-row total"><span>面板显示</span><strong><span id="total">0</span> <small>MB</small></strong></div><p class="counter">新增连接计数：<strong id="connections">0</strong></p><button class="button secondary" id="flush" disabled>模拟批量落盘 ↓</button><p class="muted">真实直连默认约 30 秒或缓冲达到阈值时写入；这里由你点击触发，保持显示总量不变。</p></div></div>
+  <div class="lab-log" id="lab-log" aria-live="polite">等待输入。该实验不连接网关，不产生网络流量统计。</div></div>
+  <p class="caption">缩小模型只演示单连接、单方向、单维度；实际源码对任一方向的计数回退，会同时按重置处理上传和下载。<a href="{{BASE}}apps/collector/src/modules/collector/gateway.collector.ts">核对增量分支 ↗</a></p>
+</section>
+
+<section id="architecture" class="section">
+  <div class="section-heading"><div><p class="eyebrow">03 / UNDER THE HOOD</p><h2>一条数据，两种节奏。</h2></div><p>内存让近期变化及时可见，批量写入保存历史。<br>分层的收益，是把显示频率与写盘频率解耦。</p></div>
+  <figure id="collector-guide" class="guide"><a href="capability-summary.svg" target="_blank" rel="noopener"><img src="capability-summary.svg" width="1440" height="940" loading="lazy" alt="从网关 API 到连接增量，再到实时内存与批量数据库，合并后形成多维统计；另有远程 Agent HTTP 采集和上报路径"></a><figcaption>原创原理图 · <a href="capability-summary.svg">打开矢量原图</a> · <a href="capability-summary-text.txt">阅读文字版</a></figcaption></figure>
+  <div class="mechanisms">
+    <details open><summary><span>01</span> 读取网关已有的连接记录</summary><div><p>直连 Clash/Mihomo 订阅 <code>/connections</code> WebSocket；直连 Surge 默认约 2 秒间隔 HTTP 轮询 <code>/v1/requests/recent</code>。连接 ID、字节累计、域名、目的 IP、来源 IP 与策略字段构成统计输入。</p><a href="{{BASE}}apps/collector/src/modules/collector/surge.collector.ts">Surge 适配器 ↗</a></div></details>
+    <details><summary><span>02</span> 保存基线，计算差分，按维度聚合</summary><div><p>初见连接计入当前累计流量，后续只计新增。缓冲键包括后端、分钟、域名、IP、规则、完整链和来源 IP，合并同键数据。聚合缓冲本身不替代连接或请求去重。</p><a href="{{BASE}}apps/collector/src/modules/collector/batch-buffer.ts">BatchBuffer ↗</a></div></details>
+    <details><summary><span>03</span> 历史与未落盘数据合并</summary><div><p>查询把 SQLite / 可选 ClickHouse 的历史与实时内存增量合并。持久化成功后清理相应实时维度；部分写入失败需要分别保留或回退处理。这里没有验证跨数据库原子性。</p><a href="{{BASE}}apps/collector/src/modules/realtime/realtime.merger.ts">Realtime merger ↗</a></div></details>
+    <details><summary><span>04</span> 补全地理信息，解释策略关系</summary><div><p>目标 IP 查询 GeoIP / ASN；Clash 使用原始链，Surge 从 notes 解析策略路径并反转，失败时使用策略名称回退。例如“规则 → 策略组 → 节点”表达的是选择关系，不是实际网络中的每一跳。</p><a href="{{BASE}}apps/collector/src/modules/geo/geo.service.ts">GeoIP 服务 ↗</a></div></details>
+  </div>
+  <div class="stack"><span>Next.js / React <small>界面</small></span><span>Fastify / TypeScript <small>采集与 API</small></span><span>SQLite / ClickHouse <small>存储</small></span><span>Go <small>远程 Agent</small></span></div>
+</section>
+
+<section id="deployment" class="section deployment-section">
+  <div class="section-heading"><div><p class="eyebrow">04 / DIRECT &amp; AGENT</p><h2>网关在近处，或在另一个网络。</h2></div><div class="segmented" role="group" aria-label="选择采集部署模式"><button data-mode="direct" aria-pressed="true" disabled>直连模式</button><button data-mode="agent" aria-pressed="false" disabled>Agent 模式</button></div></div>
+  <div class="deployment-panel" aria-live="polite"><p class="badge" id="mode-label">中心可以访问网关 API</p><div class="deployment-flow" id="mode-flow"><span>Clash / Surge 网关</span><b aria-hidden="true">→</b><span>中心采集服务</span><b aria-hidden="true">→</b><span>统计与面板</span></div><p id="mode-description">Clash 通过 WebSocket；Surge 通过 HTTP 轮询。适合中心与网关网络可达的环境。</p></div>
+  <p class="notice"><strong>源码核对：</strong>该提交 Go Agent 实际通过 HTTP 轮询 Clash / Surge，和 Agent 文档中的 Clash WebSocket 描述不一致。直连与 Agent 的采集实现需要分别理解。<a href="{{BASE}}apps/agent/internal/gateway/client.go">Go 采集代码 ↗</a></p>
+</section>
+
+<section id="boundaries" class="section">
+  <div class="section-heading"><div><p class="eyebrow">05 / READ WITH CONTEXT</p><h2>看得见什么，也取决于数据从哪来。</h2></div></div>
+  <div class="two-columns boundary-grid"><article><span>可见范围</span><h3>只分析网关提供的记录</h3><p>未经过网关、缺失的域名字段、断采期间已经结束的连接，都无法保证补齐。没有 HTTPS 内容解密能力。</p></article><article><span>地理补全</span><h3>Local 不等于严格离线</h3><p>该版本本地 MMDB 不可用或查询失败时可能回退在线查询；位置来自目标 IP，不是访问者的实际位置。</p></article><article><span>可靠性</span><h3>重试有用，但有状态窗口</h3><p>Agent 使用内存队列，溢出会丢弃旧数据；中心 requestId 去重也在内存中。重启和晚到重试仍需要真实测试。</p></article><article><span>存储选择</span><h3>ClickHouse 有多种写入模式</h3><p>默认、减少 SQLite 写入、CH_ONLY_MODE 的条件不同。不能把它描述为始终双写，也不能等同于完全替代 SQLite。</p></article></div>
+  <p class="caption">以上边界来自固定源码及推论，未进行故障注入或完整安全审计。研究状态：研究中。</p>
+</section>
+
+<section id="sources" class="section sources-section"><div><p class="eyebrow">06 / EVIDENCE</p><h2>每个判断，都有出处。</h2><p>阅读基准 <code>6f72cfd</code> · 2026-09-17 · MIT<br>静态研究展示；未运行上游真实网关。</p><a class="text-link" href="{{BASE}}README.zh.md">查看固定版本 ↗</a></div><div class="source-links"><a href="understanding.txt">我们的理解：客户端、远端与统计 <span>↗</span></a><a href="capabilities.txt">能力、场景与验证矩阵 <span>↗</span></a><a href="architecture.txt">完整原理与源码分析 <span>↗</span></a><a href="sources.txt">固定版本来源目录 <span>↗</span></a><a href="source-manifest.json">26 个文件的来源与 SHA-256 <span>↗</span></a><a href="LICENSE.neko-master.txt">上游 MIT 许可证 <span>↗</span></a></div></section>
+</main>
+<footer><a href="../../">← 返回研究集</a><p>Neko Master / 007 · 上游界面、原创分析、教学实验分别标明来源。</p><a href="#main">回到顶部 ↑</a></footer>
+</body></html>

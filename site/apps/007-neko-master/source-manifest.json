@@ -1,0 +1,166 @@
+{
+  "repository": "https://github.com/foru17/neko-master",
+  "commit": "6f72cfd0db69e2952713f24a648812407fef1e78",
+  "review_date": "2026-09-17",
+  "license": "MIT",
+  "retrieval": "Git clone stalled; selected files retrieved from commit-pinned raw URLs. This is a partial source snapshot, not a runnable checkout.",
+  "upstream_runtime_tested": false,
+  "files": [
+    {
+      "path": "README.zh.md",
+      "url": "https://raw.githubusercontent.com/foru17/neko-master/6f72cfd0db69e2952713f24a648812407fef1e78/README.zh.md",
+      "bytes": 35854,
+      "sha256": "37a97d78018fd25fa7ffad91c8feb2ccc5dce24dccd038434d237d9e654fdc1c"
+    },
+    {
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/foru17/neko-master/6f72cfd0db69e2952713f24a648812407fef1e78/LICENSE",
+      "bytes": 1063,
+      "sha256": "fbeed7cf5ec842f21d5ab4336ca4e225559693e5e81a7d63c13dd04f8bd0f2a4"
+    },
+    {
+      "path": "apps/collector/package.json",
+      "url": "https://raw.githubusercontent.com/foru17/neko-master/6f72cfd0db69e2952713f24a648812407fef1e78/apps/collector/package.json",
+      "bytes": 977,
+      "sha256": "6d334047bd1bf6db697caca9fc8e113f84e86bd5298e0f28b5125b4d9d1f4ea9"
+    },
+    {
+      "path": "apps/web/package.json",
+      "url": "https://raw.githubusercontent.com/foru17/neko-master/6f72cfd0db69e2952713f24a648812407fef1e78/apps/web/package.json",
+      "bytes": 1893,
+      "sha256": "05e5a479aa82a3d922656b47b531ad92abf15e68aeb2ac71af26be3b04d92216"
+    },
+    {
+      "path": "apps/collector/src/modules/collector/gateway.collector.ts",
+      "url": "https://raw.githubusercontent.com/foru17/neko-master/6f72cfd0db69e2952713f24a648812407fef1e78/apps/collector/src/modules/collector/gateway.collector.ts",
+      "bytes": 22029,
+      "sha256": "0e88fe099d85645bc19a07222de4961f01562bae97f3e9d89bbf1000251178e9"
+    },
+    {
+      "path": "apps/collector/src/modules/collector/surge.collector.ts",
+      "url": "https://raw.githubusercontent.com/foru17/neko-master/6f72cfd0db69e2952713f24a648812407fef1e78/apps/collector/src/modules/collector/surge.collector.ts",
+      "bytes": 29466,
+      "sha256": "799fded8c858f91244c331157d03879cbaf895015ba37612da4fb116231ff36f"
+    },
+    {
+      "path": "apps/collector/src/modules/collector/batch-buffer.ts",
+      "url": "https://raw.githubusercontent.com/foru17/neko-master/6f72cfd0db69e2952713f24a648812407fef1e78/apps/collector/src/modules/collector/batch-buffer.ts",
+      "bytes": 7354,
+      "sha256": "068b31e5ff4e572341767cadd65a0defdb41740fa92796ae08b91b1806b3ec1c"
+    },
+    {
+      "path": "apps/collector/src/modules/realtime/realtime.merger.ts",
+      "url": "https://raw.githubusercontent.com/foru17/neko-master/6f72cfd0db69e2952713f24a648812407fef1e78/apps/collector/src/modules/realtime/realtime.merger.ts",
+      "bytes": 30279,
+      "sha256": "df77fb69c37e6afa5995d98bcd3d37bdfaa49b1b69c8e99badbefa932ecdd968"
+    },
+    {
+      "path": "apps/collector/src/modules/realtime/realtime.store.ts",
+      "url": "https://raw.githubusercontent.com/foru17/neko-master/6f72cfd0db69e2952713f24a648812407fef1e78/apps/collector/src/modules/realtime/realtime.store.ts",
+      "bytes": 50619,
+      "sha256": "e728cd93df42d62cda153ef7d2db8618a4898ab8ef42480678bbee133d082964"
+    },
+    {
+      "path": "apps/collector/src/modules/stats/stats-write-mode.ts",
+      "url": "https://raw.githubusercontent.com/foru17/neko-master/6f72cfd0db69e2952713f24a648812407fef1e78/apps/collector/src/modules/stats/stats-write-mode.ts",
+      "bytes": 1847,
+      "sha256": "72f0e02278b98001d7e9d48f747e464876a60ca15b174c344af36e5a098209a1"
+    },
+    {
+      "path": "apps/collector/src/modules/geo/geo.service.ts",
+      "url": "https://raw.githubusercontent.com/foru17/neko-master/6f72cfd0db69e2952713f24a648812407fef1e78/apps/collector/src/modules/geo/geo.service.ts",
+      "bytes": 20749,
+      "sha256": "6827407419aec546f7117e42ef2980ea06e7e75640d0c4759a4bdfb51e3da83e"
+    },
+    {
+      "path": "apps/collector/src/modules/surge/surge-policy-sync.ts",
+      "url": "https://raw.githubusercontent.com/foru17/neko-master/6f72cfd0db69e2952713f24a648812407fef1e78/apps/collector/src/modules/surge/surge-policy-sync.ts",
+      "bytes": 5076,
+      "sha256": "9e0cf71485d88b9db8d926e02bcf3e99f087fb4861a933a9843f40beea796503"
+    },
+    {
+      "path": "apps/collector/src/database/connection.ts",
+      "url": "https://raw.githubusercontent.com/foru17/neko-master/6f72cfd0db69e2952713f24a648812407fef1e78/apps/collector/src/database/connection.ts",
+      "bytes": 1111,
+      "sha256": "63613905f24c6f6106aa60f1e8cb867631706f7f8ed9d6740f6d982e91cb87da"
+    },
+    {
+      "path": "apps/collector/src/database/schema.ts",
+      "url": "https://raw.githubusercontent.com/foru17/neko-master/6f72cfd0db69e2952713f24a648812407fef1e78/apps/collector/src/database/schema.ts",
+      "bytes": 19650,
+      "sha256": "e560f5ee8ffba5ded70d8e0e66d37a610b113202c226f338ae0bba7d397d4187"
+    },
+    {
+      "path": "apps/collector/src/modules/app/app.ts",
+      "url": "https://raw.githubusercontent.com/foru17/neko-master/6f72cfd0db69e2952713f24a648812407fef1e78/apps/collector/src/modules/app/app.ts",
+      "bytes": 51782,
+      "sha256": "54074d1bf27feba1615fd4418a35e439a899989983b2b2db314b143942741ea8"
+    },
+    {
+      "path": "apps/collector/src/modules/websocket/websocket.server.ts",
+      "url": "https://raw.githubusercontent.com/foru17/neko-master/6f72cfd0db69e2952713f24a648812407fef1e78/apps/collector/src/modules/websocket/websocket.server.ts",
+      "bytes": 48457,
+      "sha256": "d0013ca328eddc7f5b5762beab29dd38ee3498481e3dc2d121148f1162b3adb3"
+    },
+    {
+      "path": "apps/web/lib/websocket.ts",
+      "url": "https://raw.githubusercontent.com/foru17/neko-master/6f72cfd0db69e2952713f24a648812407fef1e78/apps/web/lib/websocket.ts",
+      "bytes": 15331,
+      "sha256": "43dc78fc0ef28684d07636d53b4d9af4cbabd3a91013d724696ecb15e70c244c"
+    },
+    {
+      "path": "apps/web/components/features/rules/rule-chain-flow.tsx",
+      "url": "https://raw.githubusercontent.com/foru17/neko-master/6f72cfd0db69e2952713f24a648812407fef1e78/apps/web/components/features/rules/rule-chain-flow.tsx",
+      "bytes": 58094,
+      "sha256": "caf4b9aa5ac8962e65068d61e8021006c37d6eae65acaeab71e7d8d3200a895c"
+    },
+    {
+      "path": "apps/agent/internal/agent/runner.go",
+      "url": "https://raw.githubusercontent.com/foru17/neko-master/6f72cfd0db69e2952713f24a648812407fef1e78/apps/agent/internal/agent/runner.go",
+      "bytes": 20409,
+      "sha256": "68934a4deb2b2d44eb1885ee325daf5f2524cd7ba134dc3f0772b673d6ddc199"
+    },
+    {
+      "path": "apps/agent/internal/gateway/client.go",
+      "url": "https://raw.githubusercontent.com/foru17/neko-master/6f72cfd0db69e2952713f24a648812407fef1e78/apps/agent/internal/gateway/client.go",
+      "bytes": 12971,
+      "sha256": "d60c067b7b33b0881bc8085cf2c787814b11380603af3035d34a41df96339932"
+    },
+    {
+      "path": "apps/agent/internal/domain/types.go",
+      "url": "https://raw.githubusercontent.com/foru17/neko-master/6f72cfd0db69e2952713f24a648812407fef1e78/apps/agent/internal/domain/types.go",
+      "bytes": 755,
+      "sha256": "df407cb7dbdafb9b7fbe471c20abfef76f3917c98a66752b96eeb0dcf68f85b4"
+    },
+    {
+      "path": "docs/agent/overview.md",
+      "url": "https://raw.githubusercontent.com/foru17/neko-master/6f72cfd0db69e2952713f24a648812407fef1e78/docs/agent/overview.md",
+      "bytes": 2644,
+      "sha256": "5ab66dd985698d32438cee254ab5b11bdb9f1ce431a23ac38bfc256b7e4551e7"
+    },
+    {
+      "path": "assets/neko-master-overview-light.png",
+      "url": "https://raw.githubusercontent.com/foru17/neko-master/6f72cfd0db69e2952713f24a648812407fef1e78/assets/neko-master-overview-light.png",
+      "bytes": 764719,
+      "sha256": "8728fa4843630e8877e564dba0e4463c3a4dc3d2ddcb6c8287ef9fdab233b2a4"
+    },
+    {
+      "path": "assets/neko-master-domains-dark.png",
+      "url": "https://raw.githubusercontent.com/foru17/neko-master/6f72cfd0db69e2952713f24a648812407fef1e78/assets/neko-master-domains-dark.png",
+      "bytes": 537586,
+      "sha256": "67a960638694554c76d581e2fecd520d4d5ede63a4e037428c33f08b05ef7acf"
+    },
+    {
+      "path": "assets/neko-master-rules-dark.png",
+      "url": "https://raw.githubusercontent.com/foru17/neko-master/6f72cfd0db69e2952713f24a648812407fef1e78/assets/neko-master-rules-dark.png",
+      "bytes": 1007029,
+      "sha256": "539c190589035af489859cba70f6ac2687638a3220646e9652a7228539f45e4e"
+    },
+    {
+      "path": "assets/neko-master-regions-light.png",
+      "url": "https://raw.githubusercontent.com/foru17/neko-master/6f72cfd0db69e2952713f24a648812407fef1e78/assets/neko-master-regions-light.png",
+      "bytes": 624574,
+      "sha256": "f07782df37711b9abe8228641045f4b1bc347bbb3f399ee6531446ab9245e584"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "id": 7,
+  "slug": "neko-master",
+  "name": "Neko Master",
+  "summary": "从 Clash 等代理客户端内核采集连接与流量信息，保存历史并按设备、域名和节点展示；统计来自内核本地转发计数，无需远端同步。",
+  "repo": "https://github.com/foru17/neko-master",
+  "status": "研究中",
+  "demo": "",
+  "cover": "assets/system-proxy-tun-revised.png",
+  "cover_alt": "系统代理与 TUN 的修订对照图：两种入口汇入 Clash 内核，远端转发、DNS、Neko Master 统计读取和排查边界。"
+}

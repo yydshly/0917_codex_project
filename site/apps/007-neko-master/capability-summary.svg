@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="940" viewBox="0 0 1440 940" role="img" aria-labelledby="title desc">
+<title id="title">Neko Master 能力与原理总览</title><desc id="desc">网关 API 提供连接记录，中心或远程 Agent 计算增量，实时内存与批量存储分别处理，再合并为设备、域名、IP、规则、代理与地区统计。原理示意，未运行真实网关。</desc>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9" fill="none" stroke="#19735a" stroke-width="1.5"/></marker></defs>
+<rect width="1440" height="940" rx="24" fill="#f3f5ed"/>
+<g font-family="Segoe UI,Microsoft YaHei,sans-serif" fill="#183b32">
+<text x="64" y="65" font-size="16" letter-spacing="3">007 / OPEN SOURCE FIELD NOTES</text>
+<text x="64" y="134" font-size="46" font-weight="700">从连接记录，到可解释的流量历史</text>
+<text x="64" y="178" font-size="22" fill="#536b60">Neko Master · 网关流量分析 · 固定源码研究 6f72cfd · 原创原理示意</text>
+<rect x="64" y="218" width="1312" height="89" rx="16" fill="#193e33"/>
+<g fill="#fff" font-size="24"><text x="96" y="272">总量 / 趋势</text><text x="312" y="272">设备来源</text><text x="510" y="272">域名 / IP</text><text x="731" y="272">规则 / 节点</text><text x="974" y="272">国家 / ASN</text><text x="1210" y="272">多网关</text></g>
+<g fill="white" stroke="#ccdacb"><rect x="64" y="350" width="292" height="182" rx="14"/><rect x="405" y="350" width="285" height="182" rx="14"/><rect x="757" y="350" width="274" height="182" rx="14"/><rect x="1097" y="350" width="279" height="182" rx="14"/></g>
+<g font-size="16" fill="#19735a"><text x="87" y="383">01 / 读取网关</text><text x="428" y="383">02 / 计算新增</text><text x="780" y="383">03 / 两路处理</text><text x="1120" y="383">04 / 合并展示</text></g>
+<g font-size="24" font-weight="600"><text x="87" y="428">Clash / Mihomo</text><text x="428" y="428">当前累计 − 上次累计</text><text x="780" y="428">内存实时增量</text><text x="1120" y="428">历史 + 未落盘增量</text></g>
+<g font-size="19" fill="#536b60"><text x="87" y="467">直连 WebSocket</text><text x="87" y="502">Surge：HTTP 轮询</text><text x="428" y="467">10 → 13 MB = 新增 3 MB</text><text x="428" y="502">按连接 ID 维护基线</text><text x="780" y="467">缓冲 → 批量持久化</text><text x="780" y="502">SQLite / ClickHouse</text><text x="1120" y="467">API / WebSocket</text><text x="1120" y="502">浏览器多维统计</text></g>
+<g stroke="#19735a" stroke-width="2" marker-end="url(#arrow)"><path d="M357 437H392"/><path d="M691 437H744"/><path d="M1032 437H1084"/></g>
+<rect x="64" y="570" width="1312" height="148" rx="16" fill="#e0ebe0"/>
+<text x="89" y="612" font-size="17" fill="#19735a">另一条入口 / 远程 AGENT</text>
+<text x="89" y="657" font-size="25" font-weight="600">远程网关 → 本地 HTTP 轮询 → Go Agent 计算增量 → HTTP 批量上报中心</text>
+<text x="89" y="693" font-size="19" fill="#536b60">该提交 Go 实现对 Clash / Surge 均使用 HTTP；与上游 Agent 文档的 WebSocket 描述存在差异。</text>
+<path d="M718 570V437H744" stroke="#19735a" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<text x="64" y="778" font-size="23" font-weight="600">理解边界，才能正确读图</text>
+<text x="64" y="821" font-size="20" fill="#536b60">只分析网关可见记录 · 策略链不是网络逐跳路由 · 没有 HTTPS 内容解密</text>
+<text x="64" y="858" font-size="20" fill="#536b60">实时缓存与 Agent 队列含内存状态；断采、重启和溢出的完整性需在真实环境验证。</text>
+<text x="64" y="909" font-size="16" fill="#536b60">来源：foru17/neko-master 固定源码 · MIT · 上游界面与本地教学数据均不代表本研究的真实网关测量</text>
+</g></svg>

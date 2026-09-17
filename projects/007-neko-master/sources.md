@@ -1,0 +1,36 @@
+# 来源与许可证
+
+全部来源固定到 `6f72cfd0db69e2952713f24a648812407fef1e78`。源码核对不等同于性能与可靠性测量。
+
+| 文件 | 来源 |
+| --- | --- |
+| `README.zh.md` | [固定源码 / 素材](https://github.com/foru17/neko-master/blob/6f72cfd0db69e2952713f24a648812407fef1e78/README.zh.md) |
+| `LICENSE` | [固定源码 / 素材](https://github.com/foru17/neko-master/blob/6f72cfd0db69e2952713f24a648812407fef1e78/LICENSE) |
+| `apps/collector/package.json` | [固定源码 / 素材](https://github.com/foru17/neko-master/blob/6f72cfd0db69e2952713f24a648812407fef1e78/apps/collector/package.json) |
+| `apps/web/package.json` | [固定源码 / 素材](https://github.com/foru17/neko-master/blob/6f72cfd0db69e2952713f24a648812407fef1e78/apps/web/package.json) |
+| `apps/collector/src/modules/collector/gateway.collector.ts` | [固定源码 / 素材](https://github.com/foru17/neko-master/blob/6f72cfd0db69e2952713f24a648812407fef1e78/apps/collector/src/modules/collector/gateway.collector.ts) |
+| `apps/collector/src/modules/collector/surge.collector.ts` | [固定源码 / 素材](https://github.com/foru17/neko-master/blob/6f72cfd0db69e2952713f24a648812407fef1e78/apps/collector/src/modules/collector/surge.collector.ts) |
+| `apps/collector/src/modules/collector/batch-buffer.ts` | [固定源码 / 素材](https://github.com/foru17/neko-master/blob/6f72cfd0db69e2952713f24a648812407fef1e78/apps/collector/src/modules/collector/batch-buffer.ts) |
+| `apps/collector/src/modules/realtime/realtime.merger.ts` | [固定源码 / 素材](https://github.com/foru17/neko-master/blob/6f72cfd0db69e2952713f24a648812407fef1e78/apps/collector/src/modules/realtime/realtime.merger.ts) |
+| `apps/collector/src/modules/realtime/realtime.store.ts` | [固定源码 / 素材](https://github.com/foru17/neko-master/blob/6f72cfd0db69e2952713f24a648812407fef1e78/apps/collector/src/modules/realtime/realtime.store.ts) |
+| `apps/collector/src/modules/stats/stats-write-mode.ts` | [固定源码 / 素材](https://github.com/foru17/neko-master/blob/6f72cfd0db69e2952713f24a648812407fef1e78/apps/collector/src/modules/stats/stats-write-mode.ts) |
+| `apps/collector/src/modules/geo/geo.service.ts` | [固定源码 / 素材](https://github.com/foru17/neko-master/blob/6f72cfd0db69e2952713f24a648812407fef1e78/apps/collector/src/modules/geo/geo.service.ts) |
+| `apps/collector/src/modules/surge/surge-policy-sync.ts` | [固定源码 / 素材](https://github.com/foru17/neko-master/blob/6f72cfd0db69e2952713f24a648812407fef1e78/apps/collector/src/modules/surge/surge-policy-sync.ts) |
+| `apps/collector/src/database/connection.ts` | [固定源码 / 素材](https://github.com/foru17/neko-master/blob/6f72cfd0db69e2952713f24a648812407fef1e78/apps/collector/src/database/connection.ts) |
+| `apps/collector/src/database/schema.ts` | [固定源码 / 素材](https://github.com/foru17/neko-master/blob/6f72cfd0db69e2952713f24a648812407fef1e78/apps/collector/src/database/schema.ts) |
+| `apps/collector/src/modules/app/app.ts` | [固定源码 / 素材](https://github.com/foru17/neko-master/blob/6f72cfd0db69e2952713f24a648812407fef1e78/apps/collector/src/modules/app/app.ts) |
+| `apps/collector/src/modules/websocket/websocket.server.ts` | [固定源码 / 素材](https://github.com/foru17/neko-master/blob/6f72cfd0db69e2952713f24a648812407fef1e78/apps/collector/src/modules/websocket/websocket.server.ts) |
+| `apps/web/lib/websocket.ts` | [固定源码 / 素材](https://github.com/foru17/neko-master/blob/6f72cfd0db69e2952713f24a648812407fef1e78/apps/web/lib/websocket.ts) |
+| `apps/web/components/features/rules/rule-chain-flow.tsx` | [固定源码 / 素材](https://github.com/foru17/neko-master/blob/6f72cfd0db69e2952713f24a648812407fef1e78/apps/web/components/features/rules/rule-chain-flow.tsx) |
+| `apps/agent/internal/agent/runner.go` | [固定源码 / 素材](https://github.com/foru17/neko-master/blob/6f72cfd0db69e2952713f24a648812407fef1e78/apps/agent/internal/agent/runner.go) |
+| `apps/agent/internal/gateway/client.go` | [固定源码 / 素材](https://github.com/foru17/neko-master/blob/6f72cfd0db69e2952713f24a648812407fef1e78/apps/agent/internal/gateway/client.go) |
+| `apps/agent/internal/domain/types.go` | [固定源码 / 素材](https://github.com/foru17/neko-master/blob/6f72cfd0db69e2952713f24a648812407fef1e78/apps/agent/internal/domain/types.go) |
+| `docs/agent/overview.md` | [固定源码 / 素材](https://github.com/foru17/neko-master/blob/6f72cfd0db69e2952713f24a648812407fef1e78/docs/agent/overview.md) |
+| `assets/neko-master-overview-light.png` | [固定源码 / 素材](https://github.com/foru17/neko-master/blob/6f72cfd0db69e2952713f24a648812407fef1e78/assets/neko-master-overview-light.png) |
+| `assets/neko-master-domains-dark.png` | [固定源码 / 素材](https://github.com/foru17/neko-master/blob/6f72cfd0db69e2952713f24a648812407fef1e78/assets/neko-master-domains-dark.png) |
+| `assets/neko-master-rules-dark.png` | [固定源码 / 素材](https://github.com/foru17/neko-master/blob/6f72cfd0db69e2952713f24a648812407fef1e78/assets/neko-master-rules-dark.png) |
+| `assets/neko-master-regions-light.png` | [固定源码 / 素材](https://github.com/foru17/neko-master/blob/6f72cfd0db69e2952713f24a648812407fef1e78/assets/neko-master-regions-light.png) |
+
+文件原始 URL、字节数及 SHA-256 见 [source-manifest.json](source-manifest.json)。四张原样 PNG 及 MIT 原文随展示发布；[图片说明](assets/README.md) · [原许可证](third-party/LICENSE.neko-master)。
+
+研究正文、原理 SVG 与教学模型为本研究新增内容，不是上游官方文档。教学模型依据已读逻辑独立编写，没有直接运行上游采集器。文档与源码不一致时以固定源码为分析依据，具体差异见 [原理分析](architecture.md)。

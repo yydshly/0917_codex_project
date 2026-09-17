@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2260" viewBox="0 0 1600 2260" role="img" aria-labelledby="title desc">
+<title id="title">Clash 底层交互：系统代理与 TUN 如何汇入同一条代理链</title>
+<desc id="desc">以 HTTPS 网站和 Trojan 远端节点为例。左路应用主动使用 HTTP 代理，经操作系统回环 TCP 到本地监听器；右路应用正常联网，经系统路由及 TUN 虚拟网卡把 IP 包交给协议栈。两路都进入 Clash，识别目标、选择出口并统计转发字节。物理网络连接远端节点，节点解除外层代理 TLS 并新建到网站的连接，内层 HTTPS 仍由浏览器和网站端到端处理。DIRECT 则直接连接网站。底部解释 IP 检测、DNS 和 Neko Master 统计。</desc>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto-start-reverse"><path d="M1 1L9 5L1 9" fill="none" stroke="#294e44" stroke-width="1.7"/></marker><marker id="b" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto-start-reverse"><path d="M1 1L9 5L1 9" fill="none" stroke="#976239" stroke-width="1.7"/></marker></defs>
+<rect width="1600" height="2260" fill="#f7f8f2"/>
+<g font-family="Microsoft YaHei,Segoe UI,sans-serif">
+<text x="50" y="64" font-size="48" fill="#203e35" font-weight="650" text-anchor="start">Clash：两种入口，同一套出口与统计</text>
+<text x="50" y="109" font-size="26" fill="#50675d" font-weight="400" text-anchor="start">示例：访问 HTTPS 网站，使用 Trojan 节点。沿箭头向下读；响应沿对应链路反向返回。</text>
+<rect x="40" y="150" width="1520" height="865" rx="22" fill="#eef3ed" stroke="#b8cdbf" stroke-width="2"/>
+<text x="68" y="192" font-size="29" fill="#203e35" font-weight="600" text-anchor="start">Ⅰ 你的电脑内部</text>
+<text x="1515" y="192" font-size="23" fill="#50675d" font-weight="400" text-anchor="end">这部分没有连接远端代理服务器</text>
+<text x="90" y="242" font-size="30" fill="#215b79" font-weight="600" text-anchor="start">A · 系统代理：应用主动找 Clash</text>
+<text x="860" y="242" font-size="30" fill="#326044" font-weight="600" text-anchor="start">B · TUN：系统把包交给 Clash</text>
+<rect x="90" y="264" width="650" height="118" rx="15" fill="#edf4f9" stroke="#c8d8ce" stroke-width="2"/>
+<text x="114" y="306" font-size="30" fill="#203e35" font-weight="600" text-anchor="start">浏览器知道代理地址</text>
+<text x="114" y="346" font-size="24" fill="#50675d" font-weight="400" text-anchor="start">示例：本机 127.0.0.1:7890</text>
+<rect x="860" y="264" width="650" height="118" rx="15" fill="#edf5e9" stroke="#c8d8ce" stroke-width="2"/>
+<text x="884" y="306" font-size="30" fill="#203e35" font-weight="600" text-anchor="start">应用照常连接网站</text>
+<text x="884" y="346" font-size="24" fill="#50675d" font-weight="400" text-anchor="start">目标：网站 IP:443；应用无须知道代理</text>
+<path d="M415 383V448" fill="none" stroke="#294e44" stroke-width="3" marker-end="url(#a)"/>
+<text x="447" y="423" font-size="23" fill="#215b79" font-weight="400" text-anchor="start">先连接本机代理端口</text>
+<path d="M1185 383V448" fill="none" stroke="#294e44" stroke-width="3" marker-end="url(#a)"/>
+<text x="1217" y="423" font-size="23" fill="#326044" font-weight="400" text-anchor="start">产生 TCP/IP 数据包</text>
+<rect x="90" y="452" width="650" height="120" rx="15" fill="#edf4f9" stroke="#c8d8ce" stroke-width="2"/>
+<text x="114" y="494" font-size="30" fill="#203e35" font-weight="600" text-anchor="start">操作系统：回环 TCP/IP</text>
+<text x="114" y="534" font-size="24" fill="#50675d" font-weight="400" text-anchor="start">本机 socket → 本机代理监听器</text>
+<rect x="860" y="452" width="650" height="120" rx="15" fill="#edf5e9" stroke="#c8d8ce" stroke-width="2"/>
+<text x="884" y="494" font-size="30" fill="#203e35" font-weight="600" text-anchor="start">操作系统：路由 → TUN 虚拟网卡</text>
+<text x="884" y="534" font-size="24" fill="#50675d" font-weight="400" text-anchor="start">匹配的 IP 包交给程序，不直接发到网线</text>
+<path d="M415 573V644" fill="none" stroke="#294e44" stroke-width="3" marker-end="url(#a)"/>
+<text x="447" y="611" font-size="22" fill="#215b79" font-weight="400" text-anchor="start">HTTP CONNECT 网站域名:443</text>
+<path d="M1185 573V644" fill="none" stroke="#294e44" stroke-width="3" marker-end="url(#a)"/>
+<text x="1217" y="611" font-size="22" fill="#326044" font-weight="400" text-anchor="start">IP 包：IP / TCP / 数据</text>
+<rect x="90" y="648" width="650" height="124" rx="15" fill="#edf4f9" stroke="#c8d8ce" stroke-width="2"/>
+<text x="114" y="690" font-size="30" fill="#203e35" font-weight="600" text-anchor="start">Clash 的 HTTP / mixed 入口</text>
+<text x="114" y="730" font-size="24" fill="#50675d" font-weight="400" text-anchor="start">解析 CONNECT 目标，建立字节转发通道</text>
+<rect x="860" y="648" width="650" height="124" rx="15" fill="#edf5e9" stroke="#c8d8ce" stroke-width="2"/>
+<text x="884" y="690" font-size="30" fill="#203e35" font-weight="600" text-anchor="start">Clash 的 TUN 协议栈适配</text>
+<text x="884" y="730" font-size="24" fill="#50675d" font-weight="400" text-anchor="start">处理 TCP 状态与重组，形成连接 / 字节流</text>
+<text x="90" y="809" font-size="23" fill="#50675d" font-weight="400" text-anchor="start">通道建立后，浏览器发送网站的 TLS 握手与密文。</text>
+<text x="860" y="809" font-size="23" fill="#50675d" font-weight="400" text-anchor="start">UDP 则按数据报处理；TUN 自身不是远端协议。</text>
+<path d="M415 826V852H780V877" fill="none" stroke="#294e44" stroke-width="3" marker-end="url(#a)"/>
+<path d="M1185 826V852H820V877" fill="none" stroke="#294e44" stroke-width="3" marker-end="url(#a)"/>
+<rect x="90" y="882" width="1420" height="100" rx="15" fill="#203e35" stroke="#203e35" stroke-width="2"/>
+<text x="118" y="923" font-size="31" fill="#fff" font-weight="600" text-anchor="start">Clash 统一处理</text>
+<text x="420" y="920" font-size="25" fill="#e1eddf" font-weight="400" text-anchor="start">目标识别 / DNS 映射</text>
+<text x="806" y="920" font-size="25" fill="#e1eddf" font-weight="400" text-anchor="start">规则 / GLOBAL 选出口</text>
+<text x="1210" y="920" font-size="25" fill="#e1eddf" font-weight="400" text-anchor="start">读写计数与转发</text>
+<text x="420" y="958" font-size="24" fill="#e1eddf" font-weight="400" text-anchor="start">全局模式只改出口选择；不会让所有应用自动进入 Clash。</text>
+<path d="M800 983V1047" fill="none" stroke="#294e44" stroke-width="3" marker-end="url(#a)"/>
+<text x="834" y="1028" font-size="23" fill="#203e35" font-weight="400" text-anchor="start">选中代理节点：由本机新建到节点的连接</text>
+<text x="50" y="1092" font-size="30" fill="#203e35" font-weight="600" text-anchor="start">Ⅱ 真正经过物理网络的交互</text>
+<rect x="50" y="1120" width="450" height="205" rx="15" fill="#fff" stroke="#c8d8ce" stroke-width="2"/>
+<text x="74" y="1162" font-size="30" fill="#203e35" font-weight="600" text-anchor="start">你的电脑：Clash 出站</text>
+<text x="74" y="1202" font-size="24" fill="#50675d" font-weight="400" text-anchor="start">认证 + 目标地址 + 要转发的数据</text>
+<text x="74" y="1237" font-size="24" fill="#50675d" font-weight="400" text-anchor="start">用 Trojan 的外层 TLS 封装</text>
+<text x="74" y="1272" font-size="24" fill="#50675d" font-weight="400" text-anchor="start">经系统 TCP/IP → Wi-Fi / 网线</text>
+<rect x="600" y="1120" width="450" height="205" rx="15" fill="#fff" stroke="#c8d8ce" stroke-width="2"/>
+<text x="624" y="1162" font-size="30" fill="#203e35" font-weight="600" text-anchor="start">远端 Trojan 服务器</text>
+<text x="624" y="1202" font-size="24" fill="#50675d" font-weight="400" text-anchor="start">解除外层 TLS，读取目标地址</text>
+<text x="624" y="1237" font-size="24" fill="#50675d" font-weight="400" text-anchor="start">新建到网站的 TCP 连接</text>
+<text x="624" y="1272" font-size="24" fill="#50675d" font-weight="400" text-anchor="start">继续转发内层 HTTPS 密文</text>
+<rect x="1150" y="1120" width="400" height="205" rx="15" fill="#e7efdf" stroke="#c8d8ce" stroke-width="2"/>
+<text x="1174" y="1162" font-size="30" fill="#203e35" font-weight="600" text-anchor="start">目标网站，例如 Google</text>
+<text x="1174" y="1202" font-size="24" fill="#50675d" font-weight="400" text-anchor="start">处理浏览器的 HTTPS</text>
+<text x="1174" y="1237" font-size="24" fill="#50675d" font-weight="400" text-anchor="start">读取网页请求并返回响应</text>
+<text x="1174" y="1272" font-size="24" fill="#50675d" font-weight="400" text-anchor="start">来源 IP：节点的出口 IP</text>
+<path d="M501 1217H583" fill="none" stroke="#294e44" stroke-width="3" marker-end="url(#a)"/>
+<text x="548" y="1155" font-size="20" fill="#203e35" font-weight="400" text-anchor="middle">连接①</text>
+<path d="M1051 1217H1133" fill="none" stroke="#294e44" stroke-width="3" marker-end="url(#a)"/>
+<text x="1098" y="1155" font-size="20" fill="#203e35" font-weight="400" text-anchor="middle">连接②</text>
+<text x="50" y="1364" font-size="25" fill="#50675d" font-weight="400" text-anchor="start">这两段是分别建立的网络连接；同一个网站 TLS 会话的字节被跨段转发。</text>
+<path d="M274 1326V1404H1347V1340" fill="none" stroke="#976239" stroke-width="3" marker-end="url(#b)" stroke-dasharray="9 7"/>
+<rect x="465" y="1383" width="668" height="42" rx="0" fill="#f7f8f2" stroke="#f7f8f2" stroke-width="2"/>
+<text x="800" y="1413" font-size="23" fill="#976239" font-weight="400" text-anchor="middle">若选 DIRECT：本机 → 网站，网站看到本地出口 IP</text>
+<text x="50" y="1488" font-size="30" fill="#203e35" font-weight="600" text-anchor="start">Ⅲ “转换”的到底是什么？看两个加密层</text>
+<rect x="50" y="1514" width="1500" height="267" rx="15" fill="#fff" stroke="#c8d8ce" stroke-width="2"/>
+<text x="77" y="1557" font-size="26" fill="#203e35" font-weight="600" text-anchor="start">连接①  本机 → 节点</text>
+<rect x="390" y="1529" width="1125" height="80" rx="8" fill="#edf3ed" stroke="#c8d8ce" stroke-width="2"/>
+<text x="410" y="1578" font-size="25" fill="#203e35" font-weight="400" text-anchor="start">IP（目的=节点 IP） / TCP / 外层 TLS〔Trojan 协议 + 内层 HTTPS〕</text>
+<text x="77" y="1660" font-size="26" fill="#203e35" font-weight="600" text-anchor="start">连接②  节点 → 网站</text>
+<rect x="390" y="1632" width="1125" height="68" rx="8" fill="#edf4f9" stroke="#cad8e2" stroke-width="2"/>
+<text x="410" y="1675" font-size="25" fill="#203e35" font-weight="400" text-anchor="start">IP（目的=网站 IP） / TCP / 内层 HTTPS TLS 数据</text>
+<text x="77" y="1744" font-size="25" fill="#50675d" font-weight="400" text-anchor="start">内层 HTTPS：浏览器 ↔ 网站。远端代理解除的是外层加密，不因此获得 HTTPS 正文。</text>
+<text x="50" y="1820" font-size="23" fill="#50675d" font-weight="400" text-anchor="start">图示为连接的逻辑分层：认证和目标地址不是每个数据包都重复携带；不代表原 IP 包整包转发。</text>
+<text x="50" y="1882" font-size="30" fill="#203e35" font-weight="600" text-anchor="start">Ⅳ 回到你的问题：出口 IP、域名和监控</text>
+<rect x="50" y="1905" width="480" height="200" rx="15" fill="#fff" stroke="#c8d8ce" stroke-width="2"/>
+<text x="74" y="1947" font-size="30" fill="#203e35" font-weight="600" text-anchor="start">网站为什么看到代理 IP？</text>
+<text x="74" y="1987" font-size="24" fill="#50675d" font-weight="400" text-anchor="start">连接②由节点建立，来源是节点。</text>
+<text x="74" y="2022" font-size="24" fill="#50675d" font-weight="400" text-anchor="start">两种入口若使用同一个出口，</text>
+<text x="74" y="2057" font-size="24" fill="#50675d" font-weight="400" text-anchor="start">网站看到的出口 IP 可以相同。</text>
+<rect x="560" y="1905" width="480" height="200" rx="15" fill="#fff" stroke="#c8d8ce" stroke-width="2"/>
+<text x="584" y="1947" font-size="30" fill="#203e35" font-weight="600" text-anchor="start">域名和 IP 从哪里来？</text>
+<text x="584" y="1987" font-size="24" fill="#50675d" font-weight="400" text-anchor="start">CONNECT 可以直接提供域名。</text>
+<text x="584" y="2022" font-size="24" fill="#50675d" font-weight="400" text-anchor="start">TUN 初始主要看到目标 IP；</text>
+<text x="584" y="2057" font-size="24" fill="#50675d" font-weight="400" text-anchor="start">域名可由 DNS 映射 / 嗅探补充。</text>
+<rect x="1070" y="1905" width="480" height="200" rx="15" fill="#fff" stroke="#c8d8ce" stroke-width="2"/>
+<text x="1094" y="1947" font-size="30" fill="#203e35" font-weight="600" text-anchor="start">Neko Master 在哪里统计？</text>
+<text x="1094" y="1987" font-size="24" fill="#50675d" font-weight="400" text-anchor="start">Clash 先计每条连接的读写字节。</text>
+<text x="1094" y="2022" font-size="24" fill="#50675d" font-weight="400" text-anchor="start">Neko 读 API，做差分并汇总。</text>
+<text x="1094" y="2057" font-size="24" fill="#50675d" font-weight="400" text-anchor="start">不等于物理网卡的全部字节。</text>
+<text x="50" y="2160" font-size="24" fill="#50675d" font-weight="400" text-anchor="start">两种入口都使用操作系统与 IP 层。TUN 无须和远端同 IP；Clash 出站需正确选路，避免再次被自身捕获。</text>
+<text x="50" y="2204" font-size="22" fill="#50675d" font-weight="400" text-anchor="start">适用范围：普通 HTTPS + HTTP 代理入口 / TUN + Trojan；不含 HTTPS 解密、链式代理、VPN IP 隧道等变体。</text>
+<text x="50" y="2239" font-size="20" fill="#50675d" font-weight="400" text-anchor="start">原创教学示意 · 依据 Chromium、Linux TUN 文档、Mihomo 源码、Trojan 协议与 Neko Master 源码 · 详见配套来源说明</text>
+</g></svg>
